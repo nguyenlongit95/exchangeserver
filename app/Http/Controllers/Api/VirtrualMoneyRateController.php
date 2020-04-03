@@ -73,8 +73,47 @@ class VirtrualMoneyRateController extends Controller
             return response()->json(["message" => "Money not found"], 403);
         }
         $virtualMoneyUSD->vnd = $virtualMoneyVND->price;
-
+        $virtualMoneyUSD->image = $this->getImageMoney($slug);
         return response()->json(array($virtualMoneyUSD), 200);
+    }
+
+    public function getImageMoney($slug)
+    {
+        switch ($slug) {
+            case "bitcoin":
+                return asset('iconVirualMoney/bitcoin.png');
+                break;
+            case "litecoin":
+                return asset('iconVirualMoney/litecoin.png');
+                break;
+            case "ethereum":
+                return asset('iconVirualMoney/ethereum.png');
+                break;
+            case "cardano":
+                return asset('iconVirualMoney/cardano.png');
+                break;
+            case "xrp":
+                return asset('iconVirualMoney/xrp.png');
+                break;
+            case "tron":
+                return asset('iconVirualMoney/tron.png');
+                break;
+            case "tether":
+                return asset('iconVirualMoney/tether.png');
+                break;
+            case "dash":
+                return asset('iconVirualMoney/dash.png');
+                break;
+            case "cash":
+                return asset('iconVirualMoney/cash.png');
+                break;
+            case "iota":
+                return asset('iconVirualMoney/iota.png');
+                break;
+            default:
+                return null;
+                break;
+        }
     }
 
     /**
