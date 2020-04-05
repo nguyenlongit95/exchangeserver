@@ -329,3 +329,5 @@ Route::group(['namespace'=>$namespace], function() {
 // Route web client
     Route::get('index', 'IndexController@index');
 });
+
+Route::get('getVNIndex', 'adminController@getVNIndex');
