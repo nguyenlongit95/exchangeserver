@@ -22,18 +22,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="admin/DashBoard"><i class="fa fa-circle-o"></i> Dashboard </a></li>
+                    <li class="active"><a href="admin/DashBoard"><img src="{{ asset('admin/asset/css/font-awesome/fonts/chart-bar.svg') }}" style="width: 16px;"> Dashboard </a></li>
                 </ul>
-            </li>
-
-            <!-- Widgets dùng để quản lý các thành phần của website như header, sidebar footer -->
-            <li>
-                <a href="admin/Widgets/Widgets">
-                    <i class="fa fa-th"></i> <span>Widgets</span>
-                    <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-                </a>
             </li>
 
             <li class="treeview">
@@ -45,51 +35,17 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="admin/Categories/CategoriesProduct"><i class="fa fa-bars"></i> Categories Products</a></li>
-                    <li><a href="admin/Categories/CategoriesBlog"><i class="fa fa-bars"></i> Categories Blogs</a></li>
-                    <li><a href="admin/Product/Products"><i class="fa fa-gift"></i> Products</a></li>
-                    <li><a href="admin/Blog/Blogs"><i class="fa fa-file"></i> Blogs</a></li>
-                    <li><a href="admin/Article/Articles"><i class="fa fa-address-card"></i> Article</a></li>
-                    <li><a href="admin/Order/Orders"><i class="fa fa-shopping-cart"></i> Orders</a></li>
-                    <li><a href="admin/User/Users"><i class="fa fa-users"></i> Users</a></li>
-                    <li><a href="admin/RoleAndPermission/RoleAndPermission"><i class="fa fa-user-circle"></i> Roles and Permissions</a></li>
-                </ul>
-            </li>
-            <li class="header">ORTHER NAVIGATION</li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-folder"></i> <span>Other elements </span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="admin/Comment/Comments"><i class="fa fa-comments"></i> Comments</a></li>
-                    <li><a href="admin/Contact/Contacts"><i class="fa fa-compress"></i> Contacts</a></li>
-                    <li><a href="admin/InfoAndLinked/index"><i class="fa fa-info-circle"></i> Info And Linked</a></li>
-                    <li><a href="admin/Slider/Sliders"><i class="fa fa-slideshare"></i> Sliders</a></li>
-                    <li><a href="admin/Seo/index"><i class="fa fa-address-book"></i> Seo one page</a></li>
-                    <li><a href="admin/API/APIs"><i class="fa fa-qq"></i> API</a></li>
+                    <li><a href="admin/exchange"><i class="fa fa-money"></i>Exchanges Money</a></li>
+                    <li><a href="admin/exchange-bank"><i class="fa fa-bank"></i>Exchange Money of Bank</a></li>
+                    <li><a href="admin/gold"><img src="{{ asset('admin/asset/css/font-awesome/fonts/coins.svg') }}" style="width: 16px;"> Gold Exchanges</a></li>
+                    <li><a href="admin/interest"><i class="fa fa-map"></i>Interest Of Bank</a></li>
+                    <li><a href="admin/virual-money"><i class="fa fa-bitcoin"></i>Virtual Money</a></li>
+                    <li><a href="admin/oil-petro"><img src="{{ asset('admin/asset/css/font-awesome/fonts/gas-pump-solid.svg') }}" width="16px" alt=""> Oil Petro</a></li>
+                    {{-- <li><a href="admin/bank"><i class="fa fa-university"></i>Bank Info</a></li> --}}
                 </ul>
             </li>
 
-            <li class="treeview">
-                <a href="#">
-                    <i class="nav-icon fa fa-cog"></i> <span>System settings</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="admin/Email/Email"><i class="fa fa-envelope"></i> Settings Email</a></li>
-                    <li><a href="admin/Paygate/Paygate"><i class="fa fa-paypal"></i> Paygate</a></li>
-                    <li><a href="admin/Menu/menus"><i class="fa fa-bars"></i> Menu</a></li>
-                    <li><a href="admin/Currency/Currencies"><i class="fa fa-money"></i> Currency</a></li>
-                </ul>
-            </li>
-
-            <li><a href="admin/Documentation"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            <li><a href="admin/seo"><i class="fa fa-book"></i> <span>SEO</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

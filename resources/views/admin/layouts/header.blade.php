@@ -5,7 +5,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>Exchange</b>App</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -61,7 +61,7 @@
                 </li>
                 <!-- Control Sidebar Toggle Button -->
                 <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-arrow-right"></i></a>
+                    <a href="{{ route('logout') }}"><i class="fa fa-arrow-right"></i></a>
                 </li>
             </ul>
         </div>

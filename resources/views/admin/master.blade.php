@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="admin/dist/css/skins/_all-skins.min.css">
 
     <link rel="stylesheet" href="admin/asset/css/morris.js/morris.css">
+    <link rel="stylesheet" href="admin/asset/css/custom.css">
 
     <!-- Google Font -->
     <link rel="stylesheet"

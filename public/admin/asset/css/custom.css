@@ -1,0 +1,45 @@
+
+/*
+* CSS cho cac phan co khoang cach
+*/
+.margin-top-5px {
+    margin: 5px;;
+}
+.margin-left-5px {
+    margin-left: 5px;
+}
+
+/*
+* CSS cho cac thanh phan label va text
+*/
+.custom-label {
+    vertical-align: middle !important;
+}
+
+/*
+* Css cho tung thanh phan nho
+*/
+.dau-nga {
+    font-size: 25px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/**
+* Css color and background
+*/
+.background-table-fillter {
+    background: #ecf0f5;
+}
+
+/**
+* CSS gianh rieng cho cac phan tu
+*/
+.btn-search {
+    position: relative;
+}
+.iconLoading {
+    position: absolute;
+    top:0;
+    left:100px;
+}

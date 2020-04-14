@@ -102,12 +102,12 @@ class cronJobGetInterestRate extends Command
         }catch(\Exception $exception){
             $htmlMB = null;
         }
-        $this->lsMbbank($htmlMB);
-        $this->ocb($SimpleHTMLDOM);
+        // $this->lsMbbank($htmlMB);
+        // $this->ocb($SimpleHTMLDOM);
         $this->vib($SimpleHTMLDOM);
         $this->baoviet($SimpleHTMLDOM);
         $this->laisuatnongnghiep($SimpleHTMLDOM);
-        $this->ncb($SimpleHTMLDOM);
+        // $this->ncb($SimpleHTMLDOM);
 
 
         //Laisuat online
@@ -456,25 +456,30 @@ class cronJobGetInterestRate extends Command
                 if($kyhanslug == "tietkiemcokyhan"){
                     continue;
                 }
-                $insertSCB = DB::table('lai_suat')->insert([
-                    "bank_id"=>16,
-                    "bank_code"=>"scb",
-                    "bank_name"=>"SCB",
-                    "hinhthuctietkiem"=>1,
-                    "kyhan"=>$kyhan,
-                    "kyhanslug"=>$kyhanslug,
-                    "moctiengui"=>null,
-                    "moctienguisau"=>null,
-                    "laisuat_vnd"=>$laisuattratruoc,
-                    "laisuattratruoc"=>$laisuattratruoc,
-                    "laisuathangthang"=>$laisuathangthang,
-                    "laisuatcuoiky"=>$tralaicuoiky,
-                    "laisuathangquy"=> $tralaihangquy,
-                ]);
-                if($insertSCB){
-                    echo "Thêm thành công lãi suất ngân hàng SCB: " . $kyhan . "\n";
-                }else{
-                    echo "Thêm lãi suất ngân hàng SCB: " . $kyhan . " thất bại \n";
+                try {
+                    $insertSCB = DB::table('lai_suat')->insert([
+                        "bank_id"=>16,
+                        "bank_code"=>"scb",
+                        "bank_name"=>"SCB",
+                        "hinhthuctietkiem"=>1,
+                        "kyhan"=>$kyhan,
+                        "kyhanslug"=>$kyhanslug,
+                        "moctiengui"=>null,
+                        "moctienguisau"=>null,
+                        "laisuat_vnd"=>$laisuattratruoc,
+                        "laisuattratruoc"=>$laisuattratruoc,
+                        "laisuathangthang"=>$laisuathangthang,
+                        "laisuatcuoiky"=>$tralaicuoiky,
+                        "laisuathangquy"=> $tralaihangquy,
+                    ]);
+                    if($insertSCB){
+                        echo "Thêm thành công lãi suất ngân hàng SCB: " . $kyhan . "\n";
+                    }else{
+                        echo "Thêm lãi suất ngân hàng SCB: " . $kyhan . " thất bại \n";
+                    }
+                } catch (\Exception $e) {
+                    echo $e . "\n";
+                    continue;
                 }
             }
         }
@@ -494,31 +499,34 @@ class cronJobGetInterestRate extends Command
                 }else{
                     $kyhanslug = str_replace('0','',str_replace('-ngay','',str_replace('-thang','',$changeText->changeTitle($kyhan))));
                 }
-                $insertMB = DB::table('lai_suat')->insert([
-                    "bank_id"=>15,
-                    "bank_code"=>"mbbank",
-                    "bank_name"=>"MBank",
-                    "hinhthuctietkiem"=>1,
-                    "kyhan"=>$kyhan,
-                    "kyhanslug"=>$kyhanslug,
-                    "laisuat_vnd"=>$laisuat,
-                    "moctiengui"=>null,
-                    "moctienguisau"=>null,
-                    "laisuattratruoc"=>null,
-                    "laisuathangthang"=>null,
-                    "laisuatcuoiky"=>null,
-                    "laisuathangquy"=> null,
-                ]);
-                if($insertMB){
-                    echo "Update Mbbank success";
-                }else{
-                    echo "Update Mbbank failed";
+                try {
+                    $insertMB = DB::table('lai_suat')->insert([
+                        "bank_id"=>15,
+                        "bank_code"=>"mbbank",
+                        "bank_name"=>"MBank",
+                        "hinhthuctietkiem"=>1,
+                        "kyhan"=>$kyhan,
+                        "kyhanslug"=>$kyhanslug,
+                        "laisuat_vnd"=>$laisuat,
+                        "moctiengui"=>null,
+                        "moctienguisau"=>null,
+                        "laisuattratruoc"=>null,
+                        "laisuathangthang"=>null,
+                        "laisuatcuoiky"=>null,
+                        "laisuathangquy"=> null,
+                    ]);
+                    if($insertMB){
+                        echo "Update Mbbank success";
+                    }else{
+                        echo "Update Mbbank failed";
+                    }
+                } catch (\Exception $e) {
+                    echo $e . "\n";
+                    continue;
                 }
             }
         }
     }
-
-
 
     /**
      * Lấy những ngân hàng:
@@ -1041,25 +1049,29 @@ class cronJobGetInterestRate extends Command
             }else{
                 $kyhanslug = str_replace('0','',str_replace('-ngay','',str_replace('-thang','',$changeText->changeTitle($arrKyHan[$i]))));
             }
-            $LaiSuatNCB = DB::table('lai_suat')->insert([
-                "bank_id"=>18,
-                "bank_code"=>"ncb",
-                "bank_name"=>"ncb",
-                "hinhthuctietkiem"=>2,
-                "kyhan"=> $arrKyHan[$i],
-                "kyhanslug"=>$kyhanslug,
-                "laisuat_vnd"=>floatval(str_replace(" ","", str_replace(",",".", strip_tags($trVCB->find("td",$i))))),
-                "moctiengui"=>null,
-                "moctienguisau"=>null,
-                "laisuattratruoc"=>null,
-                "laisuathangthang"=>null,
-                "laisuatcuoiky"=>null,
-                "laisuathangquy"=> null,
-            ]);
-            if($LaiSuatNCB){
-                echo "Lấy thành công dữ liệu NCB \n";
-            }else{
-                echo "Có lỗi xảy ra vs NCB, kiểm tra lại hệ thống \n";
+            try {
+                $LaiSuatNCB = DB::table('lai_suat')->insert([
+                    "bank_id"=>18,
+                    "bank_code"=>"ncb",
+                    "bank_name"=>"ncb",
+                    "hinhthuctietkiem"=>2,
+                    "kyhan"=> $arrKyHan[$i],
+                    "kyhanslug"=>$kyhanslug,
+                    "laisuat_vnd"=>floatval(str_replace(" ","", str_replace(",",".", strip_tags($trVCB->find("td",$i))))),
+                    "moctiengui"=>null,
+                    "moctienguisau"=>null,
+                    "laisuattratruoc"=>null,
+                    "laisuathangthang"=>null,
+                    "laisuatcuoiky"=>null,
+                    "laisuathangquy"=> null,
+                ]);
+                if($LaiSuatNCB){
+                    echo "Lấy thành công dữ liệu NCB \n";
+                }else{
+                    echo "Có lỗi xảy ra vs NCB, kiểm tra lại hệ thống \n";
+                }
+            } catch (\Exception $e) {
+                echo $e . '\n';
             }
         }
 
@@ -1068,14 +1080,14 @@ class cronJobGetInterestRate extends Command
         $khongkyhan = $trVCB->find("td",1);
         for($i = 1; $i <= 9; $i++){
             $laisuat_vnd = null;
-            if(strip_tags($trVCB->find("td",$i)) == "-"){
+            if(strip_tags($trVCB->find("td",$i)) == "-") {
                 $laisuat_vnd = null;
-            }else{
+            } else {
                 $laisuat_vnd = floatval(str_replace(" ","", str_replace(",",".", strip_tags($trVCB->find("td",$i)))));
             }
-            if(str_replace('-ngay','',str_replace('-thang','',$changeText->changeTitle($arrKyHan[$i]))) === "khong-ky-han"){
+            if(str_replace('-ngay','',str_replace('-thang','',$changeText->changeTitle($arrKyHan[$i]))) === "khong-ky-han") {
                 $kyhanslug = 0;
-            }else{
+            } else {
                 $kyhanslug = str_replace('0','',str_replace('-ngay','',str_replace('-thang','',$changeText->changeTitle($arrKyHan[$i]))));
             }
             $LaiSuatSHB = DB::table('lai_suat')->insert([
@@ -1225,52 +1237,60 @@ class cronJobGetInterestRate extends Command
         if($html){
             $changeTitle = new ChangeText();
             $table = $html->find("#tbVND", 0);
-
-            for($i = 1; $i <= 12; $i++){
-                $tr = $table->find("tr", $i);
-                $kyhan = html_entity_decode(strip_tags($tr->find("td", 0)));
-                $kyhanslug = html_entity_decode(str_replace("-thang",'',str_replace('0','',html_entity_decode($changeTitle->changeTitle(strip_tags($kyhan))))));
-
-                if($kyhanslug === "khong-ky-han"){
-                    $kyhanslug = 0;
+            try {
+                for($i = 1; $i <= 12; $i++){
+                    try {
+                        $tr = $table->find("tr", $i);
+                        $kyhan = html_entity_decode(strip_tags($tr->find("td", 0)));
+                        $kyhanslug = html_entity_decode(str_replace("-thang",'',str_replace('0','',html_entity_decode($changeTitle->changeTitle(strip_tags($kyhan))))));
+                        if($kyhanslug === "khong-ky-han"){
+                            $kyhanslug = 0;
+                        }
+                        $laisuat = str_replace(' ','',str_replace('(***)','',str_replace('(**)','',str_replace('(*)','',strip_tags($tr->find("td", 1))))));
+                        $laisuatOnline = strip_tags($tr->find("td",2));
+        
+                        if($laisuat == null || $laisuat == ""){
+                            $laisuat = null;
+                        }
+                        if($laisuatOnline == null || $laisuat == ""){
+                            $laisuatOnline = null;
+                        }
+                        $insertOCB = DB::table('lai_suat')->insert([
+                            'bank_id'=>22,
+                            'bank_code'=>'ocb',
+                            'bank_name'=>'ocb',
+                            'hinhthuctietkiem'=>1,
+                            'kyhan'=>html_entity_decode($kyhan),
+                            'kyhanslug'=>$kyhanslug,
+                            'laisuat_vnd'=>floatval($laisuat)
+                        ]);
+                        $insertOCBOnline = DB::table('lai_suat')->insert([
+                            'bank_id'=>22,
+                            'bank_code'=>'ocb',
+                            'bank_name'=>'ocb',
+                            'hinhthuctietkiem'=>2,
+                            'kyhan'=>html_entity_decode($kyhan),
+                            'kyhanslug'=>$kyhanslug,
+                            'laisuat_vnd'=>floatval($laisuatOnline)
+                        ]);
+                        if($insertOCB){
+                            echo "Cập nhật thành công lãi suất ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
+                        }else{
+                            echo "Cập nhật không thành công lãi suất ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
+                        }
+                        if($insertOCBOnline){
+                            echo "Cập nhật thành công lãi suất Online ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
+                        }else{
+                            echo "Cập nhật không thành công lãi suất Online ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
+                        }
+                    } catch (\Exception $e) {
+                        echo $e . "\n";
+                        continue;
+                    }
                 }
-                $laisuat = str_replace(' ','',str_replace('(***)','',str_replace('(**)','',str_replace('(*)','',strip_tags($tr->find("td", 1))))));
-                $laisuatOnline = strip_tags($tr->find("td",2));
-
-                if($laisuat == null || $laisuat == ""){
-                    $laisuat = null;
-                }
-                if($laisuatOnline == null || $laisuat == ""){
-                    $laisuatOnline = null;
-                }
-                $insertOCB = DB::table('lai_suat')->insert([
-                    'bank_id'=>22,
-                    'bank_code'=>'ocb',
-                    'bank_name'=>'ocb',
-                    'hinhthuctietkiem'=>1,
-                    'kyhan'=>html_entity_decode($kyhan),
-                    'kyhanslug'=>$kyhanslug,
-                    'laisuat_vnd'=>floatval($laisuat)
-                ]);
-                $insertOCBOnline = DB::table('lai_suat')->insert([
-                    'bank_id'=>22,
-                    'bank_code'=>'ocb',
-                    'bank_name'=>'ocb',
-                    'hinhthuctietkiem'=>2,
-                    'kyhan'=>html_entity_decode($kyhan),
-                    'kyhanslug'=>$kyhanslug,
-                    'laisuat_vnd'=>floatval($laisuatOnline)
-                ]);
-                if($insertOCB){
-                    echo "Cập nhật thành công lãi suất ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
-                }else{
-                    echo "Cập nhật không thành công lãi suất ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
-                }
-                if($insertOCBOnline){
-                    echo "Cập nhật thành công lãi suất Online ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
-                }else{
-                    echo "Cập nhật không thành công lãi suất Online ngân hàng OCB với kỳ hạn(".$kyhan. ") \n";
-                }
+            } catch (\Exception $e) {
+                echo $e. '\n';
+                echo "Insert data errors OCB bank";
             }
         }else{
             echo "Không tìm được dữ liệu trong đường dẫn này! \n";

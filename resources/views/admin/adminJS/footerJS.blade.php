@@ -373,3 +373,41 @@
         });
     });
 </script>
+
+<link rel="stylesheet" type="text/css" href="admin/asset/js/datetimepicker/css/bootstrap-datetimepicker.css"/>
+<script src="admin/asset/js/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.btn-search').click(function () {
+            $('.iconLoading').css('display', 'block');
+        });
+    });
+    /*
+    * setup date time picker here
+    * Default date time now
+    */
+    $("#time_start").datetimepicker({
+        lang: 'en',
+        format: 'yyyy-mm-dd hh:ii',
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+    $("#time_end").datetimepicker({
+        lang: 'en',
+        format: 'yyyy-mm-dd hh:ii',
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+    $('#time_start').on('keyup', function (evt) {
+       if (evt.keyCode == 8 || evt.keyCode == 46) {
+            $(this).val('');
+       }
+    });
+    $('#time_end').on('keyup', function (evt) {
+        if (evt.keyCode == 8 || evt.keyCode == 46) {
+             $(this).val('');
+        }
+     });
+</script>

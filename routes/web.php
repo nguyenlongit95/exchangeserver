@@ -307,6 +307,24 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
         Route::get('test','EmailController@sendMail');
     });
 
+    /**
+     * Quản trị hệ thống tỷ giá
+     *  Chỉ bao gồm show và search dữ liệu
+     *     Tỷ giá
+     *     Ngoại Tệ
+     *     Giá vàng
+     *     Lãi suất
+     *     Tiền Ảo
+     */
+    Route::group(['namespace' =>'web'], function () {
+        Route::get('/exchange', 'ExchangeController@index');
+        Route::get('/exchange-bank', 'ExchangeController@exchangeBank');
+        Route::get('/gold', 'ExchangeController@gold');
+        Route::get('/interest', 'ExchangeController@interest');
+        Route::get('/virual-money', 'ExchangeController@virualMoney');
+        Route::get('/oil-petro', 'ExchangeController@oilPetro');
+    });
+
     /*
      * Route cho documentation
      * */
@@ -326,7 +344,7 @@ Route::get('verification/{filename}','adminController@verification');
 
 
 Route::group(['namespace'=>$namespace], function() {
-// Route web client
+// Route web
     Route::get('index', 'IndexController@index');
 });
 

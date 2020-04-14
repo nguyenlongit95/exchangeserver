@@ -67,8 +67,6 @@ class cronJobGetExchange extends Command
             $this->abc($SimpleHTMLDOM, $NgoaiTeCron, $html);
         }
 
-        $this->BIDV($NgoaiTeCron);
-
         try {
             $urlTechcombank = "https://www.techcombank.com.vn/cong-cu-tien-ich/ti-gia/ti-gia-hoi-doai";
             $htmlTechcombank = $SimpleHTMLDOM->file_get_html($urlTechcombank);
@@ -77,14 +75,7 @@ class cronJobGetExchange extends Command
             $htmlTechcombank = null;
         }
         $this->Techcombank($htmlTechcombank, $NgoaiTeCron);
-        try {
-            $urlHSBC = "https://www.hsbc.com.vn/1/2/miscellaneous/exchange_rate";
-            $htmlHSBC = $SimpleHTMLDOM->file_get_html($urlHSBC);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công HSBC Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "hsbc");
-            $htmlHSBC = null;
-        }
-        $this->HSBC($htmlHSBC, $NgoaiTeCron);
+       
         try {
             $urlSHB = "https://www.shb.com.vn/tygia/ty-gia-hoi-doai/";
             $htmlSHB = $SimpleHTMLDOM->file_get_html($urlSHB);
@@ -149,24 +140,8 @@ class cronJobGetExchange extends Command
         }
         if ($this->agribank($html, $NgoaiTeCron) === "datanone") {
             $day = $day - 1;
-        } else { }
-
-        $urlMBBank = "https://webgia.com/ty-gia/mbbank/";
-        try {
-            $htmlMBBank = $SimpleHTMLDOM->file_get_html($urlMBBank);
-        } catch (\Exception $exception) {
-            $htmlMBBank = null;
+        } else { 
         }
-        $this->mbbank($htmlMBBank, $NgoaiTeCron);
-
-        $urlTPBank = "https://webgia.com/ty-gia/tpbank/";
-
-        try {
-            $htmlTPBank = $SimpleHTMLDOM->file_get_html($urlTPBank);
-        } catch (\Exception $exception) {
-            $htmlTPBank = null;
-        }
-        $this->tpBank($htmlTPBank, $NgoaiTeCron);
 
         $this->scb($SimpleHTMLDOM, $NgoaiTeCron);
 
@@ -177,6 +152,34 @@ class cronJobGetExchange extends Command
             $htmlMSB = null;
         }
         $this->msb($htmlMSB, $NgoaiTeCron);
+
+        // $this->BIDV($NgoaiTeCron);
+
+        // try {
+        //     $urlHSBC = "https://www.hsbc.com.vn/1/2/miscellaneous/exchange_rate";
+        //     $htmlHSBC = $SimpleHTMLDOM->file_get_html($urlHSBC);
+        // } catch (\Exception $e) {
+        //     $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công HSBC Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "hsbc");
+        //     $htmlHSBC = null;
+        // }
+        // $this->HSBC($htmlHSBC, $NgoaiTeCron);
+
+        // $urlMBBank = "https://webgia.com/ty-gia/mbbank/";
+        // try {
+        //     $htmlMBBank = $SimpleHTMLDOM->file_get_html($urlMBBank);
+        // } catch (\Exception $exception) {
+        //     $htmlMBBank = null;
+        // }
+        // $this->mbbank($htmlMBBank, $NgoaiTeCron);
+
+        // $urlTPBank = "https://webgia.com/ty-gia/tpbank/";
+
+        // try {
+        //     $htmlTPBank = $SimpleHTMLDOM->file_get_html($urlTPBank);
+        // } catch (\Exception $exception) {
+        //     $htmlTPBank = null;
+        // }
+        // $this->tpBank($htmlTPBank, $NgoaiTeCron);
 
         $this->insertNameCurrency();
 
@@ -302,20 +305,18 @@ class cronJobGetExchange extends Command
         try {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/x-www-form-urlencoded'
-            ));
             $result = curl_exec($ch);
             curl_close($ch);
         } catch (\Exception $e) {
             $result = null;
         }
         $Carbon = Carbon::now();
-        if ($result) {
+        if ($result != null) {
             $response = json_decode($result);
+            if ($response == null) {
+                return null;
+            }
             $responseData = $response->data;
             foreach ($responseData as $data) {
                 $NgoaiTe = new NgoaiTe();
@@ -367,6 +368,8 @@ class cronJobGetExchange extends Command
                 }
             }
             $this->CreateLog($NgoaiTeCron, "Cập nhật thành công BIDV vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "bidv");
+        } else {
+            $this->CreateLog($NgoaiTeCron, "Cập nhật khong thành công BIDV vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "bidv");
         }
     }
     /**
@@ -1109,7 +1112,7 @@ class cronJobGetExchange extends Command
     protected function insertNameCurrency()
     {
         $NgoaiTe = NgoaiTe::select("code", "vname", "ename")->get();
-        $CurrencyCode = CurrencyCode::select("code", "name", "vname")->get();
+        $CurrencyCode = DB::table('currencies_code')->select("code", "name", "vname")->get();
         foreach ($NgoaiTe as $ngoaite) {
             if ($ngoaite->vname == null || $ngoaite->ename == null) {
                 foreach ($CurrencyCode as $currencycode) {
@@ -1117,16 +1120,17 @@ class cronJobGetExchange extends Command
                         $ngoaite->ename = $currencycode->name;
                         $ngoaite->vname = $currencycode->vname;
                         $ngoaite->save();
-                    } else { }
+                    } else {
+                    }
                 }
-            } else { }
+            } else {
+            }
         }
     }
 
 
     public function agribank($html, $NgoaiTeCron)
     {
-
         if ($html) {
             $table = $html->find("#tblTG table");
             if (count($table) > 0) {
@@ -1142,9 +1146,7 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->bank_id = 13;
                     $NgoaiTe->bank_code = "agribank";
                     $NgoaiTe->bank_name = "Argibank";
-                    $NgoaiTe->bank_image = "/storage/userfiles/images/icons/argibank.png";
                     $NgoaiTe->symbol = $this->checkSymbol(strip_tags($mangoaite));
-                    $NgoaiTe->image = "/storage/currency/" . strip_tags($mangoaite) . ".png";
                     $NgoaiTe->cron_id = $NgoaiTeCron;
                     $NgoaiTe->vname = "";
                     $NgoaiTe->ename = "";
@@ -1188,7 +1190,8 @@ class cronJobGetExchange extends Command
             } else {
                 return "datanone";
             }
-        } else { }
+        } else { 
+        }
     }
 
     public function eximbank($html, $NgoaiTeCron)
@@ -1253,9 +1256,7 @@ class cronJobGetExchange extends Command
                 $NgoaiTe->bank_id = 14;
                 $NgoaiTe->bank_code = "eximbank";
                 $NgoaiTe->bank_name = "Eximbank";
-                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/exim.png";
                 $NgoaiTe->symbol = $this->checkSymbol($mangoaite);
-                $NgoaiTe->image = "/storage/currency/" . $mangoaite . ".png";
                 $NgoaiTe->cron_id = $NgoaiTeCron;
                 $NgoaiTe->vname = "";
                 $NgoaiTe->ename = "";
@@ -1297,6 +1298,7 @@ class cronJobGetExchange extends Command
             }
         }
     }
+
     public function mbbank($htmlMBBank, $NgoaiTeCron)
     {
 

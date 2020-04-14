@@ -70,27 +70,6 @@ class cronJobGetGold extends Command
         $this->phuquy($html, $dom);
 
         try {
-            $html = $dom->file_get_html('https://webgia.com/gia-vang/pnj/');
-        } catch (\Exception $e) {
-            $html = null;
-        }
-        $this->pnj_webgia($html, $dom);
-
-        try {
-            $html = $dom->file_get_html('https://webgia.com/gia-vang/phu-quy/');
-        } catch (\Exception $e) {
-            $html = null;
-        }
-        $this->phuquy_webgia($html, $dom);
-
-        try {
-            $html = $dom->file_get_html('https://webgia.com/gia-vang/bao-tin-minh-chau/');
-        } catch (\Exception $e) {
-            $html = null;
-        }
-        $this->btmc_webgia($html, $dom);
-
-        try {
             $html = $dom->file_get_html('http://giavang.doji.vn/');
         } catch (\Exception $e) {
             $html = null;
@@ -216,9 +195,6 @@ class cronJobGetGold extends Command
 
         if ($html) {
             $updated = $html->find('.leftPriceGV', 0);
-            $updated = str_replace('Cập nhật ', '', $updated->plaintext);
-            $updated = str_replace(' ngày ', '', $updated);
-            $updated = str_replace(' ', '', $updated);
 
             $OilCron = DB::table('tygiavang_cron')->where('slug', '=', 'bao-tin-minh-chau')->orderBy('id', 'DESC')->first();
 
@@ -228,67 +204,72 @@ class cronJobGetGold extends Command
             $_SESSION['tinhthanh'] = '';
             $trs = $html->find('table tbody tr');
             foreach ($trs as $tr) {
-                $tds = $dom->str_get_html($tr->innertext);
-                $td = $tds->find('td');
-
-                if (count($td) == 6) {
-                    $img = $dom->str_get_html($td[0]->outertext);
-                    $filename =  str_replace('/Data/upload/files/AnhThuongPham/', '', $img->find('img', 0)->src);
-                    switch ($filename) {
-                        case 'vangrongthanglong.png':
-                            $name =  'Vàng rồng Thăng Long';
-                            break;
-                        case 'vangBTMC.png':
-                            $name =  'Vàng BTMC';
-                            break;
-                        case 'vangHTBT.png':
-                            $name =  'Vàng HTMC';
-                            break;
-                        case 'vangSJC.png':
-                            $name = 'Vàng SJC';
-                            break;
-                        case 'VangTT.png';
-                            $name = 'Vàng thị trường';
-                            break;
-                        case 'vangBIMC.png';
-                            $name = 'Vàng nguyên liệu BTMC';
-                            break;
-                        case 'VangNLTT.png':
-                            $name = 'Vàng nguyên liệu thị trường';
-                            break;
-                        default:
-                            $name = 'Chưa phân loại';
+                if ($tr != null) {
+                    try {
+                        $tds = $dom->str_get_html($tr->innertext);
+                        $td = $tds->find('td');
+                        if (count($td) == 6) {
+                            $img = $dom->str_get_html($td[0]->outertext);
+                            $filename =  str_replace('/Data/upload/files/AnhThuongPham/', '', $img->find('img', 0)->src);
+                            switch ($filename) {
+                                case 'vangrongthanglong.png':
+                                    $name =  'Vàng rồng Thăng Long';
+                                    break;
+                                case 'vangBTMC.png':
+                                    $name =  'Vàng BTMC';
+                                    break;
+                                case 'vangHTBT.png':
+                                    $name =  'Vàng HTMC';
+                                    break;
+                                case 'vangSJC.png':
+                                    $name = 'Vàng SJC';
+                                    break;
+                                case 'VangTT.png';
+                                    $name = 'Vàng thị trường';
+                                    break;
+                                case 'vangBIMC.png';
+                                    $name = 'Vàng nguyên liệu BTMC';
+                                    break;
+                                case 'VangNLTT.png':
+                                    $name = 'Vàng nguyên liệu thị trường';
+                                    break;
+                                default:
+                                    $name = 'Chưa phân loại';
+                            }
+                            $_SESSION['tinhthanh'] = $name;
+                            $data['cron_id'] = $insert_id;
+                            $data['tieude'] = $td[1]->plaintext;
+                            $data['slug'] = "bao-tin-minh-chau";
+                            $data['loai'] = $td[1]->plaintext;
+                            $data['tinhthanh'] = $_SESSION['tinhthanh'];
+                            $data['mua']  = str_replace('.', '', $td[3]->plaintext);
+                            $data['ban'] = str_replace('.', '', $td[4]->plaintext);
+                            $data['data'] = '';
+                            $data['donvi'] = $donvi;
+                            $this->insertVang($data, $OilCron);
+                        }
+                        if (count($td) == 5) {
+                            $data['cron_id'] = $insert_id;
+                            $data['tieude'] = $td[0]->plaintext;
+                            $data['slug'] = "bao-tin-minh-chau";
+                            $data['loai'] = $td[0]->plaintext;
+                            $data['tinhthanh'] = $_SESSION['tinhthanh'];
+                            $data['mua']  = str_replace('.', '', $td[2]->plaintext);
+                            $data['ban'] = str_replace('.', '', $td[3]->plaintext);
+                            $data['data'] = '';
+                            $data['donvi'] = $donvi;
+                            $this->insertVang($data, $OilCron);
+                        }
+                    } catch (Exception $e) {
+                        continue;
                     }
-                    $_SESSION['tinhthanh'] = $name;
-
-                    $data['cron_id'] = $insert_id;
-                    $data['tieude'] = $td[1]->plaintext;
-                    $data['slug'] = "bao-tin-minh-chau";
-                    $data['loai'] = $td[1]->plaintext;
-                    $data['tinhthanh'] = $_SESSION['tinhthanh'];
-                    $data['mua']  = str_replace('.', '', $td[3]->plaintext);
-                    $data['ban'] = str_replace('.', '', $td[4]->plaintext);
-                    $data['data'] = '';
-                    $data['donvi'] = $donvi;
-                    $this->insertVang($data, $OilCron);
-                }
-                if (count($td) == 5) {
-
-                    $data['cron_id'] = $insert_id;
-                    $data['tieude'] = $td[0]->plaintext;
-                    $data['slug'] = "bao-tin-minh-chau";
-                    $data['loai'] = $td[0]->plaintext;
-                    $data['tinhthanh'] = $_SESSION['tinhthanh'];
-                    $data['mua']  = str_replace('.', '', $td[2]->plaintext);
-                    $data['ban'] = str_replace('.', '', $td[3]->plaintext);
-                    $data['data'] = '';
-                    $data['donvi'] = $donvi;
-                    $this->insertVang($data, $OilCron);
+                } else {
+                    continue;
                 }
             }
-            return 'Btmc Updated';
+            return 'Btmc Updated \n';
         }
-        return 'html null';
+        return 'html null \n';
     }
 
     //Phu Nhan PNJ
@@ -440,22 +421,25 @@ class cronJobGetGold extends Command
                             continue;
                         }
                     }
-                    DB::table('tygiavang_data')->insert([
-                        'cron_id' => $insert_id,
-                        'tieude'    => $tinhthanh,
-                        'slug' => "doji",
-                        'loai'    => $node[1],
-                        'tinhthanh' => $tinhthanh,
-                        'mua'  => (float) $node[2],
-                        'tyle_mua' => (float) $tyle_mua,
-                        'ban'  => (float) $node[3],
-                        'tyle_ban' => (float) $tyle_ban,
-                        'data' => '',
-                        'donvi' => 'Nghìn/Lượng'
-                    ]);
+                    try {
+                        DB::table('tygiavang_data')->insert([
+                            'cron_id' => $insert_id,
+                            'tieude'    => $tinhthanh,
+                            'slug' => "doji",
+                            'loai'    => $node[1],
+                            'tinhthanh' => $tinhthanh,
+                            'mua'  => (float) $node[2],
+                            'tyle_mua' => (float) $tyle_mua,
+                            'ban'  => (float) $node[3],
+                            'tyle_ban' => (float) $tyle_ban,
+                            'data' => '',
+                            'donvi' => 'Nghìn/Lượng'
+                        ]);
+                    } catch (\Exception $e) {
+                        continue;
+                    }
                 }
             }
-
             return 'Doiji updated!';
         }
         return 'html null';
@@ -506,173 +490,32 @@ class cronJobGetGold extends Command
 
                 $buy = floatval($item['buy']);
                 $sell = floatval($item['sell']);
-                $sjcInsert = DB::table('tygiavang_data')->insert([
-                    'cron_id' => $insert_id,
-                    'tieude'    => $city['name'],
-                    'slug' => 'sjc',
-                    'loai'    => $item['type'],
-                    'tinhthanh' => $city['name'],
-                    'mua'  => $buy * 100,
-                    'tyle_mua' => $tyle_mua,
-                    'ban'  => $sell * 100,
-                    'tyle_ban' => $tyle_ban,
-                    'data' => '',
-                    'donvi' => 'đồng/lượng'
-                ]);
-                if ($sjcInsert) {
-                    echo "Update SJC success";
-                } else {
-                    echo "Update SJC failed";
+                try {
+                    $sjcInsert = DB::table('tygiavang_data')->insert([
+                        'cron_id' => $insert_id,
+                        'tieude'    => $city['name'],
+                        'slug' => 'sjc',
+                        'loai'    => $item['type'],
+                        'tinhthanh' => $city['name'],
+                        'mua'  => $buy * 100,
+                        'tyle_mua' => $tyle_mua,
+                        'ban'  => $sell * 100,
+                        'tyle_ban' => $tyle_ban,
+                        'data' => '',
+                        'donvi' => 'đồng/lượng'
+                    ]);
+                    if ($sjcInsert) {
+                        echo "Update SJC success \n";
+                    } else {
+                        echo "Update SJC failed \n";
+                    }
+                } catch (\Exception $e) {
+                    continue;
                 }
             }
         }
-
         echo " Updated SJC! \n ";
     }
-
-    /* =============================== WEBGIA =============================== */
-    //WEBGIA
-    public function phuquy_webgia($html, $dom)
-    {
-
-        if ($html) {
-            $updated = $html->find('h1.h-head small', 0);
-            $updated = str_replace('- Cập nhật lúc ', '', $updated->plaintext);
-
-            $check = DB::table('tygiavang_cron')
-                ->where('cron_key', $updated)
-                ->where('nguon', 'webgia.com/gia-vang/phu-quy')
-                ->first();
-            if (!$check) {
-                $insert_id = $this->insertCron($updated, 'webgia.com/gia-vang/phu-quy', 'phuquy_webgia');
-                $table = $html->find(".table-responsive table tbody tr");
-                foreach ($table as $tr) {
-
-                    $tds = $dom->str_get_html($tr->innertext);
-                    $count = count($tds->find('td'));
-                    if ($count == 4) {
-                        $title = $tds->find('td', 0);
-                        $_SESSION['current_title'] = $title->plaintext;
-                        $loai = $tds->find('td', 1);
-                        $mua = $tds->find('td', 2);
-                        $ban = $tds->find('td', 3);
-                    } else {
-                        $loai = $tds->find('td', 0);
-                        $mua = $tds->find('td', 1);
-                        $ban = $tds->find('td', 2);
-                    }
-
-                    DB::table('tygiavang_data')->insert([
-                        'cron_id' => $insert_id,
-                        'tieude'  => isset($_SESSION['current_title']) ? $_SESSION['current_title'] : '',
-                        'slug' => 'phu_quy_webgia',
-                        'loai'    => $loai->plaintext,
-                        'tinhthanh' => $loai->plaintext,
-                        'mua'  => (float) $mua->plaintext,
-                        'ban'  => (float) $ban->plaintext,
-                        'data' => ''
-                    ]);
-                }
-            }
-            return 'PhuQuy updated!';
-        }
-        return 'Html Null';
-    }
-
-    public function pnj_webgia($html, $dom)
-    {
-
-        if ($html) {
-            $updated = $html->find('h1.h-head small', 0);
-            $updated = str_replace('- Cập nhật lúc ', '', $updated->plaintext);
-
-            $check = DB::table('tygiavang_cron')
-                ->where('cron_key', $updated)
-                ->where('nguon', 'webgia.com/gia-vang/pnj')
-                ->first();
-            if (!$check) {
-                $insert_id = $this->insertCron($updated, 'webgia.com/gia-vang/pnj', 'pnj_webgia');
-                $table = $html->find(".table-responsive table tbody tr");
-                foreach ($table as $tr) {
-
-                    $tds = $dom->str_get_html($tr->innertext);
-                    $count = count($tds->find('td'));
-                    if ($count >= 4) {
-                        $title = $tds->find('td', 0);
-                        $_SESSION['current_title'] = $title->plaintext;
-                        $loai = $tds->find('td', 1);
-                        $mua = $tds->find('td', 2);
-                        $ban = $tds->find('td', 3);
-                    } else {
-                        $loai = $tds->find('td', 0);
-                        $mua = $tds->find('td', 1);
-                        $ban = $tds->find('td', 2);
-                    }
-
-                    DB::table('tygiavang_data')->insert([
-                        'cron_id' => $insert_id,
-                        'tieude'  => isset($_SESSION['current_title']) ? $_SESSION['current_title'] : '',
-                        'slug' => 'pnj_webgia',
-                        'loai'    => $loai->plaintext,
-                        'tinhthanh' => $loai->plaintext,
-                        'mua'  => (float) $mua->plaintext,
-                        'ban'  => (float) $ban->plaintext,
-                        'data' => ''
-                    ]);
-                }
-            }
-            return 'Pnj updated!';
-        }
-        return 'Html Null';
-    }
-
-    public function btmc_webgia($html, $dom)
-    {
-
-        if ($html) {
-            $updated = $html->find('h1.h-head small', 0);
-            $updated = str_replace('- Cập nhật lúc ', '', $updated->plaintext);
-
-            $check = DB::table('tygiavang_cron')
-                ->where('cron_key', $updated)
-                ->where('nguon', 'webgia.com/gia-vang/bao-tin-minh-chau')
-                ->first();
-            if (!$check) {
-                $insert_id = $this->insertCron($updated, 'webgia.com/gia-vang/bao-tin-minh-chau', 'minhchau_webgia');
-                $table = $html->find(".table-responsive table tbody tr");
-                foreach ($table as $tr) {
-
-                    $tds = $dom->str_get_html($tr->innertext);
-                    $count = count($tds->find('td'));
-                    if ($count == 4) {
-                        $title = $tds->find('td', 0);
-                        $_SESSION['current_title'] = $title->plaintext;
-                        $loai = $tds->find('td', 1);
-                        $mua = $tds->find('td', 2);
-                        $ban = $tds->find('td', 3);
-                    } else {
-                        $loai = $tds->find('td', 0);
-                        $mua = $tds->find('td', 1);
-                        $ban = $tds->find('td', 2);
-                    }
-
-                    DB::table('tygiavang_data')->insert([
-                        'cron_id' => $insert_id,
-                        'tieude'  => isset($_SESSION['current_title']) ? $_SESSION['current_title'] : '',
-                        'slug' => 'btmc_webgia',
-                        'loai'    => $loai->plaintext,
-                        'tinhthanh' => $loai->plaintext,
-                        'mua'  => (float) $mua->plaintext,
-                        'ban'  => (float) $ban->plaintext,
-                        'data' => ''
-                    ]);
-                }
-            }
-            return 'btmc updated!';
-        }
-        return 'Html Null';
-    }
-
 
     protected function sjcEximbank($html, $dom)
     {

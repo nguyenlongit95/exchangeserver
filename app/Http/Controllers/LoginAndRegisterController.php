@@ -15,22 +15,36 @@ class LoginAndRegisterController extends Controller
         $this->UserRepository = $usersReporitory;
     }
 
-    public function getLogin(){
+    // return a view login
+    public function getLogin()
+    {
         return view("Login");
     }
-    public function postLogin(Request $request){
-        if(Auth::attempt(["name"=>$request->username,"password"=>$request->password])){
+
+    /**
+     * function post login
+     *  Param $request
+     * return a redirect
+     */
+    public function postLogin(Request $request)
+    {
+        if(Auth::attempt(["name"=>$request->username,"password"=>$request->password])) {
             return redirect("admin/DashBoard")->with("thong_bao","Login success,welcome adminstator!");
-        }else{
+        } else {
             return redirect()->back()->with("thong_bao","Login false, please check again username or password");
         }
     }
-    public function logout(){
-        if(Auth::check()){
 
+    /**
+     * function logout
+     * return a redirect
+     */
+    public function logout()
+    {
+        if(Auth::check()) {
             Auth::logout();
             return redirect('/')->with('thong_bao','Logout success');
-        }else{
+        } else {
             return redirect('/')->with('thong_bao','Please login system now!');
         }
     }
