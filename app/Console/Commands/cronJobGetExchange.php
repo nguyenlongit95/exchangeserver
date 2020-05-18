@@ -75,7 +75,7 @@ class cronJobGetExchange extends Command
             $htmlTechcombank = null;
         }
         $this->Techcombank($htmlTechcombank, $NgoaiTeCron);
-       
+
         try {
             $urlSHB = "https://www.shb.com.vn/tygia/ty-gia-hoi-doai/";
             $htmlSHB = $SimpleHTMLDOM->file_get_html($urlSHB);
@@ -140,7 +140,7 @@ class cronJobGetExchange extends Command
         }
         if ($this->agribank($html, $NgoaiTeCron) === "datanone") {
             $day = $day - 1;
-        } else { 
+        } else {
         }
 
         $this->scb($SimpleHTMLDOM, $NgoaiTeCron);
@@ -183,8 +183,8 @@ class cronJobGetExchange extends Command
 
         $this->insertNameCurrency();
 
-        $CapNhatNgoaiTe = new ApiFrontController();
-        $CapNhatNgoaiTe->capnhatngoaite();
+        // $CapNhatNgoaiTe = new ApiFrontController();
+        // $CapNhatNgoaiTe->capnhatngoaite();
     }
     /**
      * Add cron
@@ -1190,7 +1190,7 @@ class cronJobGetExchange extends Command
             } else {
                 return "datanone";
             }
-        } else { 
+        } else {
         }
     }
 
