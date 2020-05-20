@@ -1,23 +1,21 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="my-component">
+        <h1>Test Vue.JS here</h1>
     </div>
 </template>
 
 <script>
+    /**
+     * Vue.JS code function example
+     * Test function vue js core
+     */
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+
     }
 </script>
+<!-- Extends CSS more -->
+<style lang="scss" scoped>
+    .my-component {
+        color: red;
+    }
+</style>

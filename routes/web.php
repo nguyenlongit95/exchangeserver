@@ -3,8 +3,9 @@
  * Route test demo
  * */
 $namespace = 'Web';
+$namespaceFrontend = 'Frontend';
 
-Route::get('/', function () {
+Route::get('/admin-login', function () {
     return view('welcome');
 });
 
@@ -25,9 +26,6 @@ Route::get('AssignPermissionFirstUser','HomeController@AssignPermissionFirstUser
 Route::get('AdminLogin','HomeController@index');
 Route::post('Login','LoginAndRegisterController@postLogin');
 Route::get('logout','LoginAndRegisterController@logout');
-Route::get('home',function(){
-    return redirect('/');
-});
 /*
  * Route cho phia admin
  * */
@@ -336,16 +334,39 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
 /*
  * Route cho phia client
  * */
-
 Route::get('createCart','adminController@createCart');
 
 Route::post('uploadVerificationFile','adminController@uploadVerificationFile');
 Route::get('verification/{filename}','adminController@verification');
 
-
 Route::group(['namespace'=>$namespace], function() {
 // Route web
     Route::get('index', 'IndexController@index');
+
+
+});
+
+// Route cho front-end
+Route::group(['namespace' => $namespaceFrontend], function () {
+    Route::get('/', 'indexController@index');
+    Route::get('home', 'indexController@index');
+
+    Route::get('ty-gia', 'tygiaController@index');
+    Route::get('ty-gia/{code}', 'tygiaController@index');
+
+    Route::get('ngoai-te', 'ngoaiteController@index');
+    Route::get('ngoai-te/{code}', 'ngoaiteController@index');
+
+    Route::get('gia-vang', 'giavangController@index');
+    Route::get('gia-vang/{code}', 'giavangController@index');
+
+    Route::get('lai-suat', 'laisuatController@index');
+    Route::get('lai-suat/{code}', 'laisuatController@show');
+
+    Route::get('tien-ao', 'tienaoController@index');
+    Route::get('tien-ao/{code}', 'tienaoController@show');
+
+    Route::get('xang-dau', 'xangdauController@index');
 });
 
 Route::get('getVNIndex', 'adminController@getVNIndex');
