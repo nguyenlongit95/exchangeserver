@@ -47,7 +47,7 @@
         <!-- End Banner -->
         <br>
         <!-- section exchanges -->
-        <div class="section layout_padding margin-top-25px">
+        <div class="section layout_padding margin-top-25px padding-bottom-25px">
             <div class="container">
                 <div class="section-main">
                     <div class="container main-wrapper">
@@ -56,7 +56,7 @@
                                 <div class="block">
                                     <div class="block-content">
                                         <article id="main" class="col-md-12">
-                                            <h2 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá Bitcoin(bitcoin) mới nhất ngày hôm nay <small> - <span class="hidden-xs">Cập nhật lúc </span>17:00:08 03/09/2019</small></h2>
+                                            <h2 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá Bitcoin(bitcoin) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>17:00:08 03/09/2019</small></h2>
                                             <div style="margin-top: 5px; height: 25px; margin-bottom: 5px; text-align: right;">
                                                 <div class="pull-right" style="margin-left: 5px">
                                                 </div>

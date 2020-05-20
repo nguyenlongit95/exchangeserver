@@ -71,7 +71,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Tỷ giá ngân hàng <span>VietcomBank</span> - <span class="font-weight-initial">cập nhật lúc: 17:15:02 20/05/2020</span></h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Tỷ giá ngân hàng VietcomBank - <span class="font-weight-initial font-size-16px">cập nhật lúc: 17:15:02 20/05/2020</span></h2>
                             </div>
                         </div>
                     </div>

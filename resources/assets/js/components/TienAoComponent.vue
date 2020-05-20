@@ -53,7 +53,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Bitcoins</h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Các lần cập nhật tiền ảo mới nhất</h2>
                             </div>
                         </div>
                     </div>

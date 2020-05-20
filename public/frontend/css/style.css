@@ -2491,3 +2491,7 @@ ul.bottom_menu li {
 .font-weight-initial {
    font-weight: initial;
 }
+
+.padding-bottom-25px {
+    padding-bottom: 25px !important;
+}
