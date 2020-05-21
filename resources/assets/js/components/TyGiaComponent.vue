@@ -28,36 +28,31 @@
                             <a href="#">MBank</a>
                         </div>
                         <hr>
-                        <form action="" method="POST">
-                            <br>
-                            <div class="col-md-7 pull-left">
-                                <div class="row">
-                                    <div class="col-md-3 row pull-left">
-                                        <label style="margin-top:10px;">Chọn ngân hàng</label>
-                                    </div>
-                                    <div class="col-md-6 pull-right">
-                                        <select class="form-control" name="bankID" id="">
-                                            <option value="1">Techcombank</option>
-                                            <option value="2">HSBC</option>
-                                            <option value="3">SHB</option>
-                                            <option value="4">TPB</option>
-                                            <option value="5">BIDV</option>
-                                            <option value="6">VietinBank</option>
-                                            <option value="7">SacomBank</option>
-                                            <option value="8">VietcomBank</option>
-                                            <option value="9">DongABank</option>
-                                            <option value="10">ACB</option>
-                                            <option value="11">ArgiBank</option>
-                                            <option value="12">EximBank</option>
-                                            <option value="13">MBank</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="submit" name="check" value="Tra cứu" class="btn btn-primary" style="height:45px;">
-                                    </div>
+                        <br>
+                        <div class="col-md-7 pull-left">
+                            <div class="row">
+                                <div class="col-md-3 row pull-left">
+                                    <label style="margin-top:10px;">Chọn ngân hàng</label>
+                                </div>
+                                <div class="col-md-6 pull-right">
+                                    <select class="form-control" name="bankID" id="">
+                                        <option value="1">Techcombank</option>
+                                        <option value="2">HSBC</option>
+                                        <option value="3">SHB</option>
+                                        <option value="4">TPB</option>
+                                        <option value="5">BIDV</option>
+                                        <option value="6">VietinBank</option>
+                                        <option value="7">SacomBank</option>
+                                        <option value="8">VietcomBank</option>
+                                        <option value="9">DongABank</option>
+                                        <option value="10">ACB</option>
+                                        <option value="11">ArgiBank</option>
+                                        <option value="12">EximBank</option>
+                                        <option value="13">MBank</option>
+                                    </select>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,7 +79,7 @@
                             <table class="table table-hover table-bordered" id="table-exchange-page">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Ngoại tệ</th>
+                                    <th class="text-left">Ngoại tệ</th>
                                     <th class="text-center">Mua tiền mặt</th>
                                     <th class="text-center">Mua chuyển khoản</th>
                                     <th class="text-center">Bán tiền mặt</th>
@@ -93,56 +88,56 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th class="bg-gray">USD</th>
+                                    <th class="bg-gray text-left">USD <span class="font-size-13px"><i>(Dollar Mỹ)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">AUD</th>
+                                    <th class="bg-gray text-left">AUD <span class="font-size-13px"><i>(Dollar Úc)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">SGD</th>
+                                    <th class="bg-gray text-left">SGD <span class="font-size-13px"><i>(Dollar Singapore)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">RUB</th>
+                                    <th class="bg-gray text-left">RUB <span class="font-size-13px"><i>(Đồng RUB Nga)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">CNY</th>
+                                    <th class="bg-gray text-left">CNY <span class="font-size-13px"><i>(Nhân Dân Tệ)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">JPY</th>
+                                    <th class="bg-gray text-left">JPY <span class="font-size-13px"><i>(Yên Nhật)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">KRW</th>
+                                    <th class="bg-gray text-left">KRW <span class="font-size-13px"><i>(Won Hàn Quốc)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">EUR</th>
+                                    <th class="bg-gray text-left">EUR <span class="font-size-13px"><i>(Đồng Euro)</i></span></th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -150,6 +145,20 @@
                                 </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 pull-left margin-top-25px">
+                    <div class="row">
+                        <div class="col-md-5 row pull-left">
+                            <label style="margin-top:10px;">Tra cứu lịch sử tỷ giá Vietcombank: </label>
+                        </div>
+                        <div class="col-md-6 pull-left">
+                            <input type="text" class="form-control time-search" name="bankID" id="time_input" value="">
+                        </div>
+                        <div class="col-md-1 pull-left">
+                            <button class="btn btn-primary">Tìm kiếm</button>
                         </div>
                     </div>
                 </div>

@@ -49881,7 +49881,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -49892,6 +49892,11 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50274,10 +50279,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "index-component" }, [
       _c(
         "div",
-        {
-          staticClass: "section layout_padding",
-          staticStyle: { "margin-top": "85px" }
-        },
+        { staticClass: "section", staticStyle: { "margin-top": "85px" } },
         [
           _c("div", { staticClass: "container" }, [
             _c("div", { staticClass: "row" }, [
@@ -50401,21 +50403,117 @@ var staticRenderFns = [
                         ]),
                         _vm._v(" "),
                         _c("tbody", [
-                          _c("tr", [_c("th", [_vm._v("AUD")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("AUD "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Đô la Úc)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("EUR")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("EUR "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Đồng Euro)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("USD")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("USD "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Đồng dollar Mỹ)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("CNY")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("CNY "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Đồng nhân dân tệ)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("JPY")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("JPY "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Đồng yên Nhật)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("SGD")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("SGD "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Dollar Singapore)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("CAD")])]),
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("CAD "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Dollar Canada)")])]
+                              )
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("tr", [_c("th", [_vm._v("KRW")])])
+                          _c("tr", [
+                            _c("th", [
+                              _vm._v("KRW "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-size-13px font-style-inherit"
+                                },
+                                [_c("i", [_vm._v("(Won Hàn Quốc)")])]
+                              )
+                            ])
+                          ])
                         ])
                       ]
                     )
@@ -50455,7 +50553,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("Techcombank")]
                                     )
@@ -50480,7 +50578,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("Vietcombank")]
                                     )
@@ -50505,7 +50603,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("Vietinbank")]
                                     )
@@ -50530,7 +50628,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("Sacombank")]
                                     )
@@ -50555,7 +50653,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("SHB")]
                                     )
@@ -50580,7 +50678,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("BIDV")]
                                     )
@@ -50605,7 +50703,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("ACB")]
                                     )
@@ -50631,7 +50729,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("ArgiBank")]
                                     )
@@ -50656,7 +50754,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("Eximbank")]
                                     )
@@ -50681,7 +50779,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("HSBC")]
                                     )
@@ -50706,7 +50804,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("TPB")]
                                     )
@@ -50731,7 +50829,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("DongA")]
                                     )
@@ -50756,7 +50854,7 @@ var staticRenderFns = [
                                     _c(
                                       "span",
                                       {
-                                        staticClass: "bank-name padding-top-3px"
+                                        staticClass: "bank-name padding-top-5px"
                                       },
                                       [_vm._v("MBank")]
                                     )
@@ -50768,87 +50866,671 @@ var staticRenderFns = [
                           _vm._v(" "),
                           _c("tbody", [
                             _c("tr", { staticClass: "text-center" }, [
-                              _c("th", [_vm._v("15,141")]),
+                              _c("th", [
+                                _vm._v("15,141 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,333")]),
+                              _c("th", [
+                                _vm._v("15,333 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,290")]),
+                              _c("th", [
+                                _vm._v("15,290 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,359")]),
+                              _c("th", [
+                                _vm._v("15,359 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")])
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ])
                             ]),
                             _vm._v(" "),
                             _c("tr", { staticClass: "text-center" }, [
-                              _c("th", [_vm._v("15,141")]),
+                              _c("th", [
+                                _vm._v("15,141 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,333")]),
+                              _c("th", [
+                                _vm._v("15,333 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,290")]),
+                              _c("th", [
+                                _vm._v("15,290 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,359")]),
+                              _c("th", [
+                                _vm._v("15,359 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")])
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ])
                             ]),
                             _vm._v(" "),
                             _c("tr", { staticClass: "text-center" }, [
-                              _c("th", [_vm._v("15,141")]),
+                              _c("th", [
+                                _vm._v("15,141 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,333")]),
+                              _c("th", [
+                                _vm._v("15,333 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,290")]),
+                              _c("th", [
+                                _vm._v("15,290 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,359")]),
+                              _c("th", [
+                                _vm._v("15,359 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "font-size-13px font-color-green"
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                      _vm._v(" 34")
+                                    ])
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")]),
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v("15,357")])
+                              _c("th", [
+                                _vm._v("15,357 "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [_vm._v(" 34")]
+                                    )
+                                  ]
+                                )
+                              ])
                             ]),
                             _vm._v(" "),
                             _c("tr", { staticClass: "text-center" }, [
@@ -51002,7 +51684,39 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "section layout_padding" }, [
+      _c("div", { staticClass: "section margin-top-25px" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("section", [
+            _c("div", { staticClass: "heading_main pull-left" }, [
+              _c("h2", { staticClass: "font-size-22px" }, [
+                _c("span", { staticClass: "theme_color" }),
+                _vm._v(
+                  "Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực"
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("iframe", {
+              staticStyle: { height: "450px", width: "100%" },
+              attrs: {
+                id: "tradingview_b92c2",
+                src:
+                  "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_b92c2&symbol=BTCUSD&interval=1&symboledit=0&saveimage=1&toolbarbg=f1f3f6&details=1&studies=%5B%5D&hideideas=1&theme=White&style=3&timezone=Asia%2FBangkok&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en_US&referral_id=1713&utm_source=tygia.vn&utm_medium=widget&utm_campaign=chart&utm_term=ETHUSD",
+                frameborder: "0",
+                allowtransparency: "true",
+                scrolling: "no",
+                allowfullscreen: ""
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("br")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "section margin-top-25px" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
@@ -51038,7 +51752,7 @@ var staticRenderFns = [
                       _c("thead", [
                         _c("tr", [
                           _c("th", { attrs: { id: "currency-code" } }, [
-                            _vm._v("-")
+                            _vm._v("Tỉnh thành")
                           ])
                         ])
                       ]),
@@ -51097,27 +51811,144 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("tbody", [
                           _c("tr", [
-                            _c("th", [_vm._v("3600000")]),
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v("3600000")]),
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v("3600000")])
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
-                            _c("th", [_vm._v("3600000")]),
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v("3600000")]),
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v("3600000")])
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
-                            _c("th", [_vm._v("3600000")]),
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v("3600000")]),
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v("3600000")])
+                            _c("th", [
+                              _vm._v("3600000 "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(" 34")
+                                  ])
+                                ]
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -51170,7 +52001,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "section margin-top-25px" }, [
         _c("div", { staticClass: "container" }, [
           _c("section", [
             _c("div", { staticClass: "heading_main pull-left" }, [
@@ -51185,39 +52016,11 @@ var staticRenderFns = [
             _c("br"),
             _vm._v(" "),
             _c("iframe", {
-              staticStyle: { height: "550px", width: "100%" },
+              staticStyle: { height: "450px", width: "100%" },
               attrs: {
                 id: "tradingview_cbf8a",
                 src:
                   "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&symbol=TVC%3AUKOIL&interval=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&hideideas=1&theme=White&style=1&timezone=Asia%2FBangkok&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=vi_VN&referral_id=1713&utm_source=tygia.vn&utm_medium=widget&utm_campaign=chart&utm_term=TVC%3AUKOIL",
-                frameborder: "0",
-                allowtransparency: "true",
-                scrolling: "no",
-                allowfullscreen: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("section", [
-            _c("div", { staticClass: "heading_main pull-left" }, [
-              _c("h2", { staticClass: "font-size-22px" }, [
-                _c("span", { staticClass: "theme_color" }),
-                _vm._v(
-                  "Biểu đồ giá Dầu Crude Oil (WTI)- USOIL trực tiếp theo thời gian thực"
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("iframe", {
-              staticStyle: { height: "550px", width: "100%" },
-              attrs: {
-                id: "tradingview_9a8db",
-                src:
-                  "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_9a8db&symbol=TVC%3AUSOIL&interval=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&hideideas=1&theme=White&style=1&timezone=Asia%2FBangkok&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=vi&referral_id=1713&utm_source=tygia.vn&utm_medium=widget&utm_campaign=chart&utm_term=TVC%3AUSOIL",
                 frameborder: "0",
                 allowtransparency: "true",
                 scrolling: "no",
@@ -51327,7 +52130,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51338,6 +52141,15 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -51565,91 +52377,77 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _c("form", { attrs: { action: "", method: "POST" } }, [
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-7 pull-left" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-3 row pull-left" }, [
-                      _c("label", { staticStyle: { "margin-top": "10px" } }, [
-                        _vm._v("Chọn ngân hàng")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6 pull-right" }, [
-                      _c(
-                        "select",
-                        {
-                          staticClass: "form-control",
-                          attrs: { name: "bankID", id: "" }
-                        },
-                        [
-                          _c("option", { attrs: { value: "1" } }, [
-                            _vm._v("Techcombank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "2" } }, [
-                            _vm._v("HSBC")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "3" } }, [
-                            _vm._v("SHB")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "4" } }, [
-                            _vm._v("TPB")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "5" } }, [
-                            _vm._v("BIDV")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "6" } }, [
-                            _vm._v("VietinBank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "7" } }, [
-                            _vm._v("SacomBank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "8" } }, [
-                            _vm._v("VietcomBank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "9" } }, [
-                            _vm._v("DongABank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "10" } }, [
-                            _vm._v("ACB")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "11" } }, [
-                            _vm._v("ArgiBank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "12" } }, [
-                            _vm._v("EximBank")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "13" } }, [
-                            _vm._v("MBank")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("input", {
-                        staticClass: "btn btn-primary",
-                        staticStyle: { height: "45px" },
-                        attrs: {
-                          type: "submit",
-                          name: "check",
-                          value: "Tra cứu"
-                        }
-                      })
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-7 pull-left" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-3 row pull-left" }, [
+                    _c("label", { staticStyle: { "margin-top": "10px" } }, [
+                      _vm._v("Chọn ngân hàng")
                     ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6 pull-right" }, [
+                    _c(
+                      "select",
+                      {
+                        staticClass: "form-control",
+                        attrs: { name: "bankID", id: "" }
+                      },
+                      [
+                        _c("option", { attrs: { value: "1" } }, [
+                          _vm._v("Techcombank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "2" } }, [
+                          _vm._v("HSBC")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "3" } }, [
+                          _vm._v("SHB")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "4" } }, [
+                          _vm._v("TPB")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "5" } }, [
+                          _vm._v("BIDV")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "6" } }, [
+                          _vm._v("VietinBank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "7" } }, [
+                          _vm._v("SacomBank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "8" } }, [
+                          _vm._v("VietcomBank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "9" } }, [
+                          _vm._v("DongABank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "10" } }, [
+                          _vm._v("ACB")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "11" } }, [
+                          _vm._v("ArgiBank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "12" } }, [
+                          _vm._v("EximBank")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "13" } }, [
+                          _vm._v("MBank")
+                        ])
+                      ]
+                    )
                   ])
                 ])
               ])
@@ -51690,7 +52488,7 @@ var staticRenderFns = [
                   [
                     _c("thead", [
                       _c("tr", [
-                        _c("th", { staticClass: "text-center" }, [
+                        _c("th", { staticClass: "text-left" }, [
                           _vm._v("Ngoại tệ")
                         ]),
                         _vm._v(" "),
@@ -51714,7 +52512,12 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("USD")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("USD "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Mỹ)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51726,7 +52529,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("AUD")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("AUD "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Úc)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51738,7 +52546,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("SGD")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("SGD "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Singapore)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51750,7 +52563,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("RUB")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("RUB "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng RUB Nga)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51762,7 +52580,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("CNY")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("CNY "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Nhân Dân Tệ)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51774,7 +52597,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("JPY")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("JPY "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Yên Nhật)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51786,7 +52614,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("KRW")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("KRW "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Won Hàn Quốc)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51798,7 +52631,12 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("EUR")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("EUR "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng Euro)")])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -51811,6 +52649,34 @@ var staticRenderFns = [
                     ])
                   ]
                 )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-7 pull-left margin-top-25px" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-5 row pull-left" }, [
+                _c("label", { staticStyle: { "margin-top": "10px" } }, [
+                  _vm._v("Tra cứu lịch sử tỷ giá Vietcombank: ")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 pull-left" }, [
+                _c("input", {
+                  staticClass: "form-control time-search",
+                  attrs: {
+                    type: "text",
+                    name: "bankID",
+                    id: "time_input",
+                    value: ""
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-1 pull-left" }, [
+                _c("button", { staticClass: "btn btn-primary" }, [
+                  _vm._v("Tìm kiếm")
+                ])
               ])
             ])
           ])
@@ -51914,7 +52780,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51925,7 +52791,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -52168,13 +53033,11 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
               _c("div", { staticClass: "col-md-7 pull-left" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-3 row pull-left" }, [
                     _c("label", { staticStyle: { "margin-top": "10px" } }, [
-                      _vm._v("Chọn ngân hàng")
+                      _vm._v("Chọn loại tiền")
                     ])
                   ]),
                   _vm._v(" "),
@@ -52187,55 +53050,94 @@ var staticRenderFns = [
                       },
                       [
                         _c("option", { attrs: { value: "1" } }, [
-                          _vm._v("Techcombank")
+                          _vm._v("USD "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Mỹ)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "2" } }, [
-                          _vm._v("HSBC")
+                          _vm._v("EUR "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng Euro)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "3" } }, [
-                          _vm._v("SHB")
+                          _vm._v("AUD "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Úc)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "4" } }, [
-                          _vm._v("TPB")
+                          _vm._v("SGD "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Singapore)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "5" } }, [
-                          _vm._v("BIDV")
+                          _vm._v("JPY "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Yên Nhật)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "6" } }, [
-                          _vm._v("VietinBank")
+                          _vm._v("KRW "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Won Hàn Quốc)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "7" } }, [
-                          _vm._v("SacomBank")
+                          _vm._v("HKD "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Dollar Hồng kông)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "8" } }, [
-                          _vm._v("VietcomBank")
+                          _vm._v("CNY "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng Nhân Dân Tệ)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "9" } }, [
-                          _vm._v("DongABank")
+                          _vm._v("KRR "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng Kíp Laos)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "10" } }, [
-                          _vm._v("ACB")
+                          _vm._v("INR "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Inndi Ấn Độ)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "11" } }, [
-                          _vm._v("ArgiBank")
+                          _vm._v("GBP "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng Bảng Anh)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "12" } }, [
-                          _vm._v("EximBank")
+                          _vm._v("MYR "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Kíp Myanmar)")])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "13" } }, [
-                          _vm._v("MBank")
+                          _vm._v("SEK "),
+                          _c("label", { staticClass: "font-size-13px" }, [
+                            _c("i", [_vm._v("(Đồng Kíp SÉC)")])
+                          ])
                         ])
                       ]
                     )
@@ -52258,9 +53160,11 @@ var staticRenderFns = [
                     _vm._v("Chi tiết đồng "),
                     _c("span", [_vm._v("USD")]),
                     _vm._v(" - "),
-                    _c("span", { staticClass: "font-weight-initial" }, [
-                      _vm._v("cập nhật lúc: 17:15:02 20/05/2020")
-                    ])
+                    _c(
+                      "span",
+                      { staticClass: "font-weight-initial font-size-16px" },
+                      [_vm._v("cập nhật lúc: 17:15:02 20/05/2020")]
+                    )
                   ])
                 ])
               ])
@@ -52811,7 +53715,9 @@ var staticRenderFns = [
                   [
                     _c("thead", [
                       _c("tr", [
-                        _c("th", { staticClass: "text-center" }),
+                        _c("th", { staticClass: "text-left" }, [
+                          _vm._v("Tỉnh thành")
+                        ]),
                         _vm._v(" "),
                         _c("th", { staticClass: "text-center" }, [
                           _vm._v("Loại")
@@ -52829,7 +53735,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Hà Nội")
                         ]),
                         _vm._v(" "),
@@ -52841,7 +53747,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("TP Hồ Chí Minh")
                         ]),
                         _vm._v(" "),
@@ -52853,7 +53759,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Đà Nẵng")
                         ]),
                         _vm._v(" "),
@@ -52865,7 +53771,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("Huế")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("Huế")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -52875,7 +53783,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Bình Dương")
                         ]),
                         _vm._v(" "),
@@ -52887,7 +53795,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Tuyên Quang")
                         ]),
                         _vm._v(" "),
@@ -52899,7 +53807,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Hải Phòng")
                         ]),
                         _vm._v(" "),
@@ -52911,7 +53819,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Cần Thơ")
                         ]),
                         _vm._v(" "),
@@ -53441,7 +54349,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "section layout_padding margin-top-25" }, [
+      _c("div", { staticClass: "section margin-top-25" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
@@ -53449,9 +54357,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "heading_main text_align_center" }, [
                   _c("h2", { staticClass: "font-size-22px" }, [
                     _c("span", { staticClass: "theme_color" }),
-                    _vm._v("Giá vàng "),
-                    _c("span", [_vm._v("SJC")]),
-                    _vm._v(" - "),
+                    _vm._v("Lãi suất tại quầy - "),
                     _c("span", { staticClass: "font-size-16px" }, [
                       _vm._v("cập nhật lúc: 17:30:03 20/05/2020")
                     ])
@@ -53668,15 +54574,18 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "section margin-top-25px" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticClass: "full" }, [
                 _c("div", { staticClass: "heading_main text_align_center" }, [
-                  _c("h2", [
+                  _c("h2", { staticClass: "font-size-22px" }, [
                     _c("span", { staticClass: "theme_color" }),
-                    _vm._v("Lãi suất online")
+                    _vm._v("Lãi suất online - "),
+                    _c("span", { staticClass: "font-size-16px" }, [
+                      _vm._v("cập nhật lúc: 17:30:03 20/05/2020")
+                    ])
                   ])
                 ])
               ])

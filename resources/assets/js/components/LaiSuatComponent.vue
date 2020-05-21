@@ -43,13 +43,13 @@
         </div>
 
         <!-- section exchanges -->
-        <div class="section layout_padding margin-top-25">
+        <div class="section margin-top-25">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Giá vàng <span>SJC</span> - <span class="font-size-16px">cập nhật lúc: 17:30:03 20/05/2020</span></h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Lãi suất tại quầy - <span class="font-size-16px">cập nhật lúc: 17:30:03 20/05/2020</span></h2>
                             </div>
                         </div>
                     </div>
@@ -162,13 +162,13 @@
         <!-- end section -->
 
         <!-- section exchanges -->
-        <div class="section">
+        <div class="section margin-top-25px">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2><span class="theme_color"></span>Lãi suất online</h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Lãi suất online - <span class="font-size-16px">cập nhật lúc: 17:30:03 20/05/2020</span></h2>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
     <!-- Content layout -->
     <div class="index-component">
         <!-- section exchanges -->
-        <div class="section layout_padding" style="margin-top:85px;">
+        <div class="section" style="margin-top:85px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -35,28 +35,28 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th>AUD</th>
+                                    <th>AUD <span class="font-size-13px font-style-inherit"><i>(Đô la Úc)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>EUR</th>
+                                    <th>EUR <span class="font-size-13px font-style-inherit"><i>(Đồng Euro)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>USD</th>
+                                    <th>USD <span class="font-size-13px font-style-inherit"><i>(Đồng dollar Mỹ)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>CNY</th>
+                                    <th>CNY <span class="font-size-13px font-style-inherit"><i>(Đồng nhân dân tệ)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>JPY</th>
+                                    <th>JPY <span class="font-size-13px font-style-inherit"><i>(Đồng yên Nhật)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>SGD</th>
+                                    <th>SGD <span class="font-size-13px font-style-inherit"><i>(Dollar Singapore)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>CAD</th>
+                                    <th>CAD <span class="font-size-13px font-style-inherit"><i>(Dollar Canada)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>KRW</th>
+                                    <th>KRW <span class="font-size-13px font-style-inherit"><i>(Won Hàn Quốc)</i></span></th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -69,66 +69,66 @@
                                 <table class="table table-hover table-bordered" id="table-exchange-home">
                                     <thead>
                                     <tr>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-3px">Techcombank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VCB.png" alt=""><span class="bank-name padding-top-3px">Vietcombank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-3px">Vietinbank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SAC.png" alt=""><span class="bank-name padding-top-3px">Sacombank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SHB.png" alt=""><span class="bank-name padding-top-3px">SHB</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/BIDV.png" alt=""><span class="bank-name padding-top-3px">BIDV</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-3px">ACB</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-3px">ArgiBank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-3px">Eximbank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-3px">HSBC</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-3px">TPB</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-3px">DongA</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-3px">MBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-5px">Techcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VCB.png" alt=""><span class="bank-name padding-top-5px">Vietcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-5px">Vietinbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SAC.png" alt=""><span class="bank-name padding-top-5px">Sacombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SHB.png" alt=""><span class="bank-name padding-top-5px">SHB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/BIDV.png" alt=""><span class="bank-name padding-top-5px">BIDV</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-5px">ACB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-5px">ArgiBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-5px">Eximbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-5px">HSBC</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-5px">TPB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-5px">DongA</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-5px">MBank</span></span></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+                                        <th>15,141 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,333 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,290 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,359 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
                                     </tr>
                                     <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+                                        <th>15,141 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,333 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,290 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,359 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
                                     </tr>
                                     <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+                                        <th>15,141 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,333 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,290 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,359 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-green"><i class="fa fa-arrow-up"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
                                     </tr>
                                     <tr class="text-center">
                                         <th>15,141</th>
@@ -216,8 +216,21 @@
         </div>
         <!-- end section -->
 
+        <div class="section margin-top-25px">
+            <div class="container">
+                <section>
+                    <div class="heading_main pull-left">
+                        <h2 class="font-size-22px"><span class="theme_color"></span>Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực</h2>
+                    </div>
+                    <br>
+                    <iframe style="height:450px; width: 100%;" id="tradingview_b92c2" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_b92c2&amp;symbol=BTCUSD&amp;interval=1&amp;symboledit=0&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;details=1&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=3&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en_US&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=ETHUSD" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+                </section>
+                <br>
+            </div>
+        </div>
+
         <!-- section exchanges -->
-        <div class="section layout_padding">
+        <div class="section margin-top-25px">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -235,7 +248,7 @@
                             <table class="table table-hover table-bordered" id="table-currency-code-home">
                                 <thead>
                                 <tr>
-                                    <th id="currency-code">-</th>
+                                    <th id="currency-code">Tỉnh thành</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -281,19 +294,19 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
+                                        <th>3600000 <span class="font-size-13px font-color-green"><i class="fa fa-arrow-up"> 34</i></span></th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
                                     </tr>
                                     <tr>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-up"> 34</i></span></th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
                                     </tr>
                                     <tr>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
                                     </tr>
                                     <tr>
                                         <th>3600000</th>
@@ -330,22 +343,14 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section margin-top-25px">
             <div class="container">
                 <section>
                     <div class="heading_main pull-left">
                         <h2 class="font-size-22px"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h2>
                     </div>
                     <br>
-                    <iframe style="height: 550px; width: 100%;" id="tradingview_cbf8a" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&amp;symbol=TVC%3AUKOIL&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi_VN&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=TVC%3AUKOIL" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
-                </section>
-                <hr>
-                <section>
-                    <div class="heading_main pull-left">
-                        <h2 class="font-size-22px"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (WTI)- USOIL trực tiếp theo thời gian thực</h2>
-                    </div>
-                    <br>
-                    <iframe style="height: 550px; width: 100%;" id="tradingview_9a8db" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_9a8db&amp;symbol=TVC%3AUSOIL&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=TVC%3AUSOIL" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+                    <iframe style="height: 450px; width: 100%;" id="tradingview_cbf8a" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&amp;symbol=TVC%3AUKOIL&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi_VN&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=TVC%3AUKOIL" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
                 </section>
                 <br>
             </div>

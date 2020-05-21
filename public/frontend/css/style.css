@@ -2019,7 +2019,7 @@ p.section_count {
 .heading_main {
     float: left;
     display: flex;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
     width: 100%;
     /*justify-content: center;*/
 }
@@ -2119,7 +2119,7 @@ ul.social_icon li {
     background: #532a02;
     padding: 0 0;
     width: 100%;
-    min-height: 82px;
+    min-height: 40px;
     float: left;
     text-align: center;
 
@@ -2132,7 +2132,7 @@ ul.social_icon li {
     font-size: 16px;
     text-align: center;
     width: 100%;
-    line-height: 82px;
+    line-height: 40px;
 }
 
 .footer_menu ul {
@@ -2494,4 +2494,58 @@ ul.bottom_menu li {
 
 .padding-bottom-25px {
     padding-bottom: 25px !important;
+}
+
+.padding-right-5px {
+    padding-right: 5px !important;
+}
+
+.logo-footer {
+    color: #ffffffbd;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.padding-logo-footer {
+    padding-top: 7px;
+    padding-left: 11px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+.font-size-13px {
+    font-size: 13px !important;
+}
+
+.tag-footer {
+    padding-left: 5px;
+    padding-right: 5px;
+    border: ghostwhite 1px dotted;
+}
+
+.tag-footer:hover {
+    border: #d66c0b 1px dotted;
+    color: #d66c0b;
+}
+
+.font-style-inherit {
+    font-style: inherit;
+}
+
+.font-color-red {
+    color: red;
+}
+
+.font-color-green {
+    color: forestgreen;
+}
+
+.color-white {
+    color: whitesmoke;
+}
+
+.padding-top-5px {
+    padding-top: 5px !important;
 }

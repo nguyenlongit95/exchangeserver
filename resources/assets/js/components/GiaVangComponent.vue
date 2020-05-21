@@ -56,7 +56,7 @@
                             <table class="table table-hover table-bordered" id="table-exchange-page">
                                 <thead>
                                 <tr>
-                                    <th class="text-center"> </th>
+                                    <th class="text-left">Tỉnh thành</th>
                                     <th class="text-center">Loại</th>
                                     <th class="text-center">Mua vào</th>
                                     <th class="text-center">Bán ra</th>
@@ -64,49 +64,49 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th class="bg-gray">Hà Nội</th>
+                                    <th class="bg-gray text-left">Hà Nội</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">TP Hồ Chí Minh</th>
+                                    <th class="bg-gray text-left">TP Hồ Chí Minh</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Đà Nẵng</th>
+                                    <th class="bg-gray text-left">Đà Nẵng</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Huế</th>
+                                    <th class="bg-gray text-left">Huế</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Bình Dương</th>
+                                    <th class="bg-gray text-left">Bình Dương</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Tuyên Quang</th>
+                                    <th class="bg-gray text-left">Tuyên Quang</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Hải Phòng</th>
+                                    <th class="bg-gray text-left">Hải Phòng</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Cần Thơ</th>
+                                    <th class="bg-gray text-left">Cần Thơ</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
