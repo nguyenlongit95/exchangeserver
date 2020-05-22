@@ -145,8 +145,35 @@
 
 <script>
     export default {
-        name: "giavangComponent"
+        data() {
+            /**
+             * Create local variable
+             */
+            return {}
+        },
+        created: function () {
+            /**
+             * construction function call labs
+             */
+            this.getExchanges();
+        },
+        methods: {
+            /**
+             * Implement function here
+             */
+            getExchanges() {
+                axios.get('api/v1/get-exchange').then(response => {
+                    let objExchangeData = response.data;
+                    for (let i = 0; i < objExchangeData.length; i++) {
+                        console.log(objExchangeData[i]);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                });
+            }
+        }
     }
+
 
     /**
      * jQuery draw chart

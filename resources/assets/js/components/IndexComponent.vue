@@ -38,178 +38,872 @@
                                     <th>AUD <span class="font-size-13px font-style-inherit"><i>(Đô la Úc)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>EUR <span class="font-size-13px font-style-inherit"><i>(Đồng Euro)</i></span></th>
+                                    <th>CAD <span class="font-size-13px font-style-inherit"><i>(Dollar Canada)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>USD <span class="font-size-13px font-style-inherit"><i>(Đồng dollar Mỹ)</i></span></th>
+                                    <th>CHF <span class="font-size-13px font-style-inherit"><i>(France Thuỵ Sỹ)</i></span></th>
                                 </tr>
                                 <tr>
                                     <th>CNY <span class="font-size-13px font-style-inherit"><i>(Đồng nhân dân tệ)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>JPY <span class="font-size-13px font-style-inherit"><i>(Đồng yên Nhật)</i></span></th>
+                                    <th>DKK <span class="font-size-13px font-style-inherit"><i>(Krone Đan Mạch)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>EUR <span class="font-size-13px font-style-inherit"><i>(Dollar EUro)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>GBP <span class="font-size-13px font-style-inherit"><i>(Đồng Bảng Anh)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>HKD <span class="font-size-13px font-style-inherit"><i>(Dollar Hong Kong)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>JPY <span class="font-size-13px font-style-inherit"><i>(Đồng Yên Nhật)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>KRW <span class="font-size-13px font-style-inherit"><i>(Won Hàn Quốc)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>MYR <span class="font-size-13px font-style-inherit"><i>(Dollar Myanmar)</i></span></th>
+                                </tr>
+                                <tr>
+                                    <th>RUB <span class="font-size-13px font-style-inherit"><i>(Đồng RUB Nga)</i></span></th>
                                 </tr>
                                 <tr>
                                     <th>SGD <span class="font-size-13px font-style-inherit"><i>(Dollar Singapore)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>CAD <span class="font-size-13px font-style-inherit"><i>(Dollar Canada)</i></span></th>
+                                    <th>THB <span class="font-size-13px font-style-inherit"><i>(Đồng Bạt Thái)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>KRW <span class="font-size-13px font-style-inherit"><i>(Won Hàn Quốc)</i></span></th>
+                                    <th>USD <span class="font-size-13px font-style-inherit"><i>(Dollar Mỹ)</i></span></th>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    <div class="col-9 col-xs-8 col-sm-9 col-md-9 pull-right">
-                        <div class="wrap-home">
-                            <div class="row">
+                    <div class="col-9 col-xs-8 col-sm-9 col-md-9 pull-right" role="tabpanel">
+                        <div class="wrap-home tab-content">
+                            <div class="row tab-pane active" id="muatienmat">
                                 <table class="table table-hover table-bordered" id="table-exchange-home">
                                     <thead>
                                     <tr>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-5px">Techcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-5px">TPB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-5px">MBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-5px">Eximbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-5px">DongA</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VCB.png" alt=""><span class="bank-name padding-top-5px">Vietcombank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-5px">Vietinbank</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SAC.png" alt=""><span class="bank-name padding-top-5px">Sacombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-5px">Vietinbank</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SHB.png" alt=""><span class="bank-name padding-top-5px">SHB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-5px">HSBC</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-5px">Techcombank</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/BIDV.png" alt=""><span class="bank-name padding-top-5px">BIDV</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-5px">ACB</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-5px">ArgiBank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-5px">Eximbank</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-5px">HSBC</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-5px">TPB</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-5px">DongA</span></span></th>
-                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-5px">MBank</span></span></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="text-center">
-                                        <th>15,141 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,333 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,290 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,359 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                        <tr>
+                                            <td v-for="renderAUD in arrAUD" class="text-center">
+                                                {{ renderAUD.muatienmat }}
+                                                <span v-if="renderAUD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderAUD.muatienmat_diff }}</i>
+                                                </span>
+                                                <span v-if="renderAUD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderAUD.muatienmat_diff }}</i>
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderCAD in arrCAD" class="text-center">
+                                                {{ renderCAD.muatienmat }}
+                                                <span v-if="renderCAD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCAD.muatienmat_diff }}</i>
+                                                </span>
+                                                <span v-if="renderCAD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCAD.muatienmat_diff }}</i>
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderCHF in arrCHF" class="text-center">
+                                                {{ renderCHF.muatienmat }}
+                                                <span v-if="renderCHF.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCHF.muatienmat_diff }}</i>
+                                                </span>
+                                                <span v-if="renderCHF.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCHF.muatienmat_diff }}</i>
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderCNY in arrCNY" class="text-center">
+                                                {{ renderCNY.muatienmat }}
+                                                <span v-if="renderCNY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderCNY.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderCNY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderCNY.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderDKK in arrDKK" class="text-center">
+                                                {{ renderDKK.muatienmat }}
+                                                <span v-if="renderDKK.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderDKK.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderDKK.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderDKK.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderEUR in arrEUR" class="text-center">
+                                                {{ renderEUR.muatienmat }}
+                                                <span v-if="renderEUR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderEUR.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderEUR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderEUR.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderGBP in arrGBP" class="text-center">
+                                                {{ renderGBP.muatienmat }}
+                                                <span v-if="renderGBP.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderGBP.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderGBP.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderGBP.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderHKD in arrHKD" class="text-center">
+                                                {{ renderHKD.muatienmat }}
+                                                <span v-if="renderHKD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderHKD.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderHKD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderHKD.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderJPY in arrJPY" class="text-center">
+                                                {{ renderJPY.muatienmat }}
+                                                <span v-if="renderJPY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderJPY.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderJPY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderJPY.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderKRW in arrKRW" class="text-center">
+                                                {{ renderKRW.muatienmat }}
+                                                <span v-if="renderKRW.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderKRW.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderKRW.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderKRW.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderMYR in arrMYR" class="text-center">
+                                                {{ renderMYR.muatienmat }}
+                                                <span v-if="renderMYR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderMYR.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderMYR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderMYR.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderRUB in arrRUB" class="text-center">
+                                                {{ renderRUB.muatienmat }}
+                                                <span v-if="renderRUB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderRUB.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderRUB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderRUB.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderSGD in arrSGD" class="text-center">
+                                                {{ renderSGD.muatienmat }}
+                                                <span v-if="renderSGD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderSGD.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderSGD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderSGD.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderTHB in arrTHB" class="text-center">
+                                                {{ renderTHB.muatienmat }}
+                                                <span v-if="renderTHB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderTHB.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderTHB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderTHB.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td v-for="renderUSD in arrUSD" class="text-center">
+                                                {{ renderUSD.muatienmat }}
+                                                <span v-if="renderUSD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderUSD.muatienmat_diff }}</i>
+                                            </span>
+                                                <span v-if="renderUSD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderUSD.muatienmat_diff }}</i>
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row tab-pane" id="muachuyenkhoan">
+                                <table class="table table-hover table-bordered" id="table-exchange-home">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-5px">TPB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-5px">MBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-5px">Eximbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-5px">DongA</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VCB.png" alt=""><span class="bank-name padding-top-5px">Vietcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SAC.png" alt=""><span class="bank-name padding-top-5px">Sacombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-5px">Vietinbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SHB.png" alt=""><span class="bank-name padding-top-5px">SHB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-5px">HSBC</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-5px">Techcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/BIDV.png" alt=""><span class="bank-name padding-top-5px">BIDV</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-5px">ACB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-5px">ArgiBank</span></span></th>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,333 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,290 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,359 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td v-for="renderAUD in arrAUD" class="text-center">
+                                            {{ renderAUD.muachuyenkhoan }}
+                                            <span v-if="renderAUD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderAUD.muachuyenkhoan_diff }}</i>
+                                                </span>
+                                            <span v-if="renderAUD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderAUD.muachuyenkhoan_diff }}</i>
+                                                </span>
+                                        </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,333 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,290 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,359 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-green"><i class="fa fa-arrow-up"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>15,357 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
+
+                                    <tr>
+                                        <td v-for="renderCAD in arrCAD" class="text-center">
+                                            {{ renderCAD.muachuyenkhoan }}
+                                            <span v-if="renderCAD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCAD.muachuyenkhoan_diff }}</i>
+                                                </span>
+                                            <span v-if="renderCAD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCAD.muachuyenkhoan_diff }}</i>
+                                                </span>
+                                        </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+
+                                    <tr>
+                                        <td v-for="renderCHF in arrCHF" class="text-center">
+                                            {{ renderCHF.muachuyenkhoan }}
+                                            <span v-if="renderCHF.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCHF.muachuyenkhoan_diff }}</i>
+                                                </span>
+                                            <span v-if="renderCHF.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCHF.muachuyenkhoan_diff }}</i>
+                                                </span>
+                                        </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+
+                                    <tr>
+                                        <td v-for="renderCNY in arrCNY" class="text-center">
+                                            {{ renderCNY.muachuyenkhoan }}
+                                            <span v-if="renderCNY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderCNY.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderCNY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderCNY.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+
+                                    <tr>
+                                        <td v-for="renderDKK in arrDKK" class="text-center">
+                                            {{ renderDKK.muachuyenkhoan }}
+                                            <span v-if="renderDKK.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderDKK.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderDKK.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderDKK.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+
+                                    <tr>
+                                        <td v-for="renderEUR in arrEUR" class="text-center">
+                                            {{ renderEUR.muachuyenkhoan }}
+                                            <span v-if="renderEUR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderEUR.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderEUR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderEUR.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                        <th>15,359</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
-                                        <th>15,357</th>
+
+                                    <tr>
+                                        <td v-for="renderGBP in arrGBP" class="text-center">
+                                            {{ renderGBP.muachuyenkhoan }}
+                                            <span v-if="renderGBP.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderGBP.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderGBP.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderGBP.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
                                     </tr>
+
+                                    <tr>
+                                        <td v-for="renderHKD in arrHKD" class="text-center">
+                                            {{ renderHKD.muachuyenkhoan }}
+                                            <span v-if="renderHKD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderHKD.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderHKD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderHKD.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderJPY in arrJPY" class="text-center">
+                                            {{ renderJPY.muachuyenkhoan }}
+                                            <span v-if="renderJPY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderJPY.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderJPY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderJPY.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderKRW in arrKRW" class="text-center">
+                                            {{ renderKRW.muachuyenkhoan }}
+                                            <span v-if="renderKRW.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderKRW.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderKRW.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderKRW.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderMYR in arrMYR" class="text-center">
+                                            {{ renderMYR.muachuyenkhoan }}
+                                            <span v-if="renderMYR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderMYR.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderMYR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderMYR.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderRUB in arrRUB" class="text-center">
+                                            {{ renderRUB.muachuyenkhoan }}
+                                            <span v-if="renderRUB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderRUB.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderRUB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderRUB.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderSGD in arrSGD" class="text-center">
+                                            {{ renderSGD.muachuyenkhoan }}
+                                            <span v-if="renderSGD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderSGD.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderSGD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderSGD.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderTHB in arrTHB" class="text-center">
+                                            {{ renderTHB.muachuyenkhoan }}
+                                            <span v-if="renderTHB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderTHB.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderTHB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderTHB.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderUSD in arrUSD" class="text-center">
+                                            {{ renderUSD.muachuyenkhoan }}
+                                            <span v-if="renderUSD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderUSD.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderUSD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderUSD.muachuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row tab-pane" id="bantienmat">
+                                <table class="table table-hover table-bordered" id="table-exchange-home">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-5px">TPB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-5px">MBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-5px">Eximbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-5px">DongA</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VCB.png" alt=""><span class="bank-name padding-top-5px">Vietcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SAC.png" alt=""><span class="bank-name padding-top-5px">Sacombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-5px">Vietinbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SHB.png" alt=""><span class="bank-name padding-top-5px">SHB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-5px">HSBC</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-5px">Techcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/BIDV.png" alt=""><span class="bank-name padding-top-5px">BIDV</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-5px">ACB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-5px">ArgiBank</span></span></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td v-for="renderAUD in arrAUD" class="text-center">
+                                            {{ renderAUD.bantienmat }}
+                                            <span v-if="renderAUD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderAUD.bantienmat_diff }}</i>
+                                                </span>
+                                            <span v-if="renderAUD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderAUD.bantienmat_diff }}</i>
+                                                </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderCAD in arrCAD" class="text-center">
+                                            {{ renderCAD.bantienmat }}
+                                            <span v-if="renderCAD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCAD.bantienmat_diff }}</i>
+                                                </span>
+                                            <span v-if="renderCAD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCAD.bantienmat_diff }}</i>
+                                                </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderCHF in arrCHF" class="text-center">
+                                            {{ renderCHF.bantienmat }}
+                                            <span v-if="renderCHF.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCHF.bantienmat_diff }}</i>
+                                                </span>
+                                            <span v-if="renderCHF.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCHF.bantienmat_diff }}</i>
+                                                </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderCNY in arrCNY" class="text-center">
+                                            {{ renderCNY.bantienmat }}
+                                            <span v-if="renderCNY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderCNY.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderCNY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderCNY.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderDKK in arrDKK" class="text-center">
+                                            {{ renderDKK.bantienmat }}
+                                            <span v-if="renderDKK.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderDKK.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderDKK.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderDKK.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderEUR in arrEUR" class="text-center">
+                                            {{ renderEUR.bantienmat }}
+                                            <span v-if="renderEUR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderEUR.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderEUR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderEUR.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderGBP in arrGBP" class="text-center">
+                                            {{ renderGBP.bantienmat }}
+                                            <span v-if="renderGBP.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderGBP.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderGBP.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderGBP.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderHKD in arrHKD" class="text-center">
+                                            {{ renderHKD.bantienmat }}
+                                            <span v-if="renderHKD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderHKD.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderHKD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderHKD.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderJPY in arrJPY" class="text-center">
+                                            {{ renderJPY.bantienmat }}
+                                            <span v-if="renderJPY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderJPY.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderJPY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderJPY.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderKRW in arrKRW" class="text-center">
+                                            {{ renderKRW.bantienmat }}
+                                            <span v-if="renderKRW.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderKRW.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderKRW.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderKRW.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderMYR in arrMYR" class="text-center">
+                                            {{ renderMYR.bantienmat }}
+                                            <span v-if="renderMYR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderMYR.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderMYR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderMYR.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderRUB in arrRUB" class="text-center">
+                                            {{ renderRUB.bantienmat }}
+                                            <span v-if="renderRUB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderRUB.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderRUB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderRUB.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderSGD in arrSGD" class="text-center">
+                                            {{ renderSGD.bantienmat }}
+                                            <span v-if="renderSGD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderSGD.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderSGD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderSGD.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderTHB in arrTHB" class="text-center">
+                                            {{ renderTHB.bantienmat }}
+                                            <span v-if="renderTHB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderTHB.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderTHB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderTHB.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderUSD in arrUSD" class="text-center">
+                                            {{ renderUSD.bantienmat }}
+                                            <span v-if="renderUSD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderUSD.bantienmat_diff }}</i>
+                                            </span>
+                                            <span v-if="renderUSD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderUSD.bantienmat_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row tab-pane" id="banchuyenkhoan">
+                                <table class="table table-hover table-bordered" id="table-exchange-home">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TPB.png" alt=""><span class="bank-name padding-top-5px">TPB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/mbank.png" alt=""><span class="bank-name padding-top-5px">MBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/exim.jpg" alt=""><span class="bank-name padding-top-5px">Eximbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/DAB.png" alt=""><span class="bank-name padding-top-5px">DongA</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VCB.png" alt=""><span class="bank-name padding-top-5px">Vietcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SAC.png" alt=""><span class="bank-name padding-top-5px">Sacombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/VTB.png" alt=""><span class="bank-name padding-top-5px">Vietinbank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/SHB.png" alt=""><span class="bank-name padding-top-5px">SHB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/HSBC.png" alt=""><span class="bank-name padding-top-5px">HSBC</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/TCB.png"> <span class="bank-name padding-top-5px">Techcombank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/BIDV.png" alt=""><span class="bank-name padding-top-5px">BIDV</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-5px">ACB</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-5px">ArgiBank</span></span></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td v-for="renderAUD in arrAUD" class="text-center">
+                                            {{ renderAUD.banchuyenkhoan }}
+                                            <span v-if="renderAUD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderAUD.banchuyenkhoan_diff }}</i>
+                                                </span>
+                                            <span v-if="renderAUD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderAUD.banchuyenkhoan_diff }}</i>
+                                                </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderCAD in arrCAD" class="text-center">
+                                            {{ renderCAD.banchuyenkhoan }}
+                                            <span v-if="renderCAD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCAD.banchuyenkhoan_diff }}</i>
+                                                </span>
+                                            <span v-if="renderCAD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCAD.banchuyenkhoan_diff }}</i>
+                                                </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderCHF in arrCHF" class="text-center">
+                                            {{ renderCHF.banchuyenkhoan }}
+                                            <span v-if="renderCHF.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderCHF.banchuyenkhoan_diff }}</i>
+                                                </span>
+                                            <span v-if="renderCHF.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderCHF.banchuyenkhoan_diff }}</i>
+                                                </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderCNY in arrCNY" class="text-center">
+                                            {{ renderCNY.banchuyenkhoan }}
+                                            <span v-if="renderCNY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderCNY.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderCNY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderCNY.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderDKK in arrDKK" class="text-center">
+                                            {{ renderDKK.banchuyenkhoan }}
+                                            <span v-if="renderDKK.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderDKK.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderDKK.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderDKK.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderEUR in arrEUR" class="text-center">
+                                            {{ renderEUR.banchuyenkhoan }}
+                                            <span v-if="renderEUR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderEUR.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderEUR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderEUR.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderGBP in arrGBP" class="text-center">
+                                            {{ renderGBP.banchuyenkhoan }}
+                                            <span v-if="renderGBP.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderGBP.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderGBP.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderGBP.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderHKD in arrHKD" class="text-center">
+                                            {{ renderHKD.banchuyenkhoan }}
+                                            <span v-if="renderHKD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderHKD.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderHKD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderHKD.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderJPY in arrJPY" class="text-center">
+                                            {{ renderJPY.banchuyenkhoan }}
+                                            <span v-if="renderJPY.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderJPY.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderJPY.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderJPY.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderKRW in arrKRW" class="text-center">
+                                            {{ renderKRW.banchuyenkhoan }}
+                                            <span v-if="renderKRW.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderKRW.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderKRW.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderKRW.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderMYR in arrMYR" class="text-center">
+                                            {{ renderMYR.banchuyenkhoan }}
+                                            <span v-if="renderMYR.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderMYR.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderMYR.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderMYR.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderRUB in arrRUB" class="text-center">
+                                            {{ renderRUB.banchuyenkhoan }}
+                                            <span v-if="renderRUB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderRUB.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderRUB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderRUB.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderSGD in arrSGD" class="text-center">
+                                            {{ renderSGD.banchuyenkhoan }}
+                                            <span v-if="renderSGD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderSGD.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderSGD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderSGD.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderTHB in arrTHB" class="text-center">
+                                            {{ renderTHB.banchuyenkhoan }}
+                                            <span v-if="renderTHB.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderTHB.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderTHB.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderTHB.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td v-for="renderUSD in arrUSD" class="text-center">
+                                            {{ renderUSD.banchuyenkhoan }}
+                                            <span v-if="renderUSD.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderUSD.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                            <span v-if="renderUSD.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                                <i class="fa fa-arrow-up"> {{ renderUSD.banchuyenkhoan_diff }}</i>
+                                            </span>
+                                        </td>
+                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!-- end table exchange home -->
             </div>
@@ -364,7 +1058,83 @@
      * Test function vue js core
      */
     export default {
-        name: "IndexComponent"
+        data() {
+            /**
+             * Create local variable and array
+             */
+            return {
+                arrAUD: [], arrCAD: [], arrCHF: [], arrCNY: [], arrDKK: [], arrEUR: [], arrGBP: [], arrHKD: [],
+                arrJPY: [], arrKRW: [], arrMYR: [], arrRUB: [], arrSGD: [], arrTHB: [], arrUSD: [],
+            }
+        },
+        created: function () {
+            /**
+             * construction function call labs
+             */
+            this.getExchanges();
+        },
+        methods: {
+            /**
+             * Implement function here
+             */
+            getExchanges() {
+                axios.get('api/v1/get-exchange').then(response => {
+                    let objExchangeData = response.data;
+                    for (let i = 0; i < objExchangeData.length; i++) {
+                        if (objExchangeData[i]['code'] === "AUD") {
+                            this.arrAUD.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "CAD") {
+                            this.arrCAD.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "CHF") {
+                            this.arrCHF.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "CNY") {
+                            this.arrCNY.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "DKK") {
+                            this.arrDKK.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "EUR") {
+                            this.arrEUR.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "GBP") {
+                            this.arrGBP.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "HKD") {
+                            this.arrHKD.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "JPY") {
+                            this.arrJPY.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "KRW") {
+                            this.arrKRW.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "MYR") {
+                            this.arrMYR.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "RUB") {
+                            this.arrRUB.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "SGD") {
+                            this.arrSGD.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "THB") {
+                            this.arrTHB.push(objExchangeData[i]);
+                        }
+                        if (objExchangeData[i]['code'] === "USD") {
+                            this.arrUSD.push(objExchangeData[i]);
+                        }
+                    }
+                    for (var j = 0; j < this.arrAUD.length; j++) {
+                        console.log(this.arrAUD[j]['bank_name']);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                });
+            }
+        }
     }
 </script>
 
