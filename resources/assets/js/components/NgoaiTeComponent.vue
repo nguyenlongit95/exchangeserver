@@ -59,7 +59,7 @@
         <!-- End Banner -->
 
         <!-- section exchanges -->
-        <div class="section layout_padding margin-top-25px">
+        <div class="section margin-top-25px">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -77,7 +77,7 @@
                             <table class="table table-hover table-bordered" id="table-exchange-page">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Ngân hàng</th>
+                                    <th class="text-left">Ngân hàng</th>
                                     <th class="text-center">Mua tiền mặt</th>
                                     <th class="text-center">Mua chuyển khoản</th>
                                     <th class="text-center">Bán tiền mặt</th>
@@ -86,56 +86,56 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th class="bg-gray">Techcombank</th>
+                                    <th class="bg-gray text-left">Techcombank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">HSBC</th>
+                                    <th class="bg-gray text-left">HSBC</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">VietcomBank</th>
+                                    <th class="bg-gray text-left">VietcomBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">SHB</th>
+                                    <th class="bg-gray text-left">SHB</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">BIDV</th>
+                                    <th class="bg-gray text-left">BIDV</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">ArgiBank</th>
+                                    <th class="bg-gray text-left">ArgiBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">VietinBank</th>
+                                    <th class="bg-gray text-left">VietinBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
                                     <th>15,359</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">DongABank</th>
+                                    <th class="bg-gray text-left">DongABank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -144,6 +144,27 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end section -->
+
+        <!-- section draw chart -->
+        <div class="section">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 row">
+                            <p class="text-center">
+                                <strong class="font-size-13px">Tỷ giá đồng <span id="txt_money_code" class="color-d66c0b">USD</span> trong 6 tháng trước</strong>
+                            </p>
+                        </div>
+                        <div class="chart col-md-12 row">
+                            <!-- Sales Chart Canvas -->
+                            <canvas id="exchangeChart" style="height: 350px; width: 100%;"></canvas>
+                        </div>
+                        <!-- /.chart-responsive -->
                     </div>
                 </div>
             </div>
@@ -167,13 +188,91 @@
             </div>
         </div>
         <!-- End Banner -->
+
     </div>
 </template>
 
 <script>
+    /**
+     * Code JS Vue component here
+     */
     export default {
         name: "ngoaiteComponent"
     }
+
+    /**
+     * function chart JS
+     * */
+    $(function () {
+        'use strict';
+        /**
+         * Code JS draw chart here
+         * */
+        // Get context with jQuery - using jQuery's .get() method.
+        var exchangeChartCanvas = $('#exchangeChart').get(0).getContext('2d');
+        // This will get the first returned node in the jQuery collection.
+        var exchangeChart = new Chart(exchangeChartCanvas);
+
+        var exchangeChartData = {
+            labels  : [
+                'January', 'February', 'March', 'April', 'May', 'June', 'July',
+                'January', 'February', 'March', 'April', 'May', 'June', 'July',
+                'January', 'February', 'March', 'April', 'May', 'June', 'July'
+            ],
+            datasets: [
+                {
+                    label               : 'Tỷ giá ngoại tệ',
+                    fillColor           : 'rgba(60,141,188,0.9)',
+                    strokeColor         : 'rgba(60,141,188,0.8)',
+                    pointColor          : '#3b8bba',
+                    pointStrokeColor    : 'rgba(60,141,188,1)',
+                    pointHighlightFill  : '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data                : [
+                        28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90
+                    ]
+                }
+            ]
+        };
+
+        var exchangeChartOptions = {
+            // Boolean - If we should show the scale at all
+            showScale               : true,
+            // Boolean - Whether grid lines are shown across the chart
+            scaleShowGridLines      : true,
+            // String - Colour of the grid lines
+            // scaleGridLineColor      : 'rgba(0,0,0,.05)',
+            // Number - Width of the grid lines
+            scaleGridLineWidth      : 1,
+            // Boolean - Whether to show horizontal lines (except X axis)
+            scaleShowHorizontalLines: true,
+            // Boolean - Whether to show vertical lines (except Y axis)
+            scaleShowVerticalLines  : true,
+            // Boolean - Whether the line is curved between points
+            bezierCurve             : false,
+            // Number - Tension of the bezier curve between points
+            bezierCurveTension      : 0.3,
+            // Boolean - Whether to show a dot for each point
+            pointDot                : false,
+            // Number - Radius of each point dot in pixels
+            pointDotRadius          : 4,
+            // Number - Pixel width of point dot stroke
+            pointDotStrokeWidth     : 1,
+            // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+            pointHitDetectionRadius : 20,
+            // Boolean - Whether to show a stroke for datasets
+            datasetStroke           : true,
+            // Number - Pixel width of dataset stroke
+            datasetStrokeWidth      : 2,
+            // Boolean - Whether to fill the dataset with a color
+            datasetFill             : false,
+
+            maintainAspectRatio     : true,
+
+            responsive              : true
+        };
+        exchangeChart.Line(exchangeChartData, exchangeChartOptions);
+    });
 </script>
 
 <style scoped>

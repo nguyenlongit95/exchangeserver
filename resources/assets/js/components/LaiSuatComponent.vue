@@ -61,7 +61,7 @@
                             <table class="table table-hover table-bordered" id="table-exchange-page">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Ngân hàng</th>
+                                    <th class="text-left">Ngân hàng</th>
                                     <th class="text-center">1 tháng</th>
                                     <th class="text-center">3 tháng</th>
                                     <th class="text-center">6 tháng</th>
@@ -73,7 +73,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th class="bg-gray">VietcomBank</th>
+                                    <th class="bg-gray text-left">VietcomBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -83,7 +83,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Techcombank</th>
+                                    <th class="bg-gray text-left">Techcombank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -93,7 +93,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">OceanBank</th>
+                                    <th class="bg-gray text-left">OceanBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -103,7 +103,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">BIDV</th>
+                                    <th class="bg-gray text-left">BIDV</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -113,7 +113,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">VietinBank</th>
+                                    <th class="bg-gray text-left">VietinBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -123,7 +123,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Bắc Á</th>
+                                    <th class="bg-gray text-left">Bắc Á</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -133,7 +133,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">SCB</th>
+                                    <th class="bg-gray text-left">SCB</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -143,7 +143,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">OCB</th>
+                                    <th class="bg-gray text-left">OCB</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -180,7 +180,7 @@
                             <table class="table table-hover table-bordered" id="table-exchange-page">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Ngân hàng</th>
+                                    <th class="text-left">Ngân hàng</th>
                                     <th class="text-center">1 tháng</th>
                                     <th class="text-center">3 tháng</th>
                                     <th class="text-center">6 tháng</th>
@@ -192,7 +192,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th class="bg-gray">VietcomBank</th>
+                                    <th class="bg-gray text-left">VietcomBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -202,7 +202,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Techcombank</th>
+                                    <th class="bg-gray text-left">Techcombank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -212,7 +212,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">OceanBank</th>
+                                    <th class="bg-gray text-left">OceanBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -222,7 +222,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">BIDV</th>
+                                    <th class="bg-gray text-left">BIDV</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -232,7 +232,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">VietinBank</th>
+                                    <th class="bg-gray text-left">VietinBank</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -242,7 +242,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Bắc Á</th>
+                                    <th class="bg-gray text-left">Bắc Á</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -252,7 +252,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">SCB</th>
+                                    <th class="bg-gray text-left">SCB</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>
@@ -262,7 +262,7 @@
                                     <th>15,290</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">OCB</th>
+                                    <th class="bg-gray text-left">OCB</th>
                                     <th>15,141</th>
                                     <th>15,333</th>
                                     <th>15,290</th>

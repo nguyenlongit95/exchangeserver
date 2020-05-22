@@ -66,7 +66,7 @@
                             <table class="table table-hover table-bordered" id="table-exchange-page">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Tiền ảo</th>
+                                    <th class="text-left">Tiền ảo</th>
                                     <th class="text-center">Giá(USD)</th>
                                     <th class="text-center">Giá(VNĐ)</th>
                                     <th class="text-center">Vốn hoá thị trường</th>
@@ -77,7 +77,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th class="bg-gray">Bitcoin</th>
+                                    <th class="bg-gray text-left">Bitcoin</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -86,7 +86,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Ethereum</th>
+                                    <th class="bg-gray text-left">Ethereum</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -95,7 +95,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">XRP</th>
+                                    <th class="bg-gray text-left">XRP</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -104,7 +104,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Bitcoin Cash</th>
+                                    <th class="bg-gray text-left">Bitcoin Cash</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -113,7 +113,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Litecoin</th>
+                                    <th class="bg-gray text-left">Litecoin</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -122,7 +122,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Tether</th>
+                                    <th class="bg-gray text-left">Tether</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -131,7 +131,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">EOS</th>
+                                    <th class="bg-gray text-left">EOS</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>
@@ -140,7 +140,7 @@
                                     <th>+5.9082</th>
                                 </tr>
                                 <tr>
-                                    <th class="bg-gray">Monero</th>
+                                    <th class="bg-gray text-left">Monero</th>
                                     <th>$ 10,350.80</th>
                                     <th>240,376,000đ</th>
                                     <th>185,413,000,000</th>

@@ -52780,7 +52780,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52963,9 +52963,100 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
+/**
+ * Code JS Vue component here
+ */
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "ngoaiteComponent"
+
+    /**
+     * function chart JS
+     * */
+});$(function () {
+    'use strict';
+    /**
+     * Code JS draw chart here
+     * */
+    // Get context with jQuery - using jQuery's .get() method.
+
+    var exchangeChartCanvas = $('#exchangeChart').get(0).getContext('2d');
+    // This will get the first returned node in the jQuery collection.
+    var exchangeChart = new Chart(exchangeChartCanvas);
+
+    var exchangeChartData = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Tỷ giá ngoại tệ',
+            fillColor: 'rgba(60,141,188,0.9)',
+            strokeColor: 'rgba(60,141,188,0.8)',
+            pointColor: '#3b8bba',
+            pointStrokeColor: 'rgba(60,141,188,1)',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: 'rgba(60,141,188,1)',
+            data: [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90]
+        }]
+    };
+
+    var exchangeChartOptions = {
+        // Boolean - If we should show the scale at all
+        showScale: true,
+        // Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: true,
+        // String - Colour of the grid lines
+        // scaleGridLineColor      : 'rgba(0,0,0,.05)',
+        // Number - Width of the grid lines
+        scaleGridLineWidth: 1,
+        // Boolean - Whether to show horizontal lines (except X axis)
+        scaleShowHorizontalLines: true,
+        // Boolean - Whether to show vertical lines (except Y axis)
+        scaleShowVerticalLines: true,
+        // Boolean - Whether the line is curved between points
+        bezierCurve: false,
+        // Number - Tension of the bezier curve between points
+        bezierCurveTension: 0.3,
+        // Boolean - Whether to show a dot for each point
+        pointDot: false,
+        // Number - Radius of each point dot in pixels
+        pointDotRadius: 4,
+        // Number - Pixel width of point dot stroke
+        pointDotStrokeWidth: 1,
+        // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+        pointHitDetectionRadius: 20,
+        // Boolean - Whether to show a stroke for datasets
+        datasetStroke: true,
+        // Number - Pixel width of dataset stroke
+        datasetStrokeWidth: 2,
+        // Boolean - Whether to fill the dataset with a color
+        datasetFill: false,
+
+        maintainAspectRatio: true,
+
+        responsive: true
+    };
+    exchangeChart.Line(exchangeChartData, exchangeChartOptions);
 });
 
 /***/ }),
@@ -53149,7 +53240,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "section layout_padding margin-top-25px" }, [
+      _c("div", { staticClass: "section margin-top-25px" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
@@ -53183,7 +53274,7 @@ var staticRenderFns = [
                   [
                     _c("thead", [
                       _c("tr", [
-                        _c("th", { staticClass: "text-center" }, [
+                        _c("th", { staticClass: "text-left" }, [
                           _vm._v("Ngân hàng")
                         ]),
                         _vm._v(" "),
@@ -53207,7 +53298,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Techcombank")
                         ]),
                         _vm._v(" "),
@@ -53221,7 +53312,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("HSBC")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("HSBC")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -53233,7 +53326,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("VietcomBank")
                         ]),
                         _vm._v(" "),
@@ -53247,7 +53340,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("SHB")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("SHB")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -53259,7 +53354,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("BIDV")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("BIDV")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -53271,7 +53368,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("ArgiBank")
                         ]),
                         _vm._v(" "),
@@ -53285,7 +53382,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("VietinBank")
                         ]),
                         _vm._v(" "),
@@ -53299,7 +53396,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("DongABank")
                         ]),
                         _vm._v(" "),
@@ -53314,6 +53411,38 @@ var staticRenderFns = [
                     ])
                   ]
                 )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12 row" }, [
+                _c("p", { staticClass: "text-center" }, [
+                  _c("strong", { staticClass: "font-size-13px" }, [
+                    _vm._v("Tỷ giá đồng "),
+                    _c(
+                      "span",
+                      {
+                        staticClass: "color-d66c0b",
+                        attrs: { id: "txt_money_code" }
+                      },
+                      [_vm._v("USD")]
+                    ),
+                    _vm._v(" trong 6 tháng trước")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "chart col-md-12 row" }, [
+                _c("canvas", {
+                  staticStyle: { height: "350px", width: "100%" },
+                  attrs: { id: "exchangeChart" }
+                })
               ])
             ])
           ])
@@ -53457,7 +53586,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53592,9 +53721,94 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "giavangComponent"
+
+    /**
+     * jQuery draw chart
+     */
+});$(function () {
+    'use strict';
+
+    // Get context with jQuery - using jQuery's .get() method.
+
+    var goldChartCanvas = $('#goldChart').get(0).getContext('2d');
+    // This will get the first returned node in the jQuery collection.
+    var goldChart = new Chart(goldChartCanvas);
+
+    var goldChartData = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Tỷ giá ngoại tệ',
+            fillColor: 'rgba(60,141,188,0.9)',
+            strokeColor: 'rgba(60,141,188,0.8)',
+            pointColor: '#ff880e',
+            pointStrokeColor: 'rgba(60,141,188,1)',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: 'rgba(60,141,188,1)',
+            data: [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90]
+        }]
+    };
+
+    var goldChartOptions = {
+        // Boolean - If we should show the scale at all
+        showScale: true,
+        // Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: true,
+        // String - Colour of the grid lines
+        // scaleGridLineColor      : 'rgba(0,0,0,.05)',
+        // Number - Width of the grid lines
+        scaleGridLineWidth: 1,
+        // Boolean - Whether to show horizontal lines (except X axis)
+        scaleShowHorizontalLines: false,
+        // Boolean - Whether to show vertical lines (except Y axis)
+        scaleShowVerticalLines: true,
+        // Boolean - Whether the line is curved between points
+        bezierCurve: false,
+        // Number - Tension of the bezier curve between points
+        bezierCurveTension: 0.3,
+        // Boolean - Whether to show a dot for each point
+        pointDot: true,
+        // Number - Radius of each point dot in pixels
+        pointDotRadius: 4,
+        // Number - Pixel width of point dot stroke
+        pointDotStrokeWidth: 1,
+        // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+        pointHitDetectionRadius: 20,
+        // Boolean - Whether to show a stroke for datasets
+        datasetStroke: true,
+        // Number - Pixel width of dataset stroke
+        datasetStrokeWidth: 2,
+        // Boolean - Whether to fill the dataset with a color
+        datasetFill: false,
+
+        maintainAspectRatio: true,
+
+        responsive: true
+    };
+    goldChart.Line(goldChartData, goldChartOptions);
 });
 
 /***/ }),
@@ -53683,7 +53897,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "section layout_padding margin-top-25px" }, [
+      _c("div", { staticClass: "section margin-top-25px" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
@@ -53832,6 +54046,38 @@ var staticRenderFns = [
                     ])
                   ]
                 )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12 row" }, [
+                _c("p", { staticClass: "text-center" }, [
+                  _c("strong", { staticClass: "font-size-13px" }, [
+                    _vm._v("Giá vàng "),
+                    _c(
+                      "span",
+                      {
+                        staticClass: "color-d66c0b",
+                        attrs: { id: "txt_money_code" }
+                      },
+                      [_vm._v("SJC")]
+                    ),
+                    _vm._v(" trong 6 tháng trước")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "chart col-md-12 row" }, [
+                _c("canvas", {
+                  staticStyle: { height: "350px", width: "100%" },
+                  attrs: { id: "goldChart" }
+                })
               ])
             ])
           ])
@@ -54379,7 +54625,7 @@ var staticRenderFns = [
                   [
                     _c("thead", [
                       _c("tr", [
-                        _c("th", { staticClass: "text-center" }, [
+                        _c("th", { staticClass: "text-left" }, [
                           _vm._v("Ngân hàng")
                         ]),
                         _vm._v(" "),
@@ -54415,7 +54661,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("VietcomBank")
                         ]),
                         _vm._v(" "),
@@ -54435,7 +54681,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Techcombank")
                         ]),
                         _vm._v(" "),
@@ -54455,7 +54701,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("OceanBank")
                         ]),
                         _vm._v(" "),
@@ -54475,7 +54721,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("BIDV")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("BIDV")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54493,7 +54741,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("VietinBank")
                         ]),
                         _vm._v(" "),
@@ -54513,7 +54761,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("Bắc Á")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("Bắc Á")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54531,7 +54781,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("SCB")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("SCB")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54549,7 +54801,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("OCB")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("OCB")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54604,7 +54858,7 @@ var staticRenderFns = [
                   [
                     _c("thead", [
                       _c("tr", [
-                        _c("th", { staticClass: "text-center" }, [
+                        _c("th", { staticClass: "text-left" }, [
                           _vm._v("Ngân hàng")
                         ]),
                         _vm._v(" "),
@@ -54640,7 +54894,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("VietcomBank")
                         ]),
                         _vm._v(" "),
@@ -54660,7 +54914,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Techcombank")
                         ]),
                         _vm._v(" "),
@@ -54680,7 +54934,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("OceanBank")
                         ]),
                         _vm._v(" "),
@@ -54700,7 +54954,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("BIDV")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("BIDV")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54718,7 +54974,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("VietinBank")
                         ]),
                         _vm._v(" "),
@@ -54738,7 +54994,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("Bắc Á")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("Bắc Á")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54756,7 +55014,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("SCB")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("SCB")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -54774,7 +55034,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("OCB")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("OCB")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("15,141")]),
                         _vm._v(" "),
@@ -55965,7 +56227,7 @@ var staticRenderFns = [
                   [
                     _c("thead", [
                       _c("tr", [
-                        _c("th", { staticClass: "text-center" }, [
+                        _c("th", { staticClass: "text-left" }, [
                           _vm._v("Tiền ảo")
                         ]),
                         _vm._v(" "),
@@ -55997,7 +56259,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Bitcoin")
                         ]),
                         _vm._v(" "),
@@ -56015,7 +56277,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Ethereum")
                         ]),
                         _vm._v(" "),
@@ -56033,7 +56295,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("XRP")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("XRP")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("$ 10,350.80")]),
                         _vm._v(" "),
@@ -56049,7 +56313,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Bitcoin Cash")
                         ]),
                         _vm._v(" "),
@@ -56067,7 +56331,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Litecoin")
                         ]),
                         _vm._v(" "),
@@ -56085,7 +56349,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Tether")
                         ]),
                         _vm._v(" "),
@@ -56103,7 +56367,9 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [_vm._v("EOS")]),
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("EOS")
+                        ]),
                         _vm._v(" "),
                         _c("th", [_vm._v("$ 10,350.80")]),
                         _vm._v(" "),
@@ -56119,7 +56385,7 @@ var staticRenderFns = [
                       ]),
                       _vm._v(" "),
                       _c("tr", [
-                        _c("th", { staticClass: "bg-gray" }, [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
                           _vm._v("Monero")
                         ]),
                         _vm._v(" "),

@@ -197,6 +197,11 @@
 <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
 <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
 <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+<!-- Sparkline -->
+<script src="{{ asset('admin/asset/js/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+<!-- SlimScroll -->
+<script src="{{ asset('admin/asset/js/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('admin/asset/js/chartJS/Chart.js') }}"></script>
 <!-- ALL PLUGINS -->
 <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.pogo-slider.min.js') }}"></script>
