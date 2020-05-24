@@ -14,7 +14,8 @@ use App\Models\NgoaiTe;
 
 class ExchangeEloquentRepository extends EloquentRepository implements ExchangeRepositoryInterface
 {
-
+    private $templateMoney = [];
+    private $templateBank = [];
     /**
      * merge this exchanges
      *  param bank information and list data exchange
@@ -47,6 +48,9 @@ class ExchangeEloquentRepository extends EloquentRepository implements ExchangeR
         return $ngoaiTe;
     }
 
+    /**
+     * Merege exchange detail of bank
+     */
     public function mergeExchangeOfBank($bankInfo, $exchanges)
     {
         foreach ($exchanges as $exchange) {
@@ -65,6 +69,17 @@ class ExchangeEloquentRepository extends EloquentRepository implements ExchangeR
                 continue;
             }
         }
+        return $exchanges;
+    }
+
+    /**
+     * Function add money of bank that null
+     * @param list bank and list money
+     *      using for loop addtional money
+     * @return $exchanges
+     */
+    public function additionalNoneMoney($bankInfo, $exchanges)
+    {
         return $exchanges;
     }
 
