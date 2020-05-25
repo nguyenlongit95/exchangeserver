@@ -29,9 +29,12 @@ Route::group(['prefix'=>'v1', 'namespace'=>$namespace], function() {
     //
     Route::get('get-exchange', 'ExchangeController@index');
     Route::get('get-exchange/{bank_code}', 'ExchangeController@show');
+    Route::post('get-exchange/{bank_code}', 'ExchangeController@show');
+
 
     Route::get('get-currency', 'ExchangeController@getCurrency');
     Route::get('get-currency/{currency}', 'ExchangeController@edit');
+    Route::get('get-currency/charts/{bank_code}', 'ExchangeController@drawChart');
 
     Route::get('get-gold-exchange', 'GoldController@index');
     Route::get('get-gold-exchange/{currency}', 'GoldController@show');

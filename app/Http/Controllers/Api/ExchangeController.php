@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\BankInfo;
 use App\Models\NgoaiTe;
 use App\Models\NgoaiTeCron;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Exchanges\ExchangeRepositoryInterface;
@@ -87,7 +88,15 @@ class ExchangeController extends Controller
         if (!$bankInfo) {
             return response()->json(["message" => "Cannot find the bank"], 403);
         }
-        $ngoaiTeCron = NgoaiTeCron::where('cronkey','!=', null)->orderBy('id', 'DESC')->first();
+        $ngoaiTeCron = null;
+        if (!isset($request->timeSearch)) {
+            $ngoaiTeCron = NgoaiTeCron::where('cronkey','!=', null)->orderBy('id', 'DESC')->first();
+        } else {
+            $ngoaiTeCron = NgoaiTeCron::where('created_at','=', $request->timeSearch)->orderBy('id', 'DESC')->first();
+        }
+        if ($ngoaiTeCron == null) {
+            return response()->json("Cannot find data", 422);
+        }
         $ngoaiTe = NgoaiTe::where('cron_id', $ngoaiTeCron->id)
             ->where('bank_code', $bankInfo->bankcode)->where('default', 0)->orderBy('id', 'DESC')
             ->select(
@@ -157,6 +166,25 @@ class ExchangeController extends Controller
 
         return response()->json($exchanges, 200);
     }
+
+    public function drawChart(Request $request, $currency)
+    {
+        $exchangeCron = NgoaiTeCron::orderBy('id', 'DESC')->take(24)->pluck('id');
+        if (!$exchangeCron) {
+            return response()->json(["message" => "Cannot find cron job"], 404);
+        }
+        $exchange = NgoaiTe::whereIn('cron_id', $exchangeCron)->where('code', $currency)->where('bank_id', 8)
+            ->orderBy('id', 'DESC')->select('muatienmat', 'created_at')->get();
+        foreach ($exchange as $value) {
+            $tempTime = new Carbon($value->created_at);
+            $value->time = $tempTime->format("Y/m/d H:i");
+        }
+        if (!$exchange) {
+            return response()->json(["message" => "Cannot find cron job"], 404);
+        }
+        return $exchange;
+    }
+
 
     /**
      * Update the specified resource in storage.

@@ -2553,3 +2553,7 @@ ul.bottom_menu li {
 .color-d66c0b {
     color: #d66c0b;
 }
+
+.poiter-crusor:hover {
+    cursor: pointer;
+}

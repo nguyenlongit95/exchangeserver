@@ -13,19 +13,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="">USD</a>
-                            <a href="">EUR</a>
-                            <a href="">AUD</a>
-                            <a href="">SGD</a>
-                            <a href="">JPY</a>
-                            <a href="">KRW</a>
-                            <a href="">HKD</a>
-                            <a href="">CNY</a>
-                            <a href="">KRR</a>
-                            <a href="">INR</a>
-                            <a href="">GBP</a>
-                            <a href="">MYR</a>
-                            <a href="">SEK</a>
+                            <a v-on:click="getExchangeDetail('USD')" class="poiter-crusor">USD</a>
+                            <a v-on:click="getExchangeDetail('EUR')" class="poiter-crusor">EUR</a>
+                            <a v-on:click="getExchangeDetail('AUD')" class="poiter-crusor">AUD</a>
+                            <a v-on:click="getExchangeDetail('SGD')" class="poiter-crusor">SGD</a>
+                            <a v-on:click="getExchangeDetail('JPY')" class="poiter-crusor">JPY</a>
+                            <a v-on:click="getExchangeDetail('KRW')" class="poiter-crusor">KRW</a>
+                            <a v-on:click="getExchangeDetail('HKD')" class="poiter-crusor">HKD</a>
+                            <a v-on:click="getExchangeDetail('CNY')" class="poiter-crusor">CNY</a>
+                            <a v-on:click="getExchangeDetail('KRR')" class="poiter-crusor">KRR</a>
+                            <a v-on:click="getExchangeDetail('INR')" class="poiter-crusor">INR</a>
+                            <a v-on:click="getExchangeDetail('GBP')" class="poiter-crusor">GBP</a>
+                            <a v-on:click="getExchangeDetail('MYR')" class="poiter-crusor">MYR</a>
+                            <a v-on:click="getExchangeDetail('SEK')" class="poiter-crusor">SEK</a>
                         </div>
                         <hr>
                         <div class="col-md-7 pull-left">
@@ -34,20 +34,20 @@
                                     <label style="margin-top:10px;">Chọn loại tiền</label>
                                 </div>
                                 <div class="col-md-6 pull-right">
-                                    <select class="form-control" name="bankID" id="">
-                                        <option value="1">USD <label class="font-size-13px"><i>(Dollar Mỹ)</i></label></option>
-                                        <option value="2">EUR <label class="font-size-13px"><i>(Đồng Euro)</i></label></option>
-                                        <option value="3">AUD <label class="font-size-13px"><i>(Dollar Úc)</i></label></option>
-                                        <option value="4">SGD <label class="font-size-13px"><i>(Dollar Singapore)</i></label></option>
-                                        <option value="5">JPY <label class="font-size-13px"><i>(Yên Nhật)</i></label></option>
-                                        <option value="6">KRW <label class="font-size-13px"><i>(Won Hàn Quốc)</i></label></option>
-                                        <option value="7">HKD <label class="font-size-13px"><i>(Dollar Hồng kông)</i></label></option>
-                                        <option value="8">CNY <label class="font-size-13px"><i>(Đồng Nhân Dân Tệ)</i></label></option>
-                                        <option value="9">KRR <label class="font-size-13px"><i>(Đồng Kíp Laos)</i></label></option>
-                                        <option value="10">INR <label class="font-size-13px"><i>(Inndi Ấn Độ)</i></label></option>
-                                        <option value="11">GBP <label class="font-size-13px"><i>(Đồng Bảng Anh)</i></label></option>
-                                        <option value="12">MYR <label class="font-size-13px"><i>(Kíp Myanmar)</i></label></option>
-                                        <option value="13">SEK <label class="font-size-13px"><i>(Đồng Kíp SÉC)</i></label></option>
+                                    <select class="form-control" name="bankID" id="" v-on:change="getExchangeDetail()" v-model="currencyCode">
+                                        <option value="USD">USD <label class="font-size-13px"><i>(Dollar Mỹ)</i></label></option>
+                                        <option value="EUR">EUR <label class="font-size-13px"><i>(Đồng Euro)</i></label></option>
+                                        <option value="AUD">AUD <label class="font-size-13px"><i>(Dollar Úc)</i></label></option>
+                                        <option value="SGD">SGD <label class="font-size-13px"><i>(Dollar Singapore)</i></label></option>
+                                        <option value="JPY">JPY <label class="font-size-13px"><i>(Yên Nhật)</i></label></option>
+                                        <option value="KRW">KRW <label class="font-size-13px"><i>(Won Hàn Quốc)</i></label></option>
+                                        <option value="HKD">HKD <label class="font-size-13px"><i>(Dollar Hồng kông)</i></label></option>
+                                        <option value="CNY">CNY <label class="font-size-13px"><i>(Đồng Nhân Dân Tệ)</i></label></option>
+                                        <option value="KRR">KRR <label class="font-size-13px"><i>(Đồng Kíp Laos)</i></label></option>
+                                        <option value="INR">INR <label class="font-size-13px"><i>(Inndi Ấn Độ)</i></label></option>
+                                        <option value="GBP">GBP <label class="font-size-13px"><i>(Đồng Bảng Anh)</i></label></option>
+                                        <option value="MYR">MYR <label class="font-size-13px"><i>(Kíp Myanmar)</i></label></option>
+                                        <option value="SEK">SEK <label class="font-size-13px"><i>(Đồng Kíp SÉC)</i></label></option>
                                     </select>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Chi tiết đồng <span>USD</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: 17:15:02 20/05/2020</span></h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Chi tiết đồng <span>{{ this.currency }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h2>
                             </div>
                         </div>
                     </div>
@@ -85,62 +85,45 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th class="bg-gray text-left">Techcombank</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">HSBC</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">VietcomBank</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">SHB</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">BIDV</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">ArgiBank</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">VietinBank</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">DongABank</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                    <th>15,359</th>
-                                </tr>
+                                    <tr v-for="renderCurrency in arrListCurrency">
+                                        <th class="bg-gray text-left">{{ renderCurrency.bank_name }}</th>
+                                        <th>
+                                            {{ renderCurrency.muatienmat }}
+                                            <span v-if="renderCurrency.muatienmat_diff > 0" class="font-size-13px font-color-green">
+                                            <i class="fa fa-arrow-up"> {{ renderCurrency.muatienmat_diff }}</i>
+                                        </span>
+                                            <span v-if="renderCurrency.muatienmat_diff < 0" class="font-size-13px font-color-red">
+                                            <i class="fa fa-arrow-down"> {{ renderCurrency.muatienmat_diff }}</i>
+                                        </span>
+                                        </th>
+                                        <th>
+                                            {{ renderCurrency.bantienmat }}
+                                            <span v-if="renderCurrency.bantienmat_diff > 0" class="font-size-13px font-color-green">
+                                            <i class="fa fa-arrow-up"> {{ renderCurrency.bantienmat_diff }}</i>
+                                        </span>
+                                            <span v-if="renderCurrency.bantienmat_diff < 0" class="font-size-13px font-color-red">
+                                            <i class="fa fa-arrow-down"> {{ renderCurrency.bantienmat_diff }}</i>
+                                        </span>
+                                        </th>
+                                        <th>
+                                            {{ renderCurrency.muachuyenkhoan }}
+                                            <span v-if="renderCurrency.muachuyenkhoan_diff > 0" class="font-size-13px font-color-green">
+                                            <i class="fa fa-arrow-up"> {{ renderCurrency.muachuyenkhoan_diff }}</i>
+                                        </span>
+                                            <span v-if="renderCurrency.bantienmat_diff < 0" class="font-size-13px font-color-red">
+                                            <i class="fa fa-arrow-down"> {{ renderCurrency.muachuyenkhoan_diff }}</i>
+                                        </span>
+                                        </th>
+                                        <th>
+                                            {{ renderCurrency.banchuyenkhoan }}
+                                            <span v-if="renderCurrency.banchuyenkhoan_diff > 0" class="font-size-13px font-color-green">
+                                            <i class="fa fa-arrow-up"> {{ renderCurrency.banchuyenkhoan_diff }}</i>
+                                        </span>
+                                            <span v-if="renderCurrency.banchuyenkhoan_diff < 0" class="font-size-13px font-color-red">
+                                            <i class="fa fa-arrow-down"> {{ renderCurrency.banchuyenkhoan_diff }}</i>
+                                        </span>
+                                        </th>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -157,7 +140,7 @@
                     <div class="row">
                         <div class="col-md-12 row">
                             <p class="text-center">
-                                <strong class="font-size-13px">Tỷ giá đồng <span id="txt_money_code" class="color-d66c0b">USD</span> trong 6 tháng trước</strong>
+                                <strong class="font-size-13px">Tỷ giá đồng <span id="txt_money_code" class="color-d66c0b">{{ this.currency }}</span> trong các lần cập nhật gần nhất</strong>
                             </p>
                         </div>
                         <div class="chart col-md-12 row">
@@ -165,6 +148,7 @@
                             <canvas id="exchangeChart" style="height: 350px; width: 100%;"></canvas>
                         </div>
                         <!-- /.chart-responsive -->
+                        <input type="hidden" id="currnecy_code" :value="this.currency">
                     </div>
                 </div>
             </div>
@@ -201,7 +185,12 @@
             /**
              * Create local variable
              */
-            return {}
+            return {
+                arrListCurrency: [],
+                currency: '',
+                currencyCode: 'USD',
+                timeUpdate: ''
+            }
         },
         created: function () {
             /**
@@ -214,14 +203,96 @@
              * Implement function here
              */
             getExchanges() {
-                axios.get('api/v1/get-exchange').then(response => {
+                axios.get('api/v1/get-currency').then(response => {
                     let objExchangeData = response.data;
                     for (let i = 0; i < objExchangeData.length; i++) {
-                        console.log(objExchangeData[i]);
+                        objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
+                        this.arrListCurrency.push(objExchangeData[i]);
                     }
+                    this.arrListCurrency.reverse();
+                    this.currency = "USD";
+                    this.getTimeUpdate();
                 }).catch(error => {
                     console.log(error);
                 });
+            },
+
+            getExchangeDetail(currency_code) {
+                if (currency_code != undefined) {
+                    this.currencyCode = currency_code;
+                }
+                this.arrListCurrency.splice(0, this.arrListCurrency.length);
+                axios.get('api/v1/get-currency/' + this.currencyCode).then(response => {
+                    let objExchangeData = response.data;
+                    // console.log(objExchangeData);
+                    for (let i = 0; i < objExchangeData.length; i++) {
+                        objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
+                        this.arrListCurrency.push(objExchangeData[i]);
+                    }
+                    this.arrListCurrency.reverse();
+                    this.currency = this.currencyCode;
+                    this.getTimeUpdate();
+                    console.log(this.arrListCurrency);
+                }).catch(error => {
+                    console.log(error);
+                });
+                this.getTimeUpdate();
+            },
+
+            fillBankName(bank_code) {
+                switch (bank_code) {
+                    case "tpb":
+                        return "TPB";
+                        break;
+                    case 'eximbank':
+                        return "EximBank";
+                        break;
+                    case 'dab':
+                        return "DongA";
+                        break;
+                    case 'vietcombank':
+                        return "VietcomBank";
+                        break;
+                    case 'sacombank':
+                        return "SacomBank";
+                        break;
+                    case 'vietin':
+                        return "VietinBank";
+                        break;
+                    case 'shb':
+                        return "SHB";
+                        break;
+                    case 'hsbc':
+                        return "HSBC";
+                        break;
+                    case 'techcom':
+                        return "TechcomBank";
+                        break;
+                    case 'bidv':
+                        return "BIDV";
+                        break;
+                    case 'acb':
+                        return "ACB";
+                        break;
+                    case 'argibank':
+                        return "ArgiBank";
+                        break;
+                    case 'mbbank':
+                        return "MBBank";
+                        break;
+                    default:
+                        return null;
+                        break;
+                }
+            },
+
+            /**
+             * Get time now
+             * Show has demo title
+             */
+            getTimeUpdate() {
+                var today = new Date();
+                this.timeUpdate = today.getHours() +":"+ today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear();
             }
         }
     }
@@ -231,20 +302,35 @@
      * */
     $(function () {
         'use strict';
+       let currencyCode = $('#currnecy_code').val();
+       $.ajax({
+           url: 'api/v1/get-currency/charts/USD',
+           type: 'GET',
+           data: {},
+           success: function (result) {
+               var label = [], data = [];
+               for (let i = 0; i < result.length; i++) {
+                    label.push(result[i]['time']);
+                    data.push(result[i]['muatienmat']);
+               }
+               // Call function draw Charts
+               drawChart(data, label)
+           }
+       })
+    });
+
+    function drawChart(data, label)
+    {
         /**
          * Code JS draw chart here
          * */
-        // Get context with jQuery - using jQuery's .get() method.
+            // Get context with jQuery - using jQuery's .get() method.
         var exchangeChartCanvas = $('#exchangeChart').get(0).getContext('2d');
         // This will get the first returned node in the jQuery collection.
         var exchangeChart = new Chart(exchangeChartCanvas);
 
         var exchangeChartData = {
-            labels  : [
-                'January', 'February', 'March', 'April', 'May', 'June', 'July',
-                'January', 'February', 'March', 'April', 'May', 'June', 'July',
-                'January', 'February', 'March', 'April', 'May', 'June', 'July'
-            ],
+            labels  : label,
             datasets: [
                 {
                     label               : 'Tỷ giá ngoại tệ',
@@ -254,9 +340,7 @@
                     pointStrokeColor    : 'rgba(60,141,188,1)',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data                : [
-                        28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90
-                    ]
+                    data                : data
                 }
             ]
         };
@@ -298,7 +382,7 @@
             responsive              : true
         };
         exchangeChart.Line(exchangeChartData, exchangeChartOptions);
-    });
+    }
 </script>
 
 <style scoped>

@@ -1025,7 +1025,7 @@
                 arrJPY: [], arrKRW: [], arrMYR: [], arrRUB: [], arrSGD: [], arrTHB: [], arrUSD: [],
 
                 arrGoldExchanges: [],
-                timeUpdate: []
+                timeUpdate: [],
             }
         },
         created: function () {

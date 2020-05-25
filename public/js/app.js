@@ -14959,6 +14959,8 @@ Vue.component('lai-suat-detail-component', __webpack_require__(73));
 Vue.component('tien-ao-component', __webpack_require__(78));
 Vue.component('tien-ao-detail-component', __webpack_require__(83));
 
+Vue.component('common-component', __webpack_require__(92));
+
 var app = new Vue({
   el: '#app'
 });
@@ -56452,7 +56454,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56614,53 +56616,193 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         /**
          * Create local variable
          */
-        return {};
+        return {
+            listBank: ['tpb', 'mbbank', 'eximbank', 'dab', 'vietcombank', 'sacombank', 'vietin', 'shb', 'hsbc', 'techcom', 'bidv', 'acb', 'argibank'],
+
+            exchanges: [],
+            thisBank: [],
+            timeUpdate: [],
+            timeSearch: "",
+            bankName: 'vietcombank'
+        };
     },
 
     created: function created() {
         /**
          * construction function call labs
          */
-        this.getExchanges();
+        this.getDefaultBank();
+        this.getTimeUpdate();
     },
     methods: {
         /**
          * Implement function here
+         * Default bank that vietcombank
          */
-        getExchanges: function getExchanges() {
-            axios.get('api/v1/get-exchange').then(function (response) {
+        getDefaultBank: function getDefaultBank() {
+            var _this = this;
+
+            axios.get('api/v1/get-exchange/vietcombank').then(function (response) {
                 var objExchangeData = response.data;
                 for (var i = 0; i < objExchangeData.length; i++) {
-                    console.log(objExchangeData[i]);
+                    var moneyName = _this.fillNameMoney(objExchangeData[i]['code']);
+                    objExchangeData[i]['currency_name'] = moneyName;
+                    _this.exchanges.push(objExchangeData[i]);
                 }
+                _this.exchanges.sort();
+                _this.thisBank = "VietcomBank";
             }).catch(function (error) {
                 console.log(error);
             });
+        },
+
+
+        /**
+         * Function get exchange of an bank
+         * Fill data to tabe grid
+         */
+        getBankDetail: function getBankDetail(bank_code) {
+            var _this2 = this;
+
+            if (bank_code != undefined) {
+                this.bankName = bank_code;
+            }
+            axios.get('api/v1/get-exchange/' + this.bankName).then(function (response) {
+                var objExchangeData = response.data;
+                _this2.exchanges.splice(0, _this2.exchanges.length);
+
+                for (var i = 0; i < objExchangeData.length; i++) {
+                    var moneyName = _this2.fillNameMoney(objExchangeData[i]['code']);
+                    objExchangeData[i]['currency_name'] = moneyName;
+                    _this2.exchanges.push(objExchangeData[i]);
+                }
+                _this2.thisBank = _this2.bankName;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+
+
+        /**
+         * Function get exchange of an bank use input search day
+         * Fill data to tabe grid
+         */
+        getBankDetailSearch: function getBankDetailSearch() {
+            var _this3 = this;
+
+            // console.log(this.timeSearch);
+            axios.post('api/v1/get-exchange/' + this.bankName, {
+                timeSearch: this.timeSearch
+            }).then(function (response) {
+                var objExchangeData = response.data;
+                _this3.exchanges.splice(0, _this3.exchanges.length);
+
+                for (var i = 0; i < objExchangeData.length; i++) {
+                    var moneyName = _this3.fillNameMoney(objExchangeData[i]['code']);
+                    objExchangeData[i]['currency_name'] = moneyName;
+                    _this3.exchanges.push(objExchangeData[i]);
+                }
+
+                _this3.thisBank = _this3.bankName;
+                console.log(response.data.product);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+
+
+        /**
+         * Function fill name of money
+         * @param exchanges
+         * @returns {string|null}
+         */
+        fillNameMoney: function fillNameMoney(exchanges) {
+            switch (exchanges) {
+                case 'USD':
+                    return "Đollar Mỹ";
+                    break;
+                case "THB":
+                    return "Bạt Thái Lan";
+                    break;
+                case "SGD":
+                    return "Dollar Singapore";
+                    break;
+                case "SEK":
+                    return "Krone Thuỵ Điển";
+                    break;
+                case "SAR":
+                    return "Đồng Audi Arabia";
+                    break;
+                case "RUB":
+                    return "Đồng Rup Nga";
+                    break;
+                case "NOK":
+                    return "Đồng Krone Na-uy";
+                    break;
+                case "MYR":
+                    return "Đồng Dollar Myanmar";
+                    break;
+                case "KWD":
+                    return "Dollar Kuwait";
+                    break;
+                case "KRW":
+                    return "Đồng Won Hàn Quốc";
+                    break;
+                case "JPY":
+                    return "Đồng Yên Nhật";
+                    break;
+                case "INR":
+                    return "Đồng Inrin Ấn Độ";
+                    break;
+                case "HKD":
+                    return "Dollar Hong Kong";
+                    break;
+                case "GBP":
+                    return "Bảng Anh";
+                    break;
+                case "EUR":
+                    return "Đồng Euro";
+                    break;
+                case "DKK":
+                    return "Krone Đan Mạch";
+                    break;
+                case "CHF":
+                    return "Đồng France Thuỵ Sỹ";
+                    break;
+                case "CAD":
+                    return "Dollar Canada";
+                    break;
+                case "AUD":
+                    return "Dollar Úc";
+                    break;
+                case "NZD":
+                    return "Dollar Newzelan";
+                    break;
+                case "TWD":
+                    return "Dollar Đài Loan";
+                    break;
+                case "CNY":
+                    return "Nhân Dân Tệ";
+                    break;
+                default:
+                    return null;
+            }
+        },
+
+
+        /**
+         * Get time now
+         * Show has demo title
+         */
+        getTimeUpdate: function getTimeUpdate() {
+            var today = new Date();
+            this.timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
         }
     }
 });
@@ -56673,363 +56815,606 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "ty-gia-component" }, [
+    _c("div", { staticClass: "section margin-top-25" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "btn-item" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("techcom")
+                    }
+                  }
+                },
+                [_vm._v("Techcombank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("hsbc")
+                    }
+                  }
+                },
+                [_vm._v("HSBC")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("shb")
+                    }
+                  }
+                },
+                [_vm._v("SHB")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("tpb")
+                    }
+                  }
+                },
+                [_vm._v("TPB")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("bidv")
+                    }
+                  }
+                },
+                [_vm._v("BIDV")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("vietin")
+                    }
+                  }
+                },
+                [_vm._v("VietinBank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("sacombank")
+                    }
+                  }
+                },
+                [_vm._v("SacomBank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("vietcombank")
+                    }
+                  }
+                },
+                [_vm._v("VietcomBank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("dab")
+                    }
+                  }
+                },
+                [_vm._v("DongABank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("acb")
+                    }
+                  }
+                },
+                [_vm._v("ACB")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("argibank")
+                    }
+                  }
+                },
+                [_vm._v("ArgiBank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("eximbank")
+                    }
+                  }
+                },
+                [_vm._v("EximBank")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getBankDetail("mbbank")
+                    }
+                  }
+                },
+                [_vm._v("MBank")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-7 pull-left" }, [
+              _c("div", { staticClass: "row" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6 pull-right" }, [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.bankName,
+                          expression: "bankName"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { name: "bankID", id: "" },
+                      on: {
+                        change: [
+                          function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.bankName = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          },
+                          function($event) {
+                            return _vm.getBankDetail()
+                          }
+                        ]
+                      }
+                    },
+                    [
+                      _c(
+                        "option",
+                        { attrs: { selected: "", value: "techcom" } },
+                        [_vm._v("Techcombank")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "hsbc" } }, [
+                        _vm._v("HSBC")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "shb" } }, [
+                        _vm._v("SHB")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "tpb" } }, [
+                        _vm._v("TPB")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "bidv" } }, [
+                        _vm._v("BIDV")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "vietin" } }, [
+                        _vm._v("VietinBank")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "sacombank" } }, [
+                        _vm._v("SacomBank")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "vietcombank" } }, [
+                        _vm._v("VietcomBank")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "dab" } }, [
+                        _vm._v("DongABank")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "acb" } }, [
+                        _vm._v("ACB")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "argibank" } }, [
+                        _vm._v("ArgiBank")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "eximbank" } }, [
+                        _vm._v("EximBank")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "mbbank" } }, [
+                        _vm._v("MBank")
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section margin-top-25px" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "full" }, [
+              _c("div", { staticClass: "heading_main text_align_center" }, [
+                _c("h2", { staticClass: "font-size-22px" }, [
+                  _c("span", { staticClass: "theme_color" }),
+                  _vm._v("Tỷ giá ngân hàng "),
+                  _c("span", { staticClass: "text-uppercase" }, [
+                    _vm._v(_vm._s(this.thisBank))
+                  ]),
+                  _vm._v(" - "),
+                  _c(
+                    "span",
+                    { staticClass: "font-weight-initial font-size-16px" },
+                    [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-exchange-home" }, [
+          _c("div", { staticClass: "col-md-12 pull-right" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-hover table-bordered",
+                  attrs: { id: "table-exchange-page" }
+                },
+                [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.exchanges, function(renderExchanges) {
+                      return _c("tr", [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v(_vm._s(renderExchanges.code) + " "),
+                          _c("span", { staticClass: "font-size-13px" }, [
+                            _c("i", [
+                              _vm._v(
+                                "(" +
+                                  _vm._s(renderExchanges.currency_name) +
+                                  ")"
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(renderExchanges.muatienmat) +
+                              "\n                                    "
+                          ),
+                          renderExchanges.muatienmat_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderExchanges.muatienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderExchanges.muatienmat_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderExchanges.muatienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(renderExchanges.muachuyenkhoan) +
+                              "\n                                    "
+                          ),
+                          renderExchanges.muachuyenkhoan_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderExchanges.muachuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderExchanges.muachuyenkhoan_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderExchanges.muachuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(renderExchanges.bantienmat) +
+                              "\n                                    "
+                          ),
+                          renderExchanges.bantienmat_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderExchanges.bantienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderExchanges.bantienmat_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderExchanges.bantienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(renderExchanges.banchuyenkhoan) +
+                              "\n                                    "
+                          ),
+                          renderExchanges.banchuyenkhoan_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderExchanges.banchuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderExchanges.banchuyenkhoan_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderExchanges.banchuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-7 pull-left margin-top-25px" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-5 row pull-left" }, [
+              _c("label", { staticStyle: { "margin-top": "10px" } }, [
+                _vm._v("Tra cứu lịch sử tỷ giá " + _vm._s(this.thisBank) + ": ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6 pull-left" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.timeSearch,
+                    expression: "timeSearch"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "date", name: "bankID", id: "time_input" },
+                domProps: { value: _vm.timeSearch },
+                on: {
+                  change: function($event) {
+                    return _vm.getBankDetailSearch()
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.timeSearch = $event.target.value
+                  }
+                }
+              })
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ty-gia-component" }, [
-      _c("div", { staticClass: "section margin-top-25" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "btn-item" }, [
-                _c("div", { staticClass: "col-md-12 row" }, [
-                  _c("div", { staticClass: "full" }, [
-                    _c("div", { staticClass: "heading_main pull-left" }, [
-                      _c("h2", { staticClass: "font-size-22px" }, [
-                        _c("span", { staticClass: "theme_color" }),
-                        _vm._v("Chi tiết tỷ giá các ngân hàng")
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Techcombank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("HSBC")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("SHB")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("TPB")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("BIDV")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("VietinBank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("SacomBank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("VietcomBank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("DongABank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("ACB")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("ArgiBank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("EximBank")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("MBank")])
-              ]),
-              _vm._v(" "),
-              _c("hr"),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-7 pull-left" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-3 row pull-left" }, [
-                    _c("label", { staticStyle: { "margin-top": "10px" } }, [
-                      _vm._v("Chọn ngân hàng")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6 pull-right" }, [
-                    _c(
-                      "select",
-                      {
-                        staticClass: "form-control",
-                        attrs: { name: "bankID", id: "" }
-                      },
-                      [
-                        _c("option", { attrs: { value: "1" } }, [
-                          _vm._v("Techcombank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "2" } }, [
-                          _vm._v("HSBC")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "3" } }, [
-                          _vm._v("SHB")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "4" } }, [
-                          _vm._v("TPB")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "5" } }, [
-                          _vm._v("BIDV")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "6" } }, [
-                          _vm._v("VietinBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "7" } }, [
-                          _vm._v("SacomBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "8" } }, [
-                          _vm._v("VietcomBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "9" } }, [
-                          _vm._v("DongABank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "10" } }, [
-                          _vm._v("ACB")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "11" } }, [
-                          _vm._v("ArgiBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "12" } }, [
-                          _vm._v("EximBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "13" } }, [
-                          _vm._v("MBank")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
+    return _c("div", { staticClass: "col-md-12 row" }, [
+      _c("div", { staticClass: "full" }, [
+        _c("div", { staticClass: "heading_main pull-left" }, [
+          _c("h2", { staticClass: "font-size-22px" }, [
+            _c("span", { staticClass: "theme_color" }),
+            _vm._v("Chi tiết tỷ giá các ngân hàng")
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section layout_padding margin-top-25px" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "full" }, [
-                _c("div", { staticClass: "heading_main text_align_center" }, [
-                  _c("h2", { staticClass: "font-size-22px" }, [
-                    _c("span", { staticClass: "theme_color" }),
-                    _vm._v("Tỷ giá ngân hàng VietcomBank - "),
-                    _c(
-                      "span",
-                      { staticClass: "font-weight-initial font-size-16px" },
-                      [_vm._v("cập nhật lúc: 17:15:02 20/05/2020")]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "table-exchange-home" }, [
-            _c("div", { staticClass: "col-md-12 pull-right" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "table",
-                  {
-                    staticClass: "table table-hover table-bordered",
-                    attrs: { id: "table-exchange-page" }
-                  },
-                  [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", { staticClass: "text-left" }, [
-                          _vm._v("Ngoại tệ")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Mua tiền mặt")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Mua chuyển khoản")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Bán tiền mặt")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Bán chuyển khoản")
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tbody", [
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("USD "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Mỹ)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("AUD "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Úc)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("SGD "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Singapore)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("RUB "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng RUB Nga)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("CNY "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Nhân Dân Tệ)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("JPY "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Yên Nhật)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("KRW "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Won Hàn Quốc)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("EUR "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng Euro)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-7 pull-left margin-top-25px" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-5 row pull-left" }, [
-                _c("label", { staticStyle: { "margin-top": "10px" } }, [
-                  _vm._v("Tra cứu lịch sử tỷ giá Vietcombank: ")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6 pull-left" }, [
-                _c("input", {
-                  staticClass: "form-control time-search",
-                  attrs: {
-                    type: "text",
-                    name: "bankID",
-                    id: "time_input",
-                    value: ""
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-1 pull-left" }, [
-                _c("button", { staticClass: "btn btn-primary" }, [
-                  _vm._v("Tìm kiếm")
-                ])
-              ])
-            ])
-          ])
-        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3 row pull-left" }, [
+      _c("label", { staticStyle: { "margin-top": "10px" } }, [
+        _vm._v("Chọn ngân hàng")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "text-left" }, [_vm._v("Ngoại tệ")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Mua tiền mặt")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Mua chuyển khoản")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Bán tiền mặt")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Bán chuyển khoản")])
       ])
     ])
   }
@@ -57129,7 +57514,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57318,22 +57703,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /**
  * Code JS Vue component here
@@ -57343,7 +57712,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         /**
          * Create local variable
          */
-        return {};
+        return {
+            arrListCurrency: [],
+            currency: '',
+            currencyCode: 'USD',
+            timeUpdate: ''
+        };
     },
 
     created: function created() {
@@ -57357,14 +57731,99 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Implement function here
          */
         getExchanges: function getExchanges() {
-            axios.get('api/v1/get-exchange').then(function (response) {
+            var _this = this;
+
+            axios.get('api/v1/get-currency').then(function (response) {
                 var objExchangeData = response.data;
                 for (var i = 0; i < objExchangeData.length; i++) {
-                    console.log(objExchangeData[i]);
+                    objExchangeData[i]['bank_name'] = _this.fillBankName(objExchangeData[i]['bank_code']);
+                    _this.arrListCurrency.push(objExchangeData[i]);
                 }
+                _this.arrListCurrency.reverse();
+                _this.currency = "USD";
+                _this.getTimeUpdate();
             }).catch(function (error) {
                 console.log(error);
             });
+        },
+        getExchangeDetail: function getExchangeDetail(currency_code) {
+            var _this2 = this;
+
+            if (currency_code != undefined) {
+                this.currencyCode = currency_code;
+            }
+            this.arrListCurrency.splice(0, this.arrListCurrency.length);
+            axios.get('api/v1/get-currency/' + this.currencyCode).then(function (response) {
+                var objExchangeData = response.data;
+                // console.log(objExchangeData);
+                for (var i = 0; i < objExchangeData.length; i++) {
+                    objExchangeData[i]['bank_name'] = _this2.fillBankName(objExchangeData[i]['bank_code']);
+                    _this2.arrListCurrency.push(objExchangeData[i]);
+                }
+                _this2.arrListCurrency.reverse();
+                _this2.currency = _this2.currencyCode;
+                _this2.getTimeUpdate();
+                console.log(_this2.arrListCurrency);
+            }).catch(function (error) {
+                console.log(error);
+            });
+            this.getTimeUpdate();
+        },
+        fillBankName: function fillBankName(bank_code) {
+            switch (bank_code) {
+                case "tpb":
+                    return "TPB";
+                    break;
+                case 'eximbank':
+                    return "EximBank";
+                    break;
+                case 'dab':
+                    return "DongA";
+                    break;
+                case 'vietcombank':
+                    return "VietcomBank";
+                    break;
+                case 'sacombank':
+                    return "SacomBank";
+                    break;
+                case 'vietin':
+                    return "VietinBank";
+                    break;
+                case 'shb':
+                    return "SHB";
+                    break;
+                case 'hsbc':
+                    return "HSBC";
+                    break;
+                case 'techcom':
+                    return "TechcomBank";
+                    break;
+                case 'bidv':
+                    return "BIDV";
+                    break;
+                case 'acb':
+                    return "ACB";
+                    break;
+                case 'argibank':
+                    return "ArgiBank";
+                    break;
+                case 'mbbank':
+                    return "MBBank";
+                    break;
+                default:
+                    return null;
+                    break;
+            }
+        },
+
+
+        /**
+         * Get time now
+         * Show has demo title
+         */
+        getTimeUpdate: function getTimeUpdate() {
+            var today = new Date();
+            this.timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
         }
     }
 
@@ -57373,17 +57832,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
      * */
 });$(function () {
     'use strict';
+
+    var currencyCode = $('#currnecy_code').val();
+    $.ajax({
+        url: 'api/v1/get-currency/charts/USD',
+        type: 'GET',
+        data: {},
+        success: function success(result) {
+            var label = [],
+                data = [];
+            for (var i = 0; i < result.length; i++) {
+                label.push(result[i]['time']);
+                data.push(result[i]['muatienmat']);
+            }
+            // Call function draw Charts
+            drawChart(data, label);
+        }
+    });
+});
+
+function drawChart(data, label) {
     /**
      * Code JS draw chart here
      * */
     // Get context with jQuery - using jQuery's .get() method.
-
     var exchangeChartCanvas = $('#exchangeChart').get(0).getContext('2d');
     // This will get the first returned node in the jQuery collection.
     var exchangeChart = new Chart(exchangeChartCanvas);
 
     var exchangeChartData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: label,
         datasets: [{
             label: 'Tỷ giá ngoại tệ',
             fillColor: 'rgba(60,141,188,0.9)',
@@ -57392,7 +57870,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             pointStrokeColor: 'rgba(60,141,188,1)',
             pointHighlightFill: '#fff',
             pointHighlightStroke: 'rgba(60,141,188,1)',
-            data: [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90]
+            data: data
         }]
     };
 
@@ -57433,7 +57911,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         responsive: true
     };
     exchangeChart.Line(exchangeChartData, exchangeChartOptions);
-});
+}
 
 /***/ }),
 /* 62 */
@@ -57443,422 +57921,756 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "ngoai-te-component" }, [
+    _c("div", { staticClass: "section margin-top-25" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "btn-item" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("USD")
+                    }
+                  }
+                },
+                [_vm._v("USD")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("EUR")
+                    }
+                  }
+                },
+                [_vm._v("EUR")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("AUD")
+                    }
+                  }
+                },
+                [_vm._v("AUD")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("SGD")
+                    }
+                  }
+                },
+                [_vm._v("SGD")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("JPY")
+                    }
+                  }
+                },
+                [_vm._v("JPY")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("KRW")
+                    }
+                  }
+                },
+                [_vm._v("KRW")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("HKD")
+                    }
+                  }
+                },
+                [_vm._v("HKD")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("CNY")
+                    }
+                  }
+                },
+                [_vm._v("CNY")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("KRR")
+                    }
+                  }
+                },
+                [_vm._v("KRR")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("INR")
+                    }
+                  }
+                },
+                [_vm._v("INR")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("GBP")
+                    }
+                  }
+                },
+                [_vm._v("GBP")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("MYR")
+                    }
+                  }
+                },
+                [_vm._v("MYR")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "poiter-crusor",
+                  on: {
+                    click: function($event) {
+                      return _vm.getExchangeDetail("SEK")
+                    }
+                  }
+                },
+                [_vm._v("SEK")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-7 pull-left" }, [
+              _c("div", { staticClass: "row" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6 pull-right" }, [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.currencyCode,
+                          expression: "currencyCode"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { name: "bankID", id: "" },
+                      on: {
+                        change: [
+                          function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.currencyCode = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          },
+                          function($event) {
+                            return _vm.getExchangeDetail()
+                          }
+                        ]
+                      }
+                    },
+                    [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _vm._m(9),
+                      _vm._v(" "),
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _vm._m(11),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _vm._m(13),
+                      _vm._v(" "),
+                      _vm._m(14)
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section margin-top-25px" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "full" }, [
+              _c("div", { staticClass: "heading_main text_align_center" }, [
+                _c("h2", { staticClass: "font-size-22px" }, [
+                  _c("span", { staticClass: "theme_color" }),
+                  _vm._v("Chi tiết đồng "),
+                  _c("span", [_vm._v(_vm._s(this.currency))]),
+                  _vm._v(" - "),
+                  _c(
+                    "span",
+                    { staticClass: "font-weight-initial font-size-16px" },
+                    [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-exchange-home" }, [
+          _c("div", { staticClass: "col-md-12 pull-right" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-hover table-bordered",
+                  attrs: { id: "table-exchange-page" }
+                },
+                [
+                  _vm._m(15),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrListCurrency, function(renderCurrency) {
+                      return _c("tr", [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v(_vm._s(renderCurrency.bank_name))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(renderCurrency.muatienmat) +
+                              "\n                                        "
+                          ),
+                          renderCurrency.muatienmat_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderCurrency.muatienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderCurrency.muatienmat_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderCurrency.muatienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(renderCurrency.bantienmat) +
+                              "\n                                        "
+                          ),
+                          renderCurrency.bantienmat_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderCurrency.bantienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderCurrency.bantienmat_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(renderCurrency.bantienmat_diff)
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(renderCurrency.muachuyenkhoan) +
+                              "\n                                        "
+                          ),
+                          renderCurrency.muachuyenkhoan_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderCurrency.muachuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderCurrency.bantienmat_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderCurrency.muachuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(renderCurrency.banchuyenkhoan) +
+                              "\n                                        "
+                          ),
+                          renderCurrency.banchuyenkhoan_diff > 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-green"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderCurrency.banchuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          renderCurrency.banchuyenkhoan_diff < 0
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "font-size-13px font-color-red"
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          renderCurrency.banchuyenkhoan_diff
+                                        )
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 row" }, [
+              _c("p", { staticClass: "text-center" }, [
+                _c("strong", { staticClass: "font-size-13px" }, [
+                  _vm._v("Tỷ giá đồng "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "color-d66c0b",
+                      attrs: { id: "txt_money_code" }
+                    },
+                    [_vm._v(_vm._s(this.currency))]
+                  ),
+                  _vm._v(" trong các lần cập nhật gần nhất")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(16),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "hidden", id: "currnecy_code" },
+              domProps: { value: this.currency }
+            })
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(17)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ngoai-te-component" }, [
-      _c("div", { staticClass: "section margin-top-25" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "btn-item" }, [
-                _c("div", { staticClass: "col-md-12 row" }, [
-                  _c("div", { staticClass: "full" }, [
-                    _c(
-                      "div",
-                      { staticClass: "heading_main text_align_center" },
-                      [
-                        _c("h2", { staticClass: "font-size-22px" }, [
-                          _c("span", { staticClass: "theme_color" }),
-                          _vm._v("Tỷ giá các đồng")
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("USD")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("EUR")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("AUD")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("SGD")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("JPY")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("KRW")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("HKD")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("CNY")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("KRR")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("INR")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("GBP")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("MYR")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("SEK")])
-              ]),
-              _vm._v(" "),
-              _c("hr"),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-7 pull-left" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-3 row pull-left" }, [
-                    _c("label", { staticStyle: { "margin-top": "10px" } }, [
-                      _vm._v("Chọn loại tiền")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6 pull-right" }, [
-                    _c(
-                      "select",
-                      {
-                        staticClass: "form-control",
-                        attrs: { name: "bankID", id: "" }
-                      },
-                      [
-                        _c("option", { attrs: { value: "1" } }, [
-                          _vm._v("USD "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Mỹ)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "2" } }, [
-                          _vm._v("EUR "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng Euro)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "3" } }, [
-                          _vm._v("AUD "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Úc)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "4" } }, [
-                          _vm._v("SGD "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Singapore)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "5" } }, [
-                          _vm._v("JPY "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Yên Nhật)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "6" } }, [
-                          _vm._v("KRW "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Won Hàn Quốc)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "7" } }, [
-                          _vm._v("HKD "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Dollar Hồng kông)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "8" } }, [
-                          _vm._v("CNY "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng Nhân Dân Tệ)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "9" } }, [
-                          _vm._v("KRR "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng Kíp Laos)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "10" } }, [
-                          _vm._v("INR "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Inndi Ấn Độ)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "11" } }, [
-                          _vm._v("GBP "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng Bảng Anh)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "12" } }, [
-                          _vm._v("MYR "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Kíp Myanmar)")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "13" } }, [
-                          _vm._v("SEK "),
-                          _c("label", { staticClass: "font-size-13px" }, [
-                            _c("i", [_vm._v("(Đồng Kíp SÉC)")])
-                          ])
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
+    return _c("div", { staticClass: "col-md-12 row" }, [
+      _c("div", { staticClass: "full" }, [
+        _c("div", { staticClass: "heading_main text_align_center" }, [
+          _c("h2", { staticClass: "font-size-22px" }, [
+            _c("span", { staticClass: "theme_color" }),
+            _vm._v("Tỷ giá các đồng")
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section margin-top-25px" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "full" }, [
-                _c("div", { staticClass: "heading_main text_align_center" }, [
-                  _c("h2", { staticClass: "font-size-22px" }, [
-                    _c("span", { staticClass: "theme_color" }),
-                    _vm._v("Chi tiết đồng "),
-                    _c("span", [_vm._v("USD")]),
-                    _vm._v(" - "),
-                    _c(
-                      "span",
-                      { staticClass: "font-weight-initial font-size-16px" },
-                      [_vm._v("cập nhật lúc: 17:15:02 20/05/2020")]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "table-exchange-home" }, [
-            _c("div", { staticClass: "col-md-12 pull-right" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "table",
-                  {
-                    staticClass: "table table-hover table-bordered",
-                    attrs: { id: "table-exchange-page" }
-                  },
-                  [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", { staticClass: "text-left" }, [
-                          _vm._v("Ngân hàng")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Mua tiền mặt")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Mua chuyển khoản")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Bán tiền mặt")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Bán chuyển khoản")
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tbody", [
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Techcombank")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("HSBC")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("VietcomBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("SHB")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("BIDV")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("ArgiBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("VietinBank")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("DongABank")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,141")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,333")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,290")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("15,359")])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section" }, [
-        _c("div", { staticClass: "container" }, [
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3 row pull-left" }, [
+      _c("label", { staticStyle: { "margin-top": "10px" } }, [
+        _vm._v("Chọn loại tiền")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "USD" } }, [
+      _vm._v("USD "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Dollar Mỹ)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "EUR" } }, [
+      _vm._v("EUR "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Đồng Euro)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "AUD" } }, [
+      _vm._v("AUD "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Dollar Úc)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "SGD" } }, [
+      _vm._v("SGD "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Dollar Singapore)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "JPY" } }, [
+      _vm._v("JPY "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Yên Nhật)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "KRW" } }, [
+      _vm._v("KRW "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Won Hàn Quốc)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "HKD" } }, [
+      _vm._v("HKD "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Dollar Hồng kông)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "CNY" } }, [
+      _vm._v("CNY "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Đồng Nhân Dân Tệ)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "KRR" } }, [
+      _vm._v("KRR "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Đồng Kíp Laos)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "INR" } }, [
+      _vm._v("INR "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Inndi Ấn Độ)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "GBP" } }, [
+      _vm._v("GBP "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Đồng Bảng Anh)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "MYR" } }, [
+      _vm._v("MYR "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Kíp Myanmar)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("option", { attrs: { value: "SEK" } }, [
+      _vm._v("SEK "),
+      _c("label", { staticClass: "font-size-13px" }, [
+        _c("i", [_vm._v("(Đồng Kíp SÉC)")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "text-left" }, [_vm._v("Ngân hàng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Mua tiền mặt")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Mua chuyển khoản")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Bán tiền mặt")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Bán chuyển khoản")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "chart col-md-12 row" }, [
+      _c("canvas", {
+        staticStyle: { height: "350px", width: "100%" },
+        attrs: { id: "exchangeChart" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12 row" }, [
-                _c("p", { staticClass: "text-center" }, [
-                  _c("strong", { staticClass: "font-size-13px" }, [
-                    _vm._v("Tỷ giá đồng "),
-                    _c(
-                      "span",
-                      {
-                        staticClass: "color-d66c0b",
-                        attrs: { id: "txt_money_code" }
-                      },
-                      [_vm._v("USD")]
-                    ),
-                    _vm._v(" trong 6 tháng trước")
-                  ])
-                ])
+            _c("div", { staticClass: "banner_title" }, [
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti cum, temporibus tempora soluta assumenda est, veritatis asperiores possimus placeat quis nesciunt fugiat officiis ipsa quae, unde facere eos recusandae sapiente?"
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "chart col-md-12 row" }, [
-                _c("canvas", {
-                  staticStyle: { height: "350px", width: "100%" },
-                  attrs: { id: "exchangeChart" }
-                })
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "banner_title" }, [
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti cum, temporibus tempora soluta assumenda est, veritatis asperiores possimus placeat quis nesciunt fugiat officiis ipsa quae, unde facere eos recusandae sapiente?"
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit eos ipsum dignissimos voluptatem voluptatibus quod magni vel distinctio asperiores quibusdam esse consequuntur ut amet excepturi labore, delectus voluptates hic consequatur."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, non ad. Molestiae velit nemo minus, tempora saepe accusantium exercitationem, natus sint sapiente officiis doloribus assumenda minima ea suscipit, autem optio."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit unde vel inventore nisi culpa libero perspiciatis placeat corrupti, maxime consequatur tenetur suscipit consectetur molestiae delectus necessitatibus excepturi eius doloremque voluptates?"
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, id? Maxime, hic animi sit nulla voluptatibus non dolores quam amet reiciendis rem doloribus ducimus molestias sequi temporibus quasi dolorum soluta."
-                  )
-                ])
+              _c("p", [
+                _vm._v(
+                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit eos ipsum dignissimos voluptatem voluptatibus quod magni vel distinctio asperiores quibusdam esse consequuntur ut amet excepturi labore, delectus voluptates hic consequatur."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, non ad. Molestiae velit nemo minus, tempora saepe accusantium exercitationem, natus sint sapiente officiis doloribus assumenda minima ea suscipit, autem optio."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit unde vel inventore nisi culpa libero perspiciatis placeat corrupti, maxime consequatur tenetur suscipit consectetur molestiae delectus necessitatibus excepturi eius doloremque voluptates?"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, id? Maxime, hic animi sit nulla voluptatibus non dolores quam amet reiciendis rem doloribus ducimus molestias sequi temporibus quasi dolorum soluta."
+                )
               ])
             ])
           ])
@@ -61621,6 +62433,69 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(95)
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/GetTimeNowCommon.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-427b3395", Component.options)
+  } else {
+    hotAPI.reload("data-v-427b3395", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 93 */,
+/* 94 */,
+/* 95 */
+/***/ (function(module, exports) {
+
+
+function getTimeUpdateTest() {
+    var today = new Date();
+    var timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+    return timeUpdate;
+}
 
 /***/ })
 /******/ ]);

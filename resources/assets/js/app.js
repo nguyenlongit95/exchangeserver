@@ -27,6 +27,8 @@ Vue.component('lai-suat-detail-component', require('./components/LaiSuatDetailCo
 Vue.component('tien-ao-component', require('./components/TienAoComponent.vue'));
 Vue.component('tien-ao-detail-component', require('./components/TienAoDetailComponent.vue'));
 
+Vue.component('common-component', require('./components/GetTimeNowCommon.vue'));
+
 const app = new Vue({
     el: '#app'
 });
