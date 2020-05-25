@@ -46,11 +46,12 @@ class ExchangeController extends Controller
             return response($this->responseAPI->responseAPI(array()));
         }
         $mergeData = $this->exchange->mergeExchange($bankInfo, $ngoaiTe);
+        $dataResult = $this->exchange->addNullBank($mergeData);
         if (!$mergeData) {
             return response()->json(["message" => "Data errors"], 422);
         }
 
-        return response()->json($mergeData, 200);
+        return response()->json($dataResult, 200);
     }
 
     /**

@@ -49881,7 +49881,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -49892,48 +49892,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -50958,7 +50916,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          */
         return {
             arrAUD: [], arrCAD: [], arrCHF: [], arrCNY: [], arrDKK: [], arrEUR: [], arrGBP: [], arrHKD: [],
-            arrJPY: [], arrKRW: [], arrMYR: [], arrRUB: [], arrSGD: [], arrTHB: [], arrUSD: []
+            arrJPY: [], arrKRW: [], arrMYR: [], arrRUB: [], arrSGD: [], arrTHB: [], arrUSD: [],
+
+            arrGoldExchanges: [],
+            timeUpdate: []
         };
     },
 
@@ -50967,6 +50928,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * construction function call labs
          */
         this.getExchanges();
+        this.getGold();
+        this.getTimeUpdate();
     },
     methods: {
         /**
@@ -51024,12 +50987,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this.arrUSD.push(objExchangeData[i]);
                     }
                 }
-                for (var j = 0; j < _this.arrAUD.length; j++) {
-                    console.log(_this.arrAUD[j]['bank_name']);
-                }
             }).catch(function (error) {
                 console.log(error);
             });
+        },
+
+
+        /**
+         * Function get Gold index
+         * Fill data to table
+         */
+        getGold: function getGold() {
+            var _this2 = this;
+
+            axios.get('api/v1/get-gold-exchange').then(function (response) {
+                var objGoldExchange = response.data;
+                for (var i = 0; i < objGoldExchange.length; i++) {
+                    _this2.arrGoldExchanges.push(objGoldExchange[i]);
+                }
+                _this2.arrGoldExchanges.reverse();
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+
+
+        /**
+         * Get time now
+         * Show has demo title
+         */
+        getTimeUpdate: function getTimeUpdate() {
+            var today = new Date();
+            this.timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
         }
     }
 });
@@ -51048,12 +51037,28 @@ var render = function() {
       { staticClass: "section", staticStyle: { "margin-top": "85px" } },
       [
         _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "full" }, [
+                _c("div", { staticClass: "heading_main pull-left" }, [
+                  _c("h2", { staticClass: "font-size-22px" }, [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
+                    _c(
+                      "span",
+                      { staticClass: "font-size-16px font-weight-initial" },
+                      [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
           _vm._m(0),
           _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
           _c("div", { staticClass: "table-exchange-home" }, [
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "div",
@@ -51077,7 +51082,7 @@ var render = function() {
                           attrs: { id: "table-exchange-home" }
                         },
                         [
-                          _vm._m(3),
+                          _vm._m(2),
                           _vm._v(" "),
                           _c("tbody", [
                             _c(
@@ -52104,7 +52109,7 @@ var render = function() {
                           attrs: { id: "table-exchange-home" }
                         },
                         [
-                          _vm._m(4),
+                          _vm._m(3),
                           _vm._v(" "),
                           _c("tbody", [
                             _c(
@@ -53131,7 +53136,7 @@ var render = function() {
                           attrs: { id: "table-exchange-home" }
                         },
                         [
-                          _vm._m(5),
+                          _vm._m(4),
                           _vm._v(" "),
                           _c("tbody", [
                             _c(
@@ -54158,7 +54163,7 @@ var render = function() {
                           attrs: { id: "table-exchange-home" }
                         },
                         [
-                          _vm._m(6),
+                          _vm._m(5),
                           _vm._v(" "),
                           _c("tbody", [
                             _c(
@@ -55178,36 +55183,208 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(7),
+    _vm._m(6),
     _vm._v(" "),
-    _vm._m(8),
+    _c("div", { staticClass: "section margin-top-25px" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "full" }, [
+              _c("div", { staticClass: "heading_main text_align_center" }, [
+                _c("h2", { staticClass: "font-size-22px" }, [
+                  _c("span", { staticClass: "theme_color" }),
+                  _vm._v("Tổng hợp giá vàng SJC mới nhất "),
+                  _c(
+                    "span",
+                    { staticClass: "font-size-16px font-weight-initial" },
+                    [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-exchange-home" }, [
+          _c(
+            "div",
+            { staticClass: "col-3 col-xs-4 col-sm-3 col-md-3 pull-left" },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "table",
+                  {
+                    staticClass: "table table-hover table-bordered",
+                    attrs: { id: "table-currency-code-home" }
+                  },
+                  [
+                    _vm._m(7),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.arrGoldExchanges, function(arrGoldExchange) {
+                        return _c("tr", [
+                          _c("th", [_vm._v(_vm._s(arrGoldExchange.tinhthanh))])
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-9 col-xs-8 col-sm-9 col-md-9 pull-right" },
+            [
+              _c("div", { staticClass: "wrap-home" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "table",
+                    {
+                      staticClass: "table table-hover table-bordered",
+                      attrs: { id: "table-gold-home" }
+                    },
+                    [
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.arrGoldExchanges, function(
+                          renderGoldExchanges
+                        ) {
+                          return _c("tr", [
+                            _c("th", [
+                              _vm._v(_vm._s(renderGoldExchanges.loai))
+                            ]),
+                            _vm._v(" "),
+                            _c("th", [
+                              _vm._v(
+                                _vm._s(renderGoldExchanges.mua) +
+                                  "\n                                            "
+                              ),
+                              renderGoldExchanges.tyle_mua > 0
+                                ? _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "font-size-13px font-color-green"
+                                    },
+                                    [
+                                      _c(
+                                        "i",
+                                        { staticClass: "fa fa-arrow-up" },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                renderGoldExchanges.tyle_mua
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              renderGoldExchanges.tyle_mua < 0
+                                ? _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "font-size-13px font-color-red"
+                                    },
+                                    [
+                                      _c(
+                                        "i",
+                                        { staticClass: "fa fa-arrow-down" },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                renderGoldExchanges.tyle_mua
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _c("th", [
+                              _vm._v(
+                                _vm._s(renderGoldExchanges.ban) +
+                                  "\n                                            "
+                              ),
+                              renderGoldExchanges.tyle_ban > 0
+                                ? _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "font-size-13px font-color-green"
+                                    },
+                                    [
+                                      _c(
+                                        "i",
+                                        { staticClass: "fa fa-arrow-up" },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                renderGoldExchanges.tyle_ban
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              renderGoldExchanges.tyle_ban < 0
+                                ? _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "font-size-13px font-color-red"
+                                    },
+                                    [
+                                      _c(
+                                        "i",
+                                        { staticClass: "fa fa-arrow-down" },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                renderGoldExchanges.tyle_ban
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _vm._m(9)
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "full" }, [
-          _c("div", { staticClass: "heading_main pull-left" }, [
-            _c("h2", { staticClass: "font-size-22px" }, [
-              _c("span", { staticClass: "theme_color" }),
-              _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
-              _c(
-                "span",
-                { staticClass: "font-size-16px font-weight-initial" },
-                [_vm._v("Cập nhật lúc: 17:15:02 20/05/2020")]
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -56123,272 +56300,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "section margin-top-25px" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "full" }, [
-              _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h2", { staticClass: "font-size-22px" }, [
-                  _c("span", { staticClass: "theme_color" }),
-                  _vm._v("Tổng hợp giá vàng SJC mới nhất "),
-                  _c(
-                    "span",
-                    { staticClass: "font-size-16px font-weight-initial" },
-                    [_vm._v("Cập nhật lúc: 17:15:02 20/05/2020")]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { id: "currency-code" } }, [_vm._v("Tỉnh thành")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "text-center" }, [_vm._v("Loại")]),
         _vm._v(" "),
-        _c("div", { staticClass: "table-exchange-home" }, [
-          _c(
-            "div",
-            { staticClass: "col-3 col-xs-4 col-sm-3 col-md-3 pull-left" },
-            [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "table",
-                  {
-                    staticClass: "table table-hover table-bordered",
-                    attrs: { id: "table-currency-code-home" }
-                  },
-                  [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", { attrs: { id: "currency-code" } }, [
-                          _vm._v("Tỉnh thành")
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tbody", [
-                      _c("tr", [_c("th", [_vm._v("Hồ Chí Minh")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Hà Nội")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Đà Nẵng")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Nha Trang")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Cà Mau")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Buôn Ma Thuật")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Huế")])]),
-                      _vm._v(" "),
-                      _c("tr", [_c("th", [_vm._v("Đà Lạt")])])
-                    ])
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-9 col-xs-8 col-sm-9 col-md-9 pull-right" },
-            [
-              _c("div", { staticClass: "wrap-home" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "table",
-                    {
-                      staticClass: "table table-hover table-bordered",
-                      attrs: { id: "table-gold-home" }
-                    },
-                    [
-                      _c("thead", [
-                        _c("tr", [
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v("Loại")
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v("Mua vào")
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v("Bán ra")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tbody", [
-                        _c("tr", [
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              {
-                                staticClass: "font-size-13px font-color-green"
-                              },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-up" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-up" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v("3600000 "),
-                            _c(
-                              "span",
-                              { staticClass: "font-size-13px font-color-red" },
-                              [
-                                _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                  _vm._v(" 34")
-                                ])
-                              ]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [_vm._v("3600000")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("3600000")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("3600000")])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [_vm._v("3600000")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("3600000")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("3600000")])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [_vm._v("15,141")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("15,333")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("15,290")])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [_vm._v("15,141")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("15,333")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("15,290")])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", [_vm._v("15,141")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("15,333")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("15,290")])
-                        ])
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ]
-          )
-        ])
+        _c("th", { staticClass: "text-center" }, [_vm._v("Mua vào")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Bán ra")])
       ])
     ])
   },

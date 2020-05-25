@@ -8,7 +8,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main pull-left">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC <span class="font-size-16px font-weight-initial">Cập nhật lúc: 17:15:02 20/05/2020</span></h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h2>
                             </div>
                         </div>
                     </div>
@@ -930,7 +930,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Tổng hợp giá vàng SJC mới nhất <span class="font-size-16px font-weight-initial">Cập nhật lúc: 17:15:02 20/05/2020</span></h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Tổng hợp giá vàng SJC mới nhất <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h2>
                             </div>
                         </div>
                     </div>
@@ -946,29 +946,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th>Hồ Chí Minh</th>
-                                </tr>
-                                <tr>
-                                    <th>Hà Nội</th>
-                                </tr>
-                                <tr>
-                                    <th>Đà Nẵng</th>
-                                </tr>
-                                <tr>
-                                    <th>Nha Trang</th>
-                                </tr>
-                                <tr>
-                                    <th>Cà Mau</th>
-                                </tr>
-                                <tr>
-                                    <th>Buôn Ma Thuật</th>
-                                </tr>
-                                <tr>
-                                    <th>Huế</th>
-                                </tr>
-                                <tr>
-                                    <th>Đà Lạt</th>
+                                <tr v-for="arrGoldExchange in arrGoldExchanges">
+                                    <th>{{ arrGoldExchange.tinhthanh }}</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -987,46 +966,25 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th>3600000 <span class="font-size-13px font-color-green"><i class="fa fa-arrow-up"> 34</i></span></th>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                    </tr>
-                                    <tr>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-up"> 34</i></span></th>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                    </tr>
-                                    <tr>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                        <th>3600000 <span class="font-size-13px font-color-red"><i class="fa fa-arrow-down"> 34</i></span></th>
-                                    </tr>
-                                    <tr>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                    </tr>
-                                    <tr>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                        <th>3600000</th>
-                                    </tr>
-                                    <tr>
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                    </tr>
-                                    <tr>
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                    </tr>
-                                    <tr>
-                                        <th>15,141</th>
-                                        <th>15,333</th>
-                                        <th>15,290</th>
-                                    </tr>
+                                        <tr v-for="renderGoldExchanges in arrGoldExchanges">
+                                            <th>{{ renderGoldExchanges.loai }}</th>
+                                            <th>{{ renderGoldExchanges.mua }}
+                                                <span v-if="renderGoldExchanges.tyle_mua > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderGoldExchanges.tyle_mua }}</i>
+                                                </span>
+                                                <span v-if="renderGoldExchanges.tyle_mua < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderGoldExchanges.tyle_mua }}</i>
+                                                </span>
+                                            </th>
+                                            <th>{{ renderGoldExchanges.ban }}
+                                                <span v-if="renderGoldExchanges.tyle_ban > 0" class="font-size-13px font-color-green">
+                                                    <i class="fa fa-arrow-up"> {{ renderGoldExchanges.tyle_ban }}</i>
+                                                </span>
+                                                <span v-if="renderGoldExchanges.tyle_ban < 0" class="font-size-13px font-color-red">
+                                                    <i class="fa fa-arrow-down"> {{ renderGoldExchanges.tyle_ban }}</i>
+                                                </span>
+                                            </th>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1065,6 +1023,9 @@
             return {
                 arrAUD: [], arrCAD: [], arrCHF: [], arrCNY: [], arrDKK: [], arrEUR: [], arrGBP: [], arrHKD: [],
                 arrJPY: [], arrKRW: [], arrMYR: [], arrRUB: [], arrSGD: [], arrTHB: [], arrUSD: [],
+
+                arrGoldExchanges: [],
+                timeUpdate: []
             }
         },
         created: function () {
@@ -1072,6 +1033,8 @@
              * construction function call labs
              */
             this.getExchanges();
+            this.getGold();
+            this.getTimeUpdate();
         },
         methods: {
             /**
@@ -1127,12 +1090,34 @@
                             this.arrUSD.push(objExchangeData[i]);
                         }
                     }
-                    for (var j = 0; j < this.arrAUD.length; j++) {
-                        console.log(this.arrAUD[j]['bank_name']);
-                    }
                 }).catch(error => {
                     console.log(error);
                 });
+            },
+
+            /**
+             * Function get Gold index
+             * Fill data to table
+             */
+            getGold() {
+                axios.get('api/v1/get-gold-exchange').then(response => {
+                    let objGoldExchange = response.data;
+                    for (let i = 0; i < objGoldExchange.length; i++) {
+                        this.arrGoldExchanges.push(objGoldExchange[i]);
+                    }
+                    this.arrGoldExchanges.reverse();
+                }).catch(error => {
+                    console.log(error);
+                });
+            },
+
+            /**
+             * Get time now
+             * Show has demo title
+             */
+            getTimeUpdate() {
+                var today = new Date();
+                this.timeUpdate = today.getHours() +":"+ today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear();
             }
         }
     }

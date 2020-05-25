@@ -11,6 +11,8 @@ interface ExchangeRepositoryInterface
     public function mergeExchange($bankInfo, $exchange);
 
     public function mergeExchangeOfBank($bankInfo, $exchanges);
+
+    public function addNullBank($exchange);
 }
 
 ?>
