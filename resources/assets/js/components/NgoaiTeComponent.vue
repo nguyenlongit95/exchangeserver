@@ -34,7 +34,7 @@
                                     <label style="margin-top:10px;">Chọn loại tiền</label>
                                 </div>
                                 <div class="col-md-6 pull-right">
-                                    <select class="form-control" name="bankID" id="" v-on:change="getExchangeDetail()" v-model="currencyCode">
+                                    <select class="form-control" name="bankID" id="changeCurrency" v-on:change="getExchangeDetail()" v-model="currencyCode">
                                         <option value="USD">USD <label class="font-size-13px"><i>(Dollar Mỹ)</i></label></option>
                                         <option value="EUR">EUR <label class="font-size-13px"><i>(Đồng Euro)</i></label></option>
                                         <option value="AUD">AUD <label class="font-size-13px"><i>(Dollar Úc)</i></label></option>
@@ -232,7 +232,6 @@
                     this.arrListCurrency.reverse();
                     this.currency = this.currencyCode;
                     this.getTimeUpdate();
-                    console.log(this.arrListCurrency);
                 }).catch(error => {
                     console.log(error);
                 });
@@ -299,9 +298,10 @@
 
     /**
      * function chart JS
+     * function has runing with init pages
      * */
     $(function () {
-        'use strict';
+       'use strict';
        let currencyCode = $('#currnecy_code').val();
        $.ajax({
            url: 'api/v1/get-currency/charts/USD',
@@ -316,8 +316,31 @@
                // Call function draw Charts
                drawChart(data, label)
            }
-       })
+       });
+
+       /**
+        * Function has running with change Currency
+        * Function has replace chart oid
+        */
+        $('#changeCurrency').on('change', function () {
+            var currency = $(this).val();
+            $.ajax({
+            url: 'api/v1/get-currency/charts/' + currency,
+            type: 'GET',
+            data: {},
+            success: function (result) {
+                var label = [], data = [];
+                for (let i = 0; i < result.length; i++) {
+                        label.push(result[i]['time']);
+                        data.push(result[i]['muatienmat']);
+                }
+                // Call function draw Charts
+                drawChart(data, label)
+            }
+       });
+        });
     });
+
 
     function drawChart(data, label)
     {
