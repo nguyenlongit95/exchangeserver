@@ -104,20 +104,22 @@ class GoldController extends Controller
 
     public function drawChart(Request $request, $type)
     {
-        $goldCron = DB::table('tygiavang_cron')->where('slug', $type)->orderBy('id', 'DESC')->take(12)->pluck('id');
+        $goldCron = DB::table('tygiavang_cron')->where('slug', $type)->orderBy('id', 'DESC')
+            ->take(12)->select('id')->get();
         if (!$goldCron) {
             return response()->json(["message" => "Cron job not found"], 403);
         }
-        $goldExchange = GiaVang::whereIn('cron_id', $goldCron)->where('slug', $type)->where('tinhthanh', 'LIKE', '%Hà Nội%')
-            ->orderBy('id', 'DESC')->select('mua', 'created_at')->get();
-        if (!$goldExchange) {
-            return response()->json(["message" => "Gold data not found"], 422);
+        $goldExchange = array();
+        foreach ($goldCron as $value) {
+            $goldExchangeTemp = GiaVang::where('cron_id', $value->id)->orderBy('id', 'DESC')
+                ->select('mua', 'created_at')->first();
+            if ($goldExchangeTemp) {
+                $timeTemp = new Carbon($goldExchangeTemp->created_at);
+                $goldExchangeTemp->time = $timeTemp->format("d/m H:i");
+                array_push($goldExchange, $goldExchangeTemp);
+            }
         }
-        foreach ($goldExchange as $value) {
-            $timeTemp = new Carbon($value->created_at);
-            $value->time = $timeTemp->format("Y/m/d H:i");
-        }
-        return $goldExchange;
+        return response()->json($goldExchange, 200);
     }
 
     /**

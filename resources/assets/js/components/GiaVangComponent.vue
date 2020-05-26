@@ -22,7 +22,7 @@
                                 <div class="col-md-6 pull-right">
                                     <select class="form-control" name="bankID" id="select_gold" v-model="goldType" v-on:change="getGoldExchangesDetail()">
                                         <option value="sjc">SJC</option>
-                                        <option value="png">PNG</option>
+                                        <option value="pnj">PNJ</option>
                                         <option value="phu-quy">Phú Quý</option>
                                         <option value="bao-tin-minh-chau">Bảo Tín Minh Châu</option>
                                         <option value="doji">DOJI</option>
@@ -43,7 +43,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Giá vàng <span>SJC</span> - <span class="font-size-16px">cập nhật lúc: 17:30:03 20/05/2020</span></h2>
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Giá vàng <span>SJC</span> - <span class="font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h2>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="chart col-md-12 row">
                             <!-- Sales Chart Canvas -->
-                            <canvas id="goldChart" style="height: 350px; width: 100%;"></canvas>
+                            <canvas id="gold_chart" style="height: 350px; width: 100%;"></canvas>
                         </div>
                         <!-- /.chart-responsive -->
                     </div>
@@ -144,7 +144,8 @@
              */
             return {
                 listGiaVang: [],
-                goldType: 'sjc'
+                goldType: 'sjc',
+                timeUpdate: ''
             }
         },
         created: function () {
@@ -180,6 +181,15 @@
                 }).catch(error => {
                     console.log(error);
                 });
+            },
+
+            /**
+             * Get time now
+             * Show has demo title
+             */
+            getTimeUpdate() {
+                var today = new Date();
+                this.timeUpdate = today.getHours() +":"+ today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear();
             }
         }
     }
@@ -194,8 +204,19 @@
          * On load page draw chart
          * Default chart has sjc
          */
-        $(document).ready(function () {
-            initDrawChart('sjc');
+        $.ajax({
+            url: 'api/v1/get-gold-exchange/drawChart/sjc',
+            type: 'GET',
+            data: {},
+            success: function (result) {
+                var label = [], data = [];
+                for (let i = 0; i < result.length; i++) {
+                    label.push(result[i]['time']);
+                    data.push(result[i]['mua']);
+                }
+                // Call function draw Charts
+                drawGoldChart(data, label)
+            }
         });
 
         /**
@@ -227,7 +248,7 @@
                     data.push(result[i]['mua']);
                 }
                 // Call function draw Charts
-                drawChart(data, label)
+                drawGoldChart(data, label)
             }
         });
     }
@@ -235,10 +256,10 @@
     /**
      * Code JS draw chart here
      * */
-    function drawChart(data, label)
+    function drawGoldChart(data, label)
     {
         // Get context with jQuery - using jQuery's .get() method.
-        var goldChartCanvas = $('#goldChart').get(0).getContext('2d');
+        var goldChartCanvas = $('#gold_chart').get(0).getContext('2d');
         // This will get the first returned node in the jQuery collection.
         var goldChart = new Chart(goldChartCanvas);
 
@@ -246,7 +267,7 @@
             labels  : label,
             datasets: [
                 {
-                    label               : 'Tỷ giá ngoại tệ',
+                    label               : 'Tỷ giá vàng trong nước',
                     fillColor           : 'rgba(60,141,188,0.9)',
                     strokeColor         : 'rgba(60,141,188,0.8)',
                     pointColor          : '#ff880e',

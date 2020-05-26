@@ -177,7 +177,7 @@ class ExchangeController extends Controller
             ->orderBy('id', 'DESC')->select('muatienmat', 'created_at')->get();
         foreach ($exchange as $value) {
             $tempTime = new Carbon($value->created_at);
-            $value->time = $tempTime->format("Y/m/d H:i");
+            $value->time = $tempTime->format("d/m H:i");
         }
         if (!$exchange) {
             return response()->json(["message" => "Cannot find cron job"], 404);
