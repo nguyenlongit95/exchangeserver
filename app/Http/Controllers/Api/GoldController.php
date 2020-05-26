@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\GiaVang;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
@@ -99,6 +100,24 @@ class GoldController extends Controller
         }
         $goldExchange = $this->sttOfGold($goldExchange);
         return response()->json($goldExchange, 200);
+    }
+
+    public function drawChart(Request $request, $type)
+    {
+        $goldCron = DB::table('tygiavang_cron')->where('slug', $type)->orderBy('id', 'DESC')->take(12)->pluck('id');
+        if (!$goldCron) {
+            return response()->json(["message" => "Cron job not found"], 403);
+        }
+        $goldExchange = GiaVang::whereIn('cron_id', $goldCron)->where('slug', $type)->where('tinhthanh', 'LIKE', '%Hà Nội%')
+            ->orderBy('id', 'DESC')->select('mua', 'created_at')->get();
+        if (!$goldExchange) {
+            return response()->json(["message" => "Gold data not found"], 422);
+        }
+        foreach ($goldExchange as $value) {
+            $timeTemp = new Carbon($value->created_at);
+            $value->time = $timeTemp->format("Y/m/d H:i");
+        }
+        return $goldExchange;
     }
 
     /**

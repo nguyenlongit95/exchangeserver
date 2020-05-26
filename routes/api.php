@@ -39,6 +39,7 @@ Route::group(['prefix'=>'v1', 'namespace'=>$namespace], function() {
     Route::get('get-gold-exchange', 'GoldController@index');
     Route::get('get-gold-exchange/{currency}', 'GoldController@show');
     Route::get('get-gold-exchange-world', 'GoldController@world');
+    Route::get('get-gold-exchange/drawChart/{type}', 'GoldController@drawChart');
 
     Route::get('get-interest-rate', 'InterestRateController@index');
 

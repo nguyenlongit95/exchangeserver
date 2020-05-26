@@ -13,19 +13,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <a v-on:click="getExchangeDetail('USD')" class="poiter-crusor">USD</a>
-                            <a v-on:click="getExchangeDetail('EUR')" class="poiter-crusor">EUR</a>
-                            <a v-on:click="getExchangeDetail('AUD')" class="poiter-crusor">AUD</a>
-                            <a v-on:click="getExchangeDetail('SGD')" class="poiter-crusor">SGD</a>
-                            <a v-on:click="getExchangeDetail('JPY')" class="poiter-crusor">JPY</a>
-                            <a v-on:click="getExchangeDetail('KRW')" class="poiter-crusor">KRW</a>
-                            <a v-on:click="getExchangeDetail('HKD')" class="poiter-crusor">HKD</a>
-                            <a v-on:click="getExchangeDetail('CNY')" class="poiter-crusor">CNY</a>
-                            <a v-on:click="getExchangeDetail('KRR')" class="poiter-crusor">KRR</a>
-                            <a v-on:click="getExchangeDetail('INR')" class="poiter-crusor">INR</a>
-                            <a v-on:click="getExchangeDetail('GBP')" class="poiter-crusor">GBP</a>
-                            <a v-on:click="getExchangeDetail('MYR')" class="poiter-crusor">MYR</a>
-                            <a v-on:click="getExchangeDetail('SEK')" class="poiter-crusor">SEK</a>
+                            <button v-on:click="getExchangeDetail('USD')" class="poiter-crusor tabs-money btn-tabs" value="USD">USD</button>
+                            <button v-on:click="getExchangeDetail('EUR')" class="poiter-crusor tabs-money btn-tabs" value="EUR">EUR</button>
+                            <button v-on:click="getExchangeDetail('AUD')" class="poiter-crusor tabs-money btn-tabs" value="AUD">AUD</button>
+                            <button v-on:click="getExchangeDetail('SGD')" class="poiter-crusor tabs-money btn-tabs" value="SGD">SGD</button>
+                            <button v-on:click="getExchangeDetail('JPY')" class="poiter-crusor tabs-money btn-tabs" value="JPY">JPY</button>
+                            <button v-on:click="getExchangeDetail('KRW')" class="poiter-crusor tabs-money btn-tabs" value="KRW">KRW</button>
+                            <button v-on:click="getExchangeDetail('HKD')" class="poiter-crusor tabs-money btn-tabs" value="HKD">HKD</button>
+                            <button v-on:click="getExchangeDetail('CNY')" class="poiter-crusor tabs-money btn-tabs" value="CNY">CNY</button>
+                            <button v-on:click="getExchangeDetail('KRR')" class="poiter-crusor tabs-money btn-tabs" value="KRR">KRR</button>
+                            <button v-on:click="getExchangeDetail('INR')" class="poiter-crusor tabs-money btn-tabs" value="INR">INR</button>
+                            <button v-on:click="getExchangeDetail('GBP')" class="poiter-crusor tabs-money btn-tabs" value="GBP">GBP</button>
+                            <button v-on:click="getExchangeDetail('MYR')" class="poiter-crusor tabs-money btn-tabs" value="MYR">MYR</button>
+                            <button v-on:click="getExchangeDetail('SEK')" class="poiter-crusor tabs-money btn-tabs" value="SEK">SEK</button>
                         </div>
                         <hr>
                         <div class="col-md-7 pull-left">
@@ -302,7 +302,11 @@
      * */
     $(function () {
        'use strict';
-       let currencyCode = $('#currnecy_code').val();
+
+       /**
+       * Document ready has drawchart
+       * Default momney: USD
+       */
        $.ajax({
            url: 'api/v1/get-currency/charts/USD',
            type: 'GET',
@@ -324,30 +328,43 @@
         */
         $('#changeCurrency').on('change', function () {
             var currency = $(this).val();
-            $.ajax({
+            initDrawChart(currency);
+        });
+
+        /**
+         * Function listen event click tabs money
+         * Call draw chart
+         */
+        $('.tabs-money').on('click', function () {
+            var currency = $(this).val();
+            initDrawChart(currency);
+        });
+    });
+
+    function initDrawChart(currency) {
+        var currency = $(this).val();
+        $.ajax({
             url: 'api/v1/get-currency/charts/' + currency,
             type: 'GET',
             data: {},
             success: function (result) {
                 var label = [], data = [];
                 for (let i = 0; i < result.length; i++) {
-                        label.push(result[i]['time']);
-                        data.push(result[i]['muatienmat']);
+                    label.push(result[i]['time']);
+                    data.push(result[i]['muatienmat']);
                 }
                 // Call function draw Charts
                 drawChart(data, label)
             }
-       });
         });
-    });
+    }
 
-
+    /**
+     * Code JS draw chart here
+     * */
     function drawChart(data, label)
     {
-        /**
-         * Code JS draw chart here
-         * */
-            // Get context with jQuery - using jQuery's .get() method.
+        // Get context with jQuery - using jQuery's .get() method.
         var exchangeChartCanvas = $('#exchangeChart').get(0).getContext('2d');
         // This will get the first returned node in the jQuery collection.
         var exchangeChart = new Chart(exchangeChartCanvas);

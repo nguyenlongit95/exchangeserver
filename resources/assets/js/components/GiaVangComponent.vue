@@ -20,13 +20,12 @@
                                     <label style="margin-top:10px;">Chọn hãng vàng</label>
                                 </div>
                                 <div class="col-md-6 pull-right">
-                                    <select class="form-control" name="bankID" id="">
-                                        <option value="1">SJC</option>
-                                        <option value="2">PNG</option>
-                                        <option value="3">Phú Quý</option>
-                                        <option value="4">Bảo Tín Minh Châu</option>
-                                        <option value="5">DOJI</option>
-                                        <option value="6">Giá vàng thế giới</option>
+                                    <select class="form-control" name="bankID" id="select_gold" v-model="goldType" v-on:change="getGoldExchangesDetail()">
+                                        <option value="sjc">SJC</option>
+                                        <option value="png">PNG</option>
+                                        <option value="phu-quy">Phú Quý</option>
+                                        <option value="bao-tin-minh-chau">Bảo Tín Minh Châu</option>
+                                        <option value="doji">DOJI</option>
                                     </select>
                                 </div>
                             </div>
@@ -63,54 +62,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th class="bg-gray text-left">Hà Nội</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">TP Hồ Chí Minh</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Đà Nẵng</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Huế</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Bình Dương</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Tuyên Quang</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Hải Phòng</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Cần Thơ</th>
-                                    <th>15,141</th>
-                                    <th>15,333</th>
-                                    <th>15,290</th>
-                                </tr>
+                                    <tr v-for="renderGiaVang in listGiaVang">
+                                        <th class="bg-gray text-left">{{ renderGiaVang.tinhthanh }}</th>
+                                        <th>{{ renderGiaVang.loai }}</th>
+                                        <th>
+                                            {{ renderGiaVang.mua }}
+                                            <span v-if="renderGiaVang.tyle_mua > 0" class="font-size-13px font-color-green">
+                                             <i class="fa fa-arrow-up"> {{ renderGiaVang.tyle_mua }}</i>
+                                            </span>
+                                            <span v-if="renderGiaVang.tyle_mua < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderGiaVang.tyle_mua }}</i>
+                                            </span>
+                                        </th>
+                                        <th>
+                                            {{ renderGiaVang.ban }}
+                                            <span v-if="renderGiaVang.tyle_ban > 0" class="font-size-13px font-color-green">
+                                             <i class="fa fa-arrow-up"> {{ renderGiaVang.tyle_ban }}</i>
+                                            </span>
+                                            <span v-if="renderGiaVang.tyle_ban < 0" class="font-size-13px font-color-red">
+                                                <i class="fa fa-arrow-down"> {{ renderGiaVang.tyle_ban }}</i>
+                                            </span>
+                                        </th>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -127,12 +100,32 @@
                     <div class="row">
                         <div class="col-md-12 row">
                             <p class="text-center">
-                                <strong class="font-size-13px">Giá vàng <span id="txt_money_code" class="color-d66c0b">SJC</span> trong 6 tháng trước</strong>
+                                <strong class="font-size-13px">Giá vàng <span id="txt_money_code" class="color-d66c0b text-uppercase">{{ this.goldType }}</span> trong các ngày trước</strong>
                             </p>
                         </div>
                         <div class="chart col-md-12 row">
                             <!-- Sales Chart Canvas -->
                             <canvas id="goldChart" style="height: 350px; width: 100%;"></canvas>
+                        </div>
+                        <!-- /.chart-responsive -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end section -->
+
+        <!-- section draw chart -->
+        <div class="section layout_padding margin-top-25">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 row">
+                            <p class="text-center">
+                                <strong class="font-size-13px"><span id="txt_money_code" class="color-d66c0b">Giá vàng thế giới</span> cập nhật theo thời gian thực</strong>
+                            </p>
+                        </div>
+                        <div class="chart col-md-12">
+                            <iframe style="height: 500px; width: 100%;" id="tradingview_5b9f7" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_5b9f7&amp;symbol=FX_IDC%3AXAUUSD&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;details=1&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi_VN&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=FX_IDC%3AXAUUSD" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
                         </div>
                         <!-- /.chart-responsive -->
                     </div>
@@ -149,24 +142,41 @@
             /**
              * Create local variable
              */
-            return {}
+            return {
+                listGiaVang: [],
+                goldType: 'sjc'
+            }
         },
         created: function () {
             /**
              * construction function call labs
              */
-            this.getExchanges();
+            this.getGoldExchanges();
         },
         methods: {
             /**
              * Implement function here
              */
-            getExchanges() {
-                axios.get('api/v1/get-exchange').then(response => {
+            getGoldExchanges() {
+                axios.get('api/v1/get-gold-exchange').then(response => {
                     let objExchangeData = response.data;
                     for (let i = 0; i < objExchangeData.length; i++) {
-                        console.log(objExchangeData[i]);
+                        this.listGiaVang.push(objExchangeData[i]);
                     }
+                    this.listGiaVang.sort();
+                }).catch(error => {
+                    console.log(error);
+                });
+            },
+
+            getGoldExchangesDetail() {
+                axios.get('api/v1/get-gold-exchange/' + this.goldType).then(response => {
+                    this.listGiaVang.splice(0, this.listGiaVang.length);
+                    let objExchangeData = response.data;
+                    for (let i = 0; i < objExchangeData.length; i++) {
+                        this.listGiaVang.push(objExchangeData[i]);
+                    }
+                    this.listGiaVang.sort();
                 }).catch(error => {
                     console.log(error);
                 });
@@ -174,24 +184,66 @@
         }
     }
 
-
     /**
      * jQuery draw chart
      */
     $(function () {
         'use strict';
 
+        /**
+         * On load page draw chart
+         * Default chart has sjc
+         */
+        $(document).ready(function () {
+            initDrawChart('sjc');
+        });
+
+        /**
+         * change gold make select
+         * draw chart again
+         */
+        $('#select_gold').on('change', function () {
+            var goldType = $(this).val();
+            initDrawChart(goldType);
+        });
+    });
+
+    /**
+     * Function has running with change gold
+     * Function has replace chart oid
+     */
+    function initDrawChart(goldType) {
+        if (goldType == undefined) {
+            goldType = $(this).val();
+        }
+        $.ajax({
+            url: 'api/v1/get-gold-exchange/drawChart/' + goldType,
+            type: 'GET',
+            data: {},
+            success: function (result) {
+                var label = [], data = [];
+                for (let i = 0; i < result.length; i++) {
+                    label.push(result[i]['time']);
+                    data.push(result[i]['mua']);
+                }
+                // Call function draw Charts
+                drawChart(data, label)
+            }
+        });
+    }
+
+    /**
+     * Code JS draw chart here
+     * */
+    function drawChart(data, label)
+    {
         // Get context with jQuery - using jQuery's .get() method.
         var goldChartCanvas = $('#goldChart').get(0).getContext('2d');
         // This will get the first returned node in the jQuery collection.
         var goldChart = new Chart(goldChartCanvas);
 
         var goldChartData = {
-            labels  : [
-                'January', 'February', 'March', 'April', 'May', 'June', 'July',
-                'January', 'February', 'March', 'April', 'May', 'June', 'July',
-                'January', 'February', 'March', 'April', 'May', 'June', 'July'
-            ],
+            labels  : label,
             datasets: [
                 {
                     label               : 'Tỷ giá ngoại tệ',
@@ -201,9 +253,7 @@
                     pointStrokeColor    : 'rgba(60,141,188,1)',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data                : [
-                        28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90
-                    ]
+                    data                : data
                 }
             ]
         };
@@ -245,7 +295,8 @@
             responsive              : true
         };
         goldChart.Line(goldChartData, goldChartOptions);
-    });
+    }
+
 </script>
 
 <!-- Css more -->
