@@ -13,32 +13,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">Bitcoin</a>
-                            <a href="#">Ethereum</a>
-                            <a href="#">XRP</a>
-                            <a href="#">Bitcoin Cash</a>
-                            <a href="#">Litecoin</a>
-                            <a href="#">Tether</a>
-                            <a href="#">Binance Coin</a>
-                            <a href="#">EOS</a>
-                            <a href="#">Bitcoin SV</a>
-                            <a href="#">Monero</a>
-                            <a href="#">Stellar</a>
-                            <a href="#">Cardano</a>
-                            <a href="#">TRON</a>
-                            <a href="#">Ethereum Classic</a>
-                            <a href="#">Dash</a>
-                            <a href="#">XRP</a>
-                            <a href="#">Bitcoin Cash</a>
-                            <a href="#">Litecoin</a>
-                            <a href="#">Tether</a>
-                            <a href="#">Binance Coin</a>
-                            <a href="#">EOS</a>
-                            <a href="#">Bitcoin SV</a>
-                            <a href="#">Monero</a>
-                            <a href="#">Stellar</a>
-                            <a href="#">Cardano</a>
-                            <a href="#">TRON</a>
+                            <a class="margin-right-5" v-for="renderTienAo in arrTienAo" :href="renderTienAo.link">{{ renderTienAo.name }}</a>
                         </div>
                     </div>
                 </div>
@@ -76,78 +51,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th class="bg-gray text-left">Bitcoin</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Ethereum</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">XRP</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Bitcoin Cash</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Litecoin</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Tether</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">EOS</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
-                                <tr>
-                                    <th class="bg-gray text-left">Monero</th>
-                                    <th>$ 10,350.80</th>
-                                    <th>240,376,000đ</th>
-                                    <th>185,413,000,000</th>
-                                    <th>17,912,900</th>
-                                    <th>18,574,500,000</th>
-                                    <th>+5.9082</th>
-                                </tr>
+
+                                    <tr v-for="renderTienAo in arrTienAo">
+                                        <th class="bg-gray text-left"><img :src="renderTienAo.logo" height="16px" width="16px" alt="">{{ renderTienAo.name }}</th>
+                                        <th>$ {{ renderTienAo.price }}</th>
+                                        <th>{{ renderTienAo.price_vnd }} đ</th>
+                                        <th>{{ renderTienAo.market_cap }}</th>
+                                        <th>{{ renderTienAo.total_supply }}</th>
+                                        <th>{{ renderTienAo.volume_24h }}</th>
+                                        <th v-if="renderTienAo.percent_change_24h > 0" class="font-color-green">
+                                            + {{ renderTienAo.percent_change_24h }}
+                                        </th>
+                                        <th v-else="renderTienAo.percent_change_24h < 0" class="font-color-red">
+                                            {{ renderTienAo.percent_change_24h }}
+                                        </th>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -193,7 +112,9 @@
             /**
              * Create local variable
              */
-            return {}
+            return {
+                arrTienAo: []
+            }
         },
         created: function () {
             /**
@@ -206,11 +127,15 @@
              * Implement function here
              */
             getExchanges() {
-                axios.get('api/v1/get-exchange').then(response => {
+                axios.get('api/v1/get-virtual-money-web').then(response => {
                     let objExchangeData = response.data;
-                    for (let i = 0; i < objExchangeData.length; i++) {
-                        console.log(objExchangeData[i]);
+                    this.arrTienAo = objExchangeData;
+                    for (let i = 0; i < this.arrTienAo.length; i++) {
+                        this.arrTienAo[i]['link'] = 'tien-ao/' + this.arrTienAo[i]['slug'];
+                        this.arrTienAo[i]['logo'] = 'frontend/iconVirualMoney/' + this.arrTienAo[i]['icon'];
+
                     }
+                    console.log(this.arrTienAo);
                 }).catch(error => {
                     console.log(error);
                 });

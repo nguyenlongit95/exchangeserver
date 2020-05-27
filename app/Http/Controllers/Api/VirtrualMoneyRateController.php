@@ -35,6 +35,27 @@ class VirtrualMoneyRateController extends Controller
         return response()->json($tienAo, 200);
     }
 
+    public function list()
+    {
+        $tienAo = LoaiTienAo::select('id','slug','icon', 'name')->take(28)->get();
+        foreach ($tienAo as $value) {
+            $virtualMoney = TienAo::where('slug', $value->slug)->orderBy('id', 'DESC')->first();
+            if (!$virtualMoney) {
+                continue;
+            }
+            $virualMoneyVND = TienAo::where('slug', $value->slug)->where('currency_type', 'VND')
+                ->orderBy('id', 'DESC')->select('price', 'total_supply')->first();
+            $value->price = $virtualMoney->price;
+            $value->price_vnd = $virualMoneyVND->price;
+            $value->volume_24h = $virtualMoney->volume_24h;
+            $value->percent_change_24h = $virtualMoney->percent_change_24h;
+            $value->market_cap = $virtualMoney->market_cap;
+            $value->total_supply = $virtualMoney->total_supply;
+        }
+
+        return response()->json($tienAo, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -377,6 +377,115 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports) {
 
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -456,7 +565,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -679,115 +788,6 @@ function applyToTag (styleElement, obj) {
       styleElement.removeChild(styleElement.firstChild)
     }
     styleElement.appendChild(document.createTextNode(css))
-  }
-}
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
   }
 }
 
@@ -14876,7 +14876,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(43)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(46)
 /* template */
@@ -14923,7 +14923,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(88);
+module.exports = __webpack_require__(90);
 
 
 /***/ }),
@@ -14959,7 +14959,7 @@ Vue.component('lai-suat-detail-component', __webpack_require__(73));
 Vue.component('tien-ao-component', __webpack_require__(78));
 Vue.component('tien-ao-detail-component', __webpack_require__(83));
 
-Vue.component('common-component', __webpack_require__(92));
+Vue.component('common-component', __webpack_require__(88));
 
 var app = new Vue({
   el: '#app'
@@ -49687,7 +49687,7 @@ var content = __webpack_require__(44);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("537eca2c", content, false, {});
+var update = __webpack_require__(3)("537eca2c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -49706,7 +49706,7 @@ if(false) {
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -49806,7 +49806,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(49)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(51)
 /* template */
@@ -49859,7 +49859,7 @@ var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0e6ebc59", content, false, {});
+var update = __webpack_require__(3)("0e6ebc59", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -49878,7 +49878,7 @@ if(false) {
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -56377,7 +56377,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(54)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(56)
 /* template */
@@ -56430,7 +56430,7 @@ var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("85d1c836", content, false, {});
+var update = __webpack_require__(3)("85d1c836", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -56449,7 +56449,7 @@ if(false) {
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -57437,7 +57437,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(59)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(61)
 /* template */
@@ -57490,7 +57490,7 @@ var content = __webpack_require__(60);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("68dc0538", content, false, {});
+var update = __webpack_require__(3)("68dc0538", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -57509,7 +57509,7 @@ if(false) {
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -58751,7 +58751,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(64)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(66)
 /* template */
@@ -58804,7 +58804,7 @@ var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("3e2b5329", content, false, {});
+var update = __webpack_require__(3)("3e2b5329", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -58823,7 +58823,7 @@ if(false) {
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -59517,7 +59517,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(69)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(71)
 /* template */
@@ -59570,7 +59570,7 @@ var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("89022744", content, false, {});
+var update = __webpack_require__(3)("89022744", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -59589,12 +59589,12 @@ if(false) {
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -59719,69 +59719,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -59789,9 +59726,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Create local variable
          */
         return {
-            arrKHH: [], arrKyHan1THang: [], arrKyHan3THang: [], arrKyHan6THang: [], arrKyHan9THang: [],
-            arrKyHan12THang: [], arrKyHan24THang: [], arrKyHan36THang: [],
-            kyhanslug: "KHH",
+            arrVietcomBank: [], arrNCB: [], arrVietinBank: [], arrSCB: [], arrArgiBank: [],
+            arrDongA: [], arrSHB: [], arrVIB: [],
+            kyhanslug: "3",
             kyhanText: "Không kỳ hạn",
             timeUpdate: ""
         };
@@ -59809,22 +59746,90 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Implement function here
          */
         getInterest: function getInterest() {
+            var _this = this;
+
             axios.get('api/v1/get-interest-rate').then(function (response) {
                 var objExchangeData = response.data;
                 for (var i = 0; i < objExchangeData.length; i++) {
-                    console.log(objExchangeData[i]);
+                    if (objExchangeData[i]['bank_code'] === 'vietcombank') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrVietcomBank.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'ncb') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrNCB.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'vietin') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrVietinBank.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'scb') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrSCB.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'agribank') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrArgiBank.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'donga') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrDongA.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'shb') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrSHB.push(objExchangeData[i]);
+                    }if (objExchangeData[i]['bank_code'] === 'vib') {
+                        if (objExchangeData[i]['laisuat_vnd'] == null) {
+                            objExchangeData[i]['laisuat_vnd'] = "-";
+                        }
+                        _this.arrVIB.push(objExchangeData[i]);
+                    }
                 }
+                _this.arrVietcomBank.reverse();_this.arrNCB.reverse();_this.arrVietinBank.reverse();
+                _this.arrSCB.reverse();_this.arrArgiBank.reverse();_this.arrDongA.reverse();
+                _this.arrSHB.reverse();_this.arrVIB.reverse();
             }).catch(function (error) {
                 console.log(error);
             });
         },
-
-
-        /**
-        * Function select an kyhan
-        * Fill table data new
-        **/
-        selectKyHan: function selectKyHan() {},
+        changeKyHan: function changeKyHan(kyhanSlug) {
+            switch (kyhanSlug) {
+                case 'KKH':
+                    this.kyhanText = "Không kỳ hạn";
+                    break;
+                case 1:
+                    this.kyhanText = "1 tháng";
+                    break;
+                case 3:
+                    this.kyhanText = "3 tháng";
+                    break;
+                case 6:
+                    this.kyhanText = "6 tháng";
+                    break;
+                case 9:
+                    this.kyhanText = "9 tháng";
+                    break;
+                case 12:
+                    this.kyhanText = "12 tháng";
+                    break;
+                case 24:
+                    this.kyhanText = "24 tháng";
+                    break;
+                case 36:
+                    this.kyhanText = "36 tháng";
+                    break;
+                default:
+                    break;
+            }
+        },
 
 
         /**
@@ -59849,16 +59854,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
      */
 
     $(document).ready(function () {
-        initDrawChart(32);
+        initDrawChart("3");
     });
 
     /**
      * change gold make select
      * draw chart again
      */
-    $('#select_gold').on('change', function () {
-        var goldType = $(this).val();
-        initDrawChart(goldType);
+    $('#select_kyhan').on('change', function () {
+        var kyhanSlug = $(this).val();
+        initDrawChart(kyhanSlug);
     });
 });
 
@@ -59868,7 +59873,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 function initDrawChart(kyhanslug) {
     if (kyhanslug == undefined) {
-        goldType = $(this).val();
+        kyhanslug = $(this).val();
     }
     $.ajax({
         url: 'api/v1/get-interest-rate',
@@ -59877,10 +59882,13 @@ function initDrawChart(kyhanslug) {
         success: function success(result) {
             var label = [],
                 data = [];
-            console.log(result);
+            label.splice(0, label.length);
+            data.splice(0, data.length);
             for (var i = 0; i < result.length; i++) {
-                label.push(result[i]['time']);
-                data.push(result[i]['mua']);
+                if (result[i]['kyhanslug'] === kyhanslug) {
+                    label.push(result[i]['bank_code']);
+                    data.push(result[i]['laisuat_vnd']);
+                }
             }
             // Call function draw Charts
             drawChart(data, label);
@@ -59893,7 +59901,7 @@ function initDrawChart(kyhanslug) {
  * */
 function drawChart(data, label) {
     // Get context with jQuery - using jQuery's .get() method.
-    var goldChartCanvas = $('#interest_chart').get(0).getContext('2d');
+    var goldChartCanvas = $('#interest_chart_draw').get(0).getContext('2d');
     // This will get the first returned node in the jQuery collection.
     var goldChart = new Chart(goldChartCanvas);
 
@@ -59947,7 +59955,7 @@ function drawChart(data, label) {
 
         responsive: true
     };
-    goldChart.Line(goldChartData, goldChartOptions);
+    goldChart.Bar(goldChartData, goldChartOptions);
 }
 
 /***/ }),
@@ -59959,97 +59967,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "lai-suat-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-7 pull-left" }, [
-              _c("div", { staticClass: "row" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6 pull-right" }, [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: this.kyhanslug,
-                          expression: "this.kyhanslug"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { name: "bankID", id: "select_kyhan" },
-                      on: {
-                        change: [
-                          function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              this,
-                              "kyhanslug",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                          function($event) {
-                            return _vm.selectKyHan()
-                          }
-                        ]
-                      }
-                    },
-                    [
-                      _c("option", { attrs: { value: "KHH" } }, [
-                        _vm._v("Không kỳ hạn")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "1" } }, [
-                        _vm._v("1 tháng")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "3" } }, [
-                        _vm._v("3 tháng")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "6" } }, [
-                        _vm._v("6 tháng")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "9" } }, [
-                        _vm._v("9 tháng")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "12" } }, [
-                        _vm._v("12 tháng")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "24" } }, [
-                        _vm._v("24 tháng")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "36" } }, [
-                        _vm._v("36 tháng")
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
     _c("div", { staticClass: "section margin-top-25" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
@@ -60068,28 +59985,241 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(2)
+        _c("div", { staticClass: "table-exchange-home" }, [
+          _c("div", { staticClass: "col-md-12 pull-right" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-hover table-bordered",
+                  attrs: { id: "table-exchange-page" }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("VietcomBank")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrVietcomBank, function(renderVietcomBank) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderVietcomBank.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("NCB")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrNCB, function(renderNCB) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderNCB.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("VietinBank")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrVietinBank, function(renderVietinBank) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderVietinBank.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("SCB")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrNCB, function(renderSCB) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderSCB.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("ArgiBank")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrArgiBank, function(renderArgiBank) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderArgiBank.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("DongA")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrDongA, function(renderDongA) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderDongA.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("SHB")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrSHB, function(renderSHB) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderSHB.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _vm._v("VIB")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.arrVIB, function(renderVIB) {
+                          return _c("th", [
+                            _vm._v(_vm._s(renderVIB.laisuat_vnd))
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
       ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "section margin-top-25px" }, [
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "col-md-12 row" }, [
-          _c("p", { staticClass: "text-center" }, [
-            _c("strong", { staticClass: "font-size-13px" }, [
-              _vm._v("Biểu đồ lãi suất "),
-              _c(
-                "span",
-                {
-                  staticClass: "color-d66c0b text-uppercase",
-                  attrs: { id: "txt_money_code" }
-                },
-                [_vm._v(_vm._s(this.kyhanText))]
-              ),
-              _vm._v(" tại các ngân hàng trong nước!")
+        _c("div", { staticClass: "col-md-12 pull-left" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 row pull-left" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-8 pull-left" }, [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: this.kyhanslug,
+                        expression: "this.kyhanslug"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { name: "bankID", id: "select_kyhan" },
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            this,
+                            "kyhanslug",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        },
+                        function($event) {
+                          return _vm.changeKyHan(this.kyhanslug)
+                        }
+                      ]
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "KKH" } }, [
+                      _vm._v("Không kỳ hạn")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("1 tháng")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "3" } }, [
+                      _vm._v("3 tháng")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "6" } }, [
+                      _vm._v("6 tháng")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "9" } }, [
+                      _vm._v("9 tháng")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "12" } }, [
+                      _vm._v("12 tháng")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "24" } }, [
+                      _vm._v("24 tháng")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "36" } }, [
+                      _vm._v("36 tháng")
+                    ])
+                  ]
+                )
+              ])
             ])
           ])
         ]),
+        _vm._v(" "),
+        _vm._m(2),
         _vm._v(" "),
         _vm._m(3)
       ])
@@ -60101,16 +60231,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "btn-item" }, [
-      _c("div", { staticClass: "col-md-12 row" }, [
-        _c("div", { staticClass: "full" }, [
-          _c("div", { staticClass: "heading_main text_align_center" }, [
-            _c("h2", { staticClass: "font-size-22px" }, [
-              _c("span", { staticClass: "theme_color" }),
-              _vm._v("Chi tiết lãi suất các ngân hàng")
-            ])
-          ])
-        ])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "text-left" }, [_vm._v("Ngân hàng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Không kỳ hạn")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("1 tháng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("3 tháng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("6 tháng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("9 tháng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("12 tháng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("24 tháng")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("36 tháng")])
       ])
     ])
   },
@@ -60128,203 +60267,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "table-exchange-home" }, [
-      _c("div", { staticClass: "col-md-12 pull-right" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "table",
-            {
-              staticClass: "table table-hover table-bordered",
-              attrs: { id: "table-exchange-page" }
-            },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c("th", { staticClass: "text-left" }, [_vm._v("Ngân hàng")]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [_vm._v("1 tháng")]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [_vm._v("3 tháng")]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [_vm._v("6 tháng")]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [_vm._v("9 tháng")]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [
-                    _vm._v("12 tháng")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [
-                    _vm._v("24 tháng")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "text-center" }, [_vm._v("36 tháng")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("VietcomBank")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("Techcombank")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("OceanBank")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("BIDV")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("VietinBank")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("Bắc Á")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("SCB")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", { staticClass: "bg-gray text-left" }, [
-                    _vm._v("OCB")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,141")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,333")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("15,290")])
-                ])
-              ])
-            ]
-          )
+    return _c("div", { staticClass: "col-md-12 row margin-top-5px" }, [
+      _c("p", { staticClass: "text-center" }, [
+        _c("strong", { staticClass: "font-size-13px" }, [
+          _vm._v("Biểu đồ lãi suất tại các ngân hàng trong nước!")
         ])
       ])
     ])
@@ -60335,8 +60281,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "chart col-md-12 row" }, [
       _c("canvas", {
-        staticStyle: { height: "350px", width: "100%" },
-        attrs: { id: "interest_chart" }
+        staticStyle: { height: "450px", width: "100%" },
+        attrs: { id: "interest_chart_draw" }
       })
     ])
   }
@@ -60359,7 +60305,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(74)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(76)
 /* template */
@@ -60412,7 +60358,7 @@ var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("dd76e22c", content, false, {});
+var update = __webpack_require__(3)("dd76e22c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -60431,7 +60377,7 @@ if(false) {
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -61130,7 +61076,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(79)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(81)
 /* template */
@@ -61183,7 +61129,7 @@ var content = __webpack_require__(80);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("b0ef064c", content, false, {});
+var update = __webpack_require__(3)("b0ef064c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -61202,12 +61148,12 @@ if(false) {
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -61326,94 +61272,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         /**
          * Create local variable
          */
-        return {};
+        return {
+            arrTienAo: []
+        };
     },
 
     created: function created() {
@@ -61427,11 +61294,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Implement function here
          */
         getExchanges: function getExchanges() {
-            axios.get('api/v1/get-exchange').then(function (response) {
+            var _this = this;
+
+            axios.get('api/v1/get-virtual-money-web').then(function (response) {
                 var objExchangeData = response.data;
-                for (var i = 0; i < objExchangeData.length; i++) {
-                    console.log(objExchangeData[i]);
+                _this.arrTienAo = objExchangeData;
+                for (var i = 0; i < _this.arrTienAo.length; i++) {
+                    _this.arrTienAo[i]['link'] = 'tien-ao/' + _this.arrTienAo[i]['slug'];
+                    _this.arrTienAo[i]['logo'] = 'frontend/iconVirualMoney/' + _this.arrTienAo[i]['icon'];
                 }
+                console.log(_this.arrTienAo);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -61447,305 +61319,167 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "tien-ao-component" }, [
+    _c("div", { staticClass: "section margin-top-25" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              { staticClass: "btn-item" },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._l(_vm.arrTienAo, function(renderTienAo) {
+                  return _c(
+                    "a",
+                    {
+                      staticClass: "margin-right-5",
+                      attrs: { href: renderTienAo.link }
+                    },
+                    [_vm._v(_vm._s(renderTienAo.name))]
+                  )
+                })
+              ],
+              2
+            )
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section layout_padding margin-top-25px" }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-exchange-home" }, [
+          _c("div", { staticClass: "col-md-12 pull-right" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-hover table-bordered",
+                  attrs: { id: "table-exchange-page" }
+                },
+                [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrTienAo, function(renderTienAo) {
+                      return _c("tr", [
+                        _c("th", { staticClass: "bg-gray text-left" }, [
+                          _c("img", {
+                            attrs: {
+                              src: renderTienAo.logo,
+                              height: "16px",
+                              width: "16px",
+                              alt: ""
+                            }
+                          }),
+                          _vm._v(_vm._s(renderTienAo.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("$ " + _vm._s(renderTienAo.price))]),
+                        _vm._v(" "),
+                        _c("th", [
+                          _vm._v(_vm._s(renderTienAo.price_vnd) + " đ")
+                        ]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v(_vm._s(renderTienAo.market_cap))]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v(_vm._s(renderTienAo.total_supply))]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v(_vm._s(renderTienAo.volume_24h))]),
+                        _vm._v(" "),
+                        renderTienAo.percent_change_24h > 0
+                          ? _c("th", { staticClass: "font-color-green" }, [
+                              _vm._v(
+                                "\n                                        + " +
+                                  _vm._s(renderTienAo.percent_change_24h) +
+                                  "\n                                    "
+                              )
+                            ])
+                          : _c("th", { staticClass: "font-color-red" }, [
+                              _vm._v(
+                                "\n                                        " +
+                                  _vm._s(renderTienAo.percent_change_24h) +
+                                  "\n                                    "
+                              )
+                            ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n                Đồng Euro (€; mã ISO: EUR, còn gọi là Âu kim hay Đồng tiền chung châu Âu) là đơn vị tiền tệ của Liên minh Tiền tệ châu Âu, là tiền tệ chính thức trong 18 quốc gia thành viên của Liên minh châu Âu (Áo, Bỉ, Bồ Đào Nha, Đức, Hà Lan, Hy Lạp, Ireland, Luxembourg, Pháp, Phần Lan, Tây Ban Nha, Ý, Slovenia, Malta, Cộng hòa Síp, Estonia, Latvia, Litva) và trong 6 nước và lãnh thổ không thuộc Liên minh châu Âu.\n\n                Vào ngày 1 tháng 1 năm 1999 tỷ lệ hối đoái giữa Euro và các đơn vị tiền tệ quốc gia được quy định không thể thay đổi và Euro trở thành tiền tệ chính thức. Việc phát hành đồng Euro rộng rãi đến người tiêu dùng bắt đầu từ ngày 1 tháng 1 năm 2002.\n\n                Tiền giấy Euro giống nhau hoàn toàn trong tất cả các quốc gia.\n\n                Tiền giấy Euro có mệnh giá 5 Euro, 10 Euro, 50 Euro, 100 Euro, 200 Euro và 500 Euro. Mặt trước có hình của một cửa sổ hay phần trước của một cánh cửa, mặt sau là một chiếc cầu. Tháng 7 năm 2017, được sự chấp thuận của Ngân hàng Trung ương Châu Âu, Ngân hàng Trung ương Đức chính thức phát hành đồng hiện kim bằng giấy với mệnh giá là 0 euro (giá bán là 2,5 euro) đáp ứng nhu cầu của những người có sở thích sưu tập tiền tệ. Một mặt in chân dung nhà thần học Martin Luther ở bên phải, cùng căn phòng làm việc của ông tại Lâu đài Wartburg; mặt còn lại gồm tổ hợp hình ảnh quy tụ các kiến trúc tiêu biểu thuộc Liên minh châu Âu, bên góc phải là bức tranh nàng Mona Lisa.[1]\n\n                Tiền kim loại Euro cùng một mệnh giá giống nhau ở mặt trước, nhưng có trang trí khác nhau ở mặt sau, đặc trưng cho từng quốc gia phát hành.\n\n                Các loại mệnh giá tiền Euro đang lưu hành\n\n                Euro có 7 mệnh giá tiền giấy ( €5 , €10 , €20 , €50 , €100 , €200 và €500 )\n                Có 8 mệnh giá tiền xu cho Euro ( 1c , 2c , 5c , 10c , 20c , 50c , €1 và €2 )\n                Web tỷ giá cập nhiật liên tục, chính xác tỷ giá mua, bán, chuyển khoản đồng Euro từ các ngân hàng lớn có hỗ trợ giao dịch đồng Euro. cung cấp các công cụ chuyển đổi, quy đổi đồng Euro ra các đồng tiền khác\n\n                tiền euro\n                đồng euro\n                tỷ giá euro\n                ty gia euro\n                euro to vnd\n                eur to vnd\n                tỷ giá euro hôm nay\n                1 eur to vnd\n                1 eur = vnd\n            "
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tien-ao-component" }, [
-      _c("div", { staticClass: "section margin-top-25" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "btn-item" }, [
-                _c("div", { staticClass: "col-md-12 row" }, [
-                  _c("div", { staticClass: "full" }, [
-                    _c(
-                      "div",
-                      { staticClass: "heading_main text_align_center" },
-                      [
-                        _c("h2", { staticClass: "font-size-22px" }, [
-                          _c("span", { staticClass: "theme_color" }),
-                          _vm._v("Chi tiết các đồng tiền ảo")
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Ethereum")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("XRP")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin Cash")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Litecoin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Tether")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Binance Coin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("EOS")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin SV")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Monero")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Stellar")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Cardano")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("TRON")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Ethereum Classic")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Dash")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("XRP")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin Cash")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Litecoin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Tether")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Binance Coin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("EOS")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin SV")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Monero")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Stellar")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Cardano")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("TRON")])
-              ])
+    return _c("div", { staticClass: "col-md-12 row" }, [
+      _c("div", { staticClass: "full" }, [
+        _c("div", { staticClass: "heading_main text_align_center" }, [
+          _c("h2", { staticClass: "font-size-22px" }, [
+            _c("span", { staticClass: "theme_color" }),
+            _vm._v("Chi tiết các đồng tiền ảo")
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "full" }, [
+          _c("div", { staticClass: "heading_main text_align_center" }, [
+            _c("h2", { staticClass: "font-size-22px" }, [
+              _c("span", { staticClass: "theme_color" }),
+              _vm._v("Các lần cập nhật tiền ảo mới nhất")
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section layout_padding margin-top-25px" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "full" }, [
-                _c("div", { staticClass: "heading_main text_align_center" }, [
-                  _c("h2", { staticClass: "font-size-22px" }, [
-                    _c("span", { staticClass: "theme_color" }),
-                    _vm._v("Các lần cập nhật tiền ảo mới nhất")
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "table-exchange-home" }, [
-            _c("div", { staticClass: "col-md-12 pull-right" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "table",
-                  {
-                    staticClass: "table table-hover table-bordered",
-                    attrs: { id: "table-exchange-page" }
-                  },
-                  [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", { staticClass: "text-left" }, [
-                          _vm._v("Tiền ảo")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Giá(USD)")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Giá(VNĐ)")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Vốn hoá thị trường")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Đơn vị hiện có")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("Thanh khoản 24h")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-center" }, [
-                          _vm._v("% 24h")
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tbody", [
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Bitcoin")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Ethereum")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("XRP")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Bitcoin Cash")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Litecoin")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Tether")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("EOS")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v("Monero")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("$ 10,350.80")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("240,376,000đ")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("185,413,000,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("17,912,900")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("18,574,500,000")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("+5.9082")])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                Đồng Euro (€; mã ISO: EUR, còn gọi là Âu kim hay Đồng tiền chung châu Âu) là đơn vị tiền tệ của Liên minh Tiền tệ châu Âu, là tiền tệ chính thức trong 18 quốc gia thành viên của Liên minh châu Âu (Áo, Bỉ, Bồ Đào Nha, Đức, Hà Lan, Hy Lạp, Ireland, Luxembourg, Pháp, Phần Lan, Tây Ban Nha, Ý, Slovenia, Malta, Cộng hòa Síp, Estonia, Latvia, Litva) và trong 6 nước và lãnh thổ không thuộc Liên minh châu Âu.\n\n                Vào ngày 1 tháng 1 năm 1999 tỷ lệ hối đoái giữa Euro và các đơn vị tiền tệ quốc gia được quy định không thể thay đổi và Euro trở thành tiền tệ chính thức. Việc phát hành đồng Euro rộng rãi đến người tiêu dùng bắt đầu từ ngày 1 tháng 1 năm 2002.\n\n                Tiền giấy Euro giống nhau hoàn toàn trong tất cả các quốc gia.\n\n                Tiền giấy Euro có mệnh giá 5 Euro, 10 Euro, 50 Euro, 100 Euro, 200 Euro và 500 Euro. Mặt trước có hình của một cửa sổ hay phần trước của một cánh cửa, mặt sau là một chiếc cầu. Tháng 7 năm 2017, được sự chấp thuận của Ngân hàng Trung ương Châu Âu, Ngân hàng Trung ương Đức chính thức phát hành đồng hiện kim bằng giấy với mệnh giá là 0 euro (giá bán là 2,5 euro) đáp ứng nhu cầu của những người có sở thích sưu tập tiền tệ. Một mặt in chân dung nhà thần học Martin Luther ở bên phải, cùng căn phòng làm việc của ông tại Lâu đài Wartburg; mặt còn lại gồm tổ hợp hình ảnh quy tụ các kiến trúc tiêu biểu thuộc Liên minh châu Âu, bên góc phải là bức tranh nàng Mona Lisa.[1]\n\n                Tiền kim loại Euro cùng một mệnh giá giống nhau ở mặt trước, nhưng có trang trí khác nhau ở mặt sau, đặc trưng cho từng quốc gia phát hành.\n\n                Các loại mệnh giá tiền Euro đang lưu hành\n\n                Euro có 7 mệnh giá tiền giấy ( €5 , €10 , €20 , €50 , €100 , €200 và €500 )\n                Có 8 mệnh giá tiền xu cho Euro ( 1c , 2c , 5c , 10c , 20c , 50c , €1 và €2 )\n                Web tỷ giá cập nhiật liên tục, chính xác tỷ giá mua, bán, chuyển khoản đồng Euro từ các ngân hàng lớn có hỗ trợ giao dịch đồng Euro. cung cấp các công cụ chuyển đổi, quy đổi đồng Euro ra các đồng tiền khác\n\n                tiền euro\n                đồng euro\n                tỷ giá euro\n                ty gia euro\n                euro to vnd\n                eur to vnd\n                tỷ giá euro hôm nay\n                1 eur to vnd\n                1 eur = vnd\n            "
-            )
-          ])
-        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "text-left" }, [_vm._v("Tiền ảo")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Giá(USD)")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Giá(VNĐ)")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [
+          _vm._v("Vốn hoá thị trường")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Đơn vị hiện có")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Thanh khoản 24h")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("% 24h")])
       ])
     ])
   }
@@ -61768,7 +61502,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(84)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(86)
 /* template */
@@ -61821,7 +61555,7 @@ var content = __webpack_require__(85);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("28ada0ae", content, false, {});
+var update = __webpack_require__(3)("28ada0ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -61840,7 +61574,7 @@ if(false) {
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -62465,21 +62199,12 @@ if (false) {
 
 /***/ }),
 /* 88 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(95)
+var __vue_script__ = __webpack_require__(89)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -62520,9 +62245,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 93 */,
-/* 94 */,
-/* 95 */
+/* 89 */
 /***/ (function(module, exports) {
 
 
@@ -62531,6 +62254,12 @@ function getTimeUpdateTest() {
     var timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
     return timeUpdate;
 }
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

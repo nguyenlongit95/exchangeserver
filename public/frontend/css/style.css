@@ -2562,3 +2562,7 @@ ul.bottom_menu li {
     background: white;
     border: 1px double #00000017;
 }
+
+.margin-right-5 {
+    margin-right: 5px;
+}
