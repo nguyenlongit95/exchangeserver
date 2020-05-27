@@ -135,7 +135,6 @@
                         this.arrTienAo[i]['logo'] = 'frontend/iconVirualMoney/' + this.arrTienAo[i]['icon'];
 
                     }
-                    console.log(this.arrTienAo);
                 }).catch(error => {
                     console.log(error);
                 });
