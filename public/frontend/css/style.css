@@ -2566,3 +2566,16 @@ ul.bottom_menu li {
 .margin-right-5 {
     margin-right: 5px;
 }
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-absolute-right-0 {
+    position: absolute;
+    right: 0%;
+}
+
+.width-auto {
+    width: auto !important;
+}

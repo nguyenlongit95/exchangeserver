@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="col-md-12 margin-top-25px">
+    <div class="section col-md-12 layout_padding margin-top-25px">
         <div class="container">
             <section>
                 <h2 class="font-size-22px"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h2>

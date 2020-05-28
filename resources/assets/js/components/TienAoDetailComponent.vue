@@ -13,32 +13,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">Bitcoin</a>
-                            <a href="#">Ethereum</a>
-                            <a href="#">XRP</a>
-                            <a href="#">Bitcoin Cash</a>
-                            <a href="#">Litecoin</a>
-                            <a href="#">Tether</a>
-                            <a href="#">Binance Coin</a>
-                            <a href="#">EOS</a>
-                            <a href="#">Bitcoin SV</a>
-                            <a href="#">Monero</a>
-                            <a href="#">Stellar</a>
-                            <a href="#">Cardano</a>
-                            <a href="#">TRON</a>
-                            <a href="#">Ethereum Classic</a>
-                            <a href="#">Dash</a>
-                            <a href="#">XRP</a>
-                            <a href="#">Bitcoin Cash</a>
-                            <a href="#">Litecoin</a>
-                            <a href="#">Tether</a>
-                            <a href="#">Binance Coin</a>
-                            <a href="#">EOS</a>
-                            <a href="#">Bitcoin SV</a>
-                            <a href="#">Monero</a>
-                            <a href="#">Stellar</a>
-                            <a href="#">Cardano</a>
-                            <a href="#">TRON</a>
+                            <a class="margin-right-5" v-for="renderTienAo in arrTienAo" :href="renderTienAo.link">{{ renderTienAo.name }}</a>
                         </div>
                     </div>
                 </div>
@@ -55,83 +30,74 @@
                             <div class="col-sm-12 border-sm-right">
                                 <div class="block">
                                     <div class="block-content">
-                                        <article id="main" class="col-md-12">
-                                            <h2 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá Bitcoin(bitcoin) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>17:00:08 03/09/2019</small></h2>
-                                            <div style="margin-top: 5px; height: 25px; margin-bottom: 5px; text-align: right;">
-                                                <div class="pull-right" style="margin-left: 5px">
-                                                </div>
-                                                <div class="pull-right" style="margin-left: 5px">
-                                                    <div class="fb-share-button"
-                                                         data-href="https://tygia.vn/tien-ao/bitcoin"
-                                                         data-layout="button_count">
-                                                    </div>
-                                                </div>
-                                                <div class="pull-right">
-                                                    <div class="fb-like"
-                                                         data-href="https://tygia.vn/tien-ao/bitcoin"
-                                                         data-layout="button_count"
-                                                         data-action="like"
-                                                         data-show-faces="true">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
+                                        <article id="main" class="col-md-12" v-for="renderMoney in this.detailMoney">
+                                            <h2 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá {{ renderMoney.name }}({{ renderMoney.slug }}) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>{{ renderMoney.created_at }}</small></h2>
+                                            <div class="row margin-top-25px">
                                                 <div class="col-xs-12 col-sm-4 col-md-3 text-center">
                                                     <div class="coin-logo">
-                                                        <img src="https://tygia.vn/storage/virtualmoney/1.png" alt="Bitcoin" title="Bitcoin" />
+                                                        <img :src="renderMoney.logo" :alt="renderMoney.name" :title="renderMoney.slug" />
                                                     </div>
                                                     <div class="coin-info">
-                                                        <h2> Bitcoin <small>(bitcoin)</small> </h2>
-                                                        <a class="btn btn-xs btn-success" href="https://tygia.vn/tien-ao/bitcoin" title="Bảng giá tiền ảo, tiền điện tử">Xếp hạng: 1</a>
+                                                        <h2> {{ renderMoney.name }} <small>({{ renderMoney.slug }})</small> </h2>
+                                                        <a class="btn btn-xs btn-success" href="https://tygia.vn/tien-ao/bitcoin" title="Bảng giá tiền ảo, tiền điện tử">Xếp hạng: {{ renderMoney.rank }}</a>
                                                         <br>
-                                                        <a class="btn btn-xs btn-danger" href="https://tygia.vn/tien-ao" title="Bảng giá tiền ảo, tiền điện tử">Xem các đồng khác</a>
+                                                        <a class="btn btn-xs btn-danger" href="/tien-ao" title="Bảng giá tiền ảo, tiền điện tử">Xem các đồng khác</a>
                                                         <br>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-8 col-md-9">
                                                     <div class="coin-price">
-                                                        <h2 class="text-large" id="quote_price">$10,322.90 <span  style="color:red; font-size:18px;"  class="text-large down_change">(5.478%)</span></h2>
+                                                        <h2 class="text-large" id="quote_price">${{ renderMoney.price }}
+                                                            <span v-if="renderMoney.percent_change_24h < 0" style="color:red; font-size:18px;"  class="text-large down_change">
+                                                                ({{ renderMoney.percent_change_24h }}%)
+                                                            </span>
+                                                            <span v-else style="font-size:18px;"  class="text-large up_change font-color-green">
+                                                                ({{ renderMoney.percent_change_24h }}%)
+                                                            </span>
+                                                        </h2>
 
                                                         <br>
-                                                        <p class="text-gray">1 BTC = 1.0 BTC</p>
+                                                        <p class="text-gray">1 {{ renderMoney.symbol }} = 1.0 {{ renderMoney.symbol }}</p>
                                                     </div>
                                                     <table id="coin-table" class="table table-striped table-hover">
                                                         <tbody>
                                                         <tr>
                                                             <th>Quy đổi VNĐ</th>
                                                             <td>
-                                                                <strong class="text-primary">1 bitcoin = ~239,875,000 đồng</strong>
+                                                                <strong class="text-primary">1 bitcoin = ~{{ renderMoney.vnd }} đồng</strong>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <th><span class="hidden-xs">Giá trị vốn hóa thị trường</span><span class="visible-xs">Vốn hóa thị trường</span></th>
-                                                            <td>$ 184,914,000,000</td>
+                                                            <td>$ {{ renderMoney.market_cap }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Thanh khoản (24h)</th>
-                                                            <td>$ 18,686,600,000.000</td>
+                                                            <td>$ {{ renderMoney.volume_24h }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Tổng BTC hiện có</th>
-                                                            <td>$ 17,913,000</td>
+                                                            <td>$ {{ renderMoney.total_supply }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Dao động 1 giờ</th>
                                                             <td>
-                                                                <span class="up_change" style="color:red;"> -0.286%</span>
-
+                                                                <span v-if="renderMoney.percent_change_1h < 0" class="up_change font-color-red"> {{ renderMoney.percent_change_1h }}%</span>
+                                                                <span v-else class="up_change font-color-green"> +{{ renderMoney.percent_change_1h }}%</span>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <th>Dao động 24 giờ</th>
                                                             <td>
-                                                                <span class="up_change" style="color:green;"> 5.478%</span>
+                                                                <span v-if="renderMoney.percent_change_24h < 0" class="up_change font-color-red"> {{ renderMoney.percent_change_24h }}%</span>
+                                                                <span v-else class="up_change font-color-green"> +{{ renderMoney.percent_change_24h }}%</span>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <th>Dao động 7 ngày</th>
                                                             <td>
-                                                                <span class="up_change" style="color:green;"> 1.451%</span>
+                                                                <span v-if="renderMoney.percent_change_7d < 0" class="up_change font-color-red"> {{ renderMoney.percent_change_7d }}%</span>
+                                                                <span v-else class="up_change font-color-green"> +{{ renderMoney.percent_change_7d }}%</span>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -159,7 +125,11 @@
             /**
              * Create local variable
              */
-            return {}
+            return {
+                virtualMoney: 'bitcoin',
+                arrTienAo: [],
+                detailMoney: []
+            }
         },
         created: function () {
             /**
@@ -172,14 +142,42 @@
              * Implement function here
              */
             getExchanges() {
-                axios.get('api/v1/get-exchange').then(response => {
+                let url = location.href;
+                let txtMoney = this.analysisURL(url);
+
+                // Call API is render tabs money
+                axios.get('/api/v1/get-virtual-money-web').then(response => {
                     let objExchangeData = response.data;
-                    for (let i = 0; i < objExchangeData.length; i++) {
-                        console.log(objExchangeData[i]);
+                    this.arrTienAo = objExchangeData;
+                    for (let i = 0; i < this.arrTienAo.length; i++) {
+                        this.arrTienAo[i]['link'] = '/tien-ao/' + this.arrTienAo[i]['slug'];
+                        this.arrTienAo[i]['logo'] = '/iconVirualMoney/' + this.arrTienAo[i]['image'];
                     }
                 }).catch(error => {
                     console.log(error);
                 });
+
+                // Call API get data an money detail
+                axios.get('/api/v1/get-virtual-money/' + txtMoney).then(response => {
+                    let objExchangeData = response.data;
+                    objExchangeData[0]['logo'] = '/iconVirualMoney/' + objExchangeData[0]['image'];
+                    this.detailMoney.push(objExchangeData[0]);
+                }).catch(error => {
+                    console.log(error);
+                });
+                console.log(this.detailMoney);
+            },
+
+            analysisURL(url) {
+                let strURL = url.toString();
+                let arrURL = strURL.split('/');
+                let virualMoney = arrURL[arrURL.length - 1];
+                if (virualMoney == null || virualMoney == undefined) {
+                    this.virtualMoney = "bitcoin";
+                } else {
+                    this.virtualMoney = virualMoney;
+                }
+                return virualMoney;
             }
         }
     }

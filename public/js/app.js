@@ -61153,7 +61153,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -61257,21 +61257,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -61279,7 +61264,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Create local variable
          */
         return {
-            arrTienAo: []
+            arrTienAo: [],
+            slugMoney: 'Mã tiền ảo',
+            arrTabsMoney: []
         };
     },
 
@@ -61296,16 +61283,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getExchanges: function getExchanges() {
             var _this = this;
 
-            axios.get('api/v1/get-virtual-money-web').then(function (response) {
+            axios.get('/api/v1/get-virtual-money-web').then(function (response) {
                 var objExchangeData = response.data;
                 _this.arrTienAo = objExchangeData;
                 for (var i = 0; i < _this.arrTienAo.length; i++) {
-                    _this.arrTienAo[i]['link'] = 'tien-ao/' + _this.arrTienAo[i]['slug'];
-                    _this.arrTienAo[i]['logo'] = 'frontend/iconVirualMoney/' + _this.arrTienAo[i]['icon'];
+                    _this.arrTienAo[i]['link'] = '/tien-ao/' + _this.arrTienAo[i]['slug'];
+                    _this.arrTienAo[i]['logo'] = '/iconVirualMoney/' + _this.arrTienAo[i]['icon'];
+                    _this.arrTabsMoney.push(_this.arrTienAo[i]);
                 }
             }).catch(function (error) {
                 console.log(error);
             });
+        },
+
+
+        /**
+         * Function search money
+         * using slugMoney condition search
+         * replace data to table
+         */
+        searchMoney: function searchMoney(slugMoney) {
+            this.kyhanSlug = slugMoney;
+            if (slugMoney != null) {
+                var tempArray = [];
+                for (var j = 0; j < this.arrTienAo.length; j++) {
+                    if (this.arrTienAo[j]['slug'] === slugMoney) {
+                        tempArray.push(this.arrTienAo[j]);
+                    }
+                }
+                this.arrTienAo.splice(0, this.arrTienAo.length);
+                for (var k = 0; k < tempArray.length; k++) {
+                    this.arrTienAo.push(tempArray[k]);
+                }
+            }
         }
     }
 });
@@ -61329,7 +61339,7 @@ var render = function() {
               [
                 _vm._m(0),
                 _vm._v(" "),
-                _vm._l(_vm.arrTienAo, function(renderTienAo) {
+                _vm._l(_vm.arrTabsMoney, function(renderTienAo) {
                   return _c(
                     "a",
                     {
@@ -61349,7 +61359,48 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "section layout_padding margin-top-25px" }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(1),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "full" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "heading_main pull-right text-right col-md-6" },
+                [
+                  _c("div", { staticClass: "col-md-7 pull-left" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6 pull-right" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: this.slugMoney,
+                          expression: "this.slugMoney"
+                        }
+                      ],
+                      staticClass: "form-control row pull-right",
+                      attrs: { type: "text", id: "slug_money" },
+                      domProps: { value: this.slugMoney },
+                      on: {
+                        change: function($event) {
+                          return _vm.searchMoney(this.slugMoney)
+                        },
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(this, "slugMoney", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "table-exchange-home" }, [
           _c("div", { staticClass: "col-md-12 pull-right" }, [
@@ -61368,22 +61419,32 @@ var render = function() {
                     _vm._l(_vm.arrTienAo, function(renderTienAo) {
                       return _c("tr", [
                         _c("th", { staticClass: "bg-gray text-left" }, [
-                          _c("img", {
-                            attrs: {
-                              src: renderTienAo.logo,
-                              height: "16px",
-                              width: "16px",
-                              alt: ""
-                            }
-                          }),
-                          _vm._v(_vm._s(renderTienAo.name))
+                          _c("a", { attrs: { href: renderTienAo.link } }, [
+                            _c("img", {
+                              staticClass: "margin-right-5",
+                              attrs: {
+                                src: renderTienAo.logo,
+                                height: "16px",
+                                width: "16px",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(
+                              "\n                                            " +
+                                _vm._s(renderTienAo.name) +
+                                "\n                                            "
+                            ),
+                            _c("span", { staticClass: "font-size-13px" }, [
+                              _c("i", [
+                                _vm._v("(" + _vm._s(renderTienAo.slug) + ")")
+                              ])
+                            ])
+                          ])
                         ]),
                         _vm._v(" "),
-                        _c("th", [_vm._v("$ " + _vm._s(renderTienAo.price))]),
+                        _c("th", [_vm._v(_vm._s(renderTienAo.price))]),
                         _vm._v(" "),
-                        _c("th", [
-                          _vm._v(_vm._s(renderTienAo.price_vnd) + " đ")
-                        ]),
+                        _c("th", [_vm._v(_vm._s(renderTienAo.price_vnd))]),
                         _vm._v(" "),
                         _c("th", [_vm._v(_vm._s(renderTienAo.market_cap))]),
                         _vm._v(" "),
@@ -61414,12 +61475,6 @@ var render = function() {
               )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n                Đồng Euro (€; mã ISO: EUR, còn gọi là Âu kim hay Đồng tiền chung châu Âu) là đơn vị tiền tệ của Liên minh Tiền tệ châu Âu, là tiền tệ chính thức trong 18 quốc gia thành viên của Liên minh châu Âu (Áo, Bỉ, Bồ Đào Nha, Đức, Hà Lan, Hy Lạp, Ireland, Luxembourg, Pháp, Phần Lan, Tây Ban Nha, Ý, Slovenia, Malta, Cộng hòa Síp, Estonia, Latvia, Litva) và trong 6 nước và lãnh thổ không thuộc Liên minh châu Âu.\n\n                Vào ngày 1 tháng 1 năm 1999 tỷ lệ hối đoái giữa Euro và các đơn vị tiền tệ quốc gia được quy định không thể thay đổi và Euro trở thành tiền tệ chính thức. Việc phát hành đồng Euro rộng rãi đến người tiêu dùng bắt đầu từ ngày 1 tháng 1 năm 2002.\n\n                Tiền giấy Euro giống nhau hoàn toàn trong tất cả các quốc gia.\n\n                Tiền giấy Euro có mệnh giá 5 Euro, 10 Euro, 50 Euro, 100 Euro, 200 Euro và 500 Euro. Mặt trước có hình của một cửa sổ hay phần trước của một cánh cửa, mặt sau là một chiếc cầu. Tháng 7 năm 2017, được sự chấp thuận của Ngân hàng Trung ương Châu Âu, Ngân hàng Trung ương Đức chính thức phát hành đồng hiện kim bằng giấy với mệnh giá là 0 euro (giá bán là 2,5 euro) đáp ứng nhu cầu của những người có sở thích sưu tập tiền tệ. Một mặt in chân dung nhà thần học Martin Luther ở bên phải, cùng căn phòng làm việc của ông tại Lâu đài Wartburg; mặt còn lại gồm tổ hợp hình ảnh quy tụ các kiến trúc tiêu biểu thuộc Liên minh châu Âu, bên góc phải là bức tranh nàng Mona Lisa.[1]\n\n                Tiền kim loại Euro cùng một mệnh giá giống nhau ở mặt trước, nhưng có trang trí khác nhau ở mặt sau, đặc trưng cho từng quốc gia phát hành.\n\n                Các loại mệnh giá tiền Euro đang lưu hành\n\n                Euro có 7 mệnh giá tiền giấy ( €5 , €10 , €20 , €50 , €100 , €200 và €500 )\n                Có 8 mệnh giá tiền xu cho Euro ( 1c , 2c , 5c , 10c , 20c , 50c , €1 và €2 )\n                Web tỷ giá cập nhiật liên tục, chính xác tỷ giá mua, bán, chuyển khoản đồng Euro từ các ngân hàng lớn có hỗ trợ giao dịch đồng Euro. cung cấp các công cụ chuyển đổi, quy đổi đồng Euro ra các đồng tiền khác\n\n                tiền euro\n                đồng euro\n                tỷ giá euro\n                ty gia euro\n                euro to vnd\n                eur to vnd\n                tỷ giá euro hôm nay\n                1 eur to vnd\n                1 eur = vnd\n            "
-          )
         ])
       ])
     ])
@@ -61445,18 +61500,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "full" }, [
-          _c("div", { staticClass: "heading_main text_align_center" }, [
-            _c("h2", { staticClass: "font-size-22px" }, [
-              _c("span", { staticClass: "theme_color" }),
-              _vm._v("Các lần cập nhật tiền ảo mới nhất")
-            ])
-          ])
+    return _c(
+      "div",
+      { staticClass: "heading_main pull-left text_align_center col-md-6 row" },
+      [
+        _c("h2", { staticClass: "font-size-22px" }, [
+          _c("span", { staticClass: "theme_color" }),
+          _vm._v("Các lần cập nhật tiền ảo mới nhất")
         ])
-      ])
-    ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -61578,7 +61631,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -61710,47 +61763,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         /**
          * Create local variable
          */
-        return {};
+        return {
+            virtualMoney: 'bitcoin',
+            arrTienAo: [],
+            detailMoney: []
+        };
     },
 
     created: function created() {
@@ -61764,14 +61787,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Implement function here
          */
         getExchanges: function getExchanges() {
-            axios.get('api/v1/get-exchange').then(function (response) {
+            var _this = this;
+
+            var url = location.href;
+            var txtMoney = this.analysisURL(url);
+
+            // Call API is render tabs money
+            axios.get('/api/v1/get-virtual-money-web').then(function (response) {
                 var objExchangeData = response.data;
-                for (var i = 0; i < objExchangeData.length; i++) {
-                    console.log(objExchangeData[i]);
+                _this.arrTienAo = objExchangeData;
+                for (var i = 0; i < _this.arrTienAo.length; i++) {
+                    _this.arrTienAo[i]['link'] = '/tien-ao/' + _this.arrTienAo[i]['slug'];
+                    _this.arrTienAo[i]['logo'] = '/iconVirualMoney/' + _this.arrTienAo[i]['image'];
                 }
             }).catch(function (error) {
                 console.log(error);
             });
+
+            // Call API get data an money detail
+            axios.get('/api/v1/get-virtual-money/' + txtMoney).then(function (response) {
+                var objExchangeData = response.data;
+                objExchangeData[0]['logo'] = '/iconVirualMoney/' + objExchangeData[0]['image'];
+                _this.detailMoney.push(objExchangeData[0]);
+            }).catch(function (error) {
+                console.log(error);
+            });
+            console.log(this.detailMoney);
+        },
+        analysisURL: function analysisURL(url) {
+            var strURL = url.toString();
+            var arrURL = strURL.split('/');
+            var virualMoney = arrURL[arrURL.length - 1];
+            if (virualMoney == null || virualMoney == undefined) {
+                this.virtualMoney = "bitcoin";
+            } else {
+                this.virtualMoney = virualMoney;
+            }
+            return virualMoney;
         }
     }
 });
@@ -61784,108 +61836,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tien-ao-detail-component" }, [
-      _c("div", { staticClass: "section margin-top-25" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "btn-item" }, [
-                _c("div", { staticClass: "col-md-12 row" }, [
-                  _c("div", { staticClass: "full" }, [
-                    _c(
-                      "div",
-                      { staticClass: "heading_main text_align_center" },
-                      [
-                        _c("h2", { staticClass: "font-size-22px" }, [
-                          _c("span", { staticClass: "theme_color" }),
-                          _vm._v("Chi tiết các đồng tiền ảo")
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
+  return _c("div", { staticClass: "tien-ao-detail-component" }, [
+    _c("div", { staticClass: "section margin-top-25" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              { staticClass: "btn-item" },
+              [
+                _vm._m(0),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Ethereum")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("XRP")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin Cash")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Litecoin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Tether")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Binance Coin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("EOS")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin SV")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Monero")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Stellar")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Cardano")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("TRON")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Ethereum Classic")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Dash")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("XRP")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin Cash")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Litecoin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Tether")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Binance Coin")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("EOS")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Bitcoin SV")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Monero")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Stellar")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Cardano")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("TRON")])
-              ])
-            ])
+                _vm._l(_vm.arrTienAo, function(renderTienAo) {
+                  return _c(
+                    "a",
+                    {
+                      staticClass: "margin-right-5",
+                      attrs: { href: renderTienAo.link }
+                    },
+                    [_vm._v(_vm._s(renderTienAo.name))]
+                  )
+                })
+              ],
+              2
+            )
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "section layout_padding margin-top-25px padding-bottom-25px"
-        },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "section-main" }, [
-              _c("div", { staticClass: "container main-wrapper" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-12 border-sm-right" }, [
-                    _c("div", { staticClass: "block" }, [
-                      _c("div", { staticClass: "block-content" }, [
-                        _c(
+      ])
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "section layout_padding margin-top-25px padding-bottom-25px"
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "section-main" }, [
+            _c("div", { staticClass: "container main-wrapper" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12 border-sm-right" }, [
+                  _c("div", { staticClass: "block" }, [
+                    _c(
+                      "div",
+                      { staticClass: "block-content" },
+                      _vm._l(this.detailMoney, function(renderMoney) {
+                        return _c(
                           "article",
                           { staticClass: "col-md-12", attrs: { id: "main" } },
                           [
@@ -61898,7 +61897,11 @@ var staticRenderFns = [
                               [
                                 _c("span", { staticClass: "theme_color" }),
                                 _vm._v(
-                                  "Giá Bitcoin(bitcoin) mới nhất ngày hôm nay "
+                                  "Giá " +
+                                    _vm._s(renderMoney.name) +
+                                    "(" +
+                                    _vm._s(renderMoney.slug) +
+                                    ") mới nhất ngày hôm nay "
                                 ),
                                 _c("small", [
                                   _vm._v(" - "),
@@ -61907,61 +61910,12 @@ var staticRenderFns = [
                                     { staticClass: "hidden-xs font-size-16px" },
                                     [_vm._v("Cập nhật lúc ")]
                                   ),
-                                  _vm._v("17:00:08 03/09/2019")
+                                  _vm._v(_vm._s(renderMoney.created_at))
                                 ])
                               ]
                             ),
                             _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticStyle: {
-                                  "margin-top": "5px",
-                                  height: "25px",
-                                  "margin-bottom": "5px",
-                                  "text-align": "right"
-                                }
-                              },
-                              [
-                                _c("div", {
-                                  staticClass: "pull-right",
-                                  staticStyle: { "margin-left": "5px" }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "pull-right",
-                                    staticStyle: { "margin-left": "5px" }
-                                  },
-                                  [
-                                    _c("div", {
-                                      staticClass: "fb-share-button",
-                                      attrs: {
-                                        "data-href":
-                                          "https://tygia.vn/tien-ao/bitcoin",
-                                        "data-layout": "button_count"
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "pull-right" }, [
-                                  _c("div", {
-                                    staticClass: "fb-like",
-                                    attrs: {
-                                      "data-href":
-                                        "https://tygia.vn/tien-ao/bitcoin",
-                                      "data-layout": "button_count",
-                                      "data-action": "like",
-                                      "data-show-faces": "true"
-                                    }
-                                  })
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "row margin-top-25px" }, [
                               _c(
                                 "div",
                                 {
@@ -61972,18 +61926,23 @@ var staticRenderFns = [
                                   _c("div", { staticClass: "coin-logo" }, [
                                     _c("img", {
                                       attrs: {
-                                        src:
-                                          "https://tygia.vn/storage/virtualmoney/1.png",
-                                        alt: "Bitcoin",
-                                        title: "Bitcoin"
+                                        src: renderMoney.logo,
+                                        alt: renderMoney.name,
+                                        title: renderMoney.slug
                                       }
                                     })
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "coin-info" }, [
                                     _c("h2", [
-                                      _vm._v(" Bitcoin "),
-                                      _c("small", [_vm._v("(bitcoin)")])
+                                      _vm._v(
+                                        " " + _vm._s(renderMoney.name) + " "
+                                      ),
+                                      _c("small", [
+                                        _vm._v(
+                                          "(" + _vm._s(renderMoney.slug) + ")"
+                                        )
+                                      ])
                                     ]),
                                     _vm._v(" "),
                                     _c(
@@ -61997,7 +61956,12 @@ var staticRenderFns = [
                                             "Bảng giá tiền ảo, tiền điện tử"
                                         }
                                       },
-                                      [_vm._v("Xếp hạng: 1")]
+                                      [
+                                        _vm._v(
+                                          "Xếp hạng: " +
+                                            _vm._s(renderMoney.rank)
+                                        )
+                                      ]
                                     ),
                                     _vm._v(" "),
                                     _c("br"),
@@ -62007,7 +61971,7 @@ var staticRenderFns = [
                                       {
                                         staticClass: "btn btn-xs btn-danger",
                                         attrs: {
-                                          href: "https://tygia.vn/tien-ao",
+                                          href: "/tien-ao",
                                           title:
                                             "Bảng giá tiền ảo, tiền điện tử"
                                         }
@@ -62032,26 +61996,63 @@ var staticRenderFns = [
                                         attrs: { id: "quote_price" }
                                       },
                                       [
-                                        _vm._v("$10,322.90 "),
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "text-large down_change",
-                                            staticStyle: {
-                                              color: "red",
-                                              "font-size": "18px"
-                                            }
-                                          },
-                                          [_vm._v("(5.478%)")]
-                                        )
+                                        _vm._v(
+                                          "$" +
+                                            _vm._s(renderMoney.price) +
+                                            "\n                                                        "
+                                        ),
+                                        renderMoney.percent_change_24h < 0
+                                          ? _c(
+                                              "span",
+                                              {
+                                                staticClass:
+                                                  "text-large down_change",
+                                                staticStyle: {
+                                                  color: "red",
+                                                  "font-size": "18px"
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                                                            (" +
+                                                    _vm._s(
+                                                      renderMoney.percent_change_24h
+                                                    ) +
+                                                    "%)\n                                                        "
+                                                )
+                                              ]
+                                            )
+                                          : _c(
+                                              "span",
+                                              {
+                                                staticClass:
+                                                  "text-large up_change font-color-green",
+                                                staticStyle: {
+                                                  "font-size": "18px"
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                                                            (" +
+                                                    _vm._s(
+                                                      renderMoney.percent_change_24h
+                                                    ) +
+                                                    "%)\n                                                        "
+                                                )
+                                              ]
+                                            )
                                       ]
                                     ),
                                     _vm._v(" "),
                                     _c("br"),
                                     _vm._v(" "),
                                     _c("p", { staticClass: "text-gray" }, [
-                                      _vm._v("1 BTC = 1.0 BTC")
+                                      _vm._v(
+                                        "1 " +
+                                          _vm._s(renderMoney.symbol) +
+                                          " = 1.0 " +
+                                          _vm._s(renderMoney.symbol)
+                                      )
                                     ])
                                   ]),
                                   _vm._v(" "),
@@ -62073,7 +62074,9 @@ var staticRenderFns = [
                                               { staticClass: "text-primary" },
                                               [
                                                 _vm._v(
-                                                  "1 bitcoin = ~239,875,000 đồng"
+                                                  "1 bitcoin = ~" +
+                                                    _vm._s(renderMoney.vnd) +
+                                                    " đồng"
                                                 )
                                               ]
                                             )
@@ -62081,25 +62084,13 @@ var staticRenderFns = [
                                         ]),
                                         _vm._v(" "),
                                         _c("tr", [
-                                          _c("th", [
-                                            _c(
-                                              "span",
-                                              { staticClass: "hidden-xs" },
-                                              [
-                                                _vm._v(
-                                                  "Giá trị vốn hóa thị trường"
-                                                )
-                                              ]
-                                            ),
-                                            _c(
-                                              "span",
-                                              { staticClass: "visible-xs" },
-                                              [_vm._v("Vốn hóa thị trường")]
-                                            )
-                                          ]),
+                                          _vm._m(1, true),
                                           _vm._v(" "),
                                           _c("td", [
-                                            _vm._v("$ 184,914,000,000")
+                                            _vm._v(
+                                              "$ " +
+                                                _vm._s(renderMoney.market_cap)
+                                            )
                                           ])
                                         ]),
                                         _vm._v(" "),
@@ -62109,7 +62100,10 @@ var staticRenderFns = [
                                           ]),
                                           _vm._v(" "),
                                           _c("td", [
-                                            _vm._v("$ 18,686,600,000.000")
+                                            _vm._v(
+                                              "$ " +
+                                                _vm._s(renderMoney.volume_24h)
+                                            )
                                           ])
                                         ]),
                                         _vm._v(" "),
@@ -62118,21 +62112,51 @@ var staticRenderFns = [
                                             _vm._v("Tổng BTC hiện có")
                                           ]),
                                           _vm._v(" "),
-                                          _c("td", [_vm._v("$ 17,913,000")])
+                                          _c("td", [
+                                            _vm._v(
+                                              "$ " +
+                                                _vm._s(renderMoney.total_supply)
+                                            )
+                                          ])
                                         ]),
                                         _vm._v(" "),
                                         _c("tr", [
                                           _c("th", [_vm._v("Dao động 1 giờ")]),
                                           _vm._v(" "),
                                           _c("td", [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "up_change",
-                                                staticStyle: { color: "red" }
-                                              },
-                                              [_vm._v(" -0.286%")]
-                                            )
+                                            renderMoney.percent_change_1h < 0
+                                              ? _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "up_change font-color-red"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " " +
+                                                        _vm._s(
+                                                          renderMoney.percent_change_1h
+                                                        ) +
+                                                        "%"
+                                                    )
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "up_change font-color-green"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " +" +
+                                                        _vm._s(
+                                                          renderMoney.percent_change_1h
+                                                        ) +
+                                                        "%"
+                                                    )
+                                                  ]
+                                                )
                                           ])
                                         ]),
                                         _vm._v(" "),
@@ -62140,14 +62164,39 @@ var staticRenderFns = [
                                           _c("th", [_vm._v("Dao động 24 giờ")]),
                                           _vm._v(" "),
                                           _c("td", [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "up_change",
-                                                staticStyle: { color: "green" }
-                                              },
-                                              [_vm._v(" 5.478%")]
-                                            )
+                                            renderMoney.percent_change_24h < 0
+                                              ? _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "up_change font-color-red"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " " +
+                                                        _vm._s(
+                                                          renderMoney.percent_change_24h
+                                                        ) +
+                                                        "%"
+                                                    )
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "up_change font-color-green"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " +" +
+                                                        _vm._s(
+                                                          renderMoney.percent_change_24h
+                                                        ) +
+                                                        "%"
+                                                    )
+                                                  ]
+                                                )
                                           ])
                                         ]),
                                         _vm._v(" "),
@@ -62155,14 +62204,39 @@ var staticRenderFns = [
                                           _c("th", [_vm._v("Dao động 7 ngày")]),
                                           _vm._v(" "),
                                           _c("td", [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "up_change",
-                                                staticStyle: { color: "green" }
-                                              },
-                                              [_vm._v(" 1.451%")]
-                                            )
+                                            renderMoney.percent_change_7d < 0
+                                              ? _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "up_change font-color-red"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " " +
+                                                        _vm._s(
+                                                          renderMoney.percent_change_7d
+                                                        ) +
+                                                        "%"
+                                                    )
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "up_change font-color-green"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      " +" +
+                                                        _vm._s(
+                                                          renderMoney.percent_change_7d
+                                                        ) +
+                                                        "%"
+                                                    )
+                                                  ]
+                                                )
                                           ])
                                         ])
                                       ])
@@ -62173,17 +62247,46 @@ var staticRenderFns = [
                             ])
                           ]
                         )
-                      ])
-                    ])
+                      }),
+                      0
+                    )
                   ])
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br")
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12 row" }, [
+      _c("div", { staticClass: "full" }, [
+        _c("div", { staticClass: "heading_main text_align_center" }, [
+          _c("h2", { staticClass: "font-size-22px" }, [
+            _c("span", { staticClass: "theme_color" }),
+            _vm._v("Chi tiết các đồng tiền ảo")
           ])
-        ]
-      )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [
+      _c("span", { staticClass: "hidden-xs" }, [
+        _vm._v("Giá trị vốn hóa thị trường")
+      ]),
+      _c("span", { staticClass: "visible-xs" }, [_vm._v("Vốn hóa thị trường")])
     ])
   }
 ]
