@@ -124,6 +124,9 @@ class ExchangeController extends Controller
         return view('admin.exchange.bankExchange', compact('bankList', 'exchanges', 'exchangeTemp'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function oilPetro()
     {
         return view('admin.exchange.oilPetro');
@@ -145,6 +148,11 @@ class ExchangeController extends Controller
         return view('admin.exchange.bankinfo', compact('bankList', 'bankInfo'));
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function bankInfoUpdate(Request $request, $id)
     {
         $bankInfo = BankInfo::findOrFail($id);
@@ -160,6 +168,10 @@ class ExchangeController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function goldInfo(Request $request)
     {
         $goldInfo = null;
@@ -172,6 +184,11 @@ class ExchangeController extends Controller
         return view('admin.exchange.goldInfo', compact('goldInfo'));
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function goldInfoUpdate(Request $request, $id)
     {
         $goldInfo = DB::table('tygiavang_distributor')->where('id', $id)->first();
@@ -194,6 +211,9 @@ class ExchangeController extends Controller
         }
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function virualMoneyType()
     {
         $loaiTienAo = LoaiTienAo::paginate(20);
@@ -203,6 +223,11 @@ class ExchangeController extends Controller
         return view('admin.exchange.typeVirualMoney', compact('loaiTienAo'));
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function virualMoneyTypeDetail(Request $request, $id)
     {
         $loaiTienAo = LoaiTienAo::find($id);
@@ -212,6 +237,11 @@ class ExchangeController extends Controller
         return view('admin.exchange.typeVirualMoneyDetail', compact('loaiTienAo'));
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function virualMoneyTypeUpdate(Request $request, $id)
     {
         $loaiTienAo = LoaiTienAo::find($id);
@@ -225,71 +255,5 @@ class ExchangeController extends Controller
         } catch (\Exception $exception) {
             dd($exception);
         }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
