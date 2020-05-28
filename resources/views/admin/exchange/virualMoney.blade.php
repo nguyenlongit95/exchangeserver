@@ -39,6 +39,9 @@
                                     <i class="fa fa-search margin-left-5px"></i>
                                     <img class="iconLoading" src="{{ asset('admin/asset/icon/loading.gif') }}" style="width: 32px; display: none;" class="margin-left-5px" alt="">
                                 </button>
+                                <div class="text-right margin-bottom">
+                                    <a class="btn btn-default" href="{{ url('admin/virual-money-type') }}">Loại tiền ảo</a>
+                                </div>
                             </div>
                         </form>
                     </div>

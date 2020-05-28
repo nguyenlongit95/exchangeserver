@@ -40,6 +40,9 @@
                                     <img class="iconLoading" src="{{ asset('admin/asset/icon/loading.gif') }}" style="width: 32px; display: none;" class="margin-left-5px" alt="">
                                 </button>
                             </div>
+                            <div class="text-right margin-bottom">
+                                <a class="btn btn-default" href="{{ url('admin/bank-info') }}">Thông tin ngân hàng</a>
+                            </div>
                         </form>
                     </div>
                     @if($exchanges != null &&count($exchanges) > 0)

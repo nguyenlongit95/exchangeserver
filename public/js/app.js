@@ -57514,7 +57514,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57525,6 +57525,44 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -58487,7 +58525,128 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(17)
+    _c("div", { staticClass: "section layout_padding" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("p", { staticClass: "text-left" }, [
+              _c("strong", { staticClass: "font-size-13px" }, [
+                _vm._v("Chuyển đổi đồng "),
+                _c(
+                  "span",
+                  {
+                    staticClass: "color-d66c0b",
+                    attrs: { id: "txt_money_code" }
+                  },
+                  [_vm._v(_vm._s(this.currency))]
+                ),
+                _vm._v(" sang VNĐ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "form-group well well-lg",
+                staticStyle: {
+                  "margin-top": "10px",
+                  visibility: "visible",
+                  padding: "1% 5% 0 5%",
+                  "margin-bottom": "5px",
+                  background: "#e3e3e3"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "text-center",
+                    staticStyle: { "padding-bottom": "2%" }
+                  },
+                  [
+                    _c("small", { staticClass: "text-red" }, [
+                      _vm._v("Chuyển đồi tỷ giá trung bình: "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "color-d66c0b",
+                          attrs: { id: "txt_money_code" }
+                        },
+                        [_vm._v(_vm._s(this.currency))]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("form", { staticClass: "form-inline" }, [
+                  _c("div", { staticClass: "col-md-12 row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-xs-12 col-sm-12 col-md-5 text-center"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "form-group pull-right",
+                            attrs: { id: "from_coin" }
+                          },
+                          [
+                            _c("div", { staticClass: "input-group" }, [
+                              _c("input", {
+                                staticClass: "form-control input-coin",
+                                attrs: {
+                                  type: "text",
+                                  id: "money1",
+                                  "data-rate": "1",
+                                  "data-mo": "AUD"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "input-group-addon",
+                                  staticStyle: { "margin-left": "5px" },
+                                  attrs: { for: "money1" }
+                                },
+                                [_c("span", [_vm._v(_vm._s(this.currency))])]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(17),
+                    _vm._v(" "),
+                    _vm._m(18)
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(19)
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "text-right",
+                    staticStyle: { "padding-bottom": "1%" }
+                  },
+                  [
+                    _c("small", [
+                      _c("i", [
+                        _vm._v(" Cập nhật:  " + _vm._s(this.timeUpdate) + " ")
+                      ])
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -58692,43 +58851,72 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "banner_title" }, [
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti cum, temporibus tempora soluta assumenda est, veritatis asperiores possimus placeat quis nesciunt fugiat officiis ipsa quae, unde facere eos recusandae sapiente?"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit eos ipsum dignissimos voluptatem voluptatibus quod magni vel distinctio asperiores quibusdam esse consequuntur ut amet excepturi labore, delectus voluptates hic consequatur."
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, non ad. Molestiae velit nemo minus, tempora saepe accusantium exercitationem, natus sint sapiente officiis doloribus assumenda minima ea suscipit, autem optio."
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit unde vel inventore nisi culpa libero perspiciatis placeat corrupti, maxime consequatur tenetur suscipit consectetur molestiae delectus necessitatibus excepturi eius doloremque voluptates?"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, id? Maxime, hic animi sit nulla voluptatibus non dolores quam amet reiciendis rem doloribus ducimus molestias sequi temporibus quasi dolorum soluta."
-                )
-              ])
-            ])
+    return _c(
+      "div",
+      { staticClass: "col-xs-12 col-sm-12 col-md-2 text-center" },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-sm btn-primary money1",
+            staticStyle: { "margin-top": "5%" },
+            attrs: { type: "button", id: "swap_button" }
+          },
+          [_c("i", { staticClass: "fa fa-arrow-right " })]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-xs-12 col-sm-12 col-md-5 text-center" },
+      [
+        _c("div", { staticClass: "form-group", attrs: { id: "to_coin" } }, [
+          _c("div", { staticClass: "input-group" }, [
+            _c("input", {
+              staticClass: "form-control input-coin",
+              attrs: {
+                type: "text",
+                id: "moneyVN",
+                disabled: "",
+                "data-mo": "VND"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "input-group-addon text-flag",
+                staticStyle: { "margin-left": "5px" },
+                attrs: { for: "moneyVN" }
+              },
+              [_c("span", [_vm._v("VND")])]
+            )
           ])
         ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-xs-12 text-center" }, [
+        _c("div", {
+          staticStyle: {
+            "margin-top": "20px",
+            color: "#f00",
+            "font-weight": "600",
+            "letter-spacing": "0.5px",
+            "word-break": "break-all"
+          },
+          attrs: { id: "convert_text" }
+        })
       ])
     ])
   }

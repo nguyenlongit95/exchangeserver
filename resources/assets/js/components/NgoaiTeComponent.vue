@@ -156,16 +156,54 @@
         <!-- end section -->
 
         <!-- Start Banner -->
-        <div class="section">
+        <div class="section layout_padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="banner_title">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti cum, temporibus tempora soluta assumenda est, veritatis asperiores possimus placeat quis nesciunt fugiat officiis ipsa quae, unde facere eos recusandae sapiente?</p>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit eos ipsum dignissimos voluptatem voluptatibus quod magni vel distinctio asperiores quibusdam esse consequuntur ut amet excepturi labore, delectus voluptates hic consequatur.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, non ad. Molestiae velit nemo minus, tempora saepe accusantium exercitationem, natus sint sapiente officiis doloribus assumenda minima ea suscipit, autem optio.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit unde vel inventore nisi culpa libero perspiciatis placeat corrupti, maxime consequatur tenetur suscipit consectetur molestiae delectus necessitatibus excepturi eius doloremque voluptates?</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, id? Maxime, hic animi sit nulla voluptatibus non dolores quam amet reiciendis rem doloribus ducimus molestias sequi temporibus quasi dolorum soluta.</p>
+                        <p class="text-left">
+                            <strong class="font-size-13px">Chuyển đổi đồng <span id="txt_money_code" class="color-d66c0b">{{ this.currency }}</span> sang VNĐ</strong>
+                        </p>
+                        <div class="form-group well well-lg" style="margin-top: 10px; visibility: visible; padding: 1% 5% 0 5%; margin-bottom: 5px;background: #e3e3e3">
+                            <div class="text-center" style="padding-bottom: 2%;">
+                                <small class="text-red">Chuyển đồi tỷ giá trung bình: <span id="txt_money_code" class="color-d66c0b">{{ this.currency }}</span></small>
+                            </div>
+                            <form class="form-inline">
+                                <div class="col-md-12 row">
+                                    <div class="col-xs-12 col-sm-12 col-md-5 text-center">
+                                        <div class="form-group pull-right" id="from_coin">
+                                            <div class="input-group">
+                                                <input type="text" id="money1" class="form-control input-coin" data-rate="1" data-mo="AUD">
+                                                <label for="money1" class="input-group-addon" style="margin-left:5px;">
+                                                    <span>{{ this.currency }}</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-2 text-center">
+                                        <button type="button" id="swap_button" class="btn btn-sm btn-primary money1" style="margin-top:5%;">
+                                            <i class="fa fa-arrow-right "></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-5 text-center">
+                                        <div class="form-group" id="to_coin">
+                                            <div class="input-group">
+                                                <input type="text" id="moneyVN" disabled class="form-control input-coin" data-mo="VND">
+                                                <label for="moneyVN" class="input-group-addon text-flag" style="margin-left:5px;">
+                                                    <span>VND</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <div id="convert_text" style="margin-top: 20px; color: #f00; font-weight: 600; letter-spacing: 0.5px; word-break: break-all"></div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-right" style="padding-bottom: 1%;">
+                                <small><i> Cập nhật:  {{ this.timeUpdate }} </i></small>
+                            </div>
                         </div>
                     </div>
                 </div>

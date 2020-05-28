@@ -38,8 +38,12 @@
                                     <i class="fa fa-search margin-left-5px"></i>
                                     <img class="iconLoading" src="{{ asset('admin/asset/icon/loading.gif') }}" style="width: 32px; display: none;" class="margin-left-5px" alt="">
                                 </button>
+                                <div class="text-right margin-bottom">
+                                    <a class="btn btn-default" href="{{ url('admin/gold-info') }}">Thông tin hãng vàng</a>
+                                </div>
                             </div>
                         </form>
+
                     </div>
                     @if($gold != null &&count($gold) > 0)
 

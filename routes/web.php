@@ -317,9 +317,21 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
     Route::group(['namespace' =>'web'], function () {
         Route::get('/exchange', 'ExchangeController@index');
         Route::get('/exchange-bank', 'ExchangeController@exchangeBank');
+
+        Route::get('/bank-info', 'ExchangeController@bankInfo');
+        Route::post('/bank-info/update/{id}', 'ExchangeController@bankInfoUpdate');
+
         Route::get('/gold', 'ExchangeController@gold');
+        Route::get('/gold-info', 'ExchangeController@goldInfo');
+        Route::post('/gold-info/update/{id}', 'ExchangeController@goldInfoUpdate');
+
         Route::get('/interest', 'ExchangeController@interest');
+
         Route::get('/virual-money', 'ExchangeController@virualMoney');
+        Route::get('/virual-money-type', 'ExchangeController@virualMoneyType');
+        Route::get('/virual-money-type/{id}', 'ExchangeController@virualMoneyTypeDetail');
+        Route::post('/virual-money-type/update/{id}', 'ExchangeController@virualMoneyTypeUpdate');
+
         Route::get('/oil-petro', 'ExchangeController@oilPetro');
     });
 
