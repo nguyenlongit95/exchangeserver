@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Seo;
 use App\Repositories\Seo\SeoRepositoryInterface;
 use App\Helpers\SeoService;
+
 class SeoController extends Controller
 {
     //

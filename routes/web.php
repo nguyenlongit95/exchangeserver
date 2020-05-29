@@ -33,6 +33,18 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
     // Trang DashBoard sẽ là nơi thống kê sản phẩm và các thông tin liên quan
     Route::get('DashBoard','adminController@DashBoard');
 
+
+    Route::get('seo','SeoController@index');
+
+    Route::post('updateSeo/{id}','SeoController@update');
+    Route::get('updateSeo/{id}','SeoController@show');
+
+    Route::get('addSeo','SeoController@getStore');
+    Route::post('addSeo','SeoController@store');
+
+    Route::get('deleteSeo/{id}','SeoController@destroy');
+
+
     /*
      * Route CURD cho cac thành phần của hệ thống
      * Categories
@@ -203,18 +215,6 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
         Route::get("APIs",'tokenAPIController@index');
 
         Route::get("updateAPIs",'tokenAPIController@update');
-    });
-
-    Route::group(['prefix'=>'Seo'],function(){
-        Route::get('index','SeoController@index');
-
-        Route::post('updateSeo/{id}','SeoController@update');
-        Route::get('updateSeo/{id}','SeoController@show');
-
-        Route::get('addSeo','SeoController@getStore');
-        Route::post('addSeo','SeoController@store');
-
-        Route::get('deleteSeo/{id}','SeoController@destroy');
     });
 
     /*
