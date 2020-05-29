@@ -57514,7 +57514,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57525,6 +57525,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -57754,7 +57755,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             arrListCurrency: [],
             currency: '',
             currencyCode: 'USD',
-            timeUpdate: ''
+            timeUpdate: '',
+            inputFirstMoney: 0,
+            inputSecondMoney: 0,
+            exchangeMoney: 0
         };
     },
 
@@ -57776,10 +57780,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var i = 0; i < objExchangeData.length; i++) {
                     objExchangeData[i]['bank_name'] = _this.fillBankName(objExchangeData[i]['bank_code']);
                     _this.arrListCurrency.push(objExchangeData[i]);
+                    if (_this.arrListCurrency[i]['bank_code'] === 'vietcombank' && _this.arrListCurrency[i]['code'] == _this.currencyCode) {
+                        _this.exchangeMoney = _this.arrListCurrency[i]['muatienmat'];
+                    }
                 }
                 _this.arrListCurrency.reverse();
                 _this.currency = "USD";
                 _this.getTimeUpdate();
+                console.log(objExchangeData);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -57797,6 +57805,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var i = 0; i < objExchangeData.length; i++) {
                     objExchangeData[i]['bank_name'] = _this2.fillBankName(objExchangeData[i]['bank_code']);
                     _this2.arrListCurrency.push(objExchangeData[i]);
+                    if (_this2.arrListCurrency[i]['bank_code'] === 'vietcombank' && _this2.arrListCurrency[i]['code'] == _this2.currencyCode) {
+                        _this2.exchangeMoney = _this2.arrListCurrency[i]['muatienmat'];
+                    }
                 }
                 _this2.arrListCurrency.reverse();
                 _this2.currency = _this2.currencyCode;
@@ -57851,6 +57862,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     return null;
                     break;
             }
+        },
+        changeMoney: function changeMoney(numberMoney) {
+            var tempMoney = 0;
+            if (numberMoney == null && numberMoney <= 0) {
+                this.inputSecondMoney = 0;
+            } else {
+                for (var i = 0; i < this.arrListCurrency.length; i++) {
+                    if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                        tempMoney = this.arrListCurrency[i]['muatienmat'];
+                    }
+                }
+            }
+            var calMoney = numberMoney * tempMoney;
+            this.inputFirstMoney = numberMoney;
+            this.inputSecondMoney = calMoney;
         },
 
 
@@ -58312,9 +58338,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("th", [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                            " +
                               _vm._s(renderCurrency.muatienmat) +
-                              "\n                                        "
+                              "\n                                            "
                           ),
                           renderCurrency.muatienmat_diff > 0
                             ? _c(
@@ -58353,9 +58379,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("th", [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                            " +
                               _vm._s(renderCurrency.bantienmat) +
-                              "\n                                        "
+                              "\n                                            "
                           ),
                           renderCurrency.bantienmat_diff > 0
                             ? _c(
@@ -58394,9 +58420,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("th", [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                            " +
                               _vm._s(renderCurrency.muachuyenkhoan) +
-                              "\n                                        "
+                              "\n                                            "
                           ),
                           renderCurrency.muachuyenkhoan_diff > 0
                             ? _c(
@@ -58439,9 +58465,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("th", [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                            " +
                               _vm._s(renderCurrency.banchuyenkhoan) +
-                              "\n                                        "
+                              "\n                                            "
                           ),
                           renderCurrency.banchuyenkhoan_diff > 0
                             ? _c(
@@ -58595,12 +58621,36 @@ var render = function() {
                           [
                             _c("div", { staticClass: "input-group" }, [
                               _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: this.inputFirstMoney,
+                                    expression: "this.inputFirstMoney"
+                                  }
+                                ],
                                 staticClass: "form-control input-coin",
                                 attrs: {
-                                  type: "text",
+                                  type: "number",
                                   id: "money1",
                                   "data-rate": "1",
                                   "data-mo": "AUD"
+                                },
+                                domProps: { value: this.inputFirstMoney },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.changeMoney(this.inputFirstMoney)
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      this,
+                                      "inputFirstMoney",
+                                      $event.target.value
+                                    )
+                                  }
                                 }
                               }),
                               _vm._v(" "),
@@ -58621,7 +58671,57 @@ var render = function() {
                     _vm._v(" "),
                     _vm._m(17),
                     _vm._v(" "),
-                    _vm._m(18)
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-xs-12 col-sm-12 col-md-5 text-center"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "form-group",
+                            attrs: { id: "to_coin" }
+                          },
+                          [
+                            _c("div", { staticClass: "input-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: this.inputSecondMoney,
+                                    expression: "this.inputSecondMoney"
+                                  }
+                                ],
+                                staticClass: "form-control input-coin",
+                                attrs: {
+                                  type: "text",
+                                  id: "moneyVN",
+                                  disabled: "",
+                                  "data-mo": "VND"
+                                },
+                                domProps: { value: this.inputSecondMoney },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      this,
+                                      "inputSecondMoney",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(18)
+                            ])
+                          ]
+                        )
+                      ]
+                    )
                   ]),
                   _vm._v(" "),
                   _vm._m(19)
@@ -58859,10 +58959,18 @@ var staticRenderFns = [
           "button",
           {
             staticClass: "btn btn-sm btn-primary money1",
-            staticStyle: { "margin-top": "5%" },
+            staticStyle: { "margin-top": "3%" },
             attrs: { type: "button", id: "swap_button" }
           },
-          [_c("i", { staticClass: "fa fa-arrow-right " })]
+          [
+            _c("img", {
+              attrs: {
+                src: "/frontend/images/arrows-alt-h-solid.svg",
+                alt: "",
+                height: "20px"
+              }
+            })
+          ]
         )
       ]
     )
@@ -58872,33 +58980,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "col-xs-12 col-sm-12 col-md-5 text-center" },
-      [
-        _c("div", { staticClass: "form-group", attrs: { id: "to_coin" } }, [
-          _c("div", { staticClass: "input-group" }, [
-            _c("input", {
-              staticClass: "form-control input-coin",
-              attrs: {
-                type: "text",
-                id: "moneyVN",
-                disabled: "",
-                "data-mo": "VND"
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "input-group-addon text-flag",
-                staticStyle: { "margin-left": "5px" },
-                attrs: { for: "moneyVN" }
-              },
-              [_c("span", [_vm._v("VND")])]
-            )
-          ])
-        ])
-      ]
+      "label",
+      {
+        staticClass: "input-group-addon text-flag",
+        staticStyle: { "margin-left": "5px" },
+        attrs: { for: "moneyVN" }
+      },
+      [_c("span", [_vm._v("VND")])]
     )
   },
   function() {

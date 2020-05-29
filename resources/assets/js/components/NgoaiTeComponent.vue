@@ -172,7 +172,7 @@
                                     <div class="col-xs-12 col-sm-12 col-md-5 text-center">
                                         <div class="form-group pull-right" id="from_coin">
                                             <div class="input-group">
-                                                <input type="text" id="money1" class="form-control input-coin" data-rate="1" data-mo="AUD">
+                                                <input type="number" id="money1" class="form-control input-coin" data-rate="1" data-mo="AUD" v-model="this.inputFirstMoney" v-on:change="changeMoney(this.inputFirstMoney)">
                                                 <label for="money1" class="input-group-addon" style="margin-left:5px;">
                                                     <span>{{ this.currency }}</span>
                                                 </label>
@@ -180,14 +180,15 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 text-center">
-                                        <button type="button" id="swap_button" class="btn btn-sm btn-primary money1" style="margin-top:5%;">
-                                            <i class="fa fa-arrow-right "></i>
+                                        <button type="button" id="swap_button" class="btn btn-sm btn-primary money1" style="margin-top:3%;">
+<!--                                            <i class="fa fa-arrow-right "></i>-->
+                                            <img src="/frontend/images/arrows-alt-h-solid.svg" alt="" height="20px">
                                         </button>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-5 text-center">
                                         <div class="form-group" id="to_coin">
                                             <div class="input-group">
-                                                <input type="text" id="moneyVN" disabled class="form-control input-coin" data-mo="VND">
+                                                <input type="text" id="moneyVN" disabled class="form-control input-coin" data-mo="VND" v-model="this.inputSecondMoney">
                                                 <label for="moneyVN" class="input-group-addon text-flag" style="margin-left:5px;">
                                                     <span>VND</span>
                                                 </label>
@@ -227,7 +228,10 @@
                 arrListCurrency: [],
                 currency: '',
                 currencyCode: 'USD',
-                timeUpdate: ''
+                timeUpdate: '',
+                inputFirstMoney: 0,
+                inputSecondMoney: 0,
+                exchangeMoney: 0
             }
         },
         created: function () {
@@ -246,10 +250,14 @@
                     for (let i = 0; i < objExchangeData.length; i++) {
                         objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
                         this.arrListCurrency.push(objExchangeData[i]);
+                        if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                            this.exchangeMoney = this.arrListCurrency[i]['muatienmat'];
+                        }
                     }
                     this.arrListCurrency.reverse();
                     this.currency = "USD";
                     this.getTimeUpdate();
+                    console.log(objExchangeData);
                 }).catch(error => {
                     console.log(error);
                 });
@@ -266,6 +274,9 @@
                     for (let i = 0; i < objExchangeData.length; i++) {
                         objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
                         this.arrListCurrency.push(objExchangeData[i]);
+                        if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                            this.exchangeMoney = this.arrListCurrency[i]['muatienmat'];
+                        }
                     }
                     this.arrListCurrency.reverse();
                     this.currency = this.currencyCode;
@@ -321,6 +332,22 @@
                         return null;
                         break;
                 }
+            },
+
+            changeMoney(numberMoney) {
+                let tempMoney = 0;
+                if (numberMoney == null && numberMoney <= 0) {
+                    this.inputSecondMoney = 0;
+                } else {
+                    for (let i = 0; i < this.arrListCurrency.length; i++) {
+                        if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                            tempMoney = this.arrListCurrency[i]['muatienmat'];
+                        }
+                    }
+                }
+                let calMoney = numberMoney * tempMoney;
+                this.inputFirstMoney = numberMoney;
+                this.inputSecondMoney = calMoney;
             },
 
             /**
