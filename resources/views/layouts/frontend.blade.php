@@ -98,12 +98,12 @@
                             </div>
                         </div>
                     </nav>
-                    <div class="search-box">
-                        <input type="text" class="search-txt" placeholder="Search">
-                        <a class="search-btn">
-                            <img src="{{ asset('frontend/images/search_icon.png') }}" alt="Tìm kiếm" />
-                        </a>
-                    </div>
+{{--                    <div class="search-box">--}}
+{{--                        <input type="text" class="search-txt" placeholder="Search">--}}
+{{--                        <a class="search-btn">--}}
+{{--                            <img src="{{ asset('frontend/images/search_icon.png') }}" alt="Tìm kiếm" />--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use http\Env\Response;
+use Illuminate\Support\Facades\DB;
 use App\Models\BankInfo;
 use App\Models\NgoaiTe;
 use App\Models\NgoaiTeCron;
@@ -185,6 +187,14 @@ class ExchangeController extends Controller
         return $exchange;
     }
 
+    public function getBankInfo(Request $request, $bankCode)
+    {
+        $bankInfo = DB::table('bank_info')->where('bankcode', $bankCode)->first();
+        if (!$bankInfo) {
+            return response()->json(['message' => 'Cannot find the bank'], 422);
+        }
+        return response()->json($bankInfo, 200);
+    }
 
     /**
      * Update the specified resource in storage.

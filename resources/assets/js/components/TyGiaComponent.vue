@@ -65,8 +65,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="full">
-                            <div class="heading_main text_align_center">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Tỷ giá ngân hàng <span class="text-uppercase">{{ this.thisBank }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h2>
+                            <div class="heading_main pull-left text-left col-md-6 row">
+                                <h2 class="font-size-22px"><span class="theme_color"></span>Tỷ giá <span class="text-uppercase">{{ this.thisBank }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h2>
+                            </div>
+                            <div class="heading_main pull-right text-right col-md-6">
+                                <div class="col-md-7 pull-left"></div>
+                                <div class="col-md-6 pull-right">
+                                    <input type="date" class="form-control pull-right row" name="bankID" id="time_input" v-model="timeSearch" v-on:change="getBankDetailSearch()">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,16 +138,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-7 pull-left margin-top-25px">
-                    <div class="row">
-                        <div class="col-md-5 row pull-left">
-                            <label style="margin-top:10px;">Tra cứu lịch sử tỷ giá {{ this.thisBank }}: </label>
-                        </div>
-                        <div class="col-md-6 pull-left">
-                            <input type="date" class="form-control" name="bankID" id="time_input" v-model="timeSearch" v-on:change="getBankDetailSearch()">
-                        </div>
-
-                    </div>
+                <div class="col-md-12 layout_padding pull-left row" v-for="renderBankInfo in bankInfo">
+                    <section v-html="renderBankInfo"></section>
                 </div>
             </div>
         </div>
@@ -165,7 +163,8 @@
                 thisBank: [],
                 timeUpdate: [],
                 timeSearch: "",
-                bankName: 'vietcombank'
+                bankName: 'vietcombank',
+                bankInfo: []
             }
         },
         created: function () {
@@ -183,6 +182,7 @@
             getDefaultBank() {
                 axios.get('api/v1/get-exchange/vietcombank').then(response => {
                     let objExchangeData = response.data;
+
                     for (let i = 0; i < objExchangeData.length; i++) {
                         let moneyName = this.fillNameMoney(objExchangeData[i]['code']);
                         objExchangeData[i]['currency_name'] = moneyName;
@@ -193,6 +193,7 @@
                 }).catch(error => {
                     console.log(error);
                 });
+                this.getBankInfo('vietcombank');
             },
 
             /**
@@ -213,6 +214,7 @@
                         this.exchanges.push(objExchangeData[i]);
                     }
                     this.thisBank = this.bankName;
+                    this.getBankInfo(bank_code);
                 }).catch(error => {
                     console.log(error);
                 });
@@ -223,7 +225,6 @@
              * Fill data to tabe grid
              */
             getBankDetailSearch() {
-                // console.log(this.timeSearch);
                 axios.post('api/v1/get-exchange/'+ this.bankName, {
                     timeSearch: this.timeSearch,
                 }).then(response => {
@@ -235,12 +236,21 @@
                         objExchangeData[i]['currency_name'] = moneyName;
                         this.exchanges.push(objExchangeData[i]);
                     }
-
                     this.thisBank = this.bankName;
                     console.log(response.data.product);
                 })
                 .catch(error => {
                     console.log(error)
+                });
+            },
+
+            getBankInfo(bank_code) {
+                axios.get('api/v1/get-bank-info/' + bank_code).then(response => {
+                    let objExchangeData = response.data;
+                    this.bankInfo.splice(0, this.bankInfo.length);
+                    this.bankInfo.push(objExchangeData['description']);
+                }).catch(error => {
+                    console.log(error);
                 });
             },
 

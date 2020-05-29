@@ -46,4 +46,7 @@ Route::group(['prefix'=>'v1', 'namespace'=>$namespace], function() {
     Route::get('get-virtual-money', 'VirtrualMoneyRateController@index');
     Route::get('get-virtual-money-web', 'VirtrualMoneyRateController@list');
     Route::get('get-virtual-money/{slug}', 'VirtrualMoneyRateController@show');
+
+    // get information
+    Route::get('get-bank-info/{bankcode}', 'ExchangeController@getBankInfo');
 });

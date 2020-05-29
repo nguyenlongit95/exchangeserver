@@ -56454,7 +56454,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56465,8 +56465,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -56629,7 +56627,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             thisBank: [],
             timeUpdate: [],
             timeSearch: "",
-            bankName: 'vietcombank'
+            bankName: 'vietcombank',
+            bankInfo: []
         };
     },
 
@@ -56650,6 +56649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.get('api/v1/get-exchange/vietcombank').then(function (response) {
                 var objExchangeData = response.data;
+
                 for (var i = 0; i < objExchangeData.length; i++) {
                     var moneyName = _this.fillNameMoney(objExchangeData[i]['code']);
                     objExchangeData[i]['currency_name'] = moneyName;
@@ -56660,6 +56660,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
                 console.log(error);
             });
+            this.getBankInfo('vietcombank');
         },
 
 
@@ -56683,6 +56684,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this2.exchanges.push(objExchangeData[i]);
                 }
                 _this2.thisBank = _this2.bankName;
+                _this2.getBankInfo(bank_code);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -56696,7 +56698,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getBankDetailSearch: function getBankDetailSearch() {
             var _this3 = this;
 
-            // console.log(this.timeSearch);
             axios.post('api/v1/get-exchange/' + this.bankName, {
                 timeSearch: this.timeSearch
             }).then(function (response) {
@@ -56708,9 +56709,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     objExchangeData[i]['currency_name'] = moneyName;
                     _this3.exchanges.push(objExchangeData[i]);
                 }
-
                 _this3.thisBank = _this3.bankName;
                 console.log(response.data.product);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        getBankInfo: function getBankInfo(bank_code) {
+            var _this4 = this;
+
+            axios.get('api/v1/get-bank-info/' + bank_code).then(function (response) {
+                var objExchangeData = response.data;
+                _this4.bankInfo.splice(0, _this4.bankInfo.length);
+                _this4.bankInfo.push(objExchangeData['description']);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -57101,276 +57112,331 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "section margin-top-25px" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "full" }, [
-              _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h2", { staticClass: "font-size-22px" }, [
-                  _c("span", { staticClass: "theme_color" }),
-                  _vm._v("Tỷ giá ngân hàng "),
-                  _c("span", { staticClass: "text-uppercase" }, [
-                    _vm._v(_vm._s(this.thisBank))
-                  ]),
-                  _vm._v(" - "),
-                  _c(
-                    "span",
-                    { staticClass: "font-weight-initial font-size-16px" },
-                    [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "table-exchange-home" }, [
-          _c("div", { staticClass: "col-md-12 pull-right" }, [
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "table",
-                {
-                  staticClass: "table table-hover table-bordered",
-                  attrs: { id: "table-exchange-page" }
-                },
-                [
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.exchanges, function(renderExchanges) {
-                      return _c("tr", [
-                        _c("th", { staticClass: "bg-gray text-left" }, [
-                          _vm._v(_vm._s(renderExchanges.code) + " "),
-                          _c("span", { staticClass: "font-size-13px" }, [
-                            _c("i", [
-                              _vm._v(
-                                "(" +
-                                  _vm._s(renderExchanges.currency_name) +
-                                  ")"
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(renderExchanges.muatienmat) +
-                              "\n                                    "
-                          ),
-                          renderExchanges.muatienmat_diff > 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-green"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(renderExchanges.muatienmat_diff)
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          renderExchanges.muatienmat_diff < 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-red"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(renderExchanges.muatienmat_diff)
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e()
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(renderExchanges.muachuyenkhoan) +
-                              "\n                                    "
-                          ),
-                          renderExchanges.muachuyenkhoan_diff > 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-green"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(
-                                          renderExchanges.muachuyenkhoan_diff
-                                        )
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          renderExchanges.muachuyenkhoan_diff < 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-red"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(
-                                          renderExchanges.muachuyenkhoan_diff
-                                        )
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e()
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(renderExchanges.bantienmat) +
-                              "\n                                    "
-                          ),
-                          renderExchanges.bantienmat_diff > 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-green"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(renderExchanges.bantienmat_diff)
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          renderExchanges.bantienmat_diff < 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-red"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(renderExchanges.bantienmat_diff)
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e()
-                        ]),
-                        _vm._v(" "),
-                        _c("th", [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(renderExchanges.banchuyenkhoan) +
-                              "\n                                    "
-                          ),
-                          renderExchanges.banchuyenkhoan_diff > 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-green"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-up" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(
-                                          renderExchanges.banchuyenkhoan_diff
-                                        )
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          renderExchanges.banchuyenkhoan_diff < 0
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "font-size-13px font-color-red"
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-arrow-down" }, [
-                                    _vm._v(
-                                      " " +
-                                        _vm._s(
-                                          renderExchanges.banchuyenkhoan_diff
-                                        )
-                                    )
-                                  ])
-                                ]
-                              )
-                            : _vm._e()
-                        ])
-                      ])
-                    }),
-                    0
-                  )
-                ]
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-7 pull-left margin-top-25px" }, [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-5 row pull-left" }, [
-              _c("label", { staticStyle: { "margin-top": "10px" } }, [
-                _vm._v("Tra cứu lịch sử tỷ giá " + _vm._s(this.thisBank) + ": ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6 pull-left" }, [
-              _c("input", {
-                directives: [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "full" }, [
+                _c(
+                  "div",
                   {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.timeSearch,
-                    expression: "timeSearch"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "date", name: "bankID", id: "time_input" },
-                domProps: { value: _vm.timeSearch },
-                on: {
-                  change: function($event) {
-                    return _vm.getBankDetailSearch()
+                    staticClass: "heading_main pull-left text-left col-md-6 row"
                   },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.timeSearch = $event.target.value
-                  }
-                }
-              })
+                  [
+                    _c("h2", { staticClass: "font-size-22px" }, [
+                      _c("span", { staticClass: "theme_color" }),
+                      _vm._v("Tỷ giá "),
+                      _c("span", { staticClass: "text-uppercase" }, [
+                        _vm._v(_vm._s(this.thisBank))
+                      ]),
+                      _vm._v(" - "),
+                      _c(
+                        "span",
+                        { staticClass: "font-weight-initial font-size-16px" },
+                        [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "heading_main pull-right text-right col-md-6"
+                  },
+                  [
+                    _c("div", { staticClass: "col-md-7 pull-left" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 pull-right" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.timeSearch,
+                            expression: "timeSearch"
+                          }
+                        ],
+                        staticClass: "form-control pull-right row",
+                        attrs: {
+                          type: "date",
+                          name: "bankID",
+                          id: "time_input"
+                        },
+                        domProps: { value: _vm.timeSearch },
+                        on: {
+                          change: function($event) {
+                            return _vm.getBankDetailSearch()
+                          },
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.timeSearch = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ]
+                )
+              ])
             ])
-          ])
-        ])
-      ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "table-exchange-home" }, [
+            _c("div", { staticClass: "col-md-12 pull-right" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "table",
+                  {
+                    staticClass: "table table-hover table-bordered",
+                    attrs: { id: "table-exchange-page" }
+                  },
+                  [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.exchanges, function(renderExchanges) {
+                        return _c("tr", [
+                          _c("th", { staticClass: "bg-gray text-left" }, [
+                            _vm._v(_vm._s(renderExchanges.code) + " "),
+                            _c("span", { staticClass: "font-size-13px" }, [
+                              _c("i", [
+                                _vm._v(
+                                  "(" +
+                                    _vm._s(renderExchanges.currency_name) +
+                                    ")"
+                                )
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(renderExchanges.muatienmat) +
+                                "\n                                    "
+                            ),
+                            renderExchanges.muatienmat_diff > 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "font-size-13px font-color-green"
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                      _vm._v(
+                                        " " +
+                                          _vm._s(
+                                            renderExchanges.muatienmat_diff
+                                          )
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            renderExchanges.muatienmat_diff < 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(
+                                              renderExchanges.muatienmat_diff
+                                            )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(renderExchanges.muachuyenkhoan) +
+                                "\n                                    "
+                            ),
+                            renderExchanges.muachuyenkhoan_diff > 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "font-size-13px font-color-green"
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                      _vm._v(
+                                        " " +
+                                          _vm._s(
+                                            renderExchanges.muachuyenkhoan_diff
+                                          )
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            renderExchanges.muachuyenkhoan_diff < 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(
+                                              renderExchanges.muachuyenkhoan_diff
+                                            )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(renderExchanges.bantienmat) +
+                                "\n                                    "
+                            ),
+                            renderExchanges.bantienmat_diff > 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "font-size-13px font-color-green"
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                      _vm._v(
+                                        " " +
+                                          _vm._s(
+                                            renderExchanges.bantienmat_diff
+                                          )
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            renderExchanges.bantienmat_diff < 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(
+                                              renderExchanges.bantienmat_diff
+                                            )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(renderExchanges.banchuyenkhoan) +
+                                "\n                                    "
+                            ),
+                            renderExchanges.banchuyenkhoan_diff > 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "font-size-13px font-color-green"
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-arrow-up" }, [
+                                      _vm._v(
+                                        " " +
+                                          _vm._s(
+                                            renderExchanges.banchuyenkhoan_diff
+                                          )
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            renderExchanges.banchuyenkhoan_diff < 0
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "font-size-13px font-color-red"
+                                  },
+                                  [
+                                    _c(
+                                      "i",
+                                      { staticClass: "fa fa-arrow-down" },
+                                      [
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(
+                                              renderExchanges.banchuyenkhoan_diff
+                                            )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.bankInfo, function(renderBankInfo) {
+            return _c(
+              "div",
+              { staticClass: "col-md-12 layout_padding pull-left row" },
+              [
+                _c("section", {
+                  domProps: { innerHTML: _vm._s(renderBankInfo) }
+                })
+              ]
+            )
+          })
+        ],
+        2
+      )
     ])
   ])
 }
