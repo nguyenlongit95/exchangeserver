@@ -26,6 +26,7 @@ Vue.component('lai-suat-component', require('./components/LaiSuatComponent.vue')
 Vue.component('lai-suat-detail-component', require('./components/LaiSuatDetailComponent.vue'));
 Vue.component('tien-ao-component', require('./components/TienAoComponent.vue'));
 Vue.component('tien-ao-detail-component', require('./components/TienAoDetailComponent.vue'));
+Vue.component('vn-index-component', require('./components/VnIndexComponent.vue'));
 
 Vue.component('common-component', require('./components/GetTimeNowCommon.vue'));
 

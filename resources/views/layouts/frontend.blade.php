@@ -10,14 +10,13 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Site Metas -->
-    <title>Ứng dụng cập nhật tỷ giá thị trường.</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>{{ $title }}</title>
+
+    @yield('seo_advanced')
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="#" />
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" />
@@ -122,26 +121,19 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="full">
-                            <img class="img-responsive" src="{{ asset('frontend/images/footer_logo.png') }}" alt="Ứng dụng cập nhật tỷ giá thị trường." />
+                            <img class="img-responsive" src="{{ asset('frontend/images/footer_logo.png') }}" alt="Ứng dụng cập nhật giá cả thị trường." />
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="full">
                             <div class="footer_blog full white_fonts">
-                                <h3 class="font-size-16px">NGOẠI TỆ</h3>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">USD</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">JPY</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">KRW</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">HKD</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">GBP</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">EUR</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">RUB</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">CAD</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">VND</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">CHF</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">THB</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">SGD</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">NZD</a></label>
+                                <h3 class="font-size-16px">LIÊN KẾT</h3>
+                                <label class="tag-footer" for="ngoai-te"><a href="{{ url('ngoai-te') }}" class="color-white">Ngoại Tệ</a></label>
+                                <label class="tag-footer" for="ty-gia"><a href="{{ url('ty-gia') }}" class="color-white">Tỷ giá ngân hàng</a></label>
+                                <label class="tag-footer" for="gia-vang"><a href="{{ url('gia-vang') }}" class="color-white">Giá vàng</a></label>
+                                <label class="tag-footer" for="lai-suat"><a href="{{ url('lai-suat') }}" class="color-white">Lãi suất</a></label>
+                                <label class="tag-footer" for="tien-ao"><a href="{{ url('tien-ao') }}" class="color-white">Tiền ảo</a></label>
+                                <label class="tag-footer" for="xang-dau"><a href="{{ url('xang-dau') }}" class="color-white">Xăng dầu</a></label>
                             </div>
                         </div>
                     </div>
@@ -149,25 +141,25 @@
                         <div class="full">
                             <div class="footer_blog full white_fonts">
                                 <h3 class="font-size-16px">TIỀN ẢO</h3>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Bitcoins</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Ethereum</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">XRP</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Bitcoin CASH</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Lite coin</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Tether</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">EOS</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Monero</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Stellar</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Cardano</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">TRON</a></label>
-                                <label class="tag-footer" for=""><a href="#" class="color-white">Classic</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/bitcoin') }}" class="color-white">Bitcoins</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/ethereum') }}" class="color-white">Ethereum</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/ripple') }}" class="color-white">XRP</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/bitcoin-cash') }}" class="color-white">Bitcoin CASH</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/litecoin') }}" class="color-white">Lite coin</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/tether') }}" class="color-white">Tether</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/eos') }}" class="color-white">EOS</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/monero') }}" class="color-white">Monero</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/stellar') }}" class="color-white">Stellar</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/cardano') }}" class="color-white">Cardano</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/tron') }}" class="color-white">TRON</a></label>
+                                <label class="tag-footer" for=""><a href="{{ url('tien-ao/iota') }}" class="color-white">IOTA</a></label>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="full">
                             <div class="footer_blog full white_fonts">
-                                <h3 class="font-size-16px">LIÊN KẾT</h3>
+                                <h3 class="font-size-16px">ỨNG DỤNG</h3>
                                 <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/profile.php?id=100013698812957"><i class="fa fa-facebook-square font-size-22px"></i></i></a>
                                 <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/profile.php?id=100013698812957"><i class="fa fa-android font-size-22px"></i><span></span></a>
                                 <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/profile.php?id=100013698812957"><i class="fa fa-apple font-size-22px"></i><span></span></a>
@@ -180,18 +172,20 @@
     </div>
 </footer>
 <!-- End Footer -->
-
+<?php
+    $year = new \Carbon\Carbon();
+?>
 <div class="footer_bottom">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="crp font-size-13px">© Copyrights 2019 - exchange app ứng dụng cập nhật giá cả thị trường</p>
+                <p class="crp font-size-13px">© Copyrights {{ $year->format('Y') }} - <a href="{{ url('/') }}" style="color:white;">tygia.info</a> ứng dụng cập nhật giá cả thị trường.</p>
             </div>
         </div>
     </div>
 </div>
 
-<a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up" style="margin-top:7px;"></i></a>
+<a href="#" id="scroll-to-top" class="hvr-radial-out back-ground-none"><i class="fa fa-angle-up" style="margin-top:7px;"></i></a>
 
 <!-- ALL JS FILES -->
 <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
@@ -329,6 +323,9 @@
         pickerPosition: "bottom-left"
     });
 </script>
+
+@yield('jsChart')
+
 </body>
 
 </html>

@@ -6,10 +6,16 @@
  * Time: 6:35 PM
  */
 namespace App\Helpers;
-class render_seo{
-    public function render_seo($blade){
-        $seo = \App\Modules\Seo\Models\Seo::getMeta();
-        return theme_view('widgets.'.$blade, compact('seo'))->render();
+
+use App\Seo;
+
+class render_seo
+{
+    public function render_seo($blade)
+    {
+        $seo = Seo::getMeta();
+        return view('layouts.' . $blade, compact('seo'))->render();
     }
 }
+
 ?>

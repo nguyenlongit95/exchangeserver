@@ -9,7 +9,7 @@
                             <div class="col-md-12 row">
                                 <div class="full">
                                     <div class="heading_main pull-left">
-                                        <h2 class="font-size-22px"><span class="theme_color"></span>Chi tiết tỷ giá các ngân hàng</h2>
+                                        <h1 class="font-size-22px"><span class="theme_color"></span>Chi tiết tỷ giá các ngân hàng</h1>
                                     </div>
                                 </div>
                             </div>
@@ -26,6 +26,9 @@
                             <a v-on:click="getBankDetail('argibank')" class="poiter-crusor">ArgiBank</a>
                             <a v-on:click="getBankDetail('eximbank')" class="poiter-crusor">EximBank</a>
                             <a v-on:click="getBankDetail('mbbank')" class="poiter-crusor">MBank</a>
+                        </div>
+                        <div class="btn-item">
+                            <a href="vn-index" class="poiter-crusor">VN-Index</a>
                         </div>
                         <hr>
                         <br>
@@ -66,11 +69,11 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main pull-left text-left col-md-6 row">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Tỷ giá <span class="text-uppercase">{{ this.thisBank }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h2>
+                                <h1 class="font-size-22px"><span class="theme_color"></span>Tỷ giá <span class="text-uppercase">{{ this.thisBank }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h1>
                             </div>
                             <div class="heading_main pull-right text-right col-md-6">
                                 <div class="col-md-7 pull-left"></div>
-                                <div class="col-md-6 pull-right">
+                                <div class="col-md-6 pull-right margin-bottom-10">
                                     <input type="date" class="form-control pull-right row" name="bankID" id="time_input" v-model="timeSearch" v-on:change="getBankDetailSearch()">
                                 </div>
                             </div>

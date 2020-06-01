@@ -1,12 +1,14 @@
 <?php
 namespace App\Helpers;
+
 /**
  * Created by PhpStorm.
  * User: nguyenlongit95
  * Date: 1/12/19
  * Time: 3:32 PM
  */
-class ChangeText{
+class ChangeText
+{
 
     // Đổi chuỗi bình thuường thành chuỗi không dấu
     public function changeTitle($str, $strSymbol = '-', $case = MB_CASE_LOWER)
@@ -23,6 +25,7 @@ class ChangeText{
 
         return $str;
     }
+
     protected function stripUnicode($str)
     {
         if (!$str) {
@@ -92,17 +95,18 @@ class ChangeText{
         }
         $text = substr($text, 0, $num);
         if ($text[$num - 1] == ' ') {
-            return trim($text).'...';
+            return trim($text) . '...';
         }
         $x = explode(' ', $text);
         $sz = sizeof($x);
         if ($sz <= 1) {
-            return $text.'...';
+            return $text . '...';
         }
         $x[$sz - 1] = '';
 
-        return trim(implode(' ', $x)).'...';
+        return trim(implode(' ', $x)) . '...';
     }
 
 }
+
 ?>

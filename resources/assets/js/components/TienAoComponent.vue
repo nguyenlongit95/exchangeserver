@@ -8,7 +8,7 @@
                         <div class="btn-item">
                             <div class="col-md-12 row">
                                 <div class="full">
-                                    <div class="heading_main text_align_center">
+                                    <div class="heading_main text_align_center padding-bottom-25px">
                                         <h2 class="font-size-22px"><span class="theme_color"></span>Chi tiết các đồng tiền ảo</h2>
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main pull-left text_align_center col-md-6 row">
-                                <h2 class="font-size-22px"><span class="theme_color"></span>Các lần cập nhật tiền ảo mới nhất</h2>
+                                <h1 class="font-size-22px"><span class="theme_color"></span>Các lần cập nhật tiền ảo mới nhất</h1>
                             </div>
                             <div class="heading_main pull-right text-right col-md-6">
                                 <div class="col-md-7 pull-left"></div>

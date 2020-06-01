@@ -323,7 +323,7 @@ button:focus {
 	letter-spacing: 1px;
 	text-align: center;
 	line-height: 40px;
-	color: #ffffff;
+	color: #f76d0c;
 	font-weight: 900;
 	border-radius: 100%;
 }
@@ -979,7 +979,6 @@ a.navbar-brand {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #d66c0b;
 	border-radius: 100%;
 	-webkit-transform: scale(0);
 	transform: scale(0);
@@ -1000,7 +999,6 @@ a.navbar-brand {
 
 a.hvr-radial-out:hover,
 a.hvr-radial-out:focus {
-	color: #fff;
 }
 
 
@@ -2019,7 +2017,6 @@ p.section_count {
 .heading_main {
     float: left;
     display: flex;
-    margin-bottom: 20px;
     width: 100%;
     /*justify-content: center;*/
 }
@@ -2578,4 +2575,19 @@ ul.bottom_menu li {
 
 .width-auto {
     width: auto !important;
+}
+
+.padding-bottom-zero {
+    padding-bottom: 0px !important;
+}
+
+.padding-bottom-25px {
+    padding-bottom: 25px !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px !important;
+}
+.back-ground-none {
+    background: none;
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\render_seo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\BankInfo;
@@ -15,6 +16,11 @@ use DB;
 
 class tygiaController extends Controller
 {
+    private $seoHelper;
+    public function __construct()
+    {
+        $this->seoHelper = new render_seo();
+    }
     /**
      * Display a listing of the resource.
      * @Param request
@@ -22,7 +28,9 @@ class tygiaController extends Controller
      */
     public function index(Request $request)
     {
-        return view('tygia');
+        $seo_advanced = $this->seoHelper->render_seo('seo_advanced');
+        $title = "Cập nhật tỷ giá của các ngân hàng trong nước";
+        return view('tygia', compact('seo_advanced', 'title'));
     }
 
     /**

@@ -5,8 +5,11 @@
  * Date: 1/25/19
  * Time: 3:46 PM
  */
+
 namespace App\Helpers;
-class buildSecureLink{
+
+class buildSecureLink
+{
 
     /**
      * @param $baseUrl - non protected part of the URL including hostname, e.g. http://example.com

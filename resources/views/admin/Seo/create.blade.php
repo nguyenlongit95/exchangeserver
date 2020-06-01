@@ -7,7 +7,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="box box-default">
             <div class="box-header with-border">
-                <h3 class="box-title">Categories</h3>
+                <h3 class="box-title">Seo module</h3>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -19,7 +19,7 @@
                 @include('admin.layouts.alert')
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="admin/Seo/addSeo" method="POST" enctype="multipart/form-data">
+                        <form action="admin/seo/add" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="box box-danger">
                                 <div class="box-header">
@@ -113,7 +113,7 @@
                                     <i class="fa fa-align-left"></i>
                                 </div>
                                 No: <input type="radio" name="noindex" value="0">
-                                Yes: <input type="radio" name="noindex" value="1">
+                                Yes: <input type="radio" name="noindex" value="1" selected>
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -144,9 +144,6 @@
                                 <select name="language" class="form-control" id="language">
                                     <option value="vi">Vietnamese</option>
                                     <option value="en">English</option>
-                                    <option value="cn">Chinese</option>
-                                    <option value="jp">Japanses</option>
-                                    <option value="kr">South Korea</option>
                                 </select>
                             </div>
                             <!-- /.input group -->
@@ -167,19 +164,24 @@
                         </div>
                         <!-- /.form group -->
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam odit culpa aspernatur ex voluptas soluta doloremque exercitationem deserunt dicta vel nemo, et enim fugit expedita ullam laudantium minus quam.
+                            Module SEO sẽ có các mục cơ bản để seo pages
                         </p>
-
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eveniet maxime neque accusantium perferendis repudiandae magni sint amet tempora repellendus recusandae eligendi temporibus cupiditate atque, porro consectetur voluptas cum incidunt.
+                            - Link SEO: đường dẫn tới trang web hiện tại.
+                        <p>
+                            - Title SEO: tiêu đề của trang web cần được SEO.
                         </p>
-
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsa repellat accusamus nemo fuga, neque asperiores consectetur tempora necessitatibus minima rem aspernatur. Beatae eius aliquam maxime distinctio id reprehenderit repudiandae.
+                            - Keywords: Các từ khoá phục vụ cho việc SEO.
                         </p>
-
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nemo ea maiores saepe quo minima, culpa sint incidunt perspiciatis omnis dolore accusamus adipisci quam architecto pariatur natus! Necessitatibus, quibusdam exercitationem!
+                            - Description: Chi tiết các từ khoá và trang web hiện tại đang cần SEO.
+                        </p>
+                        <p>
+                            - Heading 1...: Tiêu đề phụ cho website với từ khoá chính ở phần keywords
+                        </p>
+                        <p>
+                            - avatar: hình ảnh đại diện của trang.
                         </p>
                     </div>
                 </div>

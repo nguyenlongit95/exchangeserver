@@ -1,6 +1,8 @@
 <?php
 namespace App\Helpers;
-class TrimEmail{
+
+class TrimEmail
+{
     /**
      * Phuong thuc lay username trong 1 chuoi email
      * Username se duoc lay truoc ky tu @ trong chuoi email
@@ -11,4 +13,5 @@ class TrimEmail{
         return $userFormEmail;
     }
 }
+
 ?>

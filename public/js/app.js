@@ -14958,6 +14958,7 @@ Vue.component('lai-suat-component', __webpack_require__(68));
 Vue.component('lai-suat-detail-component', __webpack_require__(73));
 Vue.component('tien-ao-component', __webpack_require__(78));
 Vue.component('tien-ao-detail-component', __webpack_require__(83));
+Vue.component('vn-index-component', __webpack_require__(94));
 
 Vue.component('common-component', __webpack_require__(88));
 
@@ -51043,15 +51044,19 @@ var render = function() {
             _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticClass: "full" }, [
                 _c("div", { staticClass: "heading_main pull-left" }, [
-                  _c("h2", { staticClass: "font-size-22px" }, [
-                    _c("span", { staticClass: "theme_color" }),
-                    _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
-                    _c(
-                      "span",
-                      { staticClass: "font-size-16px font-weight-initial" },
-                      [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
-                    )
-                  ])
+                  _c(
+                    "h1",
+                    { staticClass: "font-size-22px padding-bottom-zero" },
+                    [
+                      _c("span", { staticClass: "theme_color" }),
+                      _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
+                      _c(
+                        "span",
+                        { staticClass: "font-size-16px font-weight-initial" },
+                        [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                      )
+                    ]
+                  )
                 ])
               ])
             ])
@@ -55193,7 +55198,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h2", { staticClass: "font-size-22px" }, [
+                _c("h3", { staticClass: "font-size-22px margin-bottom-zero" }, [
                   _c("span", { staticClass: "theme_color" }),
                   _vm._v("Tổng hợp giá vàng SJC mới nhất "),
                   _c(
@@ -56272,7 +56277,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("section", [
           _c("div", { staticClass: "heading_main pull-left" }, [
-            _c("h2", { staticClass: "font-size-22px" }, [
+            _c("h3", { staticClass: "font-size-22px margin-bottom-zero" }, [
               _c("span", { staticClass: "theme_color" }),
               _vm._v("Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực")
             ])
@@ -56330,7 +56335,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("section", [
           _c("div", { staticClass: "heading_main pull-left" }, [
-            _c("h2", { staticClass: "font-size-22px" }, [
+            _c("h3", { staticClass: "font-size-22px margin-bottom-zero" }, [
               _c("span", { staticClass: "theme_color" }),
               _vm._v(
                 "Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực"
@@ -56454,7 +56459,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56465,6 +56470,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -57004,13 +57012,15 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-7 pull-left" }, [
               _c("div", { staticClass: "row" }, [
-                _vm._m(1),
+                _vm._m(2),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-6 pull-right" }, [
                   _c(
@@ -57125,7 +57135,7 @@ var render = function() {
                     staticClass: "heading_main pull-left text-left col-md-6 row"
                   },
                   [
-                    _c("h2", { staticClass: "font-size-22px" }, [
+                    _c("h1", { staticClass: "font-size-22px" }, [
                       _c("span", { staticClass: "theme_color" }),
                       _vm._v("Tỷ giá "),
                       _c("span", { staticClass: "text-uppercase" }, [
@@ -57149,36 +57159,40 @@ var render = function() {
                   [
                     _c("div", { staticClass: "col-md-7 pull-left" }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6 pull-right" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.timeSearch,
-                            expression: "timeSearch"
-                          }
-                        ],
-                        staticClass: "form-control pull-right row",
-                        attrs: {
-                          type: "date",
-                          name: "bankID",
-                          id: "time_input"
-                        },
-                        domProps: { value: _vm.timeSearch },
-                        on: {
-                          change: function($event) {
-                            return _vm.getBankDetailSearch()
-                          },
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      { staticClass: "col-md-6 pull-right margin-bottom-10" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.timeSearch,
+                              expression: "timeSearch"
                             }
-                            _vm.timeSearch = $event.target.value
+                          ],
+                          staticClass: "form-control pull-right row",
+                          attrs: {
+                            type: "date",
+                            name: "bankID",
+                            id: "time_input"
+                          },
+                          domProps: { value: _vm.timeSearch },
+                          on: {
+                            change: function($event) {
+                              return _vm.getBankDetailSearch()
+                            },
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.timeSearch = $event.target.value
+                            }
                           }
-                        }
-                      })
-                    ])
+                        })
+                      ]
+                    )
                   ]
                 )
               ])
@@ -57195,7 +57209,7 @@ var render = function() {
                     attrs: { id: "table-exchange-page" }
                   },
                   [
-                    _vm._m(2),
+                    _vm._m(3),
                     _vm._v(" "),
                     _c(
                       "tbody",
@@ -57448,11 +57462,21 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-12 row" }, [
       _c("div", { staticClass: "full" }, [
         _c("div", { staticClass: "heading_main pull-left" }, [
-          _c("h2", { staticClass: "font-size-22px" }, [
+          _c("h1", { staticClass: "font-size-22px" }, [
             _c("span", { staticClass: "theme_color" }),
             _vm._v("Chi tiết tỷ giá các ngân hàng")
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "btn-item" }, [
+      _c("a", { staticClass: "poiter-crusor", attrs: { href: "vn-index" } }, [
+        _vm._v("VN-Index")
       ])
     ])
   },
@@ -57580,7 +57604,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57955,134 +57979,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
         }
     }
-
-    /**
-     * function chart JS
-     * function has runing with init pages
-     * */
-});$(function () {
-    'use strict';
-
-    /**
-    * Document ready has drawchart
-    * Default momney: USD
-    */
-
-    $.ajax({
-        url: 'api/v1/get-currency/charts/USD',
-        type: 'GET',
-        data: {},
-        success: function success(result) {
-            var label = [],
-                data = [];
-            for (var i = 0; i < result.length; i++) {
-                label.push(result[i]['time']);
-                data.push(result[i]['muatienmat']);
-            }
-            // Call function draw Charts
-            drawChart(data, label);
-        }
-    });
-
-    /**
-     * Function has running with change Currency
-     * Function has replace chart oid
-     */
-    $('#changeCurrency').on('change', function () {
-        var currency = $(this).val();
-        initDrawChart(currency);
-    });
-
-    /**
-     * Function listen event click tabs money
-     * Call draw chart
-     */
-    $('.tabs-money').on('click', function () {
-        var currency = $(this).val();
-        initDrawChart(currency);
-    });
 });
-
-function initDrawChart(currency) {
-    var currency = $(this).val();
-    $.ajax({
-        url: 'api/v1/get-currency/charts/' + currency,
-        type: 'GET',
-        data: {},
-        success: function success(result) {
-            var label = [],
-                data = [];
-            for (var i = 0; i < result.length; i++) {
-                label.push(result[i]['time']);
-                data.push(result[i]['muatienmat']);
-            }
-            // Call function draw Charts
-            drawChart(data, label);
-        }
-    });
-}
-
-/**
- * Code JS draw chart here
- * */
-function drawChart(data, label) {
-    // Get context with jQuery - using jQuery's .get() method.
-    var exchangeChartCanvas = $('#exchangeChart').get(0).getContext('2d');
-    // This will get the first returned node in the jQuery collection.
-    var exchangeChart = new Chart(exchangeChartCanvas);
-
-    var exchangeChartData = {
-        labels: label,
-        datasets: [{
-            label: 'Tỷ giá ngoại tệ',
-            fillColor: 'rgba(60,141,188,0.9)',
-            strokeColor: 'rgba(60,141,188,0.8)',
-            pointColor: '#3b8bba',
-            pointStrokeColor: 'rgba(60,141,188,1)',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(60,141,188,1)',
-            data: data
-        }]
-    };
-
-    var exchangeChartOptions = {
-        // Boolean - If we should show the scale at all
-        showScale: true,
-        // Boolean - Whether grid lines are shown across the chart
-        scaleShowGridLines: true,
-        // String - Colour of the grid lines
-        // scaleGridLineColor      : 'rgba(0,0,0,.05)',
-        // Number - Width of the grid lines
-        scaleGridLineWidth: 1,
-        // Boolean - Whether to show horizontal lines (except X axis)
-        scaleShowHorizontalLines: true,
-        // Boolean - Whether to show vertical lines (except Y axis)
-        scaleShowVerticalLines: true,
-        // Boolean - Whether the line is curved between points
-        bezierCurve: false,
-        // Number - Tension of the bezier curve between points
-        bezierCurveTension: 0.3,
-        // Boolean - Whether to show a dot for each point
-        pointDot: false,
-        // Number - Radius of each point dot in pixels
-        pointDotRadius: 4,
-        // Number - Pixel width of point dot stroke
-        pointDotStrokeWidth: 1,
-        // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-        pointHitDetectionRadius: 20,
-        // Boolean - Whether to show a stroke for datasets
-        datasetStroke: true,
-        // Number - Pixel width of dataset stroke
-        datasetStrokeWidth: 2,
-        // Boolean - Whether to fill the dataset with a color
-        datasetFill: false,
-
-        maintainAspectRatio: true,
-
-        responsive: true
-    };
-    exchangeChart.Line(exchangeChartData, exchangeChartOptions);
-}
 
 /***/ }),
 /* 62 */
@@ -58366,7 +58263,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h2", { staticClass: "font-size-22px" }, [
+                _c("h1", { staticClass: "font-size-22px" }, [
                   _c("span", { staticClass: "theme_color" }),
                   _vm._v("Chi tiết đồng "),
                   _c("span", [_vm._v(_vm._s(this.currency))]),
@@ -58822,12 +58719,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12 row" }, [
       _c("div", { staticClass: "full" }, [
-        _c("div", { staticClass: "heading_main text_align_center" }, [
-          _c("h2", { staticClass: "font-size-22px" }, [
-            _c("span", { staticClass: "theme_color" }),
-            _vm._v("Tỷ giá các đồng")
-          ])
-        ])
+        _c(
+          "div",
+          { staticClass: "heading_main text_align_center padding-bottom-25px" },
+          [
+            _c("h2", { staticClass: "font-size-22px" }, [
+              _c("span", { staticClass: "theme_color" }),
+              _vm._v("Tỷ giá các đồng")
+            ])
+          ]
+        )
       ])
     ])
   },
@@ -59170,7 +59071,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -59380,130 +59281,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.timeUpdate = today.getHours() + ":" + today.getMinutes() + " " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
         }
     }
-
-    /**
-     * jQuery draw chart
-     */
-});$(function () {
-    'use strict';
-
-    /**
-     * On load page draw chart
-     * Default chart has sjc
-     */
-
-    $.ajax({
-        url: 'api/v1/get-gold-exchange/drawChart/sjc',
-        type: 'GET',
-        data: {},
-        success: function success(result) {
-            var label = [],
-                data = [];
-            for (var i = 0; i < result.length; i++) {
-                label.push(result[i]['time']);
-                data.push(result[i]['mua']);
-            }
-            // Call function draw Charts
-            drawGoldChart(data, label);
-        }
-    });
-
-    /**
-     * change gold make select
-     * draw chart again
-     */
-    $('#select_gold').on('change', function () {
-        var goldType = $(this).val();
-        initDrawChart(goldType);
-    });
 });
-
-/**
- * Function has running with change gold
- * Function has replace chart oid
- */
-function initDrawChart(goldType) {
-    if (goldType == undefined) {
-        goldType = $(this).val();
-    }
-    $.ajax({
-        url: 'api/v1/get-gold-exchange/drawChart/' + goldType,
-        type: 'GET',
-        data: {},
-        success: function success(result) {
-            var label = [],
-                data = [];
-            for (var i = 0; i < result.length; i++) {
-                label.push(result[i]['time']);
-                data.push(result[i]['mua']);
-            }
-            // Call function draw Charts
-            drawGoldChart(data, label);
-        }
-    });
-}
-
-/**
- * Code JS draw chart here
- * */
-function drawGoldChart(data, label) {
-    // Get context with jQuery - using jQuery's .get() method.
-    var goldChartCanvas = $('#gold_chart').get(0).getContext('2d');
-    // This will get the first returned node in the jQuery collection.
-    var goldChart = new Chart(goldChartCanvas);
-
-    var goldChartData = {
-        labels: label,
-        datasets: [{
-            label: 'Tỷ giá vàng trong nước',
-            fillColor: 'rgba(60,141,188,0.9)',
-            strokeColor: 'rgba(60,141,188,0.8)',
-            pointColor: '#ff880e',
-            pointStrokeColor: 'rgba(60,141,188,1)',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(60,141,188,1)',
-            data: data
-        }]
-    };
-
-    var goldChartOptions = {
-        // Boolean - If we should show the scale at all
-        showScale: true,
-        // Boolean - Whether grid lines are shown across the chart
-        scaleShowGridLines: true,
-        // String - Colour of the grid lines
-        // scaleGridLineColor      : 'rgba(0,0,0,.05)',
-        // Number - Width of the grid lines
-        scaleGridLineWidth: 1,
-        // Boolean - Whether to show horizontal lines (except X axis)
-        scaleShowHorizontalLines: false,
-        // Boolean - Whether to show vertical lines (except Y axis)
-        scaleShowVerticalLines: true,
-        // Boolean - Whether the line is curved between points
-        bezierCurve: false,
-        // Number - Tension of the bezier curve between points
-        bezierCurveTension: 0.3,
-        // Boolean - Whether to show a dot for each point
-        pointDot: true,
-        // Number - Radius of each point dot in pixels
-        pointDotRadius: 4,
-        // Number - Pixel width of point dot stroke
-        pointDotStrokeWidth: 1,
-        // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-        pointHitDetectionRadius: 20,
-        // Boolean - Whether to show a stroke for datasets
-        datasetStroke: true,
-        // Number - Pixel width of dataset stroke
-        datasetStrokeWidth: 2,
-        // Boolean - Whether to fill the dataset with a color
-        datasetFill: false,
-
-        maintainAspectRatio: true,
-
-        responsive: true
-    };
-    goldChart.Line(goldChartData, goldChartOptions);
-}
 
 /***/ }),
 /* 67 */
@@ -59595,7 +59373,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h2", { staticClass: "font-size-22px" }, [
+                _c("h1", { staticClass: "font-size-22px" }, [
                   _c("span", { staticClass: "theme_color" }),
                   _vm._v("Giá vàng "),
                   _c("span", [_vm._v("SJC")]),
@@ -59750,12 +59528,18 @@ var staticRenderFns = [
     return _c("div", { staticClass: "btn-item" }, [
       _c("div", { staticClass: "col-md-12 row" }, [
         _c("div", { staticClass: "full" }, [
-          _c("div", { staticClass: "heading_main text_align_center" }, [
-            _c("h2", { staticClass: "font-size-22px" }, [
-              _c("span", { staticClass: "theme_color" }),
-              _vm._v("Chi tiết các hãng vàng")
-            ])
-          ])
+          _c(
+            "div",
+            {
+              staticClass: "heading_main text_align_center padding-bottom-25px"
+            },
+            [
+              _c("h2", { staticClass: "font-size-22px" }, [
+                _c("span", { staticClass: "theme_color" }),
+                _vm._v("Chi tiết các hãng vàng")
+              ])
+            ]
+          )
         ])
       ])
     ])
@@ -59936,7 +59720,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -60184,121 +59968,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 
-    /**
-     * jQuery draw chart
-     */
-});$(function () {
-    'use strict';
-
-    /**
-     * On load page draw chart
-     * Default chart has sjc
-     */
-
-    $(document).ready(function () {
-        initDrawChart("3");
-    });
-
-    /**
-     * change gold make select
-     * draw chart again
-     */
-    $('#select_kyhan').on('change', function () {
-        var kyhanSlug = $(this).val();
-        initDrawChart(kyhanSlug);
-    });
 });
-
-/**
- * Function has running with change gold
- * Function has replace chart oid
- */
-function initDrawChart(kyhanslug) {
-    if (kyhanslug == undefined) {
-        kyhanslug = $(this).val();
-    }
-    $.ajax({
-        url: 'api/v1/get-interest-rate',
-        type: 'GET',
-        data: {},
-        success: function success(result) {
-            var label = [],
-                data = [];
-            label.splice(0, label.length);
-            data.splice(0, data.length);
-            for (var i = 0; i < result.length; i++) {
-                if (result[i]['kyhanslug'] === kyhanslug) {
-                    label.push(result[i]['bank_code']);
-                    data.push(result[i]['laisuat_vnd']);
-                }
-            }
-            // Call function draw Charts
-            drawChart(data, label);
-        }
-    });
-}
-
-/**
- * Code JS draw chart here
- * */
-function drawChart(data, label) {
-    // Get context with jQuery - using jQuery's .get() method.
-    var goldChartCanvas = $('#interest_chart_draw').get(0).getContext('2d');
-    // This will get the first returned node in the jQuery collection.
-    var goldChart = new Chart(goldChartCanvas);
-
-    var goldChartData = {
-        labels: label,
-        datasets: [{
-            label: 'Tỷ giá ngoại tệ',
-            fillColor: 'rgba(60,141,188,0.9)',
-            strokeColor: 'rgba(60,141,188,0.8)',
-            pointColor: '#ff880e',
-            pointStrokeColor: 'rgba(60,141,188,1)',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(60,141,188,1)',
-            data: data
-        }]
-    };
-
-    var goldChartOptions = {
-        // Boolean - If we should show the scale at all
-        showScale: true,
-        // Boolean - Whether grid lines are shown across the chart
-        scaleShowGridLines: true,
-        // String - Colour of the grid lines
-        // scaleGridLineColor      : 'rgba(0,0,0,.05)',
-        // Number - Width of the grid lines
-        scaleGridLineWidth: 1,
-        // Boolean - Whether to show horizontal lines (except X axis)
-        scaleShowHorizontalLines: false,
-        // Boolean - Whether to show vertical lines (except Y axis)
-        scaleShowVerticalLines: true,
-        // Boolean - Whether the line is curved between points
-        bezierCurve: false,
-        // Number - Tension of the bezier curve between points
-        bezierCurveTension: 0.3,
-        // Boolean - Whether to show a dot for each point
-        pointDot: true,
-        // Number - Radius of each point dot in pixels
-        pointDotRadius: 4,
-        // Number - Pixel width of point dot stroke
-        pointDotStrokeWidth: 1,
-        // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-        pointHitDetectionRadius: 20,
-        // Boolean - Whether to show a stroke for datasets
-        datasetStroke: true,
-        // Number - Pixel width of dataset stroke
-        datasetStrokeWidth: 2,
-        // Boolean - Whether to fill the dataset with a color
-        datasetFill: false,
-
-        maintainAspectRatio: true,
-
-        responsive: true
-    };
-    goldChart.Bar(goldChartData, goldChartOptions);
-}
 
 /***/ }),
 /* 72 */
@@ -60315,7 +59985,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h2", { staticClass: "font-size-22px" }, [
+                _c("h1", { staticClass: "font-size-22px" }, [
                   _c("span", { staticClass: "theme_color" }),
                   _vm._v("Lãi suất tại quầy - "),
                   _c("span", { staticClass: "font-size-16px" }, [
@@ -61829,12 +61499,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12 row" }, [
       _c("div", { staticClass: "full" }, [
-        _c("div", { staticClass: "heading_main text_align_center" }, [
-          _c("h2", { staticClass: "font-size-22px" }, [
-            _c("span", { staticClass: "theme_color" }),
-            _vm._v("Chi tiết các đồng tiền ảo")
-          ])
-        ])
+        _c(
+          "div",
+          { staticClass: "heading_main text_align_center padding-bottom-25px" },
+          [
+            _c("h2", { staticClass: "font-size-22px" }, [
+              _c("span", { staticClass: "theme_color" }),
+              _vm._v("Chi tiết các đồng tiền ảo")
+            ])
+          ]
+        )
       ])
     ])
   },
@@ -61846,7 +61520,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "heading_main pull-left text_align_center col-md-6 row" },
       [
-        _c("h2", { staticClass: "font-size-22px" }, [
+        _c("h1", { staticClass: "font-size-22px" }, [
           _c("span", { staticClass: "theme_color" }),
           _vm._v("Các lần cập nhật tiền ảo mới nhất")
         ])
@@ -61973,7 +61647,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -61984,7 +61658,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -62231,7 +61904,7 @@ var render = function() {
                           { staticClass: "col-md-12", attrs: { id: "main" } },
                           [
                             _c(
-                              "h2",
+                              "h1",
                               {
                                 staticClass: "font-size-22px",
                                 staticStyle: { "margin-left": "-30px" }
@@ -62611,12 +62284,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12 row" }, [
       _c("div", { staticClass: "full" }, [
-        _c("div", { staticClass: "heading_main text_align_center" }, [
-          _c("h2", { staticClass: "font-size-22px" }, [
-            _c("span", { staticClass: "theme_color" }),
-            _vm._v("Chi tiết các đồng tiền ảo")
-          ])
-        ])
+        _c(
+          "div",
+          { staticClass: "heading_main text_align_center padding-bottom-25px" },
+          [
+            _c("h2", { staticClass: "font-size-22px" }, [
+              _c("span", { staticClass: "theme_color" }),
+              _vm._v("Chi tiết các đồng tiền ảo")
+            ])
+          ]
+        )
       ])
     ])
   },
@@ -62704,6 +62381,206 @@ function getTimeUpdateTest() {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(95)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(97)
+/* template */
+var __vue_template__ = __webpack_require__(98)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-691cb9da"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/VnIndexComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-691cb9da", Component.options)
+  } else {
+    hotAPI.reload("data-v-691cb9da", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(96);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("3b3d9c69", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-691cb9da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VnIndexComponent.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-691cb9da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VnIndexComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "VnIndex"
+});
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vn-index component layout_padding" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row margin-top-25" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "full" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "heading_main pull-left text-left col-md-6 row margin-top-25px"
+                },
+                [
+                  _c("h1", { staticClass: "font-size-22px" }, [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("Biểu đồ "),
+                    _c("span", { staticClass: "text-uppercase" }, [
+                      _vm._v("VN-Index")
+                    ]),
+                    _vm._v(" - "),
+                    _c(
+                      "span",
+                      { staticClass: "font-weight-initial font-size-16px" },
+                      [_vm._v("VN-Index cập nhật theo thời gian thực")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("iframe", {
+              staticStyle: { "margin-left": "-5px" },
+              attrs: {
+                src: "https://ta.vietstock.vn/Customer",
+                width: "100%",
+                height: "800",
+                scrolling: "no",
+                frameborder: "0"
+              }
+            })
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-691cb9da", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

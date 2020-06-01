@@ -8,7 +8,7 @@
                         <div class="btn-item">
                             <div class="col-md-12 row">
                                 <div class="full">
-                                    <div class="heading_main text_align_center">
+                                    <div class="heading_main text_align_center padding-bottom-25px">
                                         <h2 class="font-size-22px"><span class="theme_color"></span>Chi tiết các đồng tiền ảo</h2>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                 <div class="block">
                                     <div class="block-content">
                                         <article id="main" class="col-md-12" v-for="renderMoney in this.detailMoney">
-                                            <h2 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá {{ renderMoney.name }}({{ renderMoney.slug }}) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>{{ renderMoney.created_at }}</small></h2>
+                                            <h1 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá {{ renderMoney.name }}({{ renderMoney.slug }}) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>{{ renderMoney.created_at }}</small></h1>
                                             <div class="row margin-top-25px">
                                                 <div class="col-xs-12 col-sm-4 col-md-3 text-center">
                                                     <div class="coin-logo">
@@ -102,7 +102,6 @@
                                                         </tr>
                                                         </tbody>
                                                     </table>
-
                                                 </div>
                                             </div>
                                         </article>

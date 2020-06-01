@@ -33,19 +33,18 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
     // Trang DashBoard sẽ là nơi thống kê sản phẩm và các thông tin liên quan
     Route::get('DashBoard','adminController@DashBoard');
 
-
+    // Seo module
     Route::get('seo','SeoController@index');
 
-    Route::post('updateSeo/{id}','SeoController@update');
-    Route::get('updateSeo/{id}','SeoController@show');
+    Route::post('seo/update/{id}','SeoController@update');
+    Route::get('seo/update/{id}','SeoController@show');
 
-    Route::get('addSeo','SeoController@getStore');
-    Route::post('addSeo','SeoController@store');
+    Route::get('seo/add','SeoController@getStore');
+    Route::post('seo/add','SeoController@store');
 
-    Route::get('deleteSeo/{id}','SeoController@destroy');
+    Route::get('seo/delete/{id}','SeoController@destroy');
 
-
-    /*
+    /**
      * Route CURD cho cac thành phần của hệ thống
      * Categories
      * Article
@@ -379,6 +378,8 @@ Route::group(['namespace' => $namespaceFrontend], function () {
     Route::get('tien-ao/{code}', 'tienaoController@show');
 
     Route::get('xang-dau', 'xangdauController@index');
+
+    Route::get('vn-index', 'IndexController@vnIndex');
 });
 
 Route::get('getVNIndex', 'adminController@getVNIndex');

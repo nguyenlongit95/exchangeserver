@@ -7,7 +7,7 @@
 
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">List Link Seo / <a href="admin/Seo/addSeo">Add new</a></h3>
+                    <h3 class="box-title">List Link Seo / <a href="admin/seo/add">Add new</a></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -21,7 +21,7 @@
                             <th>Keywords</th>
                             <th>Description</th>
                             <th>Heading</th>
-                            <th>Avatar</th>
+                            <th class="text-center">Avatar</th>
                             <th>Language</th>
                             <th class="text-center">Update</th>
                             <th class="text-center">Delete</th>
@@ -50,8 +50,8 @@
                             <td>
                                 {{ $seo->language }}
                             </td>
-                            <td class="text-center"><a href="admin/Seo/updateSeo/{{$seo->id}}" class="btn-warning padding510510">Update</a></td>
-                            <td class="text-center"><a href="admin/Seo/deleteSeo/{{$seo->id}}" class="btn-danger padding510510">Delete</a></td>
+                            <td class="text-center"><a href="admin/seo/update/{{$seo->id}}" class="btn-warning padding510510">Update</a></td>
+                            <td class="text-center"><a href="admin/seo/delete/{{$seo->id}}" class="btn-danger padding510510">Delete</a></td>
                         </tr>
                         @endforeach
                         </tfoot>
