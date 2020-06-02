@@ -25,10 +25,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="banner_title">
-                    <p>Lãi suất tiền gửi tiết kiệm VND dành cho khách hàng cá nhân tại <strong>14 ngân hàng</strong> được cập nhật <strong>mới nhất.</strong></p>
+                    <p>Lãi suất tiền gửi tiết kiệm VND dành cho khách hàng cá nhân tại <strong>các ngân hàng trong nước</strong> được cập nhật <strong>mới nhất.</strong></p>
                     <p>Bảng so sánh lãi suất gửi tiết kiệm tại quầy và gửi tiết kiệm trực tuyến.</p>
                     <p>Hai loại lãi suất này có đôi chút khác nhau. Mời các bạn so sánh ở bên dưới.</p>
-                    <p>Dữ liệu được cập nhật lúc {{ $timeNow->format('d-m-Y H:i') }}</p>
+                    <p>Dữ liệu được cập nhật lúc <span class="font-color-red">{{ $timeNow->format('d-m-Y H:i') }}</span></p>
                 </div>
             </div>
         </div>
