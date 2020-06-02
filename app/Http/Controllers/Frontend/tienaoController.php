@@ -89,9 +89,14 @@ class tienaoController extends Controller
     {
         $tienao = LoaiTienAo::where('slug', $code)->first();
         $tienao['iframe_chart'] = $this->getChartRealtime($tienao['symbol']);
-        return view('tienaodetail', compact('tienao'));
+        $title = "Cập nhật đồng " . $tienao->name . " mới nhất theo thời gian thực";
+        return view('tienaodetail', compact('tienao', 'title'));
     }
 
+    /**
+     * @param $symbol
+     * @return string
+     */
     private function getChartRealtime($symbol)
     {
         $tempSymbol = $symbol . 'USD';

@@ -39,7 +39,8 @@ class ExchangeController extends Controller
         if (!$ngoaiTeCron) {
             return response()->json(["message" => "Cannot find exchanges cron jobs"], 403);
         }
-        $ngoaiTe = NgoaiTe::where('cron_id', $ngoaiTeCron->id)->where('default', 0)->orderBy('id', 'DESC')
+        $ngoaiTe = DB::table('ngoaite_today')->whereIn('bank_id', [4, 15, 14, 9, 8, 7, 6, 3, 2, 1, 5, 12, 13])
+            ->orderByRaw('bank_id', [4, 15, 14, 9, 8, 7, 6, 3, 2, 1, 5, 12, 13])
             ->select(
                 'code','bank_id',
                 'bank_code', 'muatienmat','muatienmat_diff','bantienmat','bantienmat_diff',
@@ -91,23 +92,23 @@ class ExchangeController extends Controller
             return response()->json(["message" => "Cannot find the bank"], 403);
         }
         $ngoaiTeCron = null;
+        $ngoaiTe = null;
         if (!isset($request->timeSearch)) {
             $ngoaiTeCron = NgoaiTeCron::where('cronkey','!=', null)->orderBy('id', 'DESC')->first();
+            $ngoaiTe = $this->exchange->getExchangeToDay($ngoaiTeCron->id, $bankInfo);
         } else {
             $ngoaiTeCron = NgoaiTeCron::where('created_at','=', $request->timeSearch)->orderBy('id', 'DESC')->first();
+            if ($ngoaiTeCron == null) {
+                return null;
+            }
+            $ngoaiTe = $this->exchange->getExchangeOidDay($ngoaiTeCron->id, $bankInfo);
         }
         if ($ngoaiTeCron == null) {
             return response()->json("Cannot find data", 422);
         }
-        $ngoaiTe = NgoaiTe::where('cron_id', $ngoaiTeCron->id)
-            ->where('bank_code', $bankInfo->bankcode)->where('default', 0)->orderBy('id', 'DESC')
-            ->select(
-                'code','bank_id',
-                'bank_code', 'muatienmat','muatienmat_diff','bantienmat','bantienmat_diff',
-                'muachuyenkhoan','muachuyenkhoan_diff','banchuyenkhoan','banchuyenkhoan_diff'
-            )->get();
-        if (!$ngoaiTe) {
-            return response()->json(["message" => "Currency not found"], 403);
+
+        if ($ngoaiTe == null) {
+            return null;
         }
         $mergeData = $this->exchange->mergeExchangeOfBank($bankInfo, $ngoaiTe);
 
@@ -175,7 +176,7 @@ class ExchangeController extends Controller
         if (!$exchangeCron) {
             return response()->json(["message" => "Cannot find cron job"], 404);
         }
-        $exchange = NgoaiTe::whereIn('cron_id', $exchangeCron)->where('code', $currency)->where('bank_id', 8)
+        $exchange = NgoaiTe::whereIn('cron_id', $exchangeCron)->where('code', $currency)->where('bank_id', 6)
             ->orderBy('id', 'DESC')->select('muatienmat', 'created_at')->get();
         foreach ($exchange as $value) {
             $tempTime = new Carbon($value->created_at);

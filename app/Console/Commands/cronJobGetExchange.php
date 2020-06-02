@@ -2,17 +2,24 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-
-use DB;
-use Carbon\Carbon;
 use App\Helpers\SimpleHtmlDom;
-use App\Models\NgoaiTe;
 use App\Models\CurrencyCode;
+use App\Models\NgoaiTe;
 use App\Models\NgoaiTeCron;
+use Carbon\Carbon;
+use DB;
+use Exception;
+use Illuminate\Console\Command;
 
 class cronJobGetExchange extends Command
 {
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    var $AccessKey = '49fdc5f4-b909-4a17-ad1b-99945aa2af67';
+    var $SecretAccessKey = '5459f4e06d3cf8be95659ef2a5f57d65846775b5';
     /**
      * The name and signature of the console command.
      * @var string
@@ -24,17 +31,12 @@ class cronJobGetExchange extends Command
      * @var string
      */
     protected $description = 'Call to bank and get data currency';
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    var $AccessKey = '49fdc5f4-b909-4a17-ad1b-99945aa2af67';
-    var $SecretAccessKey = '5459f4e06d3cf8be95659ef2a5f57d65846775b5';
+
     public function __construct()
     {
         parent::__construct();
     }
+
     /**
      * function constructor using call to Bank
      * Call to function get data currency bank
@@ -50,7 +52,7 @@ class cronJobGetExchange extends Command
         if ($NgoaiTeCron == null) {
             $NgoaiTeCron = 1;
         }
-        //        //Brgin call function
+        // Begin call function
         try {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://www.acb.com.vn/ACBComponent/jsp/html/vn/exchange/getlisttygia.jsp");
@@ -59,7 +61,7 @@ class cronJobGetExchange extends Command
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $server_output = curl_exec($ch);
             curl_close($ch);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $server_output = null;
         }
         if ($server_output) {
@@ -70,8 +72,9 @@ class cronJobGetExchange extends Command
         try {
             $urlTechcombank = "https://www.techcombank.com.vn/cong-cu-tien-ich/ti-gia/ti-gia-hoi-doai";
             $htmlTechcombank = $SimpleHTMLDOM->file_get_html($urlTechcombank);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công BIDV vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "bidv");
+        } catch (Exception $e) {
+            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công BIDV vào lúc: " . $Carbon->format('h:i:s d/m/Y'),
+                "bidv");
             $htmlTechcombank = null;
         }
         $this->Techcombank($htmlTechcombank, $NgoaiTeCron);
@@ -79,8 +82,9 @@ class cronJobGetExchange extends Command
         try {
             $urlSHB = "https://www.shb.com.vn/tygia/ty-gia-hoi-doai/";
             $htmlSHB = $SimpleHTMLDOM->file_get_html($urlSHB);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công SHB Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "shb");
+        } catch (Exception $e) {
+            $this->CreateLog($NgoaiTeCron,
+                "Cập nhật không thành công SHB Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "shb");
             $htmlSHB = null;
         }
         $this->SHB($htmlSHB, $NgoaiTeCron);
@@ -88,42 +92,47 @@ class cronJobGetExchange extends Command
         try {
             $htmlViettinBank = $SimpleHTMLDOM->file_get_html($urlViettinBank);
             $this->vietinbank($htmlViettinBank, $NgoaiTeCron);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công Vietin Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "vietin");
+        } catch (Exception $e) {
+            $this->CreateLog($NgoaiTeCron,
+                "Cập nhật không thành công Vietin Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "vietin");
             $html = null;
         }
         try {
             $urlSacombank = 'https://www.sacombank.com.vn/company/Pages/ty-gia.aspx';
             $htmlSacombank = $SimpleHTMLDOM->file_get_html($urlSacombank);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công Sacombank Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "sacombank");
+        } catch (Exception $e) {
+            $this->CreateLog($NgoaiTeCron,
+                "Cập nhật không thành công Sacombank Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "sacombank");
             $htmlSacombank = null;
         }
         $this->sacombank($htmlSacombank, $NgoaiTeCron);
         try {
             $urlVietComBank = 'http://www.vietcombank.com.vn/ExchangeRates/ExrateXML.aspx';
             $htmlVietcomBank = file_get_contents($urlVietComBank);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công Vietcom Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "vietcom");
+        } catch (Exception $e) {
+            $this->CreateLog($NgoaiTeCron,
+                "Cập nhật không thành công Vietcom Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "vietcom");
             $htmlVietcomBank = null;
         }
         $this->vietcombank($htmlVietcomBank, $NgoaiTeCron);
         try {
             $urlDongABank = "http://kinhdoanh.dongabank.com.vn/widget/temp?p_p_id=DTSCDongaBankEView_WAR_DTSCDongaBankIERateportlet&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view";
             $htmlDongABank = $SimpleHTMLDOM->file_get_html($urlDongABank);
-        } catch (\Exception $e) {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công Đông Á Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "dab");
+        } catch (Exception $e) {
+            $this->CreateLog($NgoaiTeCron,
+                "Cập nhật không thành công Đông Á Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "dab");
             $htmlDongABank = null;
         }
         $this->dongabank($htmlDongABank, $NgoaiTeCron);
 
-        $url = "https://eximbank.com.vn/WebsiteExrate/ExchangeRate_vn_2012.aspx";
         try {
-            $html = $SimpleHTMLDOM->file_get_html($url);
-        } catch (\Exception $exception) {
-            $html = null;
+            $urlHSBC = "https://www.hsbc.com.vn/1/2/miscellaneous/exchange_rate";
+            $htmlHSBC = $SimpleHTMLDOM->file_get_html($urlHSBC);
+        } catch (\Exception $e) {
+            $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công HSBC Bank vào lúc: " .$Carbon->format('h:i:s d/m/Y'),"hsbc");
+            $htmlHSBC = null;
         }
-        $this->eximbank($html, $NgoaiTeCron);
+        $this->HSBC($htmlHSBC, $NgoaiTeCron);
 
         $Carbon = new Carbon();
         $day = $Carbon->day;
@@ -135,57 +144,62 @@ class cronJobGetExchange extends Command
         //        $url = "http://www.agribank.com.vn/LayOut/Pages/TyGiaPopUp.aspx?date=8/4/2019&lang=1";
         try {
             $html = $SimpleHTMLDOM->file_get_html($url);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $html = null;
         }
         if ($this->agribank($html, $NgoaiTeCron) === "datanone") {
             $day = $day - 1;
-        } else {
         }
-
-        $this->scb($SimpleHTMLDOM, $NgoaiTeCron);
-
-        $urlMSB = "https://maritime.ngan-hang.com/";
+//
+        $url = "https://eximbank.com.vn/WebsiteExrate/ExchangeRate_vn_2012.aspx";
         try {
-            $htmlMSB = $SimpleHTMLDOM->file_get_html($urlMSB);
+            $html = $SimpleHTMLDOM->file_get_html($url);
         } catch (Exception $exception) {
-            $htmlMSB = null;
+            $html = null;
         }
-        $this->msb($htmlMSB, $NgoaiTeCron);
+        $this->eximbank($html, $NgoaiTeCron);
 
-        // $this->BIDV($NgoaiTeCron);
+//        $urlMSB = "https://maritime.ngan-hang.com/";
+//        try {
+//            $htmlMSB = $SimpleHTMLDOM->file_get_html($urlMSB);
+//        } catch (Exception $exception) {
+//            $htmlMSB = null;
+//        }
+//        $this->msb($htmlMSB, $NgoaiTeCron);
+//
+//        $this->BIDV($NgoaiTeCron);
+//
+//        $urlTPBank = "https://webgia.com/ty-gia/tpbank/";
+//
+//        try {
+//            $htmlTPBank = $SimpleHTMLDOM->file_get_html($urlTPBank);
+//        } catch(\Exception $exception) {
+//            $htmlTPBank = null;
+//        }
+//        $this->tpBank($htmlTPBank, $NgoaiTeCron);
 
-        // try {
-        //     $urlHSBC = "https://www.hsbc.com.vn/1/2/miscellaneous/exchange_rate";
-        //     $htmlHSBC = $SimpleHTMLDOM->file_get_html($urlHSBC);
-        // } catch (\Exception $e) {
-        //     $this->CreateLog($NgoaiTeCron, "Cập nhật không thành công HSBC Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "hsbc");
-        //     $htmlHSBC = null;
-        // }
-        // $this->HSBC($htmlHSBC, $NgoaiTeCron);
+//        $urlMBBank = "https://webgia.com/ty-gia/mbbank/";
+//        try{
+//            $htmlMBBank = $SimpleHTMLDOM->file_get_html($urlMBBank);
+//        }catch(\Exception $exception){
+//            $htmlMBBank = null;
+//        }
+//        $this->mbbank($htmlMBBank, $NgoaiTeCron);
+//
+//         try {
+//             $htmlTPBank = $SimpleHTMLDOM->file_get_html($urlTPBank);
+//         } catch (\Exception $exception) {
+//             $htmlTPBank = null;
+//         }
+//         $this->tpBank($htmlTPBank, $NgoaiTeCron);
+//
+//        $this->scb($SimpleHTMLDOM, $NgoaiTeCron);
 
-        // $urlMBBank = "https://webgia.com/ty-gia/mbbank/";
-        // try {
-        //     $htmlMBBank = $SimpleHTMLDOM->file_get_html($urlMBBank);
-        // } catch (\Exception $exception) {
-        //     $htmlMBBank = null;
-        // }
-        // $this->mbbank($htmlMBBank, $NgoaiTeCron);
+//        $this->insertNameCurrency();
 
-        // $urlTPBank = "https://webgia.com/ty-gia/tpbank/";
-
-        // try {
-        //     $htmlTPBank = $SimpleHTMLDOM->file_get_html($urlTPBank);
-        // } catch (\Exception $exception) {
-        //     $htmlTPBank = null;
-        // }
-        // $this->tpBank($htmlTPBank, $NgoaiTeCron);
-
-        $this->insertNameCurrency();
-
-        // $CapNhatNgoaiTe = new ApiFrontController();
-        // $CapNhatNgoaiTe->capnhatngoaite();
+         $this->cnNgoaiTe();
     }
+
     /**
      * Add cron
      * Mỗi lần cron dữ liệu sẽ thêm 1 bản ghi vào cron
@@ -201,25 +215,6 @@ class cronJobGetExchange extends Command
             return null;
         }
     }
-    public function CreateLog($NgoaiTeCron, $Log, $bank)
-    {
-        $NgoaiTeLog = DB::table('ngoai_te_logs')->insert(
-            [
-                'id_cron' => $NgoaiTeCron,
-                'logs' => $Log,
-                'bank' => $bank
-            ]
-        );
-        if ($NgoaiTeLog) {
-            return "Ok";
-        }
-        return "nope";
-    }
-    /**
-     * more function get data bank
-     * @ More function change data
-     * Insert to database
-     * */
 
     /**
      * function ACB
@@ -228,16 +223,13 @@ class cronJobGetExchange extends Command
     {
         if ($html) {
             $rows = $html->find(".wrap-content-search-big tr");
-
             for ($i = 1; $i < count($rows) - 1; $i++) {
-
                 $Currency_name = str_replace(' ', '', str_replace("\t", "", strip_tags($rows[$i]->find('td', 1))));
-
-                if ($Currency_name == "USD(1,2)" || $Currency_name == "USD(5,10,20)") { } else {
-
+                if ($Currency_name == "USD(1,2)" || $Currency_name == "USD(5,10,20)") {
+                } else {
                     if ($Currency_name == "USD(50,100)") {
                         $Currency_name = "USD";
-                    } else { }
+                    }
                     $MuaTienMat = str_replace(',', '', strip_tags($rows[$i]->find('td', 2)));
                     $MuaChuyenKhoan = str_replace(',', '', strip_tags($rows[$i]->find('td', 3)));
                     $BanTienmat = str_replace(',', '', strip_tags($rows[$i]->find('td', 4)));
@@ -254,7 +246,7 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ', '', $Currency_name));
                     $NgoaiTe->image = "/storage/currency/" . str_replace(' ', '', $Currency_name) . ".png";
                     $NgoaiTe->cron_id = $NgoaiTeCron;
-                    $NgoaiTe->vname =  str_replace(' ', '', $Currency_name);
+                    $NgoaiTe->vname = str_replace(' ', '', $Currency_name);
                     if ($MuaTienMat == null || $MuaTienMat == "") {
                         $NgoaiTe->muatienmat = 0;
                     } else {
@@ -286,112 +278,229 @@ class cronJobGetExchange extends Command
                         $NgoaiTe->save();
                         echo "Cập nhật dữ liệu ngân hàng ACB với đồng " . $Currency_name . " thành công \n";
                     } else { // failed
-                        echo "Insert new money \n";
-                        $this->CreateLog($NgoaiTeCron, "Cập nhật ACB không thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "acb");
-                        continue;
+                        echo "Insert new money cho ACB thành công \n";
                     }
                 }
             }
-            $this->CreateLog($NgoaiTeCron, "Cập nhật thành công ACB vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "acb");
+        } else {
+            return "Không tìm thấy dữ liệu của ngân hàng ACB";
+        }
+    }
+    /**
+     * more function get data bank
+     * @ More function change data
+     * Insert to database
+     * */
+
+    protected function checkSymbol($code)
+    {
+        if ($code == "EUR") {
+            return "&#8364;";
+        } else {
+            if ($code == "GBP") {
+                return "&#163;";
+            } else {
+                if ($code == "JPY") {
+                    return "&#165;";
+                } else {
+                    if ($code == "KRW") {
+                        return "&#8361;";
+                    } else {
+                        if ($code == "HKD") {
+                            return "&#65504;";
+                        } else {
+                            if ($code == "CHF") {
+                                return "&#65504;";
+                            } else {
+                                if ($code == "THB") {
+                                    return "&#3647;";
+                                } else {
+                                    if ($code == "AUD") {
+                                        return "&#8371;";
+                                    } else {
+                                        if ($code == "CAD") {
+                                            return "&#36;";
+                                        } else {
+                                            if ($code == "SGD") {
+                                                return "&#36;";
+                                            } else {
+                                                if ($code == "SEK") {
+                                                    return "&#8364;";
+                                                } else {
+                                                    if ($code == "LAK") {
+                                                        return "&#8365;";
+                                                    } else {
+                                                        if ($code == "DKK") {
+                                                            return "&#36;";
+                                                        } else {
+                                                            if ($code == "NOK") {
+                                                                return "&#36;";
+                                                            } else {
+                                                                if ($code == "CNY") {
+                                                                    return "&#165;";
+                                                                } else {
+                                                                    if ($code == "RUB") {
+                                                                        return "&#8381;";
+                                                                    } else {
+                                                                        if ($code == "NZD") {
+                                                                            return "&#36;";
+                                                                        } else {
+                                                                            if ($code == "MYR") {
+                                                                                return "&#8357;";
+                                                                            } else {
+                                                                                if ($code == "TWD") {
+                                                                                    return "&#36;";
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     /**
-     * function BIDV
+     * Thống kê tăng giảm bao nhiêu % đối với các tỷ giá
      * */
-    protected function BIDV($NgoaiTeCron)
+    protected function tygiaNow($code, $bank_id, $NgoaiTe, $NgoaiTeCron)
     {
-        $url = "https://www.bidv.com.vn/ServicesBIDV/ExchangeDetailServlet";
-        try {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $result = curl_exec($ch);
-            curl_close($ch);
-        } catch (\Exception $e) {
-            $result = null;
-        }
-        $Carbon = Carbon::now();
-        if ($result != null) {
-            $response = json_decode($result);
-            if ($response == null) {
-                return null;
+        if ($code != null && $bank_id != null) {
+            $tygiacu = NgoaiTe::where("code", "=", $code)
+                ->where("bank_id", "=", $bank_id)
+                ->orderBy('id', 'DESC')
+                ->first();
+
+            if ($tygiacu) {
+                if ($tygiacu->muatienmat != null) {
+                    if ($NgoaiTe->muatienmat != 0 || $NgoaiTe->muatienmat != null) {
+                        $tyle_muatienmat = (float)$NgoaiTe->muatienmat - $tygiacu->muatienmat;
+                    } else {
+                        $tyle_muatienmat = null;
+                    }
+                } else {
+                    $tyle_muatienmat = null;
+                }
+                if ($tygiacu->muachuyenkhoan != null) {
+                    if ($NgoaiTe->muachuyenkhoan != 0 || $NgoaiTe->muachuyenkhoan != null) {
+                        $tyle_muachuyenkhoan = (float)$NgoaiTe->muachuyenkhoan - $tygiacu->muachuyenkhoan;
+                    } else {
+                        $tyle_muachuyenkhoan = null;
+                    }
+                } else {
+                    $tyle_muachuyenkhoan = null;
+                }
+                if ($tygiacu->bantienmat != null) {
+                    if ($NgoaiTe->bantienmat != 0 || $NgoaiTe->bantienmat != null) {
+                        $tyle_bantienmat = (float)$NgoaiTe->bantienmat - $tygiacu->bantienmat;
+                    } else {
+                        $tyle_bantienmat = null;
+                    }
+                } else {
+                    $tyle_bantienmat = null;
+                }
+                if ($tygiacu->banchuyenkhoan != null) {
+                    if ($NgoaiTe->banchuyenkhoan != 0 || $NgoaiTe->banchuyenkhoan != null) {
+                        $tyle_banchuyenkhoan = (float)$NgoaiTe->banchuyenkhoan - $tygiacu->banchuyenkhoan;
+                    } else {
+                        $tyle_muachuyenkhoan = null;
+                    }
+                } else {
+                    $tyle_banchuyenkhoan = null;
+                }
+                $check = DB::table('ngoaite_today')
+                    ->where('code', '=', $code)
+                    ->where('bank_id', '=', $bank_id)
+                    ->orderBy('id', 'DESC')
+                    ->delete();
+
+                $NgoaiTeToDay = DB::table("ngoaite_today")->insert([
+                    "cron_id" => $NgoaiTeCron,
+                    "code" => $code,
+                    'bank_id' => $bank_id,
+                    'bank_code' => $NgoaiTe->bank_code,
+                    'bank_name' => $NgoaiTe->bank_name,
+                    'bank_image' => $NgoaiTe->bank_image,
+                    'symbol' => $NgoaiTe->symbol,
+                    'image' => $NgoaiTe->image,
+                    'vname' => strip_tags($NgoaiTe->vname),
+                    'ename' => strip_tags($NgoaiTe->ename),
+                    'muatienmat' => $NgoaiTe->muatienmat,
+                    'muatienmat_diff' => $tyle_muatienmat,
+                    'muachuyenkhoan' => $NgoaiTe->muachuyenkhoan,
+                    'muachuyenkhoan_diff' => $tyle_muachuyenkhoan,
+                    'bantienmat' => $NgoaiTe->bantienmat,
+                    'bantienmat_diff' => $tyle_bantienmat,
+                    'banchuyenkhoan' => $NgoaiTe->banchuyenkhoan,
+                    'banchuyenkhoan_diff' => $tyle_banchuyenkhoan,
+                    'date' => $NgoaiTe->date,
+                    'time' => $NgoaiTe->time
+                ]);
+                if ($NgoaiTeToDay) {
+                    $arr_diff = array(
+                        "tyle_muatienmat" => $tyle_muatienmat,
+                        "tyle_muachuyenkhoan" => $tyle_muachuyenkhoan,
+                        "tyle_bantienmat" => $tyle_bantienmat,
+                        "tyle_banchuyenkhoan" => $tyle_banchuyenkhoan
+                    );
+                    return $arr_diff;
+                }
+            } else {
+                $NgoaiTeToDay = DB::table("ngoaite_today")->insert([
+                    "cron_id" => $NgoaiTeCron,
+                    "code" => $code,
+                    'bank_id' => $bank_id,
+                    'bank_code' => $NgoaiTe->bank_code,
+                    'bank_name' => $NgoaiTe->bank_name,
+                    'bank_image' => $NgoaiTe->bank_image,
+                    'symbol' => $NgoaiTe->symbol,
+                    'image' => $NgoaiTe->image,
+                    'vname' => $NgoaiTe->vname,
+                    'ename' => $NgoaiTe->ename,
+                    'muatienmat' => $NgoaiTe->muatienmat,
+                    'muatienmat_diff' => null,
+                    'muachuyenkhoan' => $NgoaiTe->muachuyenkhoan,
+                    'muachuyenkhoan_diff' => null,
+                    'bantienmat' => $NgoaiTe->bantienmat,
+                    'bantienmat_diff' => null,
+                    'banchuyenkhoan' => $NgoaiTe->banchuyenkhoan,
+                    'banchuyenkhoan_diff' => null,
+                    'date' => $NgoaiTe->date,
+                    'time' => $NgoaiTe->time
+                ]);
+                if ($NgoaiTeToDay) {
+                    return null;
+                }
             }
-            $responseData = $response->data;
-            foreach ($responseData as $data) {
-                $NgoaiTe = new NgoaiTe();
-                $NgoaiTe->cron_id = $NgoaiTeCron;
-                $NgoaiTe->code = $data->currency;
-                if ($data->currency === "USD(1-2-5)" || $data->currency === "USD(10-20)") {
-                    continue;
-                }
-                $NgoaiTe->bank_id = 5;
-                $NgoaiTe->bank_code = "bidv";
-                $NgoaiTe->bank_name = "BIDV";
-                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/BIDV.png";
-                $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ', '', $data->currency));
-                $NgoaiTe->image = "/storage/currency/" . str_replace(' ', '', $data->currency) . ".png";
-                $NgoaiTe->vname = $data->nameVI;
-                $NgoaiTe->ename = $data->nameEN;
-                if ($data->muaTm == null || $data->muaTm == "") {
-                    $NgoaiTe->muatienmat = 0;
-                } else {
-                    $NgoaiTe->muatienmat = floatval(str_replace(',', '', $data->muaTm));
-                }
-                if ($data->ban == null || $data->ban == "") {
-                    $NgoaiTe->bantienmat = 0;
-                    $NgoaiTe->banchuyenkhoan = 0;
-                } else {
-                    $NgoaiTe->bantienmat = floatval(str_replace(',', '', $data->ban));
-                    $NgoaiTe->banchuyenkhoan = floatval(str_replace(',', '', $data->ban));
-                }
-                if ($data->muaCk == null || $data->muaCk == "") {
-                    $NgoaiTe->muachuyenkhoan = 0;
-                } else {
-                    $NgoaiTe->muachuyenkhoan = floatval(str_replace(',', '', $data->muaCk));
-                }
-                $NgoaiTe->date = $Carbon;
-                $NgoaiTe->time = $response->hour;
-                //Save vào bảng Ngoại Tệ mới
-                $arr_diff = $this->tygiaNow($data->currency, 5, $NgoaiTe, $NgoaiTeCron);
-                if ($arr_diff) {
-                    $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
-                    $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
-                    $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
-                    $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
-                    $NgoaiTe->save();
-                    echo "Cập nhật dữ liệu BIDV với đồng " . $data->currency . " thành công \n";
-                } else { // failed
-                    echo "Insert new money \n";
-                    $this->CreateLog($NgoaiTeCron, "Cập nhật BIDV không thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "bidv");
-                    continue;
-                }
-            }
-            $this->CreateLog($NgoaiTeCron, "Cập nhật thành công BIDV vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "bidv");
-        } else {
-            $this->CreateLog($NgoaiTeCron, "Cập nhật khong thành công BIDV vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "bidv");
         }
     }
-    /**
-     * Tách chuỗi để lấy thời gian
-     * Tách chuỗi để lấy ngày tháng
-     * */
-    protected function getTimeCurrency($str)
+
+    public function CreateLog($NgoaiTeCron, $Log, $bank)
     {
-        $subStr = substr($str, 20);
-        while ($subStr) {
-            $subStrDate = substr($subStr, 11);
-            return $subStrDate;
+        $NgoaiTeLog = DB::table('ngoai_te_logs')->insert(
+            [
+                'id_cron' => $NgoaiTeCron,
+                'logs' => $Log,
+                'bank' => $bank
+            ]
+        );
+        if ($NgoaiTeLog) {
+            return "Ok";
         }
+        return "nope";
     }
-    protected function getDateCurrency($str)
-    {
-        $subStr = substr($str, 20);
-        $tok = strtok($subStr, " ");
-        $Date = str_replace('/', '-', $tok);
-        $Carbon = new Carbon($Date);
-        return $Carbon->year . "-" . $Carbon->month . "-" . $Carbon->day;
-    }
+
     /**
      * function get Data Techcombank
      *
@@ -486,19 +595,21 @@ class cronJobGetExchange extends Command
                             $NgoaiTe->save();
                             echo "Cập nhật dữ liệu Techcombank với đồng " . $data['currency_code'] . " thành công \n";
                         } else { // failed
-                            echo "Insert new money \n";
-                            continue;
+                            echo "Insert new money Techcombank \n";
                         }
                     }
                     $Carbon = Carbon::now();
-                    $this->CreateLog($NgoaiTeCron, "Cập nhật thành công Techcombank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "techcom");
-                    return response()->json(["message", "Get data success"]);
                 } else {
-                    return response()->json(["message", "Cannot find data in url!"]);
+                    return "Lấy dữ liệu Techcombank thất bại";
                 }
-            } else { }
+            } else {
+                return "Lấy dữ liệu Techcombank thất bại";
+            }
+        } else {
+            return "Không có dữ liệu của Techcombank";
         }
     }
+
     /**
      * More function Techcombank
      * */
@@ -509,132 +620,12 @@ class cronJobGetExchange extends Command
         $Carbon = Carbon::now();
         return $Carbon;
     }
+
     protected function changenbsp($str)
     {
         return str_replace('&nbsp;', '', $str);
     }
-    /**
-     * End more function Techcombank
-     * */
-    /**
-     * HSBC function
-     * */
-    protected function HSBC($html, $NgoaiTeCron)
-    {
-        if ($html) {
-            $rows = $html->find("table.hsbcTableStyleForRates02 tr.hsbcTableRow03");
-            $getTime = $html->find("table.hsbcTableStyleForRates02 td.ForTime01", 0)->innertext;
-            $time = $this->changeCharaterbsp($getTime);
-            $arrDataHSBC = array();
-            if (count($rows) > 0) {
-                for ($i = 0; $i < count($rows); $i++) {
-                    $currency_name = $rows[$i]->find("td.ForRatesColumn02", 0)->innertext;
-                    $currency_buy_money = $rows[$i]->find('td.ForRatesColumn02', 1)->innertext;
-                    $currency_transfer = $rows[$i]->find('td.ForRatesColumn02', 2)->innertext;
-                    $currency_sell_money = $rows[$i]->find('td.ForRatesColumn02', 3)->innertext;
-                    $currency_sell_tranfer = $rows[$i]->find('td.ForRatesColumn02', 4)->innertext;
-                    $arrTemp = array(
-                        "currency_code" => $this->getCurrencyCodeHSBC($currency_name),
-                        "currency_name" => $this->changeCharaterbsp($currency_name),
-                        "currency_buy_money" => $currency_buy_money,
-                        "currency_buy_transfer" => $currency_transfer,
-                        "currency_sell_money" => $currency_sell_money,
-                        "currency_sell_tranfer" => $currency_sell_tranfer,
-                        "date" => $this->getDateHSBC($time),
-                        "time" => $this->getTimeHSBC($time)
-                    );
-                    array_push($arrDataHSBC, $arrTemp);
-                }
-            } else {
-                return response()->json("cannot get data");
-            }
-            if (count($arrDataHSBC) > 0) {
-                foreach ($arrDataHSBC as $data) {
-                    $NgoaiTe = new NgoaiTe();
-                    $code = str_replace('(', '', $data['currency_code']);
-                    $code1 = str_replace(')', '', $code);
-                    $NgoaiTe->code = $code1;
-                    $NgoaiTe->bank_id = 2;
-                    $NgoaiTe->bank_code = "hsbc";
-                    $NgoaiTe->bank_name = "HSBC";
-                    $NgoaiTe->bank_image = "/storage/userfiles/images/icons/HSBC.png";
-                    $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ', '', str_replace('(', '', $data['currency_code'])));
-                    $NgoaiTe->image = "/storage/currency/" . str_replace(' ', '', str_replace('(', '', $data['currency_code'])) . ".png";
-                    $NgoaiTe->cron_id = $NgoaiTeCron;
-                    $NgoaiTe->vname = "";
-                    $NgoaiTe->ename = "";
-                    if ($data["currency_buy_money"] == null || $data["currency_buy_money"] == "") {
-                        $NgoaiTe->muatienmat = 0;
-                    } else {
-                        $NgoaiTe->muatienmat = floatval(str_replace(',', '.', str_replace('.', '', $data['currency_buy_money'])));
-                    }
-                    if ($data["currency_sell_money"] == null || $data["currency_sell_money"] == "") {
-                        $NgoaiTe->bantienmat = 0;
-                    } else {
-                        $NgoaiTe->bantienmat = floatval(str_replace(',', '.', str_replace('.', '', $data["currency_sell_money"])));
-                    }
-                    if ($data["currency_buy_transfer"] == null || $data["currency_buy_transfer"] == "") {
-                        $NgoaiTe->muachuyenkhoan = 0;
-                    } else {
-                        $NgoaiTe->muachuyenkhoan = floatval(str_replace(',', '.', str_replace('.', '', $data["currency_buy_transfer"])));
-                    }
-                    if ($data["currency_sell_money"] == null || $data["currency_sell_money"] == "") {
-                        $NgoaiTe->banchuyenkhoan = 0;
-                    } else {
-                        $NgoaiTe->banchuyenkhoan = floatval(str_replace(',', '.', str_replace('.', '', $data["currency_sell_money"])));
-                    }
-                    $NgoaiTe->date = $data["date"];
-                    $NgoaiTe->time = $data["time"];
-                    //Save vào bảng Ngoại Tệ mới
-                    $arr_diff = $this->tygiaNow($code1, 2, $NgoaiTe, $NgoaiTeCron);
-                    if ($arr_diff) { // success
-                        $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
-                        $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
-                        $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
-                        $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
-                        $NgoaiTe->save();
-                        echo "Cập nhật dữ liệu HSBC với đồng " . $data['currency_code'] . "  thành công \n";
-                    } else { // failed
-                        echo "Insert new money \n";
-                        continue;
-                    }
-                }
-                $Carbon = Carbon::now();
-                $this->CreateLog($NgoaiTeCron, "Cập nhật thành công HSBC vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "hsbc");
-                return response()->json(["message", "Get data success"]);
-            } else {
-                return response()->json(["message", "Get data faild, please check system again!"]);
-            }
-        }
-    }
-    /**
-     * Custom function HSBC
-     * */
-    protected function getCurrencyCodeHSBC($CurrencyName)
-    {
-        $CodeHSBC = strstr($CurrencyName, "(");
-        return $CodeHSBC;
-    }
-    protected function changeCharaterbsp($CurrencyName)
-    {
-        $Name = str_replace("&nbsp;", " ", $CurrencyName);
-        return $Name;
-    }
-    protected function getDateHSBC($time)
-    {
-        $arrTime = explode(' ', $time);
-        $Carbon = Carbon::now();
-        return $Carbon;
-    }
-    protected function getTimeHSBC($time)
-    {
-        $arrTime = explode(' ', $time);
-        $Carbon = new Carbon($arrTime[4]);
-        return $Carbon;
-    }
-    /**
-     * End more function HSBC
-     * */
+
     /**
      * SHB function
      * */
@@ -677,8 +668,10 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->bank_code = "shb";
                     $NgoaiTe->bank_name = "SHB";
                     $NgoaiTe->bank_image = "/storage/userfiles/images/icons/SHB.png";
-                    $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ', '', str_replace('(', '', $data['currency_code'])));
-                    $NgoaiTe->image = "/storage/currency/" . str_replace(' ', '', str_replace('(', '', $data['currency_code'])) . ".png";
+                    $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ', '',
+                        str_replace('(', '', $data['currency_code'])));
+                    $NgoaiTe->image = "/storage/currency/" . str_replace(' ', '',
+                            str_replace('(', '', $data['currency_code'])) . ".png";
                     $NgoaiTe->cron_id = $NgoaiTeCron;
                     $NgoaiTe->vname = "";
                     $NgoaiTe->ename = "";
@@ -714,18 +707,21 @@ class cronJobGetExchange extends Command
                         $NgoaiTe->save();
                         echo "Cập nhật dữ liệu SHB với đồng " . $data['currency_code'] . "  thành công \n";
                     } else { // failed
-                        echo "Insert new money \n";
-                        continue;
+                        echo "Insert new money SHB thành công \n";
                     }
                 }
-                $Carbon = Carbon::now();
-                $this->CreateLog($NgoaiTeCron, "Cập nhật thành công SHB vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "shb");
-                return response()->json(["message", "Get dat success"]);
+                return "Cập nhật dữ liệu SHB thành công";
             } else {
-                return null;
+                return "Cập nhật dữ liệu SHB thất bại";
             }
+        } else {
+            return "Không tìm thấy dữ liệu của SHB";
         }
     }
+    /**
+     * End more function SHB
+     * */
+
     /**
      * Viettin bank
      * */
@@ -836,17 +832,18 @@ class cronJobGetExchange extends Command
                         $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
                         $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
                         $NgoaiTe->save();
-                        echo "Cập nhật dữ liệu ACB với đồng " . strip_tags($key) . "  thành công \n";
+                        echo "Cập nhật dữ liệu VietinBank với đồng " . strip_tags($key) . "  thành công \n";
                     } else { // failed
-                        echo "Insert new money \n";
+                        echo "Insert new money VietinBank thành công \n";
                         continue;
                     }
                 }
-                $Carbon = Carbon::now();
-                $this->CreateLog($NgoaiTeCron, "Cập nhật thành công Viettin bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "vietin");
             }
+        } else {
+            return "Không tìm thấy dữ liệu VietinBank";
         }
     }
+
     /**
      * Sacombank bank
      * */
@@ -928,14 +925,15 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->save();
                     echo "Cập nhật dữ liệu Sacombank với đồng " . strip_tags($key) . " thành công \n";
                 } else { // failed
-                    echo "Insert new money \n";
+                    echo "Insert new money SacomBank thành công \n";
                     continue;
                 }
             }
-            $Carbon = Carbon::now();
-            $this->CreateLog($NgoaiTeCron, "Cập nhật thành công Sacom bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "sacombank");
+        } else {
+            return "Không tìm được dữ liệu SacomBank";
         }
     }
+
     /**
      * Vietcom bank
      * */
@@ -948,7 +946,7 @@ class cronJobGetExchange extends Command
             $tygia = [];
             foreach ($vcb as $tg) {
                 $json = json_encode($tg);
-                $array = json_decode($json, TRUE);
+                $array = json_decode($json, true);
                 foreach ($array as $key => $ar) {
                     $vl = [];
                     $vl[0] = $ar['Buy'];
@@ -1002,14 +1000,15 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->save();
                     echo "Cập nhật dữ liệu Vietcombank với đồng " . strip_tags($key) . " thành công \n";
                 } else { // failed
-                    echo "Insert new money \n";
+                    echo "Insert new money VietcomBank \n";
                     continue;
                 }
             }
-            $Carbon = Carbon::now();
-            $this->CreateLog($NgoaiTeCron, "Cập nhật thành công Vietcombank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "vietcombank");
+        } else {
+            return "Không tìm được dữ liệu của VietcomBank";
         }
     }
+
     /**
      * Dong a bank
      * */
@@ -1086,127 +1085,25 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
                     $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
                     $NgoaiTe->save();
-                    echo "Cập nhật dữ liệu ACB với đồng " . strip_tags($key) . "  thành công \n";
+                    echo "Cập nhật dữ liệu DongA với đồng " . strip_tags($key) . "  thành công \n";
                 } else { // failed
-                    echo "Insert new money \n";
+                    echo "Insert new money DongA \n";
                     continue;
                 }
             }
-            $Carbon = Carbon::now();
-            $this->CreateLog($NgoaiTeCron, "Cập nhật thành công Đông Á Bank vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "dab")  . "\n";
-        }
-    }
-    protected function checkIssetMoney($money)
-    {
-        if ($money == "") {
-            return null;
         } else {
-            return $money;
-        }
-    }
-    /**
-     * insert vname and ename to currency
-     * param: code
-     * @return more
-     * */
-    protected function insertNameCurrency()
-    {
-        $NgoaiTe = NgoaiTe::select("code", "vname", "ename")->get();
-        $CurrencyCode = DB::table('currencies_code')->select("code", "name", "vname")->get();
-        foreach ($NgoaiTe as $ngoaite) {
-            if ($ngoaite->vname == null || $ngoaite->ename == null) {
-                foreach ($CurrencyCode as $currencycode) {
-                    if ($ngoaite->code == $currencycode->code || "(" . $currencycode->code . ")" ==  $ngoaite->code) {
-                        $ngoaite->ename = $currencycode->name;
-                        $ngoaite->vname = $currencycode->vname;
-                        $ngoaite->save();
-                    } else {
-                    }
-                }
-            } else {
-            }
-        }
-    }
-
-
-    public function agribank($html, $NgoaiTeCron)
-    {
-        if ($html) {
-            $table = $html->find("#tblTG table");
-            if (count($table) > 0) {
-                $tr = $html->find("#tblTG table tr");
-                for ($i = 1; $i < count($tr); $i++) {
-                    $mangoaite = str_replace(',', '', $tr[$i]->find("td", 0)->innertext);
-                    $muatienmat = str_replace(',', '', $tr[$i]->find("td", 1)->innertext);
-                    $muachuyenkhoan = str_replace(',', '', $tr[$i]->find("td", 2)->innertext);
-                    $bantienmat = str_replace(',', '', $tr[$i]->find("td", 3)->innertext);
-
-                    $NgoaiTe = new NgoaiTe();
-                    $NgoaiTe->code = strip_tags($mangoaite);
-                    $NgoaiTe->bank_id = 13;
-                    $NgoaiTe->bank_code = "agribank";
-                    $NgoaiTe->bank_name = "Argibank";
-                    $NgoaiTe->symbol = $this->checkSymbol(strip_tags($mangoaite));
-                    $NgoaiTe->cron_id = $NgoaiTeCron;
-                    $NgoaiTe->vname = "";
-                    $NgoaiTe->ename = "";
-                    if ($muatienmat == "" || $muatienmat == null) {
-                        $NgoaiTe->muatienmat = 0;
-                    } else {
-                        $NgoaiTe->muatienmat = floatval($muatienmat);
-                    }
-                    if ($muachuyenkhoan == "" || $muachuyenkhoan == null) {
-                        $NgoaiTe->bantienmat = 0;
-                    } else {
-                        $NgoaiTe->bantienmat = floatval($muachuyenkhoan);
-                    }
-                    if ($bantienmat == "" || $bantienmat == null) {
-                        $NgoaiTe->muachuyenkhoan = 0;
-                    } else {
-                        $NgoaiTe->muachuyenkhoan = floatval($bantienmat);
-                    }
-                    if ($bantienmat == "" || $bantienmat == null) {
-                        $NgoaiTe->banchuyenkhoan = 0;
-                    } else {
-                        $NgoaiTe->banchuyenkhoan = floatval($bantienmat);
-                    }
-                    $Carbon = Carbon::now();
-                    $NgoaiTe->date = $Carbon;
-                    $NgoaiTe->time = $Carbon;
-                    //Save vào bảng Ngoại Tệ mới
-                    $arr_diff = $this->tygiaNow(strip_tags($mangoaite), 13, $NgoaiTe, $NgoaiTeCron);
-                    if ($arr_diff) { // success
-                        $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
-                        $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
-                        $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
-                        $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
-                        $NgoaiTe->save();
-                        echo "Cập nhật dữ liệu Argibank với đồng " . strip_tags($mangoaite) . " thành công \n";
-                    } else { // failed
-                        echo "Insert new money \n";
-                        continue;
-                    }
-                }
-            } else {
-                return "datanone";
-            }
-        } else {
+            return "Không tìm thấy dữ liệu DongA";
         }
     }
 
     public function eximbank($html, $NgoaiTeCron)
     {
-
         if ($html) {
-
             $table = $html->find("table");
             $data = $table[9];
             $rows = $data->find("tr");
-
             for ($i = 0; $i < count($rows); $i += 2) {
-
                 $vname = strip_tags($rows[$i]->find("span", 0));
-
                 if ($vname === "Đô-la Mỹ (USD 5-20)" || $vname === "Đô-la Mỹ (Dưới 5 USD)") {
                     continue;
                 }
@@ -1292,150 +1189,80 @@ class cronJobGetExchange extends Command
                     $NgoaiTe->save();
                     echo "Cập nhật dữ liệu Eximbank với đồng " . $mangoaite . "  thành công \n";
                 } else { // failed
-                    echo "Insert new money \n";
-                    continue;
-                }
-            }
-        }
-    }
-
-    public function mbbank($htmlMBBank, $NgoaiTeCron)
-    {
-
-        if ($htmlMBBank) {
-            $table = $htmlMBBank->find("div.table-responsive table", 0);
-            $tr = $table->find("tr");
-
-            for ($i = 2; $i < count($tr); $i++) {
-                $Code = $tr[$i]->find("th", 0)->innertext;
-
-                if ($Code === "USD (USD 5 - 20)" || $Code === "USD (Dưới 5 USD)") {
-                    $Code = "USDDelete";
-                }
-                if ($Code == "USD (USD 50-100)") {
-                    $Code = "USD";
-                } else { }
-                //                    $Code = $tr[$i]->find("th",0)->innertext;
-                $muatienmat = str_replace(',', '.', str_replace('.', '', $tr[$i]->find("td", 0)->innertext));
-                $muachuyenkhoan = str_replace(',', '.', str_replace('.', '', $tr[$i]->find("td", 1)->innertext));
-                $bantienmat = str_replace(',', '.', str_replace('.', '', $tr[$i]->find("td", 2)->innertext));
-
-                $NgoaiTe = new NgoaiTe();
-                $NgoaiTe->code = $Code;
-                $NgoaiTe->bank_id = 15;
-                $NgoaiTe->bank_code = "mbbank";
-                $NgoaiTe->bank_name = "MBank";
-                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/mbank.png";
-                $NgoaiTe->symbol = $this->checkSymbol(strip_tags($Code));
-                $NgoaiTe->image = "/storage/currency/" . $Code . ".png";
-                $NgoaiTe->cron_id = $NgoaiTeCron;
-                $NgoaiTe->vname = $Code;
-                if ($muatienmat == 0 || $muatienmat == null || $muatienmat == "-") {
-                    $NgoaiTe->muatienmat = 0;
-                } else {
-                    $NgoaiTe->muatienmat = $muatienmat;
-                }
-                if ($muachuyenkhoan == 0 || $muachuyenkhoan == null || $muachuyenkhoan == "-") {
-                    $NgoaiTe->muachuyenkhoan = 0;
-                } else {
-                    $NgoaiTe->muachuyenkhoan = $muachuyenkhoan;
-                }
-                if ($bantienmat == 0 || $bantienmat == null || $bantienmat == "-") {
-                    $NgoaiTe->bantienmat = 0;
-                } else {
-                    $NgoaiTe->bantienmat = $bantienmat;
-                    $NgoaiTe->banchuyenkhoan = $bantienmat;
-                }
-                $Carbon = new Carbon();
-                $NgoaiTe->date = $Carbon;
-                $NgoaiTe->time = $Carbon;
-                $arr_diff = $this->tygiaNow($Code, 15, $NgoaiTe, $NgoaiTeCron);
-                if ($arr_diff) { // success
-                    $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
-                    $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
-                    $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
-                    $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
-                    $NgoaiTe->save();
-                    echo "Cập nhật dữ liệu MBBank với đồng " . $Code . " thành công \n";
-                    if ($NgoaiTe->save()) {
-                        DB::table('ngoaite_today')->where('bank_id', 15)->where('code', 'USDDelete')->delete();
-                        DB::table('ngoaite_today')->where('bank_id', 15)->where("code", "USD (USD 5 - 20)")->delete();
-                        DB::table('ngoaite_today')->where('cron_id', '!=', $NgoaiTeCron)->delete();
-                        $this->CreateLog($NgoaiTeCron, "Cập nhật MBBank thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "Mbbank")  . "\n";
-                    } else {
-                        $this->CreateLog($NgoaiTeCron, "Cập nhật MBBank không thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "Mbbank") . "\n";
-                    }
-                } else { // failed
-                    echo "Insert new money \n";
-                    $this->CreateLog($NgoaiTeCron, "Cập nhật MBBank không thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "Mbbank") . "\n";
-                    continue;
+                    echo "Insert new money Eximbank \n";
                 }
             }
         } else {
-            echo "K kết nối đc đến máy chủ dữ liệu \n";
+            echo "Không tìm được dữ liệu tại ngân hàng EximBank";
         }
     }
+    /**
+     * End more function HSBC
+     * */
 
-    protected function tpBank($html, $NgoaiTeCron)
+    public function agribank($html, $NgoaiTeCron)
     {
-
         if ($html) {
-            $table = $html->find("div.table-responsive", 0);
-            $tr = $table->find("tr");
+            $table = $html->find("#tblTG table");
+            if (count($table) > 0) {
+                $tr = $html->find("#tblTG table tr");
+                for ($i = 1; $i < count($tr); $i++) {
+                    $mangoaite = str_replace(',', '', $tr[$i]->find("td", 0)->innertext);
+                    $muatienmat = str_replace(',', '', $tr[$i]->find("td", 1)->innertext);
+                    $muachuyenkhoan = str_replace(',', '', $tr[$i]->find("td", 2)->innertext);
+                    $bantienmat = str_replace(',', '', $tr[$i]->find("td", 3)->innertext);
 
-            for ($i = 2; $i < count($tr); $i++) {
-                $Code = $tr[$i]->find("th", 0)->innertext;
-                $Ename = $tr[$i]->find("th", 1)->innertext;
-                $muatienmat = str_replace(',', '.', str_replace('.', '', $tr[$i]->find("td", 0)->innertext));
-                $muachuyenkhoan = str_replace(',', '.', str_replace('.', '', $tr[$i]->find("td", 1)->innertext));
-                $bantienmat = str_replace(',', '.', str_replace('.', '', $tr[$i]->find("td", 2)->innertext));
-
-                $NgoaiTe = new NgoaiTe();
-                $NgoaiTe->code = $Code;
-                $NgoaiTe->bank_id = 4;
-                $NgoaiTe->bank_code = "tpb";
-                $NgoaiTe->bank_name = "TBP";
-                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/TPB.png";
-                $NgoaiTe->symbol = $Code;
-                $NgoaiTe->image = "/storage/currency/" . $Code . ".png";
-                $NgoaiTe->cron_id = $NgoaiTeCron;
-                $NgoaiTe->vname = $Ename;
-                $NgoaiTe->ename = $Ename;
-                if ($muatienmat == 0 || $muatienmat == null || $muatienmat == "-") {
-                    $NgoaiTe->muatienmat = 0;
-                } else {
-                    $NgoaiTe->muatienmat = floatval($muatienmat);
+                    $NgoaiTe = new NgoaiTe();
+                    $NgoaiTe->code = strip_tags($mangoaite);
+                    $NgoaiTe->bank_id = 13;
+                    $NgoaiTe->bank_code = "agribank";
+                    $NgoaiTe->bank_name = "Argibank";
+                    $NgoaiTe->symbol = $this->checkSymbol(strip_tags($mangoaite));
+                    $NgoaiTe->cron_id = $NgoaiTeCron;
+                    $NgoaiTe->vname = "";
+                    $NgoaiTe->ename = "";
+                    if ($muatienmat == "" || $muatienmat == null) {
+                        $NgoaiTe->muatienmat = 0;
+                    } else {
+                        $NgoaiTe->muatienmat = floatval($muatienmat);
+                    }
+                    if ($muachuyenkhoan == "" || $muachuyenkhoan == null) {
+                        $NgoaiTe->bantienmat = 0;
+                    } else {
+                        $NgoaiTe->bantienmat = floatval($muachuyenkhoan);
+                    }
+                    if ($bantienmat == "" || $bantienmat == null) {
+                        $NgoaiTe->muachuyenkhoan = 0;
+                    } else {
+                        $NgoaiTe->muachuyenkhoan = floatval($bantienmat);
+                    }
+                    if ($bantienmat == "" || $bantienmat == null) {
+                        $NgoaiTe->banchuyenkhoan = 0;
+                    } else {
+                        $NgoaiTe->banchuyenkhoan = floatval($bantienmat);
+                    }
+                    $Carbon = Carbon::now();
+                    $NgoaiTe->date = $Carbon;
+                    $NgoaiTe->time = $Carbon;
+                    //Save vào bảng Ngoại Tệ mới
+                    $arr_diff = $this->tygiaNow(strip_tags($mangoaite), 13, $NgoaiTe, $NgoaiTeCron);
+                    if ($arr_diff) { // success
+                        $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
+                        $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
+                        $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
+                        $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
+                        $NgoaiTe->save();
+                        echo "Cập nhật dữ liệu Argibank với đồng " . strip_tags($mangoaite) . " thành công \n";
+                    } else { // failed
+                        echo "Insert new money Argibank \n";
+                    }
                 }
-                if ($muachuyenkhoan == 0 || $muachuyenkhoan == null || $muachuyenkhoan == "-") {
-                    $NgoaiTe->muachuyenkhoan = 0;
-                } else {
-                    $NgoaiTe->muachuyenkhoan = floatval($muachuyenkhoan);
-                }
-                if ($bantienmat == 0 || $bantienmat == null || $bantienmat == "-") {
-                    $NgoaiTe->bantienmat = 0;
-                } else {
-                    $NgoaiTe->bantienmat = floatval($bantienmat);
-                    $NgoaiTe->banchuyenkhoan = floatval($bantienmat);
-                }
-                $Carbon = new Carbon();
-                $NgoaiTe->date = $Carbon;
-                $NgoaiTe->time = $Carbon;
-                $arr_diff = $this->tygiaNow($Code, 4, $NgoaiTe, $NgoaiTeCron);
-                if ($arr_diff) { // success
-                    $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
-                    $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
-                    $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
-                    $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
-                    $NgoaiTe->save();
-                    echo "Cập nhật dữ liệu TPBank với đồng " . $Code . " thành công \n";
-                } else { // failed
-                    echo "Insert new money \n";
-                    $this->CreateLog($NgoaiTeCron, "Cập nhật TPBank không thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "TPB") . "\n";
-                    continue;
-                }
+            } else {
+                return "Không tìm thấy dữ liệu ArgiBank";
             }
+        } else {
+            return "Không tìm thấy dữ liệu ArgiBank";
         }
-        $this->CreateLog($NgoaiTeCron, "Cập nhật TPbank thành công vào lúc: " . $Carbon->format('h:i:s d/m/Y'), "TPB") . "\n";
     }
 
     public function scb($SimpleHTMLDOM, $NgoaiTeCron)
@@ -1446,13 +1273,13 @@ class cronJobGetExchange extends Command
         $dataPost['date'] = $today;
         $client = new \GuzzleHttp\Client();
         $response = $client->request('POST', $post_url, [
-            'headers' => ['content-type' => 'application/json', 'cache-control' => 'no-cache'],
+            'headers' =>['content-type' => 'application/json', 'cache-control' => 'no-cache'],
             'body' => \GuzzleHttp\json_encode($dataPost)
         ]);
         $statusCode = $response->getStatusCode();
         $result_ncc = $response->getBody()->getContents();
         if ($statusCode == 200) {
-            $result = json_decode($result_ncc, true);
+            $result = json_decode($result_ncc,true);
             try {
                 $url = 'https://www.scb.com.vn/Handlers/GetForeignExchange.aspx?';
                 $post = array();
@@ -1461,7 +1288,7 @@ class cronJobGetExchange extends Command
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, "https://www.scb.com.vn/Handlers/GetForeignExchange.aspx?");
                     curl_setopt($ch, CURLOPT_POST, 1);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, "tableno=" . $post['tableno']);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, "tableno=". $post['tableno']);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     $server_output = curl_exec($ch);
                     curl_close($ch);
@@ -1470,35 +1297,34 @@ class cronJobGetExchange extends Command
                     echo $e;
                 }
 
-                if ($server_output) {
+                if($server_output) {
                     $html = $SimpleHTMLDOM->str_get_html($server_output);
-                    if ($html) {
-                        $table = $html->find('table', 0);
+                    if($html) {
+                        $table = $html->find('table',0);
                         $tr = $table->find('tr');
                         $CarbonNow = Carbon::now();
-                        for ($i = 1; $i < count($tr); $i++) {
-                            $mangoaite = strip_tags(str_replace(']', '', str_replace('[', '', str_replace('-', '', $tr[$i]->find('td', 0)))));
-                            $muatienmat = strip_tags(str_replace(',', '', $tr[$i]->find('td', 1)));
-                            $bantienmat = strip_tags(str_replace(',', '', $tr[$i]->find('td', 2)));
-                            $muachuyenkhoan = strip_tags(str_replace(',', '', $tr[$i]->find('td', 3)));
-                            $banchuyenkhoan = strip_tags(str_replace(',', '', $tr[$i]->find('td', 4)));
-                            if ($mangoaite === "USD520" || $mangoaite === "USD50100") {
+                        for($i = 1; $i < count($tr); $i++){
+                            $mangoaite = strip_tags(str_replace(']','',str_replace('[','',str_replace('-','',$tr[$i]->find('td',0)))));
+                            $muatienmat = strip_tags(str_replace(',','',$tr[$i]->find('td',1)));
+                            $bantienmat = strip_tags(str_replace(',','',$tr[$i]->find('td',2)));
+                            $muachuyenkhoan = strip_tags(str_replace(',','',$tr[$i]->find('td',3)));
+                            $banchuyenkhoan = strip_tags(str_replace(',','',$tr[$i]->find('td',4)));
+                            if($mangoaite === "USD520" || $mangoaite === "USD50100") {
                                 continue;
                             }
-                            if ($muatienmat == "") {
+                            if($muatienmat == "") {
                                 $muatienmat = 0;
                             }
-                            if ($bantienmat == "") {
+                            if($bantienmat == "") {
                                 $bantienmat = 0;
                             }
-                            if ($muachuyenkhoan == "") {
+                            if($muachuyenkhoan == "") {
                                 $muachuyenkhoan = 0;
                             }
-                            if ($banchuyenkhoan == "") {
+                            if($banchuyenkhoan == "") {
                                 $banchuyenkhoan = 0;
                             }
-                            $cronJobNow = DB::table('ngoaite_cron')->orderBy('id', 'DESC')->first();
-
+                            $cronJobNow = DB::table('ngoaite_cron')->orderBy('id','DESC')->first();
                             $insertSCB = new NgoaiTe();
                             $insertSCB->cron_id = $NgoaiTeCron;
                             $insertSCB->code = $mangoaite;
@@ -1509,7 +1335,7 @@ class cronJobGetExchange extends Command
                             $insertSCB->vname = $mangoaite;
                             $insertSCB->ename = $mangoaite;
                             $insertSCB->symbol = $this->checkSymbol($mangoaite);
-                            $insertSCB->image = "/storage/currency/" . $mangoaite . ".png";
+                            $insertSCB->image = "/storage/currency/".$mangoaite . ".png";
                             $insertSCB->muatienmat = $muatienmat;
                             $insertSCB->bantienmat = $bantienmat;
                             $insertSCB->muachuyenkhoan = $muachuyenkhoan;
@@ -1519,7 +1345,7 @@ class cronJobGetExchange extends Command
                             $insertSCB->time = $CarbonNow;
                             try {
                                 $updateDiff = $this->tygiaNow($mangoaite, 16, $insertSCB, $NgoaiTeCron);
-                                if ($updateDiff) {
+                                if($updateDiff) {
                                     $insertSCB->muatienmat_diff = $updateDiff["tyle_muatienmat"];
                                     $insertSCB->bantienmat_diff = $updateDiff["tyle_bantienmat"];
                                     $insertSCB->muachuyenkhoan_diff = $updateDiff["tyle_muachuyenkhoan"];
@@ -1529,17 +1355,21 @@ class cronJobGetExchange extends Command
                                 } else {
                                     echo "Insert new money \n";
                                 }
-                            } catch (\Exception $e) {
+                            } catch(\Exception $e) {
                                 return $e;
                             }
                         }
                     } else {
-                        echo "null";
+                        echo "Không tìm thấy dữ liệu SCB";
                     }
                 } else {
-                    echo "Cannot find data the links";
+                    echo "Không tìm thấy dữ liệu tại đường dẫn ngân hàng SCB";
                 }
-            } catch (\Exception $ex) { }
+            } catch (\Exception $ex) {
+                dd($ex);
+            }
+        } else {
+            return "Không tìm thấy dữ liệu SCB";
         }
     }
 
@@ -1590,134 +1420,416 @@ class cronJobGetExchange extends Command
                         $NgoaiTe->muachuyenkhoan_diff = $updateDiff["tyle_muachuyenkhoan"];
                         $NgoaiTe->banchuyenkhoan_diff = $updateDiff["tyle_banchuyenkhoan"];
                         $NgoaiTe->save();
-                        echo "Thêm thành công ngoại tệ: " . $mangoaite . " của ngân hàng Maritime Bank \n";
+                        echo "Thêm thành công ngoại tệ: " . $mangoaite . " của ngân hàng MaritimeBank \n";
                     } else {
-                        echo "Insert new money \n";
+                        echo "Insert new money MaritimeBank \n";
                     }
-                } catch (\Exception $e) {
+                } catch (Exception $e) {
                     return $e;
                 }
             }
         } else {
-            echo "Không tìm được dữ liệu ở đường dẫn trên.";
+            echo "Không tìm được dữ liệu ở đường dẫn MaritimeBank.";
         }
     }
 
+    /**
+     * function BIDV
+     * */
+    protected function BIDV($NgoaiTeCron)
+    {
+        $client = new \GuzzleHttp\Client();
+        $res = $client->request('GET', 'https://www.bidv.com.vn/ServicesBIDV/ExchangeDetailServlet', [
+            'verify' => false,
+            'proxy' => [
+                'http'  => 'http://gy7651y5:f3om7895@104.144.22.205:4444',
+                'https'  => 'http://gy7651y5:f3om7895@104.144.22.205:4444',
+            ]
+        ]);
+
+        $result = $res->getBody()->getContents();
+
+        $Carbon = Carbon::now();
+        if ($result) {
+            $response = json_decode($result);
+            $responseData = $response->data;
+            foreach ($responseData as $data) {
+                $NgoaiTe = new NgoaiTe();
+                $NgoaiTe->cron_id = $NgoaiTeCron;
+                $NgoaiTe->code = $data->currency;
+                if ($data->currency === "USD(1-2-5)" || $data->currency === "USD(10-20)") {
+                    continue;
+                }
+                $NgoaiTe->bank_id = 5;
+                $NgoaiTe->bank_code = "bidv";
+                $NgoaiTe->bank_name = "BIDV";
+                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/BIDV.png";
+                $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ', '', $data->currency));
+                $NgoaiTe->image = "/storage/currency/" . str_replace(' ', '', $data->currency) . ".png";
+                $NgoaiTe->vname = $data->nameVI;
+                $NgoaiTe->ename = $data->nameEN;
+                if ($data->muaTm == null || $data->muaTm == "") {
+                    $NgoaiTe->muatienmat = 0;
+                } else {
+                    $NgoaiTe->muatienmat = floatval(str_replace(',', '', $data->muaTm));
+                }
+                if ($data->ban == null || $data->ban == "") {
+                    $NgoaiTe->bantienmat = 0;
+                    $NgoaiTe->banchuyenkhoan = 0;
+                } else {
+                    $NgoaiTe->bantienmat = floatval(str_replace(',', '', $data->ban));
+                    $NgoaiTe->banchuyenkhoan = floatval(str_replace(',', '', $data->ban));
+                }
+                if ($data->muaCk == null || $data->muaCk == "") {
+                    $NgoaiTe->muachuyenkhoan = 0;
+                } else {
+                    $NgoaiTe->muachuyenkhoan = floatval(str_replace(',', '', $data->muaCk));
+                }
+                $NgoaiTe->date = $Carbon;
+                $NgoaiTe->time = $response->hour;
+                //Save vào bảng Ngoại Tệ mới
+                $arr_diff = $this->tygiaNow($data->currency, 5, $NgoaiTe, $NgoaiTeCron);
+                if ($arr_diff) {
+                    $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
+                    $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
+                    $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
+                    $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
+                    $NgoaiTe->save();
+                    echo "Cập nhật dữ liệu BIDV với đồng " . $data->currency . " thành công \n";
+                } else {
+                    // failed
+                    echo "Insert new money BIDV thành công \n";
+                }
+            }
+        } else {
+            return "Không tìm thấy dữ liệu ở đường dẫn tới BIDV";
+        }
+    }
+
+    protected function tpBank($html, $NgoaiTeCron)
+    {
+        if($html){
+            $tr = null;
+            try {
+                $table = $html->find("div.table-responsive", 0);
+                echo $table;
+                $tr = $table->find("tr");
+            } catch (\Exception $exception) {
+                echo "Có lỗi khi cào dư liệu của TPBank";
+                return null;
+            }
+            if ($tr == null) {
+                echo "Không tìm đươư dữ liệu của ngân hàng MBank";
+                return null;
+            }
+            for($i = 2; $i < count($tr); $i++) {
+                $Code = $tr[$i]->find("th",0)->innertext;
+                $Ename = $tr[$i]->find("th",1)->innertext;
+                $muatienmat = str_replace(',','.',str_replace('.','',$tr[$i]->find("td",0)->innertext));
+                $muachuyenkhoan = str_replace(',','.',str_replace('.','',$tr[$i]->find("td",1)->innertext));
+                $bantienmat = str_replace(',','.',str_replace('.','',$tr[$i]->find("td",2)->innertext));
+
+                $NgoaiTe = new NgoaiTe();
+                $NgoaiTe->code = $Code;
+                $NgoaiTe->bank_id = 4;
+                $NgoaiTe->bank_code = "tpb";
+                $NgoaiTe->bank_name = "TBP";
+                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/TPB.png";
+                $NgoaiTe->symbol = $Code;
+                $NgoaiTe->image = "/storage/currency/".$Code . ".png";
+                $NgoaiTe->cron_id = $NgoaiTeCron;
+                $NgoaiTe->vname = $Ename;
+                $NgoaiTe->ename = $Ename;
+                if($muatienmat == 0 || $muatienmat == null || $muatienmat == "-") {
+                    $NgoaiTe->muatienmat = 0;
+                } else {
+                    $NgoaiTe->muatienmat = floatval($muatienmat);
+                }
+                if($muachuyenkhoan == 0 || $muachuyenkhoan == null || $muachuyenkhoan == "-") {
+                    $NgoaiTe->muachuyenkhoan = 0;
+                } else {
+                    $NgoaiTe->muachuyenkhoan = floatval($muachuyenkhoan);
+                }
+                if($bantienmat == 0 || $bantienmat == null || $bantienmat == "-") {
+                    $NgoaiTe->bantienmat = 0;
+                } else {
+                    $NgoaiTe->bantienmat = floatval($bantienmat);
+                    $NgoaiTe->banchuyenkhoan = floatval($bantienmat);
+                }
+                $Carbon = new Carbon();
+                $NgoaiTe->date = $Carbon;
+                $NgoaiTe->time = $Carbon;
+                $arr_diff = $this->tygiaNow($Code, 4, $NgoaiTe,$NgoaiTeCron);
+                if( $arr_diff ) { // success
+                    $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
+                    $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
+                    $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
+                    $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
+                    $NgoaiTe->save();
+                    echo "Cập nhật dữ liệu TPBank với đồng ".$Code." thành công \n";
+                } else { // failed
+                    echo "Insert new money TPBank thành công \n";
+                }
+            }
+        } else {
+            echo "Không tìm thấy dữ liệu của TPBank";
+        }
+    }
 
     /**
-     * Thống kê tăng giảm bao nhiêu % đối với các tỷ giá
+     * insert vname and ename to currency
+     * param: code
+     * @return more
      * */
-    protected function tygiaNow($code, $bank_id, $NgoaiTe, $NgoaiTeCron)
+    protected function insertNameCurrency()
     {
-        if ($code != null && $bank_id != null) {
-            $tygiacu = NgoaiTe::where("code", "=", $code)
-                ->where("bank_id", "=", $bank_id)
-                ->orderBy('id', 'DESC')
-                ->first();
-
-            if ($tygiacu) {
-                if ($tygiacu->muatienmat != null) {
-                    if ($NgoaiTe->muatienmat != 0 || $NgoaiTe->muatienmat != null) {
-                        $tyle_muatienmat = (float) $NgoaiTe->muatienmat - $tygiacu->muatienmat;
+        $NgoaiTe = NgoaiTe::select("code", "vname", "ename")->get();
+        $CurrencyCode = DB::table('currencies_code')->select("code", "name", "vname")->get();
+        foreach ($NgoaiTe as $ngoaite) {
+            if ($ngoaite->vname == null || $ngoaite->ename == null) {
+                foreach ($CurrencyCode as $currencycode) {
+                    if ($ngoaite->code == $currencycode->code || "(" . $currencycode->code . ")" == $ngoaite->code) {
+                        $ngoaite->ename = $currencycode->name;
+                        $ngoaite->vname = $currencycode->vname;
+                        $ngoaite->save();
                     } else {
-                        $tyle_muatienmat = null;
                     }
-                } else {
-                    $tyle_muatienmat = null;
-                }
-                if ($tygiacu->muachuyenkhoan != null) {
-                    if ($NgoaiTe->muachuyenkhoan != 0 || $NgoaiTe->muachuyenkhoan != null) {
-                        $tyle_muachuyenkhoan = (float) $NgoaiTe->muachuyenkhoan - $tygiacu->muachuyenkhoan;
-                    } else {
-                        $tyle_muachuyenkhoan = null;
-                    }
-                } else {
-                    $tyle_muachuyenkhoan = null;
-                }
-                if ($tygiacu->bantienmat != null) {
-                    if ($NgoaiTe->bantienmat != 0 || $NgoaiTe->bantienmat != null) {
-                        $tyle_bantienmat = (float) $NgoaiTe->bantienmat - $tygiacu->bantienmat;
-                    } else {
-                        $tyle_bantienmat = null;
-                    }
-                } else {
-                    $tyle_bantienmat = null;
-                }
-                if ($tygiacu->banchuyenkhoan != null) {
-                    if ($NgoaiTe->banchuyenkhoan != 0 || $NgoaiTe->banchuyenkhoan != null) {
-                        $tyle_banchuyenkhoan = (float) $NgoaiTe->banchuyenkhoan - $tygiacu->banchuyenkhoan;
-                    } else {
-                        $tyle_muachuyenkhoan = null;
-                    }
-                } else {
-                    $tyle_banchuyenkhoan = null;
-                }
-                $check = DB::table('ngoaite_today')
-                    ->where('code', '=', $code)
-                    ->where('bank_id', '=', $bank_id)
-                    ->orderBy('id', 'DESC')
-                    ->delete();
-
-                $NgoaiTeToDay = DB::table("ngoaite_today")->insert([
-                    "cron_id" => $NgoaiTeCron,
-                    "code" => $code,
-                    'bank_id' => $bank_id,
-                    'bank_code' => $NgoaiTe->bank_code,
-                    'bank_name' => $NgoaiTe->bank_name,
-                    'bank_image' => $NgoaiTe->bank_image,
-                    'symbol' => $NgoaiTe->symbol,
-                    'image' => $NgoaiTe->image,
-                    'vname' => strip_tags($NgoaiTe->vname),
-                    'ename' => strip_tags($NgoaiTe->ename),
-                    'muatienmat' => $NgoaiTe->muatienmat,
-                    'tyle_muatienmat' => $tyle_muatienmat,
-                    'muachuyenkhoan' => $NgoaiTe->muachuyenkhoan,
-                    'tyle_muachuyenkhoan' => $tyle_muachuyenkhoan,
-                    'bantienmat' => $NgoaiTe->bantienmat,
-                    'tyle_bantienmat' => $tyle_bantienmat,
-                    'banchuyenkhoan' => $NgoaiTe->banchuyenkhoan,
-                    'tyle_banchuyenkhoan' => $tyle_banchuyenkhoan,
-                    'date' => $NgoaiTe->date,
-                    'time' => $NgoaiTe->time
-                ]);
-                if ($NgoaiTeToDay) {
-                    $arr_diff = array(
-                        "tyle_muatienmat" => $tyle_muatienmat,
-                        "tyle_muachuyenkhoan" => $tyle_muachuyenkhoan,
-                        "tyle_bantienmat" => $tyle_bantienmat,
-                        "tyle_banchuyenkhoan" => $tyle_banchuyenkhoan
-                    );
-                    return $arr_diff;
                 }
             } else {
-                $NgoaiTeToDay = DB::table("ngoaite_today")->insert([
-                    "cron_id" => $NgoaiTeCron,
-                    "code" => $code,
-                    'bank_id' => $bank_id,
-                    'bank_code' => $NgoaiTe->bank_code,
-                    'bank_name' => $NgoaiTe->bank_name,
-                    'bank_image' => $NgoaiTe->bank_image,
-                    'symbol' => $NgoaiTe->symbol,
-                    'image' => $NgoaiTe->image,
-                    'vname' => $NgoaiTe->vname,
-                    'ename' => $NgoaiTe->ename,
-                    'muatienmat' => $NgoaiTe->muatienmat,
-                    'tyle_muatienmat' => null,
-                    'muachuyenkhoan' => $NgoaiTe->muachuyenkhoan,
-                    'tyle_muachuyenkhoan' => null,
-                    'bantienmat' => $NgoaiTe->bantienmat,
-                    'tyle_bantienmat' => null,
-                    'banchuyenkhoan' => $NgoaiTe->banchuyenkhoan,
-                    'tyle_banchuyenkhoan' => null,
-                    'date' => $NgoaiTe->date,
-                    'time' => $NgoaiTe->time
-                ]);
-                if ($NgoaiTeToDay) {
-                    return null;
-                }
             }
         }
     }
+
+    public function mbbank($htmlMBBank, $NgoaiTeCron)
+    {
+        if($htmlMBBank) {
+            $tr = null;
+            try {
+                $table = $htmlMBBank->find("div.table-responsive table",0);
+                $tr = $table->find("tr");
+            } catch (Exception $exception) {
+                dd($exception);
+            }
+            if ($tr == null) {
+                echo "Không tìm đươư dữ liệu của ngân hàng MBank";
+                return null;
+            }
+
+            for($i = 2; $i < count($tr); $i++) {
+                $Code = $tr[$i]->find("th",0)->innertext;
+
+                if($Code === "USD (USD 5 - 20)" || $Code === "USD (Dưới 5 USD)") {
+                    $Code = "USDDelete";
+                }
+                if($Code == "USD (USD 50-100)") {
+                    $Code = "USD";
+                } else {
+                }
+//                    $Code = $tr[$i]->find("th",0)->innertext;
+                $muatienmat = str_replace(',','.',str_replace('.','',$tr[$i]->find("td",0)->innertext));
+                $muachuyenkhoan = str_replace(',','.',str_replace('.','',$tr[$i]->find("td",1)->innertext));
+                $bantienmat = str_replace(',','.',str_replace('.','',$tr[$i]->find("td",2)->innertext));
+
+                $NgoaiTe = new NgoaiTe();
+                $NgoaiTe->code = $Code;
+                $NgoaiTe->bank_id = 15;
+                $NgoaiTe->bank_code = "mbbank";
+                $NgoaiTe->bank_name = "MBank";
+                $NgoaiTe->bank_image = "/storage/userfiles/images/icons/mbank.png";
+                $NgoaiTe->symbol = $this->checkSymbol(strip_tags($Code));
+                $NgoaiTe->image = "/storage/currency/".$Code . ".png";
+                $NgoaiTe->cron_id = $NgoaiTeCron;
+                $NgoaiTe->vname = $Code;
+                if($muatienmat == 0 || $muatienmat == null || $muatienmat == "-") {
+                    $NgoaiTe->muatienmat = 0;
+                } else {
+                    $NgoaiTe->muatienmat = $muatienmat;
+                }
+                if($muachuyenkhoan == 0 || $muachuyenkhoan == null || $muachuyenkhoan == "-") {
+                    $NgoaiTe->muachuyenkhoan = 0;
+                } else {
+                    $NgoaiTe->muachuyenkhoan = $muachuyenkhoan;
+                }
+                if($bantienmat == 0 || $bantienmat == null || $bantienmat == "-") {
+                    $NgoaiTe->bantienmat = 0;
+                } else {
+                    $NgoaiTe->bantienmat = $bantienmat;
+                    $NgoaiTe->banchuyenkhoan = $bantienmat;
+                }
+                $Carbon = new Carbon();
+                $NgoaiTe->date = $Carbon;
+                $NgoaiTe->time = $Carbon;
+                $arr_diff = $this->tygiaNow($Code, 15, $NgoaiTe,$NgoaiTeCron);
+                if( $arr_diff ) { // success
+                    $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
+                    $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
+                    $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
+                    $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
+                    if($NgoaiTe->save()) {
+                        DB::table('ngoaite_today')->where('bank_id',15)->where('code','USDDelete')->delete();
+                        DB::table('ngoaite_today')->where('bank_id',15)->where("code","USD (USD 5 - 20)")->delete();
+                        DB::table('ngoaite_today')->where('cron_id','!=', $NgoaiTeCron)->delete();
+                        echo "Cậập nhật dữ liệu MBank thành công";
+                    } else {
+                        echo "Cập nhật dữ liệu MBank thất bại ";
+                    }
+                } else { // failed
+                    echo "Insert new money MBank \n";
+                }
+            }
+        } else {
+            echo "K kết nối đc đến máy chủ dữ liệu ngân hàng MBank \n";
+        }
+    }
+
+    /**
+     * Tách chuỗi để lấy thời gian
+     * Tách chuỗi để lấy ngày tháng
+     * */
+    protected function getTimeCurrency($str)
+    {
+        $subStr = substr($str, 20);
+        while ($subStr) {
+            $subStrDate = substr($subStr, 11);
+            return $subStrDate;
+        }
+    }
+
+    protected function getDateCurrency($str)
+    {
+        $subStr = substr($str, 20);
+        $tok = strtok($subStr, " ");
+        $Date = str_replace('/', '-', $tok);
+        $Carbon = new Carbon($Date);
+        return $Carbon->year . "-" . $Carbon->month . "-" . $Carbon->day;
+    }
+
+    /**
+     * HSBC function
+     * */
+    protected function HSBC($html, $NgoaiTeCron){
+        if($html) {
+            $rows = $html->find("table.hsbcTableStyleForRates02 tr.hsbcTableRow03");
+            $carbon = Carbon::now();
+            $arrDataHSBC = array();
+            if (count($rows) > 0) {
+                for ($i = 0; $i < count($rows); $i++) {
+                    $currency_name = $rows[$i]->find("td.ForRatesColumn02", 0)->innertext;
+                    $currency_buy_money = $rows[$i]->find('td.ForRatesColumn02', 1)->innertext;
+                    $currency_transfer = $rows[$i]->find('td.ForRatesColumn02', 2)->innertext;
+                    $currency_sell_money = $rows[$i]->find('td.ForRatesColumn02', 3)->innertext;
+                    $currency_sell_tranfer = $rows[$i]->find('td.ForRatesColumn02', 4)->innertext;
+                    $arrTemp = array(
+                        "currency_code" => $this->getCurrencyCodeHSBC($currency_name),
+                        "currency_name" => $this->changeCharaterbsp($currency_name),
+                        "currency_buy_money" => $currency_buy_money,
+                        "currency_buy_transfer" => $currency_transfer,
+                        "currency_sell_money" => $currency_sell_money,
+                        "currency_sell_tranfer" => $currency_sell_tranfer,
+                        "date" => $carbon,
+                        "time" => $carbon->format('H:i:s')
+                    );
+                    array_push($arrDataHSBC, $arrTemp);
+                }
+            } else {
+                return response()->json("cannot get data");
+            }
+            if (count($arrDataHSBC) > 0) {
+                foreach ($arrDataHSBC as $data) {
+                    $NgoaiTe = new NgoaiTe();
+                    $code = str_replace('(', '', $data['currency_code']);
+                    $code1 = str_replace(')', '', $code);
+                    $NgoaiTe->code = $code1;
+                    $NgoaiTe->bank_id = 2;
+                    $NgoaiTe->bank_code = "hsbc";
+                    $NgoaiTe->bank_name = "HSBC";
+                    $NgoaiTe->bank_image = "/storage/userfiles/images/icons/HSBC.png";
+                    $NgoaiTe->symbol = $this->checkSymbol(str_replace(' ','',str_replace('(', '', $data['currency_code'])));
+                    $NgoaiTe->image = "/storage/currency/".str_replace(' ','',str_replace('(', '', $data['currency_code'])) . ".png";
+                    $NgoaiTe->cron_id = $NgoaiTeCron;
+                    $NgoaiTe->vname = "";
+                    $NgoaiTe->ename = "";
+                    if ($data["currency_buy_money"] == null || $data["currency_buy_money"] == "") {
+                        $NgoaiTe->muatienmat = 0;
+                    } else {
+                        $NgoaiTe->muatienmat = floatval(str_replace(',', '.', str_replace('.', '', $data['currency_buy_money'])));
+                    }
+                    if ($data["currency_sell_money"] == null || $data["currency_sell_money"] == "") {
+                        $NgoaiTe->bantienmat = 0;
+                    } else {
+                        $NgoaiTe->bantienmat = floatval(str_replace(',', '.', str_replace('.', '', $data["currency_sell_money"])));
+                    }
+                    if ($data["currency_buy_transfer"] == null || $data["currency_buy_transfer"] == "") {
+                        $NgoaiTe->muachuyenkhoan = 0;
+                    } else {
+                        $NgoaiTe->muachuyenkhoan = floatval(str_replace(',', '.', str_replace('.', '', $data["currency_buy_transfer"])));
+                    }
+                    if ($data["currency_sell_money"] == null || $data["currency_sell_money"] == "") {
+                        $NgoaiTe->banchuyenkhoan = 0;
+                    } else {
+                        $NgoaiTe->banchuyenkhoan = floatval(str_replace(',', '.', str_replace('.', '', $data["currency_sell_money"])));
+                    }
+                    $NgoaiTe->date = $data["date"];
+                    $NgoaiTe->time = $data["time"];
+                    //Save vào bảng Ngoại Tệ mới
+                    $arr_diff = $this->tygiaNow($code1, 2, $NgoaiTe,$NgoaiTeCron);
+                    if( $arr_diff ){ // success
+                        $NgoaiTe->muatienmat_diff = $arr_diff["tyle_muatienmat"];
+                        $NgoaiTe->bantienmat_diff = $arr_diff["tyle_bantienmat"];
+                        $NgoaiTe->muachuyenkhoan_diff = $arr_diff["tyle_muachuyenkhoan"];
+                        $NgoaiTe->banchuyenkhoan_diff = $arr_diff["tyle_banchuyenkhoan"];
+                        $NgoaiTe->save();
+                        echo "Cập nhật dữ liệu HSBC với đồng ".$data['currency_code']."  thành công \n";
+                    }else{ // failed
+                        echo "Insert new money \n";
+                        continue;
+                    }
+                }
+                echo "Cập nhật HSBC thành công.";
+            } else {
+                echo "Cập nhật dữ liệu HSBC thất bại.";
+            }
+        }
+    }
+
+    protected function changeCharaterbsp($CurrencyName)
+    {
+        $Name = str_replace("&nbsp;", " ", $CurrencyName);
+        return $Name;
+    }
+
+    /**
+     * Custom function HSBC
+     * */
+    protected function getCurrencyCodeHSBC($CurrencyName)
+    {
+        $CodeHSBC = strstr($CurrencyName, "(");
+        return $CodeHSBC;
+    }
+
+    protected function getDateHSBC($time)
+    {
+        $arrTime = explode(' ', $time);
+        $Carbon = Carbon::now();
+        return $Carbon;
+    }
+
+    protected function getTimeHSBC($time)
+    {
+        $arrTime = explode(' ', $time);
+        $Carbon = new Carbon($arrTime[4]);
+        return $Carbon;
+    }
+
+    protected function checkIssetMoney($money)
+    {
+        if ($money == "") {
+            return null;
+        } else {
+            return $money;
+        }
+    }
+
     protected function getCurrencyCode()
     {
         $CurrencyCode = CurrencyCode::select("code", "vname")->get();
@@ -1725,87 +1837,139 @@ class cronJobGetExchange extends Command
         foreach ($CurrencyCode as $key => $value) {
             if ($value->code == "EUR") {
                 array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "GBP") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "JPY") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "KRW") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "HKD") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "CHF") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "THB") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "AUD") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "CAD") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "SGD") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "SEK") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "LAK") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "DKK") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "NOK") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "CNY") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "RUB") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "NZD") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "MYR") {
-                array_push($arrayCurrencyCode, $value->code);
-            } else if ($value->code == "TWD") {
-                array_push($arrayCurrencyCode, $value->code);
+            } else {
+                if ($value->code == "GBP") {
+                    array_push($arrayCurrencyCode, $value->code);
+                } else {
+                    if ($value->code == "JPY") {
+                        array_push($arrayCurrencyCode, $value->code);
+                    } else {
+                        if ($value->code == "KRW") {
+                            array_push($arrayCurrencyCode, $value->code);
+                        } else {
+                            if ($value->code == "HKD") {
+                                array_push($arrayCurrencyCode, $value->code);
+                            } else {
+                                if ($value->code == "CHF") {
+                                    array_push($arrayCurrencyCode, $value->code);
+                                } else {
+                                    if ($value->code == "THB") {
+                                        array_push($arrayCurrencyCode, $value->code);
+                                    } else {
+                                        if ($value->code == "AUD") {
+                                            array_push($arrayCurrencyCode, $value->code);
+                                        } else {
+                                            if ($value->code == "CAD") {
+                                                array_push($arrayCurrencyCode, $value->code);
+                                            } else {
+                                                if ($value->code == "SGD") {
+                                                    array_push($arrayCurrencyCode, $value->code);
+                                                } else {
+                                                    if ($value->code == "SEK") {
+                                                        array_push($arrayCurrencyCode, $value->code);
+                                                    } else {
+                                                        if ($value->code == "LAK") {
+                                                            array_push($arrayCurrencyCode, $value->code);
+                                                        } else {
+                                                            if ($value->code == "DKK") {
+                                                                array_push($arrayCurrencyCode, $value->code);
+                                                            } else {
+                                                                if ($value->code == "NOK") {
+                                                                    array_push($arrayCurrencyCode, $value->code);
+                                                                } else {
+                                                                    if ($value->code == "CNY") {
+                                                                        array_push($arrayCurrencyCode, $value->code);
+                                                                    } else {
+                                                                        if ($value->code == "RUB") {
+                                                                            array_push($arrayCurrencyCode,
+                                                                                $value->code);
+                                                                        } else {
+                                                                            if ($value->code == "NZD") {
+                                                                                array_push($arrayCurrencyCode,
+                                                                                    $value->code);
+                                                                            } else {
+                                                                                if ($value->code == "MYR") {
+                                                                                    array_push($arrayCurrencyCode,
+                                                                                        $value->code);
+                                                                                } else {
+                                                                                    if ($value->code == "TWD") {
+                                                                                        array_push($arrayCurrencyCode,
+                                                                                            $value->code);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         return $arrayCurrencyCode;
     }
 
-    protected function checkSymbol($code)
+    public function cnNgoaiTe()
     {
-        if ($code == "EUR") {
-            return "&#8364;";
-        } else if ($code == "GBP") {
-            return "&#163;";
-        } else if ($code == "JPY") {
-            return "&#165;";
-        } else if ($code == "KRW") {
-            return "&#8361;";
-        } else if ($code == "HKD") {
-            return "&#65504;";
-        } else if ($code == "CHF") {
-            return "&#65504;";
-        } else if ($code == "THB") {
-            return "&#3647;";
-        } else if ($code == "AUD") {
-            return "&#8371;";
-        } else if ($code == "CAD") {
-            return "&#36;";
-        } else if ($code == "SGD") {
-            return "&#36;";
-        } else if ($code == "SEK") {
-            return "&#8364;";
-        } else if ($code == "LAK") {
-            return "&#8365;";
-        } else if ($code == "DKK") {
-            return "&#36;";
-        } else if ($code == "NOK") {
-            return "&#36;";
-        } else if ($code == "CNY") {
-            return "&#165;";
-        } else if ($code == "RUB") {
-            return "&#8381;";
-        } else if ($code == "NZD") {
-            return "&#36;";
-        } else if ($code == "MYR") {
-            return "&#8357;";
-        } else if ($code == "TWD") {
-            return "&#36;";
+        // get NgoaiTe new
+        $cronID = DB::table('ngoaite_cron')->orderBy('id', 'DESC')->select('id')->first();
+        if (!$cronID) {
+            return null;
+        }
+        $ngoaite = NgoaiTe::where('cron_id', $cronID->id)->get();
+        if (!$ngoaite) {
+            return null;
+        }
+        foreach ($ngoaite as $value) {
+            $temp = DB::table('ngoaite_today')->where('bank_id', $value->bank_id)
+                ->where('code', $value->code)->select('id')
+                ->first();
+            if ($temp) {
+                DB::table('ngoaite_today')->where('id', $temp->id)->delete();
+                $this->insertNewMoney($value);
+            } else {
+                $this->insertNewMoney($value);
+            }
+        }
+    }
+
+    public function insertNewMoney($money)
+    {
+        $insertMoney = DB::table('ngoaite_today')->insert([
+            'cron_id' => $money->cron_id,
+            'code' => $money->code,
+            'bank_id' => $money->bank_id,
+            'bank_code' => $money->bank_code,
+            'bank_name' => $money->bank_name,
+            'bank_image' => $money->bank_image,
+            'symbol' => $money->symbol,
+            'image' => 'asdasd',
+            'vname' => 'dshfu',
+            'ename' => 'aas',
+            'muatienmat' => $money->muatienmat,
+            'muatienmat_diff' => $money->muatienmat_diff,
+            'bantienmat' => $money->bantienmat,
+            'bantienmat_diff' => $money->bantienmat_diff,
+            'muachuyenkhoan' => $money->muachuyenkhoan,
+            'muachuyenkhoan_diff' => $money->muachuyenkhoan_diff,
+            'banchuyenkhoan' => $money->banchuyenkhoan,
+            'banchuyenkhoan_diff' => $money->banchuyenkhoan_diff,
+            'date' => Carbon::now(),
+            'time' => Carbon::now(),
+        ]);
+        if ($insertMoney == 1) {
+            echo "Cập nhật đồng tiền mới thành công";
+        } else {
+            echo "Cập nhật đồng tiền mới không thành công";
         }
     }
 }

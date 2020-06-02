@@ -240,7 +240,6 @@
                         this.exchanges.push(objExchangeData[i]);
                     }
                     this.thisBank = this.bankName;
-                    console.log(response.data.product);
                 })
                 .catch(error => {
                     console.log(error)
@@ -345,6 +344,7 @@
             }
         }
     }
+
 </script>
 
 <style scoped>

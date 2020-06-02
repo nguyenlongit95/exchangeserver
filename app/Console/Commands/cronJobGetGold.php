@@ -210,7 +210,13 @@ class cronJobGetGold extends Command
                         $td = $tds->find('td');
                         if (count($td) == 6) {
                             $img = $dom->str_get_html($td[0]->outertext);
-                            $filename =  str_replace('/Data/upload/files/AnhThuongPham/', '', $img->find('img', 0)->src);
+                            $filename = null;
+                            try {
+                                $filename =  str_replace('/Data/upload/files/AnhThuongPham/', '', $img->find('img', 0)->src);
+                            } catch (\Exception $exception) {
+                                echo $exception;
+                                continue;
+                            }
                             switch ($filename) {
                                 case 'vangrongthanglong.png':
                                     $name =  'Vàng rồng Thăng Long';
@@ -329,14 +335,12 @@ class cronJobGetGold extends Command
     {
 
         if ($html) {
-            $updated = $html->find('span.update-time', 0);
-            $updated = str_replace('Cập nhập lúc: ', '', $updated->plaintext);
 
             $hanoi  = $html->find('table.goldprice-view tr', 0);
             $tbodys = $html->find('table.goldprice-view tbody tr');
             $OilCron = DB::table('tygiavang_cron')->where('slug', '=', 'phu-quy')->orderBy('id', 'DESC')->first();
 
-            $insert_id = $this->insertCron($updated, 'gold.phuquy.com.vn', 'phu-quy');
+            $insert_id = $this->insertCron(Carbon::now(), 'gold.phuquy.com.vn', 'phu-quy');
 
             $_SESSION['row_loai'] = '';
             foreach ($tbodys as $index => $tbody) {

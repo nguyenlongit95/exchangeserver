@@ -34,7 +34,7 @@
                                     <label style="margin-top:10px;">Chọn loại tiền</label>
                                 </div>
                                 <div class="col-md-6 pull-right">
-                                    <select class="form-control" name="bankID" id="changeCurrency" v-on:change="getExchangeDetail()" v-model="currencyCode">
+                                    <select class="form-control" name="bankID" id="change_currency" v-on:change="getExchangeDetail()" v-model="currencyCode">
                                         <option value="USD">USD <label class="font-size-13px"><i>(Dollar Mỹ)</i></label></option>
                                         <option value="EUR">EUR <label class="font-size-13px"><i>(Đồng Euro)</i></label></option>
                                         <option value="AUD">AUD <label class="font-size-13px"><i>(Dollar Úc)</i></label></option>
@@ -250,7 +250,7 @@
                     for (let i = 0; i < objExchangeData.length; i++) {
                         objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
                         this.arrListCurrency.push(objExchangeData[i]);
-                        if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                        if (this.arrListCurrency[i]['bank_code'] === 'vietin' && this.arrListCurrency[i]['code'] == this.currencyCode) {
                             this.exchangeMoney = this.arrListCurrency[i]['muatienmat'];
                         }
                     }
@@ -274,7 +274,7 @@
                     for (let i = 0; i < objExchangeData.length; i++) {
                         objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
                         this.arrListCurrency.push(objExchangeData[i]);
-                        if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                        if (this.arrListCurrency[i]['bank_code'] === 'vietin' && this.arrListCurrency[i]['code'] == this.currencyCode) {
                             this.exchangeMoney = this.arrListCurrency[i]['muatienmat'];
                         }
                     }
@@ -340,7 +340,7 @@
                     this.inputSecondMoney = 0;
                 } else {
                     for (let i = 0; i < this.arrListCurrency.length; i++) {
-                        if (this.arrListCurrency[i]['bank_code'] === 'vietcombank' && this.arrListCurrency[i]['code'] == this.currencyCode) {
+                        if (this.arrListCurrency[i]['bank_code'] === 'vietin' && this.arrListCurrency[i]['code'] == this.currencyCode) {
                             tempMoney = this.arrListCurrency[i]['muatienmat'];
                         }
                     }
@@ -360,7 +360,6 @@
             }
         }
     }
-
 </script>
 
 <style scoped>

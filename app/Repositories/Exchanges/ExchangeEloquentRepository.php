@@ -26,6 +26,47 @@ class ExchangeEloquentRepository extends EloquentRepository implements ExchangeR
     ];
 
     /**
+     * @param $ngoaiTeCron
+     * @param $bankInfo
+     * @return |null
+     */
+    public function getExchangeToDay($ngoaiTeCron, $bankInfo)
+    {
+        $ngoaiTe = DB::table('ngoaite_today')->where('bank_code', $bankInfo->bankcode)->orderBy('id', 'DESC')
+            ->select(
+                'code','bank_id',
+                'bank_code', 'muatienmat','muatienmat_diff','bantienmat','bantienmat_diff',
+                'muachuyenkhoan','muachuyenkhoan_diff','banchuyenkhoan','banchuyenkhoan_diff'
+            )->get();
+        if ($ngoaiTe && count($ngoaiTe)) {
+            return $ngoaiTe;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @param $ngoaiTeCron
+     * @param $bankInfo
+     * @return |null
+     */
+    public function getExchangeOidDay($ngoaiTeCron, $bankInfo)
+    {
+        $ngoaiTe = NgoaiTe::where('cron_id', $ngoaiTeCron)
+            ->where('bank_code', $bankInfo->bankcode)->where('default', 0)->orderBy('id', 'DESC')
+            ->select(
+                'code','bank_id',
+                'bank_code', 'muatienmat','muatienmat_diff','bantienmat','bantienmat_diff',
+                'muachuyenkhoan','muachuyenkhoan_diff','banchuyenkhoan','banchuyenkhoan_diff'
+            )->get();
+        if ($ngoaiTe && count($ngoaiTe)) {
+            return $ngoaiTe;
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * merge this exchanges
      *  param bank information and list data exchange
      *

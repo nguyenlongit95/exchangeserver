@@ -48,7 +48,11 @@
                         data.push(result[i]['muatienmat']);
                     }
                     // Call function draw Charts
-                    drawChart(data, label)
+                    drawChart(data, label);
+                    console.log(result);
+                },
+                errors: function (err) {
+                    console.log(err);
                 }
             });
 
@@ -56,7 +60,7 @@
              * Function has running with change Currency
              * Function has replace chart oid
              */
-            $('#changeCurrency').on('change', function () {
+            $('#change_currency').on('change', function () {
                 var currency = $(this).val();
                 initDrawChart(currency);
             });
@@ -72,7 +76,7 @@
         });
 
         function initDrawChart(currency) {
-            var currency = $(this).val();
+            console.log(currency);
             $.ajax({
                 url: 'api/v1/get-currency/charts/' + currency,
                 type: 'GET',

@@ -8,6 +8,10 @@ namespace App\Repositories\Exchanges;
 
 interface ExchangeRepositoryInterface
 {
+    public function getExchangeToDay($cronID, $bankCode);
+
+    public function getExchangeOidDay($cronID, $bankCode);
+
     public function mergeExchange($bankInfo, $exchange);
 
     public function mergeExchangeOfBank($bankInfo, $exchanges);
