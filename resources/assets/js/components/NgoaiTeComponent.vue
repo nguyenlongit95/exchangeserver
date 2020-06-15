@@ -1,7 +1,7 @@
 <template>
     <div class="ngoai-te-component">
         <!-- Start Banner -->
-        <div class="section margin-top-25">
+        <div class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

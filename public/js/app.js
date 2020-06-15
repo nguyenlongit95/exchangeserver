@@ -51035,4160 +51035,3793 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "index-component" }, [
-    _c(
-      "div",
-      { staticClass: "section", staticStyle: { "margin-top": "85px" } },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "full" }, [
-                _c("div", { staticClass: "heading_main pull-left" }, [
-                  _c(
-                    "h1",
-                    { staticClass: "font-size-22px padding-bottom-zero" },
-                    [
-                      _c("span", { staticClass: "theme_color" }),
-                      _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
-                      _c(
-                        "span",
-                        { staticClass: "font-size-16px font-weight-initial" },
-                        [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
-                      )
-                    ]
-                  )
-                ])
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "full" }, [
+              _c("div", { staticClass: "heading_main pull-left" }, [
+                _c(
+                  "h1",
+                  { staticClass: "font-size-22px padding-bottom-zero" },
+                  [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
+                    _c(
+                      "span",
+                      { staticClass: "font-size-16px font-weight-initial" },
+                      [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                    )
+                  ]
+                )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "table-exchange-home" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "col-9 col-xs-8 col-sm-9 col-md-9 pull-right",
-                attrs: { role: "tabpanel" }
-              },
-              [
-                _c("div", { staticClass: "wrap-home tab-content" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "row tab-pane active",
-                      attrs: { id: "muatienmat" }
-                    },
-                    [
-                      _c(
-                        "table",
-                        {
-                          staticClass: "table table-hover table-bordered",
-                          attrs: { id: "table-exchange-home" }
-                        },
-                        [
-                          _vm._m(2),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrAUD, function(renderAUD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderAUD.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderAUD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderAUD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCAD, function(renderCAD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderCAD.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderCAD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCAD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCHF, function(renderCHF) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderCHF.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderCHF.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCHF.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCNY, function(renderCNY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderCNY.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderCNY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCNY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrDKK, function(renderDKK) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderDKK.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderDKK.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderDKK.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrEUR, function(renderEUR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderEUR.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderEUR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderEUR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrGBP, function(renderGBP) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderGBP.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderGBP.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderGBP.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrHKD, function(renderHKD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderHKD.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderHKD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderHKD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrJPY, function(renderJPY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderJPY.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderJPY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderJPY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrKRW, function(renderKRW) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderKRW.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderKRW.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderKRW.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrMYR, function(renderMYR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderMYR.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderMYR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderMYR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrRUB, function(renderRUB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderRUB.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderRUB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderRUB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrSGD, function(renderSGD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderSGD.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderSGD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderSGD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrTHB, function(renderTHB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderTHB.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderTHB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderTHB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrUSD, function(renderUSD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(renderUSD.muatienmat) +
-                                        "\n                                            "
-                                    ),
-                                    renderUSD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderUSD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.muatienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "row tab-pane",
-                      attrs: { id: "muachuyenkhoan" }
-                    },
-                    [
-                      _c(
-                        "table",
-                        {
-                          staticClass: "table table-hover table-bordered",
-                          attrs: { id: "table-exchange-home" }
-                        },
-                        [
-                          _vm._m(3),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrAUD, function(renderAUD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderAUD.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderAUD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderAUD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCAD, function(renderCAD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCAD.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderCAD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCAD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCHF, function(renderCHF) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCHF.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderCHF.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCHF.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCNY, function(renderCNY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCNY.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderCNY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCNY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrDKK, function(renderDKK) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderDKK.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderDKK.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderDKK.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrEUR, function(renderEUR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderEUR.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderEUR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderEUR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrGBP, function(renderGBP) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderGBP.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderGBP.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderGBP.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrHKD, function(renderHKD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderHKD.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderHKD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderHKD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrJPY, function(renderJPY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderJPY.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderJPY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderJPY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrKRW, function(renderKRW) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderKRW.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderKRW.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderKRW.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrMYR, function(renderMYR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderMYR.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderMYR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderMYR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrRUB, function(renderRUB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderRUB.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderRUB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderRUB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrSGD, function(renderSGD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderSGD.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderSGD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderSGD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrTHB, function(renderTHB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderTHB.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderTHB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderTHB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrUSD, function(renderUSD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderUSD.muachuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderUSD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderUSD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.muachuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "row tab-pane",
-                      attrs: { id: "bantienmat" }
-                    },
-                    [
-                      _c(
-                        "table",
-                        {
-                          staticClass: "table table-hover table-bordered",
-                          attrs: { id: "table-exchange-home" }
-                        },
-                        [
-                          _vm._m(4),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrAUD, function(renderAUD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderAUD.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderAUD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderAUD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCAD, function(renderCAD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCAD.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderCAD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCAD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCHF, function(renderCHF) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCHF.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderCHF.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCHF.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCNY, function(renderCNY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCNY.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderCNY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCNY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrDKK, function(renderDKK) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderDKK.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderDKK.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderDKK.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrEUR, function(renderEUR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderEUR.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderEUR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderEUR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrGBP, function(renderGBP) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderGBP.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderGBP.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderGBP.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrHKD, function(renderHKD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderHKD.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderHKD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderHKD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrJPY, function(renderJPY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderJPY.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderJPY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderJPY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrKRW, function(renderKRW) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderKRW.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderKRW.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderKRW.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrMYR, function(renderMYR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderMYR.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderMYR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderMYR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrRUB, function(renderRUB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderRUB.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderRUB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderRUB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrSGD, function(renderSGD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderSGD.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderSGD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderSGD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrTHB, function(renderTHB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderTHB.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderTHB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderTHB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrUSD, function(renderUSD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderUSD.bantienmat) +
-                                        "\n                                        "
-                                    ),
-                                    renderUSD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderUSD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.bantienmat_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "row tab-pane",
-                      attrs: { id: "banchuyenkhoan" }
-                    },
-                    [
-                      _c(
-                        "table",
-                        {
-                          staticClass: "table table-hover table-bordered",
-                          attrs: { id: "table-exchange-home" }
-                        },
-                        [
-                          _vm._m(5),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrAUD, function(renderAUD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderAUD.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderAUD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderAUD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderAUD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCAD, function(renderCAD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCAD.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderCAD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCAD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCAD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCHF, function(renderCHF) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCHF.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderCHF.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCHF.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCHF.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrCNY, function(renderCNY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderCNY.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderCNY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderCNY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderCNY.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrDKK, function(renderDKK) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderDKK.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderDKK.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderDKK.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderDKK.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrEUR, function(renderEUR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderEUR.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderEUR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderEUR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderEUR.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrGBP, function(renderGBP) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderGBP.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderGBP.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderGBP.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderGBP.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrHKD, function(renderHKD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderHKD.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderHKD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderHKD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderHKD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrJPY, function(renderJPY) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderJPY.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderJPY.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderJPY.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderJPY.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrKRW, function(renderKRW) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderKRW.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderKRW.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderKRW.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderKRW.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrMYR, function(renderMYR) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderMYR.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderMYR.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderMYR.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderMYR.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrRUB, function(renderRUB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderRUB.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderRUB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderRUB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderRUB.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrSGD, function(renderSGD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderSGD.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderSGD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderSGD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderSGD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrTHB, function(renderTHB) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderTHB.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderTHB.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderTHB.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderTHB.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "tr",
-                              _vm._l(_vm.arrUSD, function(renderUSD) {
-                                return _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(renderUSD.banchuyenkhoan) +
-                                        "\n                                        "
-                                    ),
-                                    renderUSD.muatienmat_diff < 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-red"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              {
-                                                staticClass: "fa fa-arrow-down"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    renderUSD.muatienmat_diff > 0
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "font-size-13px font-color-green"
-                                          },
-                                          [
-                                            _c(
-                                              "i",
-                                              { staticClass: "fa fa-arrow-up" },
-                                              [
-                                                _vm._v(
-                                                  " " +
-                                                    _vm._s(
-                                                      renderUSD.banchuyenkhoan_diff
-                                                    )
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                )
-                              }),
-                              0
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ]
-            )
           ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-exchange-home" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-9 col-xs-8 col-sm-9 col-md-9 pull-right",
+              attrs: { role: "tabpanel" }
+            },
+            [
+              _c("div", { staticClass: "wrap-home tab-content" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row tab-pane active",
+                    attrs: { id: "muatienmat" }
+                  },
+                  [
+                    _c(
+                      "table",
+                      {
+                        staticClass: "table table-hover table-bordered",
+                        attrs: { id: "table-exchange-home" }
+                      },
+                      [
+                        _vm._m(2),
+                        _vm._v(" "),
+                        _c("tbody", [
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrAUD, function(renderAUD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderAUD.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderAUD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderAUD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCAD, function(renderCAD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderCAD.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderCAD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCAD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCHF, function(renderCHF) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderCHF.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderCHF.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCHF.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCNY, function(renderCNY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderCNY.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderCNY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCNY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrDKK, function(renderDKK) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderDKK.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderDKK.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderDKK.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrEUR, function(renderEUR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderEUR.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderEUR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderEUR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrGBP, function(renderGBP) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderGBP.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderGBP.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderGBP.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrHKD, function(renderHKD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderHKD.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderHKD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderHKD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrJPY, function(renderJPY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderJPY.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderJPY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderJPY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrKRW, function(renderKRW) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderKRW.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderKRW.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderKRW.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrMYR, function(renderMYR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderMYR.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderMYR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderMYR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrRUB, function(renderRUB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderRUB.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderRUB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderRUB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrSGD, function(renderSGD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderSGD.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderSGD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderSGD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrTHB, function(renderTHB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderTHB.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderTHB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderTHB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrUSD, function(renderUSD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                            " +
+                                    _vm._s(renderUSD.muatienmat) +
+                                    "\n                                            "
+                                ),
+                                renderUSD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderUSD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.muatienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "row tab-pane",
+                    attrs: { id: "muachuyenkhoan" }
+                  },
+                  [
+                    _c(
+                      "table",
+                      {
+                        staticClass: "table table-hover table-bordered",
+                        attrs: { id: "table-exchange-home" }
+                      },
+                      [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("tbody", [
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrAUD, function(renderAUD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderAUD.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderAUD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderAUD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCAD, function(renderCAD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCAD.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderCAD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCAD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCHF, function(renderCHF) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCHF.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderCHF.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCHF.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCNY, function(renderCNY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCNY.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderCNY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCNY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrDKK, function(renderDKK) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderDKK.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderDKK.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderDKK.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrEUR, function(renderEUR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderEUR.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderEUR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderEUR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrGBP, function(renderGBP) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderGBP.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderGBP.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderGBP.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrHKD, function(renderHKD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderHKD.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderHKD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderHKD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrJPY, function(renderJPY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderJPY.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderJPY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderJPY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrKRW, function(renderKRW) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderKRW.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderKRW.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderKRW.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrMYR, function(renderMYR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderMYR.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderMYR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderMYR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrRUB, function(renderRUB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderRUB.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderRUB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderRUB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrSGD, function(renderSGD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderSGD.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderSGD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderSGD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrTHB, function(renderTHB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderTHB.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderTHB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderTHB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrUSD, function(renderUSD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderUSD.muachuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderUSD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderUSD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.muachuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "row tab-pane", attrs: { id: "bantienmat" } },
+                  [
+                    _c(
+                      "table",
+                      {
+                        staticClass: "table table-hover table-bordered",
+                        attrs: { id: "table-exchange-home" }
+                      },
+                      [
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _c("tbody", [
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrAUD, function(renderAUD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderAUD.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderAUD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderAUD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCAD, function(renderCAD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCAD.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderCAD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCAD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCHF, function(renderCHF) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCHF.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderCHF.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCHF.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCNY, function(renderCNY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCNY.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderCNY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCNY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrDKK, function(renderDKK) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderDKK.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderDKK.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderDKK.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrEUR, function(renderEUR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderEUR.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderEUR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderEUR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrGBP, function(renderGBP) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderGBP.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderGBP.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderGBP.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrHKD, function(renderHKD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderHKD.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderHKD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderHKD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrJPY, function(renderJPY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderJPY.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderJPY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderJPY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrKRW, function(renderKRW) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderKRW.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderKRW.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderKRW.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrMYR, function(renderMYR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderMYR.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderMYR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderMYR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrRUB, function(renderRUB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderRUB.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderRUB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderRUB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrSGD, function(renderSGD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderSGD.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderSGD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderSGD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrTHB, function(renderTHB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderTHB.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderTHB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderTHB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrUSD, function(renderUSD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderUSD.bantienmat) +
+                                    "\n                                        "
+                                ),
+                                renderUSD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderUSD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.bantienmat_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "row tab-pane",
+                    attrs: { id: "banchuyenkhoan" }
+                  },
+                  [
+                    _c(
+                      "table",
+                      {
+                        staticClass: "table table-hover table-bordered",
+                        attrs: { id: "table-exchange-home" }
+                      },
+                      [
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _c("tbody", [
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrAUD, function(renderAUD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderAUD.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderAUD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderAUD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderAUD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCAD, function(renderCAD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCAD.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderCAD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCAD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCAD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCHF, function(renderCHF) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCHF.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderCHF.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCHF.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCHF.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrCNY, function(renderCNY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderCNY.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderCNY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderCNY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderCNY.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrDKK, function(renderDKK) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderDKK.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderDKK.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderDKK.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderDKK.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrEUR, function(renderEUR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderEUR.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderEUR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderEUR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderEUR.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrGBP, function(renderGBP) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderGBP.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderGBP.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderGBP.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderGBP.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrHKD, function(renderHKD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderHKD.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderHKD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderHKD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderHKD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrJPY, function(renderJPY) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderJPY.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderJPY.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderJPY.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderJPY.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrKRW, function(renderKRW) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderKRW.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderKRW.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderKRW.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderKRW.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrMYR, function(renderMYR) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderMYR.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderMYR.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderMYR.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderMYR.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrRUB, function(renderRUB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderRUB.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderRUB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderRUB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderRUB.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrSGD, function(renderSGD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderSGD.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderSGD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderSGD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderSGD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrTHB, function(renderTHB) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderTHB.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderTHB.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderTHB.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderTHB.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "tr",
+                            _vm._l(_vm.arrUSD, function(renderUSD) {
+                              return _c("td", { staticClass: "text-center" }, [
+                                _vm._v(
+                                  "\n                                        " +
+                                    _vm._s(renderUSD.banchuyenkhoan) +
+                                    "\n                                        "
+                                ),
+                                renderUSD.muatienmat_diff < 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-red"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-down" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                renderUSD.muatienmat_diff > 0
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "font-size-13px font-color-green"
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "fa fa-arrow-up" },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  renderUSD.banchuyenkhoan_diff
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ])
+                            }),
+                            0
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
         ])
-      ]
-    ),
+      ])
+    ]),
     _vm._v(" "),
     _vm._m(6),
     _vm._v(" "),
@@ -56834,7 +56467,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "ty-gia-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
+    _c("div", { staticClass: "section" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -57989,7 +57622,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "ngoai-te-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
+    _c("div", { staticClass: "section" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -59291,7 +58924,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "gia-vang-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
+    _c("div", { staticClass: "section" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -59978,7 +59611,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "lai-suat-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
+    _c("div", { staticClass: "section" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -61294,7 +60927,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getExchanges: function getExchanges() {
             var _this = this;
 
-            axios.get('/api/v1/get-virtual-money-web').then(function (response) {
+            axios.get('api/v1/get-virtual-money-web').then(function (response) {
                 var objExchangeData = response.data;
                 _this.arrTienAo = objExchangeData;
                 for (var i = 0; i < _this.arrTienAo.length; i++) {
@@ -61340,7 +60973,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "tien-ao-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
+    _c("div", { staticClass: "section" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -61851,7 +61484,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "tien-ao-detail-component" }, [
-    _c("div", { staticClass: "section margin-top-25" }, [
+    _c("div", { staticClass: "section" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -62460,7 +62093,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vn-index component layout_padding" }, [
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row margin-top-25" }, [
+        _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c(

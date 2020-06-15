@@ -1,7 +1,7 @@
 <template>
     <div class="tien-ao-component">
         <!-- Start Banner -->
-        <div class="section margin-top-25">
+        <div class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -114,7 +114,7 @@
              * Implement function here
              */
             getExchanges() {
-                axios.get('/api/v1/get-virtual-money-web').then(response => {
+                axios.get('api/v1/get-virtual-money-web').then(response => {
                     let objExchangeData = response.data;
                     this.arrTienAo = objExchangeData;
                     for (let i = 0; i < this.arrTienAo.length; i++) {

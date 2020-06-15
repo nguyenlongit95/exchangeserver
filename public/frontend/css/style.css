@@ -847,8 +847,7 @@ a.navbar-brand {
     float: left;
     width: 100%;
     padding-top: 60px;
-    min-height: 240px;
-    background: #111;
+    min-height: 200px;
 }
 
 .about-box {
@@ -2590,4 +2589,40 @@ ul.bottom_menu li {
 }
 .back-ground-none {
     background: none;
+}
+
+.position-fixed {
+    position: fixed;
+}
+.position-fixed-left-0-top-40percent {
+    position: fixed;
+    top: 40%;
+    left: 0%;
+}
+
+.position-fixed-right-0-top-40percent {
+    position: fixed;
+    top: 40%;
+    right: 0%;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1348px) {
+    .ads-doc {
+        width: 4%;
+    }
+}
+
+@media screen and (max-width: 1349px) {
+    .ads-doc {
+        width: 8%;
+    }
+}
+
+@media screen and (min-width: 1349px) and (max-width: 1990px) {
+    .ads-doc {
+        width: 10%;
+    }
+    .ads-doc {
+        top:25%;
+    }
 }

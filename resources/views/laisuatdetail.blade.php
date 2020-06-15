@@ -5,10 +5,8 @@
     <div class="section inner_page_banner">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="banner_title">
-                        <h3>Lãi suất ngân hàng: Vietcombank</h3>
-                    </div>
+                <div class="col-md-12 text-center">
+                    <img src="{{ asset('frontend/images/ads/ads_ngang.gif') }}" alt="">
                 </div>
             </div>
         </div>

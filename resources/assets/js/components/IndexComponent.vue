@@ -2,7 +2,7 @@
     <!-- Content layout -->
     <div class="index-component">
         <!-- section exchanges -->
-        <div class="section" style="margin-top:85px;">
+        <div class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

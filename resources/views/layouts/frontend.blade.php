@@ -38,7 +38,7 @@
 
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" class="position-relative">
 
 <!-- LOADER -->
 <div id="preloader">
@@ -111,7 +111,9 @@
 </header>
 <!-- End header -->
 
+<img src="{{ asset('frontend/images/ads/1272.gif') }}" alt="" class="position-fixed-left-0-top-40percent ads-doc">
 @yield('content')
+<img src="{{ asset('frontend/images/ads/1273.gif') }}" alt="" class="position-fixed-right-0-top-40percent ads-doc">
 
 <!-- Start Footer -->
 <footer class="footer-box">

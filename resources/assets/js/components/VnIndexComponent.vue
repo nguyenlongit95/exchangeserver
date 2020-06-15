@@ -2,7 +2,7 @@
     <div class="vn-index component layout_padding">
         <div class="container">
 
-            <div class="row margin-top-25">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="full">
                         <div class="heading_main pull-left text-left col-md-6 row margin-top-25px">
