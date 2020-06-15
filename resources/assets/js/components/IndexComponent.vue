@@ -8,7 +8,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main pull-left">
-                                <h1 class="font-size-22px padding-bottom-zero"><span class="theme_color"></span>TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h1>
+                                <h1 class="font-size-22px padding-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h1>
                             </div>
                         </div>
                     </div>
@@ -914,7 +914,7 @@
             <div class="container">
                 <section>
                     <div class="heading_main pull-left">
-                        <h3 class="font-size-22px margin-bottom-zero"><span class="theme_color"></span>Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực</h3>
+                        <h3 class="font-size-22px margin-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực</h3>
                     </div>
                     <br>
                     <iframe style="height:450px; width: 100%;" id="tradingview_b92c2" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_b92c2&amp;symbol=BTCUSD&amp;interval=1&amp;symboledit=0&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;details=1&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=3&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en_US&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=ETHUSD" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
@@ -930,7 +930,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h3 class="font-size-22px margin-bottom-zero"><span class="theme_color"></span>Tổng hợp giá vàng SJC mới nhất <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h3>
+                                <h3 class="font-size-22px margin-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>Tổng hợp giá vàng SJC mới nhất <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h3>
                             </div>
                         </div>
                     </div>
@@ -999,7 +999,7 @@
             <div class="container">
                 <section>
                     <div class="heading_main pull-left">
-                        <h3 class="font-size-22px margin-bottom-zero"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h3>
+                        <h3 class="font-size-22px margin-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h3>
                     </div>
                     <br>
                     <iframe style="height: 450px; width: 100%;" id="tradingview_cbf8a" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&amp;symbol=TVC%3AUKOIL&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi_VN&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=TVC%3AUKOIL" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>

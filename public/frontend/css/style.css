@@ -1962,7 +1962,6 @@ p {
 .heading_main h2::after {
     width: 100%;
     height: 8px;
-    background: #ff880e;
     content: "";
     display: block;
     transform: skew(-30deg);
@@ -2604,6 +2603,10 @@ ul.bottom_menu li {
     position: fixed;
     top: 40%;
     right: 0%;
+}
+
+.border-bottom-2px-solid {
+    border-bottom: 3px double #ff880e;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1348px) {

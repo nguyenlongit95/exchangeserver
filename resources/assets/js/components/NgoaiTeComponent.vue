@@ -65,7 +65,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main text_align_center">
-                                <h1 class="font-size-22px"><span class="theme_color"></span>Chi tiết đồng <span>{{ this.currency }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h1>
+                                <h1 class="font-size-22px border-bottom-2px-solid"><span class="theme_color"></span>Chi tiết đồng <span>{{ this.currency }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h1>
                             </div>
                         </div>
                     </div>

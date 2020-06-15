@@ -31,7 +31,7 @@
                                 <div class="block">
                                     <div class="block-content">
                                         <article id="main" class="col-md-12" v-for="renderMoney in this.detailMoney">
-                                            <h1 class="font-size-22px" style="margin-left: -30px;"><span class="theme_color"></span>Giá {{ renderMoney.name }}({{ renderMoney.slug }}) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>{{ renderMoney.created_at }}</small></h1>
+                                            <h1 class="font-size-22px border-bottom-2px-solid" style="margin-left: -30px;"><span class="theme_color"></span>Giá {{ renderMoney.name }}({{ renderMoney.slug }}) mới nhất ngày hôm nay <small> - <span class="hidden-xs font-size-16px">Cập nhật lúc </span>{{ renderMoney.created_at }}</small></h1>
                                             <div class="row margin-top-25px">
                                                 <div class="col-xs-12 col-sm-4 col-md-3 text-center">
                                                     <div class="coin-logo">

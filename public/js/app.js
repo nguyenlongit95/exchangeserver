@@ -51043,7 +51043,10 @@ var render = function() {
               _c("div", { staticClass: "heading_main pull-left" }, [
                 _c(
                   "h1",
-                  { staticClass: "font-size-22px padding-bottom-zero" },
+                  {
+                    staticClass:
+                      "font-size-22px padding-bottom-zero border-bottom-2px-solid"
+                  },
                   [
                     _c("span", { staticClass: "theme_color" }),
                     _vm._v("TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC "),
@@ -54831,15 +54834,22 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h3", { staticClass: "font-size-22px margin-bottom-zero" }, [
-                  _c("span", { staticClass: "theme_color" }),
-                  _vm._v("Tổng hợp giá vàng SJC mới nhất "),
-                  _c(
-                    "span",
-                    { staticClass: "font-size-16px font-weight-initial" },
-                    [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
-                  )
-                ])
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "font-size-22px margin-bottom-zero border-bottom-2px-solid"
+                  },
+                  [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("Tổng hợp giá vàng SJC mới nhất "),
+                    _c(
+                      "span",
+                      { staticClass: "font-size-16px font-weight-initial" },
+                      [_vm._v("Cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                    )
+                  ]
+                )
               ])
             ])
           ])
@@ -55910,10 +55920,19 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("section", [
           _c("div", { staticClass: "heading_main pull-left" }, [
-            _c("h3", { staticClass: "font-size-22px margin-bottom-zero" }, [
-              _c("span", { staticClass: "theme_color" }),
-              _vm._v("Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực")
-            ])
+            _c(
+              "h3",
+              {
+                staticClass:
+                  "font-size-22px margin-bottom-zero border-bottom-2px-solid"
+              },
+              [
+                _c("span", { staticClass: "theme_color" }),
+                _vm._v(
+                  "Biểu đồ đồng Bitcoin - BTC trực tiếp theo thời gian thực"
+                )
+              ]
+            )
           ]),
           _vm._v(" "),
           _c("br"),
@@ -55968,12 +55987,19 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("section", [
           _c("div", { staticClass: "heading_main pull-left" }, [
-            _c("h3", { staticClass: "font-size-22px margin-bottom-zero" }, [
-              _c("span", { staticClass: "theme_color" }),
-              _vm._v(
-                "Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực"
-              )
-            ])
+            _c(
+              "h3",
+              {
+                staticClass:
+                  "font-size-22px margin-bottom-zero border-bottom-2px-solid"
+              },
+              [
+                _c("span", { staticClass: "theme_color" }),
+                _vm._v(
+                  "Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực"
+                )
+              ]
+            )
           ]),
           _vm._v(" "),
           _c("br"),
@@ -56767,19 +56793,23 @@ var render = function() {
                     staticClass: "heading_main pull-left text-left col-md-6 row"
                   },
                   [
-                    _c("h1", { staticClass: "font-size-22px" }, [
-                      _c("span", { staticClass: "theme_color" }),
-                      _vm._v("Tỷ giá "),
-                      _c("span", { staticClass: "text-uppercase" }, [
-                        _vm._v(_vm._s(this.thisBank))
-                      ]),
-                      _vm._v(" - "),
-                      _c(
-                        "span",
-                        { staticClass: "font-weight-initial font-size-16px" },
-                        [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
-                      )
-                    ])
+                    _c(
+                      "h1",
+                      { staticClass: "font-size-22px border-bottom-2px-solid" },
+                      [
+                        _c("span", { staticClass: "theme_color" }),
+                        _vm._v("Tỷ giá "),
+                        _c("span", { staticClass: "text-uppercase" }, [
+                          _vm._v(_vm._s(this.thisBank))
+                        ]),
+                        _vm._v(" - "),
+                        _c(
+                          "span",
+                          { staticClass: "font-weight-initial font-size-16px" },
+                          [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                        )
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -57895,17 +57925,21 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h1", { staticClass: "font-size-22px" }, [
-                  _c("span", { staticClass: "theme_color" }),
-                  _vm._v("Chi tiết đồng "),
-                  _c("span", [_vm._v(_vm._s(this.currency))]),
-                  _vm._v(" - "),
-                  _c(
-                    "span",
-                    { staticClass: "font-weight-initial font-size-16px" },
-                    [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
-                  )
-                ])
+                _c(
+                  "h1",
+                  { staticClass: "font-size-22px border-bottom-2px-solid" },
+                  [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("Chi tiết đồng "),
+                    _c("span", [_vm._v(_vm._s(this.currency))]),
+                    _vm._v(" - "),
+                    _c(
+                      "span",
+                      { staticClass: "font-weight-initial font-size-16px" },
+                      [_vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))]
+                    )
+                  ]
+                )
               ])
             ])
           ])
@@ -59005,15 +59039,19 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h1", { staticClass: "font-size-22px" }, [
-                  _c("span", { staticClass: "theme_color" }),
-                  _vm._v("Giá vàng "),
-                  _c("span", [_vm._v("SJC")]),
-                  _vm._v(" - "),
-                  _c("span", { staticClass: "font-size-16px" }, [
-                    _vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))
-                  ])
-                ])
+                _c(
+                  "h1",
+                  { staticClass: "font-size-22px border-bottom-2px-solid" },
+                  [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("Giá vàng "),
+                    _c("span", [_vm._v("SJC")]),
+                    _vm._v(" - "),
+                    _c("span", { staticClass: "font-size-16px" }, [
+                      _vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))
+                    ])
+                  ]
+                )
               ])
             ])
           ])
@@ -59617,13 +59655,17 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
               _c("div", { staticClass: "heading_main text_align_center" }, [
-                _c("h1", { staticClass: "font-size-22px" }, [
-                  _c("span", { staticClass: "theme_color" }),
-                  _vm._v("Lãi suất tại quầy - "),
-                  _c("span", { staticClass: "font-size-16px" }, [
-                    _vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))
-                  ])
-                ])
+                _c(
+                  "h1",
+                  { staticClass: "font-size-22px border-bottom-2px-solid" },
+                  [
+                    _c("span", { staticClass: "theme_color" }),
+                    _vm._v("Lãi suất tại quầy - "),
+                    _c("span", { staticClass: "font-size-16px" }, [
+                      _vm._v("cập nhật lúc: " + _vm._s(this.timeUpdate))
+                    ])
+                  ]
+                )
               ])
             ])
           ])
@@ -61152,7 +61194,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "heading_main pull-left text_align_center col-md-6 row" },
       [
-        _c("h1", { staticClass: "font-size-22px" }, [
+        _c("h1", { staticClass: "font-size-22px border-bottom-2px-solid" }, [
           _c("span", { staticClass: "theme_color" }),
           _vm._v("Các lần cập nhật tiền ảo mới nhất")
         ])
@@ -61538,7 +61580,8 @@ var render = function() {
                             _c(
                               "h1",
                               {
-                                staticClass: "font-size-22px",
+                                staticClass:
+                                  "font-size-22px border-bottom-2px-solid",
                                 staticStyle: { "margin-left": "-30px" }
                               },
                               [
@@ -62103,19 +62146,23 @@ var staticRenderFns = [
                     "heading_main pull-left text-left col-md-6 row margin-top-25px"
                 },
                 [
-                  _c("h1", { staticClass: "font-size-22px" }, [
-                    _c("span", { staticClass: "theme_color" }),
-                    _vm._v("Biểu đồ "),
-                    _c("span", { staticClass: "text-uppercase" }, [
-                      _vm._v("VN-Index")
-                    ]),
-                    _vm._v(" - "),
-                    _c(
-                      "span",
-                      { staticClass: "font-weight-initial font-size-16px" },
-                      [_vm._v("VN-Index cập nhật theo thời gian thực")]
-                    )
-                  ])
+                  _c(
+                    "h1",
+                    { staticClass: "font-size-22px border-bottom-2px-solid" },
+                    [
+                      _c("span", { staticClass: "theme_color" }),
+                      _vm._v("Biểu đồ "),
+                      _c("span", { staticClass: "text-uppercase" }, [
+                        _vm._v("VN-Index")
+                      ]),
+                      _vm._v(" - "),
+                      _c(
+                        "span",
+                        { staticClass: "font-weight-initial font-size-16px" },
+                        [_vm._v("VN-Index cập nhật theo thời gian thực")]
+                      )
+                    ]
+                  )
                 ]
               )
             ])

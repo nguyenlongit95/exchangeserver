@@ -69,7 +69,7 @@
                     <div class="col-md-12">
                         <div class="full">
                             <div class="heading_main pull-left text-left col-md-6 row">
-                                <h1 class="font-size-22px"><span class="theme_color"></span>Tỷ giá <span class="text-uppercase">{{ this.thisBank }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h1>
+                                <h1 class="font-size-22px border-bottom-2px-solid"><span class="theme_color"></span>Tỷ giá <span class="text-uppercase">{{ this.thisBank }}</span> - <span class="font-weight-initial font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h1>
                             </div>
                             <div class="heading_main pull-right text-right col-md-6">
                                 <div class="col-md-7 pull-left"></div>
