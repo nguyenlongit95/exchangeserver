@@ -21,11 +21,11 @@ class ExchangeController extends Controller
      */
     public function index()
     {
-         $ngoaiTePaginate = NgoaiTe::orderBy('id', 'DESC')->select('id')->paginate(30);
+        $ngoaiTePaginate = NgoaiTe::orderBy('id', 'DESC')->select('id')->paginate(30);
 
-         $ngoaiTe = NgoaiTe::whereIn('id', $ngoaiTePaginate)->get();
+        $ngoaiTe = NgoaiTe::whereIn('id', $ngoaiTePaginate)->get();
 
-         return view('admin.exchange.index', compact('ngoaiTePaginate', 'ngoaiTe'));
+        return view('admin.exchange.index', compact('ngoaiTePaginate', 'ngoaiTe'));
     }
 
     /**
@@ -113,7 +113,8 @@ class ExchangeController extends Controller
             $exchanges = null;
         }
         if (isset($request->bank) || $request->bank != null) {
-            $exchangeTemp = NgoaiTe::where('bank_id', $request->bank)->orderBy('id', 'DESC')->select('id')->paginate(30);
+            $exchangeTemp = NgoaiTe::where('bank_id', $request->bank)->orderBy('id',
+                'DESC')->select('id')->paginate(30);
             if (count($exchangeTemp) > 0) {
                 $exchanges = null;
             }
@@ -163,7 +164,7 @@ class ExchangeController extends Controller
         try {
             $bankInfo->save();
             return redirect()->back()->with('success', 'Cập nhật ngân hàng ' . $bankInfo->bankname . ' thành công!');
-        } catch(\Exception $exception) {
+        } catch (\Exception $exception) {
             dd($exception);
         }
     }
@@ -256,4 +257,44 @@ class ExchangeController extends Controller
             dd($exception);
         }
     }
+
+    public function adsense(Request $request)
+    {
+        $adsense = DB::table('google_adsense')->orderBy('id', 'DESC')->get();
+        if (!$adsense) {
+            return redirect('/admin/google-adsense');
+        }
+        return view('admin.exchange.googleAdSense', compact('adsense'));
+    }
+
+    public function adsenseCreate()
+    {
+        return view('admin.exchange.googleAdSensCreate');
+    }
+
+    public function adsenseStore(Request $request)
+    {
+        $insertAdSense = DB::table('google_adsense')->insert([
+            'type' => $request->type,
+            'link' => $request->link
+        ]);
+        if (!$insertAdSense) {
+            return redirect('/admin/google-adsense')->with('thong_bao', 'Có lỗi sảy ra khi thêm dữ liệu');
+        }
+        return redirect('/admin/google-adsense')->with('success', 'Thêm AdSense thành công');
+    }
+
+    public function adsenseDelete($id)
+    {
+        $findAdSense = DB::table('google_adsense')->where('id', $id)->first();
+        if (!$findAdSense) {
+            return redirect('/admin/google-adsense')->with('thong_bao', 'Không tìm thấy AdSense tương ứng');
+        }
+        $deleteAdSense = DB::table('google_adsense')->where('id', $id)->delete();
+        if ($deleteAdSense) {
+            return redirect()->with('/admin/google-adsense')->with('success', 'Xoá AdSense thành công');
+        }
+        return redirect()->with('/admin/google-adsense')->with('success', 'Có lỗi sảy ra khi xoá AdSense');
+    }
+
 }

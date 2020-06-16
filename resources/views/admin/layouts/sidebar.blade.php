@@ -46,6 +46,7 @@
             </li>
 
             <li><a href="admin/seo"><i class="fa fa-book"></i> <span>SEO</span></a></li>
+            <li><a href="admin/google-adsense"><i class="fa fa-google"></i> <span>Google AdSense</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

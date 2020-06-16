@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        Base app admin pannel
+        Exchange Server admin panel
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

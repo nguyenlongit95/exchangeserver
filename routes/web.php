@@ -54,6 +54,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
      *   Giá vàng
      *   Lãi suất
      *   Tiền Ảo
+     *   Google AdSense
      */
     Route::group(['namespace' =>'web'], function () {
         Route::get('/exchange', 'ExchangeController@index');
@@ -74,6 +75,11 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
         Route::post('/virual-money-type/update/{id}', 'ExchangeController@virualMoneyTypeUpdate');
 
         Route::get('/oil-petro', 'ExchangeController@oilPetro');
+
+        Route::get('/google-adsense', 'ExchangeController@adsense');
+        Route::get('/google-adsense/create', 'ExchangeController@adsenseCreate');
+        Route::get('/google-adsense/store', 'ExchangeController@adsenseStore');
+        Route::get('/google-adsense/delete/{id}', 'ExchangeController@adsenseDelete');
     });
 
     /**
