@@ -257,7 +257,6 @@
                     this.arrListCurrency.reverse();
                     this.currency = "USD";
                     this.getTimeUpdate();
-                    console.log(objExchangeData);
                 }).catch(error => {
                     console.log(error);
                 });
@@ -270,7 +269,6 @@
                 this.arrListCurrency.splice(0, this.arrListCurrency.length);
                 axios.get('api/v1/get-currency/' + this.currencyCode).then(response => {
                     let objExchangeData = response.data;
-                    // console.log(objExchangeData);
                     for (let i = 0; i < objExchangeData.length; i++) {
                         objExchangeData[i]['bank_name'] = this.fillBankName(objExchangeData[i]['bank_code']);
                         this.arrListCurrency.push(objExchangeData[i]);

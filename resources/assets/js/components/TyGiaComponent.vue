@@ -247,6 +247,9 @@
             },
 
             getBankInfo(bank_code) {
+                if (bank_code == undefined) {
+                    bank_code = this.bankName;
+                }
                 axios.get('api/v1/get-bank-info/' + bank_code).then(response => {
                     let objExchangeData = response.data;
                     this.bankInfo.splice(0, this.bankInfo.length);
