@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Helpers\SeoService;
 use App\Helpers\render_seo;
-use Illuminate\View\View;
 
 class IndexController extends Controller
 {

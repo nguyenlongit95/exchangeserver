@@ -106,8 +106,8 @@ Route::group(['namespace'=>$namespace], function() {
  * Route cho phía frontend
  */
 Route::group(['namespace' => $namespaceFrontend], function () {
-    Route::get('/', 'indexController@index');
-    Route::get('home', 'indexController@index');
+    Route::get('/', 'IndexController@index');
+    Route::get('home', 'IndexController@index');
 
     Route::get('ty-gia', 'tygiaController@index');
     Route::get('ty-gia/{code}', 'tygiaController@index');
