@@ -52,7 +52,6 @@
 <!-- Start header -->
 <header class="top-header">
     <div class="header_top">
-
         <div class="container">
             <div class="row">
                 <div class="logo_section">
@@ -67,7 +66,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <div class="header_bottom">
         <div class="container">

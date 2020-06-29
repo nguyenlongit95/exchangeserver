@@ -2609,6 +2609,10 @@ ul.bottom_menu li {
     border-bottom: 3px double #ff880e;
 }
 
+.width-100-percent {
+    width: 100% !important;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1348px) {
     .ads-doc {
         width: 4%;

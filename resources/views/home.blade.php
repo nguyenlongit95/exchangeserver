@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img src="{{ asset('frontend/images/ads/ads_ngang.gif') }}" alt="">
+                    <img class="width-100-percent" src="{{ asset('frontend/images/ads/ads_ngang.gif') }}" alt="">
                 </div>
             </div>
         </div>
