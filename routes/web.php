@@ -56,7 +56,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:BACKEND']],functio
      *   Tiền Ảo
      *   Google AdSense
      */
-    Route::group(['namespace' =>'web'], function () {
+    Route::group(['namespace' =>'Web'], function () {
         Route::get('/exchange', 'ExchangeController@index');
         Route::get('/exchange-bank', 'ExchangeController@exchangeBank');
 
