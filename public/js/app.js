@@ -49884,7 +49884,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -49895,6 +49895,19 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -51097,9 +51110,9 @@ var render = function() {
                             _vm._l(_vm.arrAUD, function(renderAUD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderAUD.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderAUD.muatienmat_diff < 0
                                   ? _c(
@@ -51158,9 +51171,9 @@ var render = function() {
                             _vm._l(_vm.arrCAD, function(renderCAD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderCAD.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderCAD.muatienmat_diff < 0
                                   ? _c(
@@ -51219,9 +51232,9 @@ var render = function() {
                             _vm._l(_vm.arrCHF, function(renderCHF) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderCHF.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderCHF.muatienmat_diff < 0
                                   ? _c(
@@ -51280,9 +51293,9 @@ var render = function() {
                             _vm._l(_vm.arrCNY, function(renderCNY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderCNY.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderCNY.muatienmat_diff < 0
                                   ? _c(
@@ -51341,9 +51354,9 @@ var render = function() {
                             _vm._l(_vm.arrDKK, function(renderDKK) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderDKK.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderDKK.muatienmat_diff < 0
                                   ? _c(
@@ -51402,9 +51415,9 @@ var render = function() {
                             _vm._l(_vm.arrEUR, function(renderEUR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderEUR.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderEUR.muatienmat_diff < 0
                                   ? _c(
@@ -51463,9 +51476,9 @@ var render = function() {
                             _vm._l(_vm.arrGBP, function(renderGBP) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderGBP.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderGBP.muatienmat_diff < 0
                                   ? _c(
@@ -51524,9 +51537,9 @@ var render = function() {
                             _vm._l(_vm.arrHKD, function(renderHKD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderHKD.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderHKD.muatienmat_diff < 0
                                   ? _c(
@@ -51585,9 +51598,9 @@ var render = function() {
                             _vm._l(_vm.arrJPY, function(renderJPY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderJPY.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderJPY.muatienmat_diff < 0
                                   ? _c(
@@ -51646,9 +51659,9 @@ var render = function() {
                             _vm._l(_vm.arrKRW, function(renderKRW) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderKRW.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderKRW.muatienmat_diff < 0
                                   ? _c(
@@ -51707,9 +51720,9 @@ var render = function() {
                             _vm._l(_vm.arrMYR, function(renderMYR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderMYR.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderMYR.muatienmat_diff < 0
                                   ? _c(
@@ -51768,9 +51781,9 @@ var render = function() {
                             _vm._l(_vm.arrRUB, function(renderRUB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderRUB.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderRUB.muatienmat_diff < 0
                                   ? _c(
@@ -51829,9 +51842,9 @@ var render = function() {
                             _vm._l(_vm.arrSGD, function(renderSGD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderSGD.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderSGD.muatienmat_diff < 0
                                   ? _c(
@@ -51890,9 +51903,9 @@ var render = function() {
                             _vm._l(_vm.arrTHB, function(renderTHB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderTHB.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderTHB.muatienmat_diff < 0
                                   ? _c(
@@ -51951,9 +51964,9 @@ var render = function() {
                             _vm._l(_vm.arrUSD, function(renderUSD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                            " +
+                                  "\n                                                " +
                                     _vm._s(renderUSD.muatienmat) +
-                                    "\n                                            "
+                                    "\n                                                "
                                 ),
                                 renderUSD.muatienmat_diff < 0
                                   ? _c(
@@ -52034,9 +52047,9 @@ var render = function() {
                             _vm._l(_vm.arrAUD, function(renderAUD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderAUD.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderAUD.muatienmat_diff < 0
                                   ? _c(
@@ -52095,9 +52108,9 @@ var render = function() {
                             _vm._l(_vm.arrCAD, function(renderCAD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCAD.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCAD.muatienmat_diff < 0
                                   ? _c(
@@ -52156,9 +52169,9 @@ var render = function() {
                             _vm._l(_vm.arrCHF, function(renderCHF) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCHF.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCHF.muatienmat_diff < 0
                                   ? _c(
@@ -52217,9 +52230,9 @@ var render = function() {
                             _vm._l(_vm.arrCNY, function(renderCNY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCNY.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCNY.muatienmat_diff < 0
                                   ? _c(
@@ -52278,9 +52291,9 @@ var render = function() {
                             _vm._l(_vm.arrDKK, function(renderDKK) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderDKK.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderDKK.muatienmat_diff < 0
                                   ? _c(
@@ -52339,9 +52352,9 @@ var render = function() {
                             _vm._l(_vm.arrEUR, function(renderEUR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderEUR.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderEUR.muatienmat_diff < 0
                                   ? _c(
@@ -52400,9 +52413,9 @@ var render = function() {
                             _vm._l(_vm.arrGBP, function(renderGBP) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderGBP.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderGBP.muatienmat_diff < 0
                                   ? _c(
@@ -52461,9 +52474,9 @@ var render = function() {
                             _vm._l(_vm.arrHKD, function(renderHKD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderHKD.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderHKD.muatienmat_diff < 0
                                   ? _c(
@@ -52522,9 +52535,9 @@ var render = function() {
                             _vm._l(_vm.arrJPY, function(renderJPY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderJPY.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderJPY.muatienmat_diff < 0
                                   ? _c(
@@ -52583,9 +52596,9 @@ var render = function() {
                             _vm._l(_vm.arrKRW, function(renderKRW) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderKRW.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderKRW.muatienmat_diff < 0
                                   ? _c(
@@ -52644,9 +52657,9 @@ var render = function() {
                             _vm._l(_vm.arrMYR, function(renderMYR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderMYR.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderMYR.muatienmat_diff < 0
                                   ? _c(
@@ -52705,9 +52718,9 @@ var render = function() {
                             _vm._l(_vm.arrRUB, function(renderRUB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderRUB.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderRUB.muatienmat_diff < 0
                                   ? _c(
@@ -52766,9 +52779,9 @@ var render = function() {
                             _vm._l(_vm.arrSGD, function(renderSGD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderSGD.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderSGD.muatienmat_diff < 0
                                   ? _c(
@@ -52827,9 +52840,9 @@ var render = function() {
                             _vm._l(_vm.arrTHB, function(renderTHB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderTHB.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderTHB.muatienmat_diff < 0
                                   ? _c(
@@ -52888,9 +52901,9 @@ var render = function() {
                             _vm._l(_vm.arrUSD, function(renderUSD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderUSD.muachuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderUSD.muatienmat_diff < 0
                                   ? _c(
@@ -52968,9 +52981,9 @@ var render = function() {
                             _vm._l(_vm.arrAUD, function(renderAUD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderAUD.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderAUD.muatienmat_diff < 0
                                   ? _c(
@@ -53029,9 +53042,9 @@ var render = function() {
                             _vm._l(_vm.arrCAD, function(renderCAD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCAD.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCAD.muatienmat_diff < 0
                                   ? _c(
@@ -53090,9 +53103,9 @@ var render = function() {
                             _vm._l(_vm.arrCHF, function(renderCHF) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCHF.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCHF.muatienmat_diff < 0
                                   ? _c(
@@ -53151,9 +53164,9 @@ var render = function() {
                             _vm._l(_vm.arrCNY, function(renderCNY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCNY.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCNY.muatienmat_diff < 0
                                   ? _c(
@@ -53212,9 +53225,9 @@ var render = function() {
                             _vm._l(_vm.arrDKK, function(renderDKK) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderDKK.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderDKK.muatienmat_diff < 0
                                   ? _c(
@@ -53273,9 +53286,9 @@ var render = function() {
                             _vm._l(_vm.arrEUR, function(renderEUR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderEUR.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderEUR.muatienmat_diff < 0
                                   ? _c(
@@ -53334,9 +53347,9 @@ var render = function() {
                             _vm._l(_vm.arrGBP, function(renderGBP) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderGBP.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderGBP.muatienmat_diff < 0
                                   ? _c(
@@ -53395,9 +53408,9 @@ var render = function() {
                             _vm._l(_vm.arrHKD, function(renderHKD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderHKD.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderHKD.muatienmat_diff < 0
                                   ? _c(
@@ -53456,9 +53469,9 @@ var render = function() {
                             _vm._l(_vm.arrJPY, function(renderJPY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderJPY.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderJPY.muatienmat_diff < 0
                                   ? _c(
@@ -53517,9 +53530,9 @@ var render = function() {
                             _vm._l(_vm.arrKRW, function(renderKRW) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderKRW.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderKRW.muatienmat_diff < 0
                                   ? _c(
@@ -53578,9 +53591,9 @@ var render = function() {
                             _vm._l(_vm.arrMYR, function(renderMYR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderMYR.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderMYR.muatienmat_diff < 0
                                   ? _c(
@@ -53639,9 +53652,9 @@ var render = function() {
                             _vm._l(_vm.arrRUB, function(renderRUB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderRUB.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderRUB.muatienmat_diff < 0
                                   ? _c(
@@ -53700,9 +53713,9 @@ var render = function() {
                             _vm._l(_vm.arrSGD, function(renderSGD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderSGD.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderSGD.muatienmat_diff < 0
                                   ? _c(
@@ -53761,9 +53774,9 @@ var render = function() {
                             _vm._l(_vm.arrTHB, function(renderTHB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderTHB.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderTHB.muatienmat_diff < 0
                                   ? _c(
@@ -53822,9 +53835,9 @@ var render = function() {
                             _vm._l(_vm.arrUSD, function(renderUSD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderUSD.bantienmat) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderUSD.muatienmat_diff < 0
                                   ? _c(
@@ -53905,9 +53918,9 @@ var render = function() {
                             _vm._l(_vm.arrAUD, function(renderAUD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderAUD.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderAUD.muatienmat_diff < 0
                                   ? _c(
@@ -53966,9 +53979,9 @@ var render = function() {
                             _vm._l(_vm.arrCAD, function(renderCAD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCAD.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCAD.muatienmat_diff < 0
                                   ? _c(
@@ -54027,9 +54040,9 @@ var render = function() {
                             _vm._l(_vm.arrCHF, function(renderCHF) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCHF.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCHF.muatienmat_diff < 0
                                   ? _c(
@@ -54088,9 +54101,9 @@ var render = function() {
                             _vm._l(_vm.arrCNY, function(renderCNY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderCNY.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderCNY.muatienmat_diff < 0
                                   ? _c(
@@ -54149,9 +54162,9 @@ var render = function() {
                             _vm._l(_vm.arrDKK, function(renderDKK) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderDKK.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderDKK.muatienmat_diff < 0
                                   ? _c(
@@ -54210,9 +54223,9 @@ var render = function() {
                             _vm._l(_vm.arrEUR, function(renderEUR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderEUR.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderEUR.muatienmat_diff < 0
                                   ? _c(
@@ -54271,9 +54284,9 @@ var render = function() {
                             _vm._l(_vm.arrGBP, function(renderGBP) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderGBP.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderGBP.muatienmat_diff < 0
                                   ? _c(
@@ -54332,9 +54345,9 @@ var render = function() {
                             _vm._l(_vm.arrHKD, function(renderHKD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderHKD.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderHKD.muatienmat_diff < 0
                                   ? _c(
@@ -54393,9 +54406,9 @@ var render = function() {
                             _vm._l(_vm.arrJPY, function(renderJPY) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderJPY.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderJPY.muatienmat_diff < 0
                                   ? _c(
@@ -54454,9 +54467,9 @@ var render = function() {
                             _vm._l(_vm.arrKRW, function(renderKRW) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderKRW.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderKRW.muatienmat_diff < 0
                                   ? _c(
@@ -54515,9 +54528,9 @@ var render = function() {
                             _vm._l(_vm.arrMYR, function(renderMYR) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderMYR.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderMYR.muatienmat_diff < 0
                                   ? _c(
@@ -54576,9 +54589,9 @@ var render = function() {
                             _vm._l(_vm.arrRUB, function(renderRUB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderRUB.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderRUB.muatienmat_diff < 0
                                   ? _c(
@@ -54637,9 +54650,9 @@ var render = function() {
                             _vm._l(_vm.arrSGD, function(renderSGD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderSGD.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderSGD.muatienmat_diff < 0
                                   ? _c(
@@ -54698,9 +54711,9 @@ var render = function() {
                             _vm._l(_vm.arrTHB, function(renderTHB) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderTHB.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderTHB.muatienmat_diff < 0
                                   ? _c(
@@ -54759,9 +54772,9 @@ var render = function() {
                             _vm._l(_vm.arrUSD, function(renderUSD) {
                               return _c("td", { staticClass: "text-center" }, [
                                 _vm._v(
-                                  "\n                                        " +
+                                  "\n                                            " +
                                     _vm._s(renderUSD.banchuyenkhoan) +
-                                    "\n                                        "
+                                    "\n                                            "
                                 ),
                                 renderUSD.muatienmat_diff < 0
                                   ? _c(
@@ -54913,7 +54926,7 @@ var render = function() {
                             _c("th", [
                               _vm._v(
                                 _vm._s(renderGoldExchanges.mua) +
-                                  "\n                                            "
+                                  "\n                                                "
                               ),
                               renderGoldExchanges.tyle_mua > 0
                                 ? _c(
@@ -54967,7 +54980,7 @@ var render = function() {
                             _c("th", [
                               _vm._v(
                                 _vm._s(renderGoldExchanges.ban) +
-                                  "\n                                            "
+                                  "\n                                                "
                               ),
                               renderGoldExchanges.tyle_ban > 0
                                 ? _c(
@@ -55986,36 +55999,51 @@ var staticRenderFns = [
     return _c("div", { staticClass: "section margin-top-25px" }, [
       _c("div", { staticClass: "container" }, [
         _c("section", [
-          _c("div", { staticClass: "heading_main pull-left" }, [
-            _c(
-              "h3",
-              {
-                staticClass:
-                  "font-size-22px margin-bottom-zero border-bottom-2px-solid"
-              },
-              [
-                _c("span", { staticClass: "theme_color" }),
-                _vm._v(
-                  "Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực"
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "full" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "heading_main pull-left text-left col-md-6 row margin-top-25px"
+                  },
+                  [
+                    _c(
+                      "h1",
+                      { staticClass: "font-size-22px border-bottom-2px-solid" },
+                      [
+                        _c("span", { staticClass: "theme_color" }),
+                        _vm._v("Biểu đồ "),
+                        _c("span", { staticClass: "text-uppercase" }, [
+                          _vm._v("VN-Index")
+                        ]),
+                        _vm._v(" - "),
+                        _c(
+                          "span",
+                          { staticClass: "font-weight-initial font-size-16px" },
+                          [_vm._v("VN-Index cập nhật theo thời gian thực")]
+                        )
+                      ]
+                    )
+                  ]
                 )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("iframe", {
-            staticStyle: { height: "450px", width: "100%" },
-            attrs: {
-              id: "tradingview_cbf8a",
-              src:
-                "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&symbol=TVC%3AUKOIL&interval=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&hideideas=1&theme=White&style=1&timezone=Asia%2FBangkok&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=vi_VN&referral_id=1713&utm_source=tygia.vn&utm_medium=widget&utm_campaign=chart&utm_term=TVC%3AUKOIL",
-              frameborder: "0",
-              allowtransparency: "true",
-              scrolling: "no",
-              allowfullscreen: ""
-            }
-          })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("iframe", {
+                staticStyle: { "margin-left": "-5px" },
+                attrs: {
+                  src: "https://ta.vietstock.vn/Customer",
+                  width: "100%",
+                  height: "800",
+                  scrolling: "no",
+                  frameborder: "0"
+                }
+              })
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("br")

@@ -998,11 +998,24 @@
         <div class="section margin-top-25px">
             <div class="container">
                 <section>
-                    <div class="heading_main pull-left">
-                        <h3 class="font-size-22px margin-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h3>
+<!--                    <div class="heading_main pull-left">-->
+<!--                        <h3 class="font-size-22px margin-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h3>-->
+<!--                    </div>-->
+<!--                    <br>-->
+<!--                    <iframe style="height: 450px; width: 100%;" id="tradingview_cbf8a" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&amp;symbol=TVC%3AUKOIL&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi_VN&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=TVC%3AUKOIL" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="full">
+                                <div class="heading_main pull-left text-left col-md-6 row margin-top-25px">
+                                    <h1 class="font-size-22px border-bottom-2px-solid"><span class="theme_color"></span>Biểu đồ <span class="text-uppercase">VN-Index</span> - <span class="font-weight-initial font-size-16px">VN-Index cập nhật theo thời gian thực</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <iframe src="https://ta.vietstock.vn/Customer" width="100%" style="margin-left: -5px;" height="800" scrolling="no" frameborder="0"></iframe>
+                        </div>
                     </div>
-                    <br>
-                    <iframe style="height: 450px; width: 100%;" id="tradingview_cbf8a" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cbf8a&amp;symbol=TVC%3AUKOIL&amp;interval=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Asia%2FBangkok&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=vi_VN&amp;referral_id=1713&amp;utm_source=tygia.vn&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=TVC%3AUKOIL" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+
                 </section>
                 <br>
             </div>
