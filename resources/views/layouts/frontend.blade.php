@@ -179,7 +179,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="crp font-size-13px">© Copyrights {{ $year->format('Y') }} - <a href="{{ url('/') }}" style="color:white;">tygia.info</a> ứng dụng cập nhật giá cả thị trường.</p>
+                <p class="crp font-size-13px">© Copyrights {{ $year->format('Y') }} - <a href="{{ url('/') }}" style="color:white;">tygia.site</a> ứng dụng cập nhật giá cả thị trường.</p>
             </div>
         </div>
     </div>
