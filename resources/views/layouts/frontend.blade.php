@@ -160,7 +160,7 @@
                         <div class="full">
                             <div class="footer_blog full white_fonts">
                                 <h3 class="font-size-16px">ỨNG DỤNG</h3>
-                                <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/profile.php?id=100013698812957"><i class="fa fa-facebook-square font-size-22px"></i></i></a>
+                                <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/groups/736760173746299/"><i class="fa fa-facebook-square font-size-22px"></i></i></a>
                                 <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/profile.php?id=100013698812957"><i class="fa fa-android font-size-22px"></i><span></span></a>
                                 <a class="logo-footer padding-logo-footer" href="https://www.facebook.com/profile.php?id=100013698812957"><i class="fa fa-apple font-size-22px"></i><span></span></a>
                             </div>
