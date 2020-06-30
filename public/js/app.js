@@ -49884,7 +49884,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -49895,6 +49895,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -51070,15 +51073,17 @@ var render = function() {
                     )
                   ]
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
             ])
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0),
+        _vm._m(1),
         _vm._v(" "),
         _c("div", { staticClass: "table-exchange-home" }, [
-          _vm._m(1),
+          _vm._m(2),
           _vm._v(" "),
           _c(
             "div",
@@ -51102,7 +51107,7 @@ var render = function() {
                         attrs: { id: "table-exchange-home" }
                       },
                       [
-                        _vm._m(2),
+                        _vm._m(3),
                         _vm._v(" "),
                         _c("tbody", [
                           _c(
@@ -52039,7 +52044,7 @@ var render = function() {
                         attrs: { id: "table-exchange-home" }
                       },
                       [
-                        _vm._m(3),
+                        _vm._m(4),
                         _vm._v(" "),
                         _c("tbody", [
                           _c(
@@ -52973,7 +52978,7 @@ var render = function() {
                         attrs: { id: "table-exchange-home" }
                       },
                       [
-                        _vm._m(4),
+                        _vm._m(5),
                         _vm._v(" "),
                         _c("tbody", [
                           _c(
@@ -53910,7 +53915,7 @@ var render = function() {
                         attrs: { id: "table-exchange-home" }
                       },
                       [
-                        _vm._m(5),
+                        _vm._m(6),
                         _vm._v(" "),
                         _c("tbody", [
                           _c(
@@ -54839,7 +54844,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(6),
+    _vm._m(7),
     _vm._v(" "),
     _c("div", { staticClass: "section margin-top-25px" }, [
       _c("div", { staticClass: "container" }, [
@@ -54881,7 +54886,7 @@ var render = function() {
                     attrs: { id: "table-currency-code-home" }
                   },
                   [
-                    _vm._m(7),
+                    _vm._m(8),
                     _vm._v(" "),
                     _c(
                       "tbody",
@@ -54911,7 +54916,7 @@ var render = function() {
                       attrs: { id: "table-gold-home" }
                     },
                     [
-                      _vm._m(8),
+                      _vm._m(9),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -55044,10 +55049,28 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(9)
+    _vm._m(10)
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -55148,7 +55171,10 @@ var staticRenderFns = [
               _c("thead", [
                 _c("tr", [
                   _c("th", { attrs: { id: "currency-code" } }, [
-                    _vm._v("Mã ngoại tệ")
+                    _vm._v("Mã "),
+                    _c("span", { staticClass: "ma-ngoai-te" }, [
+                      _vm._v("ngoại tệ")
+                    ])
                   ])
                 ])
               ]),
@@ -55159,7 +55185,10 @@ var staticRenderFns = [
                     _vm._v("AUD "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Đô la Úc)")])]
                     )
                   ])
@@ -55170,7 +55199,10 @@ var staticRenderFns = [
                     _vm._v("CAD "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Dollar Canada)")])]
                     )
                   ])
@@ -55181,7 +55213,10 @@ var staticRenderFns = [
                     _vm._v("CHF "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(France Thuỵ Sỹ)")])]
                     )
                   ])
@@ -55192,7 +55227,10 @@ var staticRenderFns = [
                     _vm._v("CNY "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Đồng nhân dân tệ)")])]
                     )
                   ])
@@ -55203,7 +55241,10 @@ var staticRenderFns = [
                     _vm._v("DKK "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Krone Đan Mạch)")])]
                     )
                   ])
@@ -55214,7 +55255,10 @@ var staticRenderFns = [
                     _vm._v("EUR "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Dollar EUro)")])]
                     )
                   ])
@@ -55225,7 +55269,10 @@ var staticRenderFns = [
                     _vm._v("GBP "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Đồng Bảng Anh)")])]
                     )
                   ])
@@ -55236,7 +55283,10 @@ var staticRenderFns = [
                     _vm._v("HKD "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Dollar Hong Kong)")])]
                     )
                   ])
@@ -55247,7 +55297,10 @@ var staticRenderFns = [
                     _vm._v("JPY "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Đồng Yên Nhật)")])]
                     )
                   ])
@@ -55258,7 +55311,10 @@ var staticRenderFns = [
                     _vm._v("KRW "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Won Hàn Quốc)")])]
                     )
                   ])
@@ -55269,7 +55325,10 @@ var staticRenderFns = [
                     _vm._v("MYR "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Dollar Myanmar)")])]
                     )
                   ])
@@ -55280,7 +55339,10 @@ var staticRenderFns = [
                     _vm._v("RUB "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Đồng RUB Nga)")])]
                     )
                   ])
@@ -55291,7 +55353,10 @@ var staticRenderFns = [
                     _vm._v("SGD "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Dollar Singapore)")])]
                     )
                   ])
@@ -55302,7 +55367,10 @@ var staticRenderFns = [
                     _vm._v("THB "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Đồng Bạt Thái)")])]
                     )
                   ])
@@ -55313,7 +55381,10 @@ var staticRenderFns = [
                     _vm._v("USD "),
                     _c(
                       "span",
-                      { staticClass: "font-size-13px font-style-inherit" },
+                      {
+                        staticClass:
+                          "font-size-13px font-style-inherit ten-ngoai-te"
+                      },
                       [_c("i", [_vm._v("(Dollar Mỹ)")])]
                     )
                   ])
@@ -56146,7 +56217,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56157,6 +56228,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -56804,7 +56878,9 @@ var render = function() {
                   )
                 ])
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _vm._m(3)
           ])
         ])
       ])
@@ -56902,7 +56978,7 @@ var render = function() {
                     attrs: { id: "table-exchange-page" }
                   },
                   [
-                    _vm._m(3),
+                    _vm._m(4),
                     _vm._v(" "),
                     _c(
                       "tbody",
@@ -57187,6 +57263,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", { staticClass: "text-left" }, [_vm._v("Ngoại tệ")]),
@@ -57297,7 +57391,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57308,6 +57402,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -57942,7 +58039,9 @@ var render = function() {
                   )
                 ])
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _vm._m(15)
           ])
         ])
       ])
@@ -57984,7 +58083,7 @@ var render = function() {
                   attrs: { id: "table-exchange-page" }
                 },
                 [
-                  _vm._m(15),
+                  _vm._m(16),
                   _vm._v(" "),
                   _c(
                     "tbody",
@@ -58198,7 +58297,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(16),
+            _vm._m(17),
             _vm._v(" "),
             _c("input", {
               attrs: { type: "hidden", id: "currnecy_code" },
@@ -58327,7 +58426,7 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm._m(17),
+                    _vm._m(18),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -58374,7 +58473,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(18)
+                              _vm._m(19)
                             ])
                           ]
                         )
@@ -58382,7 +58481,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(19)
+                  _vm._m(20)
                 ]),
                 _vm._v(" "),
                 _c(
@@ -58584,6 +58683,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", { staticClass: "text-left" }, [_vm._v("Ngân hàng")]),
@@ -58766,7 +58883,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -58777,6 +58894,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -59056,7 +59176,9 @@ var render = function() {
                   )
                 ])
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _vm._m(2)
           ])
         ])
       ])
@@ -59096,7 +59218,7 @@ var render = function() {
                   attrs: { id: "table-exchange-page" }
                 },
                 [
-                  _vm._m(2),
+                  _vm._m(3),
                   _vm._v(" "),
                   _c(
                     "tbody",
@@ -59210,13 +59332,13 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(3)
+            _vm._m(4)
           ])
         ])
       ])
     ]),
     _vm._v(" "),
-    _vm._m(4)
+    _vm._m(5)
   ])
 }
 var staticRenderFns = [
@@ -59251,6 +59373,24 @@ var staticRenderFns = [
       _c("label", { staticStyle: { "margin-top": "10px" } }, [
         _vm._v("Chọn hãng vàng")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
     ])
   },
   function() {
@@ -59419,7 +59559,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -59430,6 +59570,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -59695,7 +59838,9 @@ var render = function() {
                     ])
                   ]
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
             ])
           ])
         ]),
@@ -59710,7 +59855,7 @@ var render = function() {
                   attrs: { id: "table-exchange-page" }
                 },
                 [
-                  _vm._m(0),
+                  _vm._m(1),
                   _vm._v(" "),
                   _c("tbody", [
                     _c(
@@ -59854,7 +59999,7 @@ var render = function() {
         _c("div", { staticClass: "col-md-12 pull-left" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-6 row pull-left" }, [
-              _vm._m(1),
+              _vm._m(2),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-8 pull-left" }, [
                 _c(
@@ -59934,14 +60079,32 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(2),
+        _vm._m(3),
         _vm._v(" "),
-        _vm._m(3)
+        _vm._m(4)
       ])
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -60868,7 +61031,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -60879,6 +61042,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -61066,7 +61232,9 @@ var render = function() {
                 })
               ],
               2
-            )
+            ),
+            _vm._v(" "),
+            _vm._m(1)
           ])
         ])
       ])
@@ -61077,7 +61245,7 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "full" }, [
-              _vm._m(1),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "div",
@@ -61127,7 +61295,7 @@ var render = function() {
                   attrs: { id: "table-exchange-page" }
                 },
                 [
-                  _vm._m(2),
+                  _vm._m(3),
                   _vm._v(" "),
                   _c(
                     "tbody",
@@ -61213,6 +61381,24 @@ var staticRenderFns = [
           ]
         )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
     ])
   },
   function() {
@@ -61350,7 +61536,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -61361,6 +61547,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -61577,7 +61766,9 @@ var render = function() {
                 })
               ],
               2
-            )
+            ),
+            _vm._v(" "),
+            _vm._m(1)
           ])
         ])
       ])
@@ -61803,7 +61994,7 @@ var render = function() {
                                         ]),
                                         _vm._v(" "),
                                         _c("tr", [
-                                          _vm._m(1, true),
+                                          _vm._m(2, true),
                                           _vm._v(" "),
                                           _c("td", [
                                             _vm._v(
@@ -62005,6 +62196,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pull-right" }, [
+      _c("div", {
+        staticClass: "fb-like",
+        attrs: {
+          "data-href": "https://tygia.site/",
+          "data-width": "32",
+          "data-layout": "button_count",
+          "data-action": "like",
+          "data-size": "small",
+          "data-share": "true"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("th", [
       _c("span", { staticClass: "hidden-xs" }, [
         _vm._v("Giá trị vốn hóa thị trường")
@@ -62108,7 +62317,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -62119,6 +62328,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -62194,10 +62406,24 @@ var staticRenderFns = [
                   )
                 ]
               )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "pull-right col-md-2 row" }, [
+              _c("div", {
+                staticClass: "fb-like",
+                attrs: {
+                  "data-href": "https://tygia.site/",
+                  "data-width": "32",
+                  "data-layout": "button_count",
+                  "data-action": "like",
+                  "data-size": "small",
+                  "data-share": "true"
+                }
+              })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "col-md-12 margin-top-15px" }, [
             _c("iframe", {
               staticStyle: { "margin-left": "-5px" },
               attrs: {

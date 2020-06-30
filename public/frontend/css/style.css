@@ -2613,6 +2613,10 @@ ul.bottom_menu li {
     width: 100% !important;
 }
 
+.margin-top-15px {
+    margin-top: 15px !important;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1348px) {
     .ads-doc {
         width: 4%;
@@ -2631,5 +2635,14 @@ ul.bottom_menu li {
     }
     .ads-doc {
         top:25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ma-ngoai-te {
+        display: none !important;
+    }
+    .ten-ngoai-te {
+        display: none !important;
     }
 }

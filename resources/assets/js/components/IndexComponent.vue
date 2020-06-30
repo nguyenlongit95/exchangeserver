@@ -10,6 +10,9 @@
                             <div class="heading_main pull-left">
                                 <h1 class="font-size-22px padding-bottom-zero border-bottom-2px-solid"><span class="theme_color"></span>TỔNG HỢP TỶ GIÁ NGÂN HÀNG TRÊN TOÀN QUỐC <span class="font-size-16px font-weight-initial">Cập nhật lúc: {{ this.timeUpdate }}</span></h1>
                             </div>
+                            <div class="pull-right">
+                                <div class="fb-like" data-href="https://tygia.site/" data-width="32" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,54 +33,54 @@
                             <table class="table table-hover table-bordered" id="table-currency-code-home">
                                 <thead>
                                 <tr>
-                                    <th id="currency-code">Mã ngoại tệ</th>
+                                    <th id="currency-code">Mã <span class="ma-ngoai-te">ngoại tệ</span></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th>AUD <span class="font-size-13px font-style-inherit"><i>(Đô la Úc)</i></span></th>
+                                    <th>AUD <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Đô la Úc)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>CAD <span class="font-size-13px font-style-inherit"><i>(Dollar Canada)</i></span></th>
+                                    <th>CAD <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Dollar Canada)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>CHF <span class="font-size-13px font-style-inherit"><i>(France Thuỵ Sỹ)</i></span></th>
+                                    <th>CHF <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(France Thuỵ Sỹ)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>CNY <span class="font-size-13px font-style-inherit"><i>(Đồng nhân dân tệ)</i></span></th>
+                                    <th>CNY <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Đồng nhân dân tệ)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>DKK <span class="font-size-13px font-style-inherit"><i>(Krone Đan Mạch)</i></span></th>
+                                    <th>DKK <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Krone Đan Mạch)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>EUR <span class="font-size-13px font-style-inherit"><i>(Dollar EUro)</i></span></th>
+                                    <th>EUR <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Dollar EUro)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>GBP <span class="font-size-13px font-style-inherit"><i>(Đồng Bảng Anh)</i></span></th>
+                                    <th>GBP <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Đồng Bảng Anh)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>HKD <span class="font-size-13px font-style-inherit"><i>(Dollar Hong Kong)</i></span></th>
+                                    <th>HKD <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Dollar Hong Kong)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>JPY <span class="font-size-13px font-style-inherit"><i>(Đồng Yên Nhật)</i></span></th>
+                                    <th>JPY <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Đồng Yên Nhật)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>KRW <span class="font-size-13px font-style-inherit"><i>(Won Hàn Quốc)</i></span></th>
+                                    <th>KRW <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Won Hàn Quốc)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>MYR <span class="font-size-13px font-style-inherit"><i>(Dollar Myanmar)</i></span></th>
+                                    <th>MYR <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Dollar Myanmar)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>RUB <span class="font-size-13px font-style-inherit"><i>(Đồng RUB Nga)</i></span></th>
+                                    <th>RUB <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Đồng RUB Nga)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>SGD <span class="font-size-13px font-style-inherit"><i>(Dollar Singapore)</i></span></th>
+                                    <th>SGD <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Dollar Singapore)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>THB <span class="font-size-13px font-style-inherit"><i>(Đồng Bạt Thái)</i></span></th>
+                                    <th>THB <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Đồng Bạt Thái)</i></span></th>
                                 </tr>
                                 <tr>
-                                    <th>USD <span class="font-size-13px font-style-inherit"><i>(Dollar Mỹ)</i></span></th>
+                                    <th>USD <span class="font-size-13px font-style-inherit ten-ngoai-te"><i>(Dollar Mỹ)</i></span></th>
                                 </tr>
                                 </tbody>
                             </table>

@@ -9,8 +9,11 @@
                             <h1 class="font-size-22px border-bottom-2px-solid"><span class="theme_color"></span>Biểu đồ <span class="text-uppercase">VN-Index</span> - <span class="font-weight-initial font-size-16px">VN-Index cập nhật theo thời gian thực</span></h1>
                         </div>
                     </div>
+                    <div class="pull-right col-md-2 row">
+                        <div class="fb-like" data-href="https://tygia.site/" data-width="32" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                    </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 margin-top-15px">
                     <iframe src="https://ta.vietstock.vn/Customer" width="100%" style="margin-left: -5px;" height="800" scrolling="no" frameborder="0"></iframe>
                 </div>
             </div>

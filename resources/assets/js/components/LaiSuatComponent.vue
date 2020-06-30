@@ -9,6 +9,9 @@
                             <div class="heading_main text_align_center">
                                 <h1 class="font-size-22px border-bottom-2px-solid"><span class="theme_color"></span>Lãi suất tại quầy - <span class="font-size-16px">cập nhật lúc: {{ this.timeUpdate }}</span></h1>
                             </div>
+                            <div class="pull-right">
+                                <div class="fb-like" data-href="https://tygia.site/" data-width="32" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

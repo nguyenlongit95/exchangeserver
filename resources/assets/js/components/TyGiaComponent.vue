@@ -56,6 +56,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="pull-right">
+                            <div class="fb-like" data-href="https://tygia.site/" data-width="32" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                        </div>
                     </div>
                 </div>
             </div>

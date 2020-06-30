@@ -18,6 +18,9 @@
 
     <div class="section col-md-12 layout_padding margin-top-25px">
         <div class="container">
+            <div class="pull-right">
+                <div class="fb-like" data-href="https://tygia.site/" data-width="32" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+            </div>
             <section>
                 <h1 class="font-size-22px padding-bottom-zero"><span class="theme_color"></span>Biểu đồ giá Dầu Crude Oil (Brent)- UKOIL trực tiếp theo thời gian thực</h1>
                 <br>
