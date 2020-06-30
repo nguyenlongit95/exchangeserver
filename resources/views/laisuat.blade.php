@@ -1,5 +1,9 @@
 @extends('layouts.frontend')
 
+@section('seo_advanced')
+    {!! $seo_advanced !!}
+@endsection
+
 @section('content')
     <!-- Start Banner -->
     <div class="section inner_page_banner">
