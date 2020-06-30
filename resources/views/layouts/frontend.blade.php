@@ -33,6 +33,8 @@
 
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=519437805179526&autoLogAppEvents=1" nonce="IcSM1CHe"></script>
+
+    <script data-ad-client="ca-pub-8436642383272304" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{--    <!--[if lt IE 9]>--}}
 {{--<!--    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->--}}
 {{--<!--    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->--}}
