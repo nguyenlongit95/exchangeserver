@@ -33,9 +33,3 @@
         <br>
     </div>
 @endsection
-<script>
-    /**
-     * JS more detail
-     * Can using jQuery here
-     */
-</script>
