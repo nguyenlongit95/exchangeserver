@@ -87,10 +87,12 @@ class tienaoController extends Controller
      */
     public function show($code)
     {
+        $seo_advanced = $this->seoHelper->render_seo('seo_advanced');
+        $title = "Cập nhật và so sánh các loại tiền ảo trên thế giới";
         $tienao = LoaiTienAo::where('slug', $code)->first();
         $tienao['iframe_chart'] = $this->getChartRealtime($tienao['symbol']);
         $title = "Cập nhật đồng " . $tienao->name . " mới nhất theo thời gian thực";
-        return view('tienaodetail', compact('tienao', 'title'));
+        return view('tienaodetail', compact('tienao', 'title', 'seo_advanced'));
     }
 
     /**
