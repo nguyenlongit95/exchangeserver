@@ -113,9 +113,9 @@
 </header>
 <!-- End header -->
 
-<img src="{{ asset('frontend/images/ads/1272.gif') }}" alt="" class="position-fixed-left-0-top-40percent ads-doc">
+{{--<img src="{{ asset('frontend/images/ads/1272.gif') }}" alt="" class="position-fixed-left-0-top-40percent ads-doc">--}}
 @yield('content')
-<img src="{{ asset('frontend/images/ads/1273.gif') }}" alt="" class="position-fixed-right-0-top-40percent ads-doc">
+{{--<img src="{{ asset('frontend/images/ads/1273.gif') }}" alt="" class="position-fixed-right-0-top-40percent ads-doc">--}}
 
 <!-- Start Footer -->
 <footer class="footer-box">
