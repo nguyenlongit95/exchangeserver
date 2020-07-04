@@ -55563,7 +55563,7 @@ var staticRenderFns = [
               attrs: { src: "frontend/images/Bank/msb.png", alt: "" }
             }),
             _c("span", { staticClass: "bank-name padding-top-5px" }, [
-              _vm._v("MSB")
+              _vm._v("MSB ")
             ])
           ])
         ])
