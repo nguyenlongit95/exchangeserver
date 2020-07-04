@@ -107,6 +107,7 @@
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/acb.png" alt=""><span class="bank-name padding-top-5px">ACB</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/agribank.png" alt=""><span class="bank-name padding-top-5px">ArgiBank</span></span></th>
                                         <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/oceanbank.png" alt=""><span class="bank-name padding-top-5px">OceanBank</span></span></th>
+                                        <th class="text-center"><span class="bank-img min-width-130 text-center"><img src="frontend/images/Bank/msb.png" alt=""><span class="bank-name padding-top-5px">MSB</span></span></th>
                                     </tr>
                                     </thead>
                                     <tbody>
